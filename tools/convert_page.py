@@ -199,6 +199,8 @@ for i, sec in enumerate(content.find_all(recursive=False), 1):
     files[name] = component(name, sec, f"Section {i}: {first_heading(sec) or sec.get('id') or 'spacer'}")
     order.append(name)
 files["Footer"] = component("Footer", footer, "Footer")
+# Site decision: drop the "Created with ❤ using WordPress and Kubio" credit from the footer
+files["Footer"] = re.sub(r' Created with <img[^>]*/> using WordPress and\s*<a[^>]*>Kubio</a>', "", files["Footer"])
 for n, src in files.items():
     open(f"{COMP_DIR}/{n}.tsx", "w", encoding="utf8").write(src)
 
