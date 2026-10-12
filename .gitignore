@@ -1,0 +1,9 @@
+# raw mirror of the live site (regenerate with: node tools/scrape-home.mjs / && node tools/fetch-gfonts.mjs)
+_mirror/
+
+node_modules/
+.next/
+.env*
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,1 @@
+(function(){var d=document.documentElement,s=d.style;if(!("backgroundAttachment" in s))return;var o=s.backgroundAttachment;s.backgroundAttachment="fixed";var ok=s.backgroundAttachment==="fixed";s.backgroundAttachment=o;if(navigator.userAgent.toLowerCase().indexOf("mac")!==-1&&navigator.maxTouchPoints)ok=false;if(!ok)d.classList.add("kubio-attachment-fixed-support-fallback");})();
