@@ -5,7 +5,7 @@ usage: python tools/convert_page.py <page.local.html> <slug> <route> <out_dir> <
   route : app route ('' for /, 'games', 'purgatory', ...)
 Output (inside out_dir):
   components/pages/<slug>/*.tsx       one component per section (navigation, hero, sections, footer)
-  components/pages/<slug>/styles.json stylesheet list in the original cascade order
+  components/pages/<slug>/styles.json stylesheet list in the original cascade order (input of build_global_styles.py)
   public/css/<slug>/inline-*.css      the page's inline <style> blocks
   app/<route>/page.tsx                the route, composing the sections
 """
@@ -241,22 +241,23 @@ vi = re.sub(r"^https?://saigame\.studio", "", vi["href"]) if vi else None
 content_attrs = attrs_to_jsx(content)
 header_attrs = attrs_to_jsx(header)
 imp = lambda n: f'import {n} from "@/components/pages/{SLUG}/{n}";'
-lines = ['import type { Metadata } from "next";', 'import WpStyles from "@/components/WpStyles";',
-         f'import styles from "@/components/pages/{SLUG}/styles.json";', imp("Navigation"), imp("Hero")]
+lines = ['import type { Metadata } from "next";', imp("Navigation"), imp("Hero")]
 lines += [imp(n) for n in order] + [imp("Footer"), "",
           "export const metadata: Metadata = {",
           f"  title: {json.dumps(title)},",
           f"  alternates: {{ canonical: {json.dumps(canonical)}" + (f", languages: {{ \"en-US\": {json.dumps(canonical)}, vi: {json.dumps(vi)} }}" if vi else "") + " },",
           "};", "",
-          f"export default function {pascal(SLUG)}Page() {{", "  return (", "    <>",
-          "      <WpStyles styles={styles} />", '      <div className="wp-site-blocks">',
+          "// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).",
+          f"export default function {pascal(SLUG)}Page() {{", "  return (",
+          f'    <div data-wp-page="{SLUG}" style={{{{ display: "contents" }}}}>', '      <div className="wp-site-blocks">',
           f"        <div{header_attrs}>", "          <Navigation />", "          <Hero />", "        </div>",
           f"        <div{content_attrs}>"]
 lines += [f"          <{n} />" for n in order]
-lines += ["        </div>", "        <Footer />", "      </div>", "    </>", "  );", "}", ""]
+lines += ["        </div>", "        <Footer />", "      </div>", "    </div>", "  );", "}", ""]
 route_dir = f"{OUT}/app/{ROUTE}" if ROUTE else f"{OUT}/app"
 os.makedirs(route_dir, exist_ok=True)
 open(f"{route_dir}/page.tsx", "w", encoding="utf8").write("\n".join(lines))
+print("next: python tools/build_global_styles.py web   (rebuilds the global, page-scoped stylesheet list)")
 print(SLUG, "->", "/" + ROUTE, "| components:", list(files), "| styles:", len(styles), "| title:", title)
 os.makedirs(f"{OUT}/emoji", exist_ok=True)
 open(f"{OUT}/emoji/{SLUG}.txt", "w").write("\n".join(sorted(EMOJI_USED)))

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import WpStyles from "@/components/WpStyles";
-import styles from "@/components/pages/purgatory/styles.json";
 import Navigation from "@/components/pages/purgatory/Navigation";
 import Hero from "@/components/pages/purgatory/Hero";
 import GameOverview from "@/components/pages/purgatory/GameOverview";
@@ -13,10 +11,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/purgatory/", languages: { "en-US": "/purgatory/", vi: "/vi/purgatory/" } },
 };
 
+// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
 export default function PurgatoryPage() {
   return (
-    <>
-      <WpStyles styles={styles} />
+    <div data-wp-page="purgatory" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
           <Navigation />
@@ -29,6 +27,6 @@ export default function PurgatoryPage() {
         </div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

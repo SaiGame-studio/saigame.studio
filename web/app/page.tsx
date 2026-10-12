@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import WpStyles from "@/components/WpStyles";
-import styles from "@/components/pages/home/styles.json";
 import Navigation from "@/components/pages/home/Navigation";
 import Hero from "@/components/pages/home/Hero";
 import TopGames from "@/components/pages/home/TopGames";
@@ -15,10 +13,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/", languages: { "en-US": "/", vi: "/vi/" } },
 };
 
+// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
 export default function HomePage() {
   return (
-    <>
-      <WpStyles styles={styles} />
+    <div data-wp-page="home" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
           <Navigation />
@@ -33,6 +31,6 @@ export default function HomePage() {
         </div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
