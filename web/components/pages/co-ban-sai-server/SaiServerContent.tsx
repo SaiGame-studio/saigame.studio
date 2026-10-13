@@ -104,6 +104,10 @@ export default function SaiServerContent() {
                                               </strong>
                                             </h4>
                                             <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-47-text" data-kubio="kubio/text">Build diverse quest systems including main quests, side quests, and limited time events. Configure completion conditions, rewards, and linked quest chains, all through a visual drag-and-drop interface.</p>
+                                            <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-46-text" data-kubio="kubio/heading">
+                                              <strong>Backend Logic in Lua, Right Inside Unity</strong>
+                                            </h4>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-47-text" data-kubio="kubio/text">Write your game's backend logic as Lua scripts without leaving the Unity Editor. Rewards, validations and gameplay rules live alongside the rest of your project and run on Sai Server, so you can build server-side features without setting up a separate backend or learning a new stack.</p>
                                           </div>
                                         </div>
                                       </div>

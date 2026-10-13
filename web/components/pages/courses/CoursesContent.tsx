@@ -310,48 +310,6 @@ Dive into the world of game development with                                    
                                                 </div>
                                               </div>
                                             </div>
-                                            <div className="wp-block wp-block-kubio-row position-relative wp-block-kubio-row__container style-2exgxI1fBm-container style-local-69-container gutters-row-lg-0 gutters-row-v-lg-0 gutters-row-md-0 gutters-row-v-md-0 gutters-row-0 gutters-row-v-0" data-kubio="kubio/row">
-                                              <div className="background-wrapper">
-                                                <div className="background-layer background-layer-media-container-lg"></div>
-                                                <div className="background-layer background-layer-media-container-md"></div>
-                                                <div className="background-layer background-layer-media-container"></div>
-                                              </div>
-                                              <div className="position-relative wp-block-kubio-row__inner style-2exgxI1fBm-inner style-local-69-inner h-row align-items-lg-stretch align-items-md-stretch align-items-stretch justify-content-lg-center justify-content-md-center justify-content-center gutters-col-lg-0 gutters-col-v-lg-0 gutters-col-md-0 gutters-col-v-md-0 gutters-col-0 gutters-col-v-0">
-                                                <div className="wp-block wp-block-kubio-column position-relative wp-block-kubio-column__container style-VHxPQHX-gv-container style-local-70-container d-flex h-col-lg-auto h-col-md-auto h-col-auto" data-kubio="kubio/column">
-                                                  <div className="position-relative wp-block-kubio-column__inner style-VHxPQHX-gv-inner style-local-70-inner d-flex h-flex-basis h-px-lg-2 v-inner-lg-2 h-px-md-2 v-inner-md-2 h-px-2 v-inner-2">
-                                                    <div className="background-wrapper">
-                                                      <div className="background-layer background-layer-media-container-lg"></div>
-                                                      <div className="background-layer background-layer-media-container-md"></div>
-                                                      <div className="background-layer background-layer-media-container"></div>
-                                                    </div>
-                                                    <div className="position-relative wp-block-kubio-column__align style-VHxPQHX-gv-align style-local-70-align h-y-container h-column__content h-column__v-align flex-basis-auto align-self-lg-start align-self-md-start align-self-start">
-                                                      <div className="wp-block wp-block-kubio-icon position-relative wp-block-kubio-icon__outer style-9GnRB9LAA-outer style-local-71-outer" data-kubio="kubio/icon" id="icon">
-                                                        <span className="h-svg-icon wp-block-kubio-icon__inner style-9GnRB9LAA-inner style-local-71-inner h-global-transition" {...{ name: "icons8-line-awesome/lightbulb-o" }}>
-                                                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="lightbulb-o" viewBox="0 0 512 545.5">
-                                                            <path d="M109 70.5l33.5 33.5-22.5 22.5L86.5 93zm294 0L425.5 93 392 126.5 369.5 104zm-147 10c78.95-.75 144 64.436 144 143.5 0 43.29-19.986 80.986-46.5 107.5-19.81 18.394-32 42.033-32 65.5v19H320v64h-36.5c-5.553 9.55-15.715 16-27.5 16s-21.947-6.45-27.5-16H192v-96c-3.24-17.87-12.705-35.39-28-48.5-35.727-30.368-57.17-77.527-50-129.5 8.977-64.628 60.63-117.062 125.5-124.5.174-.02.326.02.5 0 5.37-.652 10.736-.95 16-1zm0 32c-4.122.06-8.285.473-12.5 1-50.102 5.566-91 46.09-98 96.5-5.63 40.827 11.227 76.97 39.5 101 22.21 19.038 33.99 45.573 37.5 73h70c3.768-28.672 17.507-54.937 39-75l-.5-.5c21.486-21.486 37-50.99 37-84.5 0-61.776-50.164-112.378-112-111.5zM32 224h48v32H32v-32zm400 0h48v32h-48v-32zM120 353.5l22.5 22.5-33.5 33.5L86.5 387zm272 0l33.5 33.5-22.5 22.5-33.5-33.5zM224 416v32h64v-32h-64z"></path>
-                                                          </svg>
-                                                        </span>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div className="wp-block wp-block-kubio-column position-relative wp-block-kubio-column__container style-1nuPj1AQu5-container style-local-72-container d-flex h-col-lg h-col-md h-col-auto" data-kubio="kubio/column">
-                                                  <div className="position-relative wp-block-kubio-column__inner style-1nuPj1AQu5-inner style-local-72-inner d-flex h-flex-basis h-px-lg-2 v-inner-lg-2 h-px-md-2 v-inner-md-2 h-px-2 v-inner-2">
-                                                    <div className="background-wrapper">
-                                                      <div className="background-layer background-layer-media-container-lg"></div>
-                                                      <div className="background-layer background-layer-media-container-md"></div>
-                                                      <div className="background-layer background-layer-media-container"></div>
-                                                    </div>
-                                                    <div className="position-relative wp-block-kubio-column__align style-1nuPj1AQu5-align style-local-72-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                                                      <a href="https://www.coderschool.vn/vi/game-development-sai-game" target="_blank" className="d-block h-link position-relative wp-block-kubio-heading__ style-y6bPr9pL1- style-local-73-">
-                                                        <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-y6bPr9pL1-text style-local-73-text" data-kubio="kubio/heading" id="heading-10">Youni – Sai Game</h4>
-                                                      </a>
-                                                      <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-TBOOb2n5m-text style-local-74-text" data-kubio="kubio/text" id="paragraph-6">Learn live every week with Youtuber SaiGame. Top influencer in Unity programming training in Vietnam.</p>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
                                           </div>
                                         </div>
                                       </div>
