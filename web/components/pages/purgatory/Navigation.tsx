@@ -1,6 +1,9 @@
 // Top navigation bar (logo, menu with dropdowns, language switcher)
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function Navigation() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function Navigation() {
+  const { t, flags } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-navigation position-relative wp-block-kubio-navigation__outer style-jZZ7ZgkWWk-outer style-local-1-outer h-navigation_overlap" data-kubio="kubio/navigation" data-kubio-component="overlap" data-kubio-settings="true" id="navigation">
       <div className="wp-block wp-block-kubio-navigation-section position-relative wp-block-kubio-navigation-section__nav style-cokser9d3k-nav style-local-2-nav h-section h-navigation" data-kubio="kubio/navigation-section" data-kubio-component="navigation" data-kubio-settings={"{\"sticky\":false,\"overlap\":true}"}>
@@ -53,7 +56,7 @@ export default function Navigation() {
                         <div className="wp-block wp-block-kubio-menu-items position-relative wp-block-kubio-menu-items__outer style-dDUW0WNaaoB-outer style-local-11-outer kubio-menu" data-kubio="kubio/menu-items">
                           <ul id="menu-primary-menu" className="menu kubio-has-gap-fallback">
                             <li id="menu-item-17" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-17">
-                              <a href="/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Home</a>
+                              <a href="/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Home")}</a>
                             </li>
                              <li id="menu-item-37" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37">
                               <a href="/games" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
@@ -67,7 +70,7 @@ export default function Navigation() {
                                   <a href="/games/purgatory" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>Purgatory</a>
                                 </li>
                                  <li id="menu-item-39" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-39">
-                                  <a href="/games/the-immortal" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>The Immortal</a>
+                                  <a href="/games/the-immortal" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("The Immortal")}</a>
                                 </li>
                                  <li id="menu-item-40" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-40">
                                   <a href="/games/the-watcher" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>The Watcher</a>
@@ -76,17 +79,17 @@ export default function Navigation() {
                              </li>
                              <li id="menu-item-46" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-46">
                               <a href="/courses" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                <span>Courses</span>
+                                <span>{t("Courses")}</span>
                                 <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
                                    <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
                                 </svg>
                               </a>
                                <ul className="sub-menu">
                                  <li id="menu-item-505" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-505">
-                                  <a href="/unity-dev-basic/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>Unity Dev Basic</a>
+                                  <a href="/unity-dev-basic/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Unity Dev Basic")}</a>
                                 </li>
                                  <li id="menu-item-811" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-811">
-                                  <a href="/co-ban-sai-server/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>Basic Sai Server</a>
+                                  <a href="/co-ban-sai-server/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Basic Sai Server")}</a>
                                 </li>
                                </ul>
                              </li>
@@ -94,13 +97,13 @@ export default function Navigation() {
                               <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
                             </li>
                              <li id="menu-item-241" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-241">
-                              <a href="/my-account/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>My account</a>
+                              <a href="/my-account/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("My account")}</a>
                             </li>
                              <li id="menu-item-61" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-has-children current-language-menu-item menu-item-61">
-                              <a href="/purgatory/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
+                              <a href="#" data-lang={flags.current.code} style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
                                 <span>
                                   <span data-no-translation="">
-                                    <img decoding="async" className="trp-flag-image" src="/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title={"<span data-no-translation><img class=\"trp-flag-image\" src=\"/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png\" width=\"18\" height=\"12\" alt=\"en_US\" title=\"<span data-no-translation><img class=\"trp-flag-image\" src=\"http://saigame.studio/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png\" width=\"18\" height=\"12\" alt=\"en_US\" title=\"<span data-no-translation><img class=\"trp-flag-image\" src=\"http://saigame.studio/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png\" width=\"18\" height=\"12\" alt=\"en_US\" title=\"English\"></span>\"></span>\"></span>"} />
+                                    <img decoding="async" className="trp-flag-image" src={flags.current.src} width="18" height="12" alt={flags.current.alt} title={flags.current.title} />
                                   </span>
                                 </span>
                                 <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
@@ -109,9 +112,9 @@ export default function Navigation() {
                               </a>
                                <ul className="sub-menu">
                                  <li id="menu-item-59" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-59">
-                                  <a href="/vi/purgatory/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
+                                  <a href="#" data-lang={flags.other.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
                                     <span data-no-translation="">
-                                      <img decoding="async" className="trp-flag-image" src="/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png" width="18" height="12" alt="vi" title={"<span data-no-translation><img class=\"trp-flag-image\" src=\"/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png\" width=\"18\" height=\"12\" alt=\"vi\" title=\"<span data-no-translation><img class=\"trp-flag-image\" src=\"http://saigame.studio/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png\" width=\"18\" height=\"12\" alt=\"vi\" title=\"<span data-no-translation><img class=\"trp-flag-image\" src=\"http://saigame.studio/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png\" width=\"18\" height=\"12\" alt=\"vi\" title=\"Ti\u1ebfng Vi\u1ec7t\"></span>\"></span>\"></span>"} />
+                                      <img decoding="async" className="trp-flag-image" src={flags.other.src} width="18" height="12" alt={flags.other.alt} title={flags.other.title} />
                                     </span>
                                   </a>
                                 </li>

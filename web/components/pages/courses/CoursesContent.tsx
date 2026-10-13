@@ -1,6 +1,9 @@
 // Section 1: Game Dev Courses
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function CoursesContent() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function CoursesContent() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-p7Z7tbZgOg-outer style-local-26-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section">
       <div className="background-wrapper">
@@ -47,11 +50,11 @@ export default function CoursesContent() {
                                   <div className="background-layer background-layer-media-container"></div>
                                 </div>
                                 <div className="position-relative wp-block-kubio-column__align style-FENVDue7bo-align style-local-31-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                                  <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fFAprHN_k-text style-local-32-text" data-kubio="kubio/heading" id="heading">Game Dev Courses</h2>
-                                  <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-PNkVKglo2-text style-local-33-text" data-kubio="kubio/heading" id="heading-1">Unlock Your Creativity and Build Amazing Games</h4>
+                                  <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fFAprHN_k-text style-local-32-text" data-kubio="kubio/heading" id="heading">{t("Game Dev Courses")}</h2>
+                                  <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-PNkVKglo2-text style-local-33-text" data-kubio="kubio/heading" id="heading-1">{t("Unlock Your Creativity and Build Amazing Games")}</h4>
                                   <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-VoYs3Tbv3-text style-local-34-text" data-kubio="kubio/text" id="paragraph">
-Are you passionate about creating games? Whether you’re a beginner or an experienced developer,                                     <strong>Game Dev Courses</strong>
- provide you with the skills and knowledge to bring your game ideas to life.                                  </p>
+{t("Are you passionate about creating games? Whether you’re a beginner or an experienced developer,")}{" "}<strong>{t("Game Dev Courses")}</strong>
+ {t("provide you with the skills and knowledge to bring your game ideas to life.")}{" "}</p>
                                 </div>
                               </div>
                             </div>
@@ -135,9 +138,9 @@ Are you passionate about creating games? Whether you’re a beginner or an exper
                                           </div>
                                           <div className="position-relative wp-block-kubio-column__align style-0zt3iY3qzQQ-align style-local-43-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-center align-self-md-center align-self-center">
                                             <a href="https://discord.gg/UU3YarmVde" target="_blank" className="d-block h-link position-relative wp-block-kubio-heading__ style-XY4tTy6rQDS- style-local-44-">
-                                              <h3 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-XY4tTy6rQDS-text style-local-44-text" data-kubio="kubio/heading">Join our Discord server</h3>
+                                              <h3 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-XY4tTy6rQDS-text style-local-44-text" data-kubio="kubio/heading">{t("Join our Discord server")}</h3>
                                             </a>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-wB0evyiAL45-text style-local-45-text" data-kubio="kubio/text">Stay connected with our community and receive updates on the latest gaming news and events.</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-wB0evyiAL45-text style-local-45-text" data-kubio="kubio/text">{t("Stay connected with our community and receive updates on the latest gaming news and events.")}</p>
                                           </div>
                                         </div>
                                       </div>
@@ -153,7 +156,7 @@ Are you passionate about creating games? Whether you’re a beginner or an exper
                                               <div className="position-relative wp-block-kubio-buttongroup__spacing style-wMqrx9oYMMM-spacing style-local-47-spacing h-x-container-inner">
                                                 <span className="wp-block wp-block-kubio-button position-relative wp-block-kubio-button__outer style-IhxsGxSIK9L-outer style-local-48-outer kubio-button-container" data-kubio="kubio/button">
                                                   <a className="position-relative wp-block-kubio-button__link style-IhxsGxSIK9L-link style-local-48-link h-w-100 h-global-transition" href="https://discord.gg/UU3YarmVde" target="_blank">
-                                                    <span className="position-relative wp-block-kubio-button__text style-IhxsGxSIK9L-text style-local-48-text kubio-inherit-typography">Join now</span>
+                                                    <span className="position-relative wp-block-kubio-button__text style-IhxsGxSIK9L-text style-local-48-text kubio-inherit-typography">{t("Join now")}</span>
                                                   </a>
                                                   <div className="position-relative wp-block-kubio-button__recommendationPageIframe style-IhxsGxSIK9L-recommendationPageIframe style-local-48-recommendationPageIframe"></div>
                                                 </span>
@@ -210,11 +213,11 @@ Are you passionate about creating games? Whether you’re a beginner or an exper
                                           </div>
                                           <div className="position-relative wp-block-kubio-column__align style-zeSFwRgj9C-align style-local-53-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                                             <a href="/courses" className="d-block h-link position-relative wp-block-kubio-heading__ style-RbDLwVD88H- style-local-54-">
-                                              <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-RbDLwVD88H-text style-local-54-text" data-kubio="kubio/heading">The Unity courses</h2>
+                                              <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-RbDLwVD88H-text style-local-54-text" data-kubio="kubio/heading">{t("The Unity courses")}</h2>
                                             </a>
                                             <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-j_OkhhiPO-text style-local-55-text h-lead" data-kubio="kubio/text">
-Dive into the world of game development with                                               <strong>Sai Game Courses</strong>
-! Whether you’re a beginner or a seasoned developer, these courses will empower you with the skills to create captivating games using the powerful Unity engine.                                            </p>
+{t("Dive into the world of game development with")}{" "}<strong>{t("Sai Game Courses")}</strong>
+{t("! Whether you’re a beginner or a seasoned developer, these courses will empower you with the skills to create captivating games using the powerful Unity engine.")}{" "}</p>
                                           </div>
                                         </div>
                                       </div>
@@ -260,9 +263,9 @@ Dive into the world of game development with                                    
                                                     </div>
                                                     <div className="position-relative wp-block-kubio-column__align style-1nuPj1AQu5-align style-local-60-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                                                       <a href="/courses/unity-dev-basic" className="d-block h-link position-relative wp-block-kubio-heading__ style-y6bPr9pL1- style-local-61-">
-                                                        <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-y6bPr9pL1-text style-local-61-text" data-kubio="kubio/heading" id="heading-10">Unity Dev Basic</h4>
+                                                        <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-y6bPr9pL1-text style-local-61-text" data-kubio="kubio/heading" id="heading-10">{t("Unity Dev Basic")}</h4>
                                                       </a>
-                                                      <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-TBOOb2n5m-text style-local-62-text" data-kubio="kubio/text" id="paragraph-6">This course is designed for beginners who want to learn the fundamentals of creating games using the powerful Unity engine.</p>
+                                                      <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-TBOOb2n5m-text style-local-62-text" data-kubio="kubio/text" id="paragraph-6">{t("This course is designed for beginners who want to learn the fundamentals of creating games using the powerful Unity engine.")}</p>
                                                     </div>
                                                   </div>
                                                 </div>
@@ -302,9 +305,9 @@ Dive into the world of game development with                                    
                                                     </div>
                                                     <div className="position-relative wp-block-kubio-column__align style-1nuPj1AQu5-align style-local-66-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                                                       <a href="/courses/unity-dev-advance" target="_blank" className="d-block h-link position-relative wp-block-kubio-heading__ style-y6bPr9pL1- style-local-67-">
-                                                        <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-y6bPr9pL1-text style-local-67-text" data-kubio="kubio/heading" id="heading-10">Unity Dev Advance</h4>
+                                                        <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-y6bPr9pL1-text style-local-67-text" data-kubio="kubio/heading" id="heading-10">{t("Unity Dev Advance")}</h4>
                                                       </a>
-                                                      <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-TBOOb2n5m-text style-local-68-text" data-kubio="kubio/text" id="paragraph-6">This course is designed for developers who want to deepen their expertise in using Unity to create complex and immersive games.</p>
+                                                      <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-TBOOb2n5m-text style-local-68-text" data-kubio="kubio/text" id="paragraph-6">{t("This course is designed for developers who want to deepen their expertise in using Unity to create complex and immersive games.")}</p>
                                                     </div>
                                                   </div>
                                                 </div>

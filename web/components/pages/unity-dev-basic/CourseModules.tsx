@@ -1,6 +1,9 @@
 // Section 1: Courses
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function CourseModules() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function CourseModules() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-h2j98a19m-outer style-local-26-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="content-1">
       <div className="background-wrapper">
@@ -42,12 +45,12 @@ export default function CourseModules() {
                   <div className="background-layer background-layer-media-container"></div>
                 </div>
                 <div className="position-relative wp-block-kubio-column__align style-8OJNIWvuy0-align style-local-30-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                  <h5 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-XYBNXM7-Li-text style-local-31-text" data-kubio="kubio/heading">Courses</h5>
+                  <h5 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-XYBNXM7-Li-text style-local-31-text" data-kubio="kubio/heading">{t("Courses")}</h5>
                   <a href="https://www.youtube.com/@SaiGame" target="_blank" className="d-block h-link position-relative wp-block-kubio-heading__ style-lHXvIGIoA- style-local-32-">
                     <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-lHXvIGIoA-text style-local-32-text" data-kubio="kubio/heading">Unity Dev Baisc</h2>
                   </a>
                   <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-2guIOsFnt-text style-local-33-text" data-kubio="kubio/text">
-Bạn có sẵn sàng bắt đầu hành trình phát triển game của mình chưa?                     <strong>Unity Dev Basic</strong>
+Bạn có sẵn sàng bắt đầu hành trình phát triển game của mình chưa?                     <strong>{t("Unity Dev Basic")}</strong>
  là khóa học dành cho người mới bắt đầu, giúp bạn làm quen với                     <strong>Unity</strong>
  – một trong những công cụ phát triển game mạnh mẽ và phổ biến nhất hiện nay.                  </p>
                   <div className="wp-block wp-block-kubio-row position-relative wp-block-kubio-row__container style-wMr2tBIlEXp-container style-local-34-container gutters-row-lg-2 gutters-row-v-lg-2 gutters-row-md-2 gutters-row-v-md-2 gutters-row-0 gutters-row-v-0" data-kubio="kubio/row">

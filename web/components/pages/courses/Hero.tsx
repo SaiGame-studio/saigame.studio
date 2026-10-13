@@ -1,6 +1,9 @@
 // Hero: Courses
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function Hero() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function Hero() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-hero position-relative wp-block-kubio-hero__outer style-KFTMhA6WOVh-outer style-local-22-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/hero" id="hero">
       <div className="background-wrapper">
@@ -24,7 +27,7 @@ export default function Hero() {
                   <div className="background-layer background-layer-media-container"></div>
                 </div>
                 <div className="position-relative wp-block-kubio-column__align style-vPVKm6K-swr-align style-local-24-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-center align-self-md-center align-self-center">
-                  <h1 className="wp-block wp-block-kubio-page-title position-relative wp-block-kubio-page-title__container style-SzZXH7PdCL-container style-local-25-container" data-kubio="kubio/page-title">Courses</h1>
+                  <h1 className="wp-block wp-block-kubio-page-title position-relative wp-block-kubio-page-title__container style-SzZXH7PdCL-container style-local-25-container" data-kubio="kubio/page-title">{t("Courses")}</h1>
                 </div>
               </div>
             </div>

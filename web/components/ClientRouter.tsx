@@ -2,10 +2,12 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { currentDocumentLang, isLang, persistLang } from "@/lib/lang";
 
 // The page markup is converted 1:1 from WordPress and uses plain <a href>. Instead of rewriting every
 // link to next/link, intercept clicks on internal links and let the App Router swap the content
 // (no full reload; the URL, title and history still update).
+// Language switcher links carry data-lang: they store the choice client-side and re-render in place.
 
 const STATIC_PATH = /^\/(wp-content|wp-includes|wp-emoji|_next|fonts|css|js)\//;
 const FILE_EXT = /\.[a-z0-9]{2,5}$/i;
@@ -31,6 +33,18 @@ export default function ClientRouter() {
     // handled the click (e.g. a submenu toggle on touch screens) defaultPrevented is respected.
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      const langLink = e.target instanceof Element ? e.target.closest("[data-lang]") : null;
+      if (langLink) {
+        e.preventDefault();
+        const lang = langLink.getAttribute("data-lang");
+        if (isLang(lang) && lang !== currentDocumentLang()) {
+          persistLang(lang);
+          router.refresh(); // server re-renders with the new language; URL and scroll stay
+        }
+        return;
+      }
+
       const url = internalTarget(e);
       if (!url) return;
       const here = window.location;

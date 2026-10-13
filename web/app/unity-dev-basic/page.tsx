@@ -7,7 +7,7 @@ import Footer from "@/components/pages/unity-dev-basic/Footer";
 
 export const metadata: Metadata = {
   title: "Courses Unity Dev Basic \u2013 SaiGame",
-  alternates: { canonical: "/unity-dev-basic/", languages: { "en-US": "/unity-dev-basic/", vi: "/vi/unity-dev-basic/" } },
+  alternates: { canonical: "/unity-dev-basic/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

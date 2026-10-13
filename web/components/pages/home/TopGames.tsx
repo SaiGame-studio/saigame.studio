@@ -1,6 +1,9 @@
 // Section 1: Top games we’ve already released.
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function TopGames() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function TopGames() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-xN-pH3E25J-outer style-local-27-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="features">
       <div className="background-wrapper">
@@ -24,7 +27,7 @@ export default function TopGames() {
                   <div className="background-layer background-layer-media-container"></div>
                 </div>
                 <div className="position-relative wp-block-kubio-column__align style-13_AQrFvFW-align style-local-29-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                  <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-uOGgXlQcQJ-text style-local-30-text" data-kubio="kubio/heading">Top games we’ve already released.</h2>
+                  <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-uOGgXlQcQJ-text style-local-30-text" data-kubio="kubio/heading">{t("Top games we’ve already released.")}</h2>
                 </div>
               </div>
             </div>
@@ -36,7 +39,7 @@ export default function TopGames() {
                   <div className="background-layer background-layer-media-container"></div>
                 </div>
                 <div className="position-relative wp-block-kubio-column__align style-Q7A3AeFP2V-align style-local-31-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-end align-self-md-end align-self-end">
-                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-CG4adr6-de-text style-local-32-text h-lead" data-kubio="kubio/text">These are some of the best games we’ve launched so far, now available for everyone to enjoy. Packed with exciting features and immersive gameplay, they showcase our commitment to delivering entertainment to players worldwide.</p>
+                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-CG4adr6-de-text style-local-32-text h-lead" data-kubio="kubio/text">{t("These are some of the best games we’ve launched so far, now available for everyone to enjoy. Packed with exciting features and immersive gameplay, they showcase our commitment to delivering entertainment to players worldwide.")}</p>
                 </div>
               </div>
             </div>
@@ -69,7 +72,7 @@ export default function TopGames() {
                   <a href="/purgatory" className="d-block h-link position-relative wp-block-kubio-heading__ style-8NBRiFs-5- style-local-36-">
                     <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-8NBRiFs-5-text style-local-36-text" data-kubio="kubio/heading" id="heading-7">Purgatory</h4>
                   </a>
-                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-GVn8ovXra-text style-local-37-text" data-kubio="kubio/text" id="paragraph-4">a next-generation interactive game designed specifically to connect Streamers and Viewers like never before. This is not just a game; it is a stage for your community to stand shoulder to shoulder, building and fighting for a common goal.</p>
+                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-GVn8ovXra-text style-local-37-text" data-kubio="kubio/text" id="paragraph-4">{t("a next-generation interactive game designed specifically to connect Streamers and Viewers like never before. This is not just a game; it is a stage for your community to stand shoulder to shoulder, building and fighting for a common goal.")}</p>
                 </div>
               </div>
             </div>
@@ -93,7 +96,7 @@ export default function TopGames() {
                   <a href="/games/the-watcher" className="d-block h-link position-relative wp-block-kubio-heading__ style-qUM-Z94y8- style-local-40-">
                     <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-qUM-Z94y8-text style-local-40-text" data-kubio="kubio/heading" id="heading-6">The Watcher</h4>
                   </a>
-                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-gOdw2OAN4-text style-local-41-text" data-kubio="kubio/text" id="paragraph-3">Our heroes catch wind of a mysterious land teeming with monsters, compelling them to uncover the truth behind its turmoil.</p>
+                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-gOdw2OAN4-text style-local-41-text" data-kubio="kubio/text" id="paragraph-3">{t("Our heroes catch wind of a mysterious land teeming with monsters, compelling them to uncover the truth behind its turmoil.")}</p>
                   <p className="wp-block-paragraph"></p>
                 </div>
               </div>

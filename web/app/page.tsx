@@ -10,7 +10,7 @@ import Footer from "@/components/pages/home/Footer";
 
 export const metadata: Metadata = {
   title: "SaiGame",
-  alternates: { canonical: "/", languages: { "en-US": "/", vi: "/vi/" } },
+  alternates: { canonical: "/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

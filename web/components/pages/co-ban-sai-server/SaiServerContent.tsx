@@ -1,6 +1,9 @@
 // Section 1: Courses
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function SaiServerContent() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function SaiServerContent() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-p7Z7tbZgOg-outer style-local-26-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section">
       <div className="background-wrapper">
@@ -65,11 +68,11 @@ export default function SaiServerContent() {
                                   <div className="background-layer background-layer-media-container"></div>
                                 </div>
                                 <div className="position-relative wp-block-kubio-column__align style-8OJNIWvuy0-align style-local-33-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                                  <h5 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-XYBNXM7-Li-text style-local-34-text" data-kubio="kubio/heading">Courses</h5>
+                                  <h5 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-XYBNXM7-Li-text style-local-34-text" data-kubio="kubio/heading">{t("Courses")}</h5>
                                   <a href="https://server.saigame.studio/tutorials" target="_blank" className="d-block h-link position-relative wp-block-kubio-heading__ style-lHXvIGIoA- style-local-35-">
-                                    <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-lHXvIGIoA-text style-local-35-text" data-kubio="kubio/heading">Game Backend Management Platform</h2>
+                                    <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-lHXvIGIoA-text style-local-35-text" data-kubio="kubio/heading">{t("Game Backend Management Platform")}</h2>
                                   </a>
-                                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-2guIOsFnt-text style-local-36-text" data-kubio="kubio/text">Sai Server is an all-in-one solution that helps game studios manage servers, monitor players, and operate their games professionally, all within a single interface</p>
+                                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-2guIOsFnt-text style-local-36-text" data-kubio="kubio/text">{t("Sai Server is an all-in-one solution that helps game studios manage servers, monitor players, and operate their games professionally, all within a single interface")}</p>
                                   <div className="wp-block wp-block-kubio-row position-relative wp-block-kubio-row__container style-wMr2tBIlEXp-container style-local-37-container gutters-row-lg-2 gutters-row-v-lg-2 gutters-row-md-2 gutters-row-v-md-2 gutters-row-0 gutters-row-v-0" data-kubio="kubio/row">
                                     <div className="background-wrapper">
                                       <div className="background-layer background-layer-media-container-lg"></div>
@@ -86,28 +89,28 @@ export default function SaiServerContent() {
                                           </div>
                                           <div className="position-relative wp-block-kubio-column__align style-jEzyj0E3frM-align style-local-38-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                                             <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-39-text" data-kubio="kubio/heading">
-                                              <strong>Manage Multiple Studios</strong>
+                                              <strong>{t("Manage Multiple Studios")}</strong>
                                             </h4>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-40-text" data-kubio="kubio/text">Support multiple studios on a single platform, with flexible role-based access control for each team member.</p>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-41-text" data-kubio="kubio/text">Create, deploy, and monitor multiple game servers simultaneously. Track real-time status and scale easily when needed.</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-40-text" data-kubio="kubio/text">{t("Support multiple studios on a single platform, with flexible role-based access control for each team member.")}</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-41-text" data-kubio="kubio/text">{t("Create, deploy, and monitor multiple game servers simultaneously. Track real-time status and scale easily when needed.")}</p>
                                             <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-42-text" data-kubio="kubio/heading">
                                               <strong>Dashboard & Analytics</strong>
                                             </h4>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-43-text" data-kubio="kubio/text">Track player metrics, system resources, and server performance through an intuitive dashboard.</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-43-text" data-kubio="kubio/text">{t("Track player metrics, system resources, and server performance through an intuitive dashboard.")}</p>
                                             <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-44-text" data-kubio="kubio/heading">
-                                              <strong>Item Management & Shop</strong>
+                                              <strong>{t("Item Management & Shop")}</strong>
                                             </h4>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-45-text" data-kubio="kubio/text">Create and manage in-game item systems, including weapons, equipment, consumables, and materials. Configure shop settings with pricing, categorization, and intuitive displays. Update items in bulk without touching code.</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-45-text" data-kubio="kubio/text">{t("Create and manage in-game item systems, including weapons, equipment, consumables, and materials. Configure shop settings with pricing, categorization, and intuitive displays. Update items in bulk without touching code.")}</p>
                                             <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-46-text" data-kubio="kubio/heading">
                                               <strong>
-                                                <strong>Quest & Mission Management</strong>
+                                                <strong>{t("Quest & Mission Management")}</strong>
                                               </strong>
                                             </h4>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-47-text" data-kubio="kubio/text">Build diverse quest systems including main quests, side quests, and limited time events. Configure completion conditions, rewards, and linked quest chains, all through a visual drag-and-drop interface.</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-47-text" data-kubio="kubio/text">{t("Build diverse quest systems including main quests, side quests, and limited time events. Configure completion conditions, rewards, and linked quest chains, all through a visual drag-and-drop interface.")}</p>
                                             <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-46-text" data-kubio="kubio/heading">
-                                              <strong>Backend Logic in Lua, Right Inside Unity</strong>
+                                              <strong>{t("Backend Logic in Lua, Right Inside Unity")}</strong>
                                             </h4>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-47-text" data-kubio="kubio/text">Write your game's backend logic as Lua scripts without leaving the Unity Editor. Rewards, validations and gameplay rules live alongside the rest of your project and run on Sai Server, so you can build server-side features without setting up a separate backend or learning a new stack.</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-47-text" data-kubio="kubio/text">{t("Write your game's backend logic as Lua scripts without leaving the Unity Editor. Rewards, validations and gameplay rules live alongside the rest of your project and run on Sai Server, so you can build server-side features without setting up a separate backend or learning a new stack.")}</p>
                                           </div>
                                         </div>
                                       </div>
@@ -121,15 +124,15 @@ export default function SaiServerContent() {
                                           <div className="position-relative wp-block-kubio-column__align style-jEzyj0E3frM-align style-local-48-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                                             <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-49-text" data-kubio="kubio/heading">
                                               <strong>
-                                                <strong>Start learning today</strong>
+                                                <strong>{t("Start learning today")}</strong>
                                               </strong>
                                             </h4>
-                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-50-text" data-kubio="kubio/text">Documentation with multilingual support and highly visual illustrations for easy understanding.</p>
+                                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-bPWgN1EfIz-text style-local-50-text" data-kubio="kubio/text">{t("Documentation with multilingual support and highly visual illustrations for easy understanding.")}</p>
                                             <div className="wp-block wp-block-kubio-buttongroup position-relative wp-block-kubio-buttongroup__outer style-E4XKfzdzxC-outer style-local-51-outer h-x-container" data-kubio="kubio/buttongroup">
                                               <div className="position-relative wp-block-kubio-buttongroup__spacing style-E4XKfzdzxC-spacing style-local-51-spacing h-x-container-inner">
                                                 <span className="wp-block wp-block-kubio-button position-relative wp-block-kubio-button__outer style-3y3mcUHvYa-outer style-local-52-outer kubio-button-container" data-kubio="kubio/button">
                                                   <a className="position-relative wp-block-kubio-button__link style-3y3mcUHvYa-link style-local-52-link h-w-100 h-global-transition" href="https://server.saigame.studio/tutorials/basic/get-started/create-a-studio" target="_blank">
-                                                    <span className="position-relative wp-block-kubio-button__text style-3y3mcUHvYa-text style-local-52-text kubio-inherit-typography">Learning Center</span>
+                                                    <span className="position-relative wp-block-kubio-button__text style-3y3mcUHvYa-text style-local-52-text kubio-inherit-typography">{t("Learning Center")}</span>
                                                   </a>
                                                   <div className="position-relative wp-block-kubio-button__recommendationPageIframe style-3y3mcUHvYa-recommendationPageIframe style-local-52-recommendationPageIframe"></div>
                                                 </span>

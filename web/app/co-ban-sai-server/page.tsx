@@ -6,7 +6,7 @@ import Footer from "@/components/pages/co-ban-sai-server/Footer";
 
 export const metadata: Metadata = {
   title: "Basic Sai Server \u2013 SaiGame",
-  alternates: { canonical: "/co-ban-sai-server/", languages: { "en-US": "/co-ban-sai-server/", vi: "/vi/co-ban-sai-server/" } },
+  alternates: { canonical: "/co-ban-sai-server/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

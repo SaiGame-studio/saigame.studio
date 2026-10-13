@@ -250,7 +250,7 @@ lines = ['import type { Metadata } from "next";', imp("Navigation"), imp("Hero")
 lines += [imp(n) for n in order] + [imp("Footer"), "",
           "export const metadata: Metadata = {",
           f"  title: {json.dumps(title)},",
-          f"  alternates: {{ canonical: {json.dumps(canonical)}" + (f", languages: {{ \"en-US\": {json.dumps(canonical)}, vi: {json.dumps(vi)} }}" if vi else "") + " },",
+          f"  alternates: {{ canonical: {json.dumps(canonical)} }},",
           "};", "",
           "// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).",
           f"export default function {pascal(SLUG)}Page() {{", "  return (",
@@ -265,6 +265,7 @@ route_dir = f"{OUT}/app/{ROUTE}" if ROUTE else f"{OUT}/app"
 os.makedirs(route_dir, exist_ok=True)
 open(f"{route_dir}/page.tsx", "w", encoding="utf8").write("\n".join(lines))
 print("next: python tools/build_global_styles.py web   (rebuilds the global, page-scoped stylesheet list)")
+print("      node tools/i18n_apply.mjs web                (language-aware texts, see web/README.md)")
 print(SLUG, "->", "/" + ROUTE, "| components:", list(files), "| styles:", len(styles), "| title:", title)
 os.makedirs(f"{OUT}/emoji", exist_ok=True)
 open(f"{OUT}/emoji/{SLUG}.txt", "w").write("\n".join(sorted(EMOJI_USED)))

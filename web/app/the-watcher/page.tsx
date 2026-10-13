@@ -8,7 +8,7 @@ import Footer from "@/components/pages/the-watcher/Footer";
 
 export const metadata: Metadata = {
   title: "The Watcher \u2013 SaiGame",
-  alternates: { canonical: "/the-watcher/", languages: { "en-US": "/the-watcher/", vi: "/vi/the-watcher/" } },
+  alternates: { canonical: "/the-watcher/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

@@ -8,7 +8,7 @@ import Footer from "@/components/pages/the-immortal/Footer";
 
 export const metadata: Metadata = {
   title: "The Immortal \u2013 SaiGame",
-  alternates: { canonical: "/the-immortal/", languages: { "en-US": "/the-immortal/", vi: "/vi/the-immortal/" } },
+  alternates: { canonical: "/the-immortal/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

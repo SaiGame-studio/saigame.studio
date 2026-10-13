@@ -8,7 +8,7 @@ import Footer from "@/components/pages/games/Footer";
 
 export const metadata: Metadata = {
   title: "Games \u2013 SaiGame",
-  alternates: { canonical: "/games/", languages: { "en-US": "/games/", vi: "/vi/games/" } },
+  alternates: { canonical: "/games/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

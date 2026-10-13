@@ -1,6 +1,9 @@
 // Section 3: Game Dev Courses
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function GameDevCourses() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function GameDevCourses() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-GxLSQsSpq-outer style-local-55-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="content-2">
       <div className="background-wrapper">
@@ -25,19 +28,19 @@ export default function GameDevCourses() {
                 </div>
                 <div className="position-relative wp-block-kubio-column__align style-FENVDue7bo-align style-local-57-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                   <a href="/courses" className="d-block h-link position-relative wp-block-kubio-heading__ style-fFAprHN_k- style-local-58-">
-                    <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fFAprHN_k-text style-local-58-text" data-kubio="kubio/heading" id="heading">Game Dev Courses</h2>
+                    <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fFAprHN_k-text style-local-58-text" data-kubio="kubio/heading" id="heading">{t("Game Dev Courses")}</h2>
                   </a>
                   <a href="/courses" className="d-block h-link position-relative wp-block-kubio-heading__ style-PNkVKglo2- style-local-59-">
-                    <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-PNkVKglo2-text style-local-59-text" data-kubio="kubio/heading" id="heading-1">Unlock Your Creativity and Build Amazing Games</h4>
+                    <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-PNkVKglo2-text style-local-59-text" data-kubio="kubio/heading" id="heading-1">{t("Unlock Your Creativity and Build Amazing Games")}</h4>
                   </a>
                   <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-VoYs3Tbv3-text style-local-60-text" data-kubio="kubio/text" id="paragraph">
-Are you passionate about creating games? Whether you’re a beginner or an experienced developer,                     <strong>Game Dev Courses</strong>
- provide you with the skills and knowledge to bring your game ideas to life.                  </p>
+{t("Are you passionate about creating games? Whether you’re a beginner or an experienced developer,")}{" "}<strong>{t("Game Dev Courses")}</strong>
+ {t("provide you with the skills and knowledge to bring your game ideas to life.")}{" "}</p>
                   <div className="wp-block wp-block-kubio-buttongroup position-relative wp-block-kubio-buttongroup__outer style-wnSceHUAg-outer style-local-61-outer h-x-container" data-kubio="kubio/buttongroup">
                     <div className="position-relative wp-block-kubio-buttongroup__spacing style-wnSceHUAg-spacing style-local-61-spacing h-x-container-inner">
                       <span className="wp-block wp-block-kubio-button position-relative wp-block-kubio-button__outer style-Dud6AOZG0Hc-outer style-local-62-outer kubio-button-container" data-kubio="kubio/button">
                         <a className="position-relative wp-block-kubio-button__link style-Dud6AOZG0Hc-link style-local-62-link h-w-100 h-global-transition" href="/courses">
-                          <span className="position-relative wp-block-kubio-button__text style-Dud6AOZG0Hc-text style-local-62-text kubio-inherit-typography">Read more</span>
+                          <span className="position-relative wp-block-kubio-button__text style-Dud6AOZG0Hc-text style-local-62-text kubio-inherit-typography">{t("Read more")}</span>
                         </a>
                         <div className="position-relative wp-block-kubio-button__recommendationPageIframe style-Dud6AOZG0Hc-recommendationPageIframe style-local-62-recommendationPageIframe"></div>
                       </span>

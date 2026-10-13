@@ -8,7 +8,7 @@ import Footer from "@/components/pages/purgatory/Footer";
 
 export const metadata: Metadata = {
   title: "Purgatory \u2013 SaiGame",
-  alternates: { canonical: "/purgatory/", languages: { "en-US": "/purgatory/", vi: "/vi/purgatory/" } },
+  alternates: { canonical: "/purgatory/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
