@@ -1,10 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 // The original WordPress page relies on Kubio's frontend JS (sticky header, dropdown menus,
-// mobile off-canvas menu, scroll animations). We load the same files, in the same order,
-// after React has hydrated so jQuery never touches the DOM before React owns it.
+// mobile off-canvas menu, animations). We load the same files, in the same order, after React
+// has hydrated so jQuery never touches the DOM before React owns it.
+// Kubio (Colibri) watches the DOM with a MutationObserver and initialises every new
+// [data-kubio-component] by itself, so components of a page reached by client-side navigation
+// are set up automatically. What we handle here:
+//  - Kubio moves off-canvas menus to <body>; they leave the page wrapper, so we tag them with
+//    data-wp-owner (the page CSS is scoped to the wrapper or the owner tag) and remove the
+//    previous page's panels after a navigation.
+//  - the header padding fix (inline script on WordPress) is re-applied on every page.
 const SCRIPTS = [
   "/wp-includes/js/jquery/jquery.min.js",
   "/wp-includes/js/jquery/jquery-migrate.min.js",
@@ -13,6 +21,7 @@ const SCRIPTS = [
   "/wp-content/plugins/kubio/build/scripts/index.js",
   "/wp-content/plugins/kubio/build/frontend/index.js",
 ];
+const MOVED = '[id^="kubio-offscreen-"]';
 
 declare global {
   interface Window {
@@ -33,6 +42,8 @@ function load(src: string) {
   });
 }
 
+const currentPage = () => document.querySelector<HTMLElement>("[data-wp-page]")?.dataset.wpPage ?? "";
+
 function navigationPadding() {
   const nav = document.querySelector<HTMLElement>('[data-colibri-navigation-overlap="true"], .h-navigation_overlap');
   if (!nav) return;
@@ -41,11 +52,21 @@ function navigationPadding() {
   });
 }
 
+function tagMovedPanels() {
+  const page = currentPage();
+  document.querySelectorAll<HTMLElement>(`body > ${MOVED}:not([data-wp-owner])`).forEach((el) => {
+    el.dataset.wpOwner = page;
+  });
+}
+
 export default function KubioScripts() {
+  const pathname = usePathname();
+
+  // once: watch <body> for panels Kubio moves out of the page, then load Kubio
   useEffect(() => {
-    navigationPadding();
     if (window.__kubioLoaded) return;
     window.__kubioLoaded = true;
+    new MutationObserver(tagMovedPanels).observe(document.body, { childList: true });
     window.kubioFrontendData = [];
     (async () => {
       for (const src of SCRIPTS) {
@@ -56,5 +77,19 @@ export default function KubioScripts() {
       }
     })().catch(console.error);
   }, []);
+
+  // every page (first load and client-side navigations)
+  useEffect(() => {
+    const page = currentPage();
+    document.querySelectorAll<HTMLElement>(`body > ${MOVED}[data-wp-owner]`).forEach((el) => {
+      if (el.dataset.wpOwner !== page) el.remove();
+    });
+    document.documentElement.classList.remove("no-scroll", "h-offcanvas-opened"); // scroll lock left by an open mobile menu
+    document.body.classList.remove("no-scroll", "h-offcanvas-opened");
+    navigationPadding();
+    const t = window.setTimeout(navigationPadding, 400); // after fonts/Kubio settle
+    return () => window.clearTimeout(t);
+  }, [pathname]);
+
   return null;
 }

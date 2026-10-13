@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import WpStyles from "@/components/WpStyles";
-import styles from "@/components/pages/the-watcher/styles.json";
 import Navigation from "@/components/pages/the-watcher/Navigation";
 import Hero from "@/components/pages/the-watcher/Hero";
 import GameOverview from "@/components/pages/the-watcher/GameOverview";
@@ -10,13 +8,13 @@ import Footer from "@/components/pages/the-watcher/Footer";
 
 export const metadata: Metadata = {
   title: "The Watcher \u2013 SaiGame",
-  alternates: { canonical: "/the-watcher/", languages: { "en-US": "/the-watcher/", vi: "/vi/the-watcher/" } },
+  alternates: { canonical: "/the-watcher/" },
 };
 
+// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
 export default function TheWatcherPage() {
   return (
-    <>
-      <WpStyles styles={styles} />
+    <div data-wp-page="the-watcher" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
           <Navigation />
@@ -29,6 +27,6 @@ export default function TheWatcherPage() {
         </div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

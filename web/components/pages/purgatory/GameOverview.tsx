@@ -1,6 +1,9 @@
 // Section 1: Steam PC
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function GameOverview() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function GameOverview() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-q1bOHdnIjn-outer style-local-26-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="content-1">
       <div className="background-wrapper">
@@ -43,9 +46,9 @@ export default function GameOverview() {
                     <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-oNCibJ-Xu-text style-local-31-text" data-kubio="kubio/heading">Purgatory</h2>
                   </a>
                   <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-u8gxyP3e_-text style-local-32-text" data-kubio="kubio/text">
-a next-generation interactive game designed specifically to connect Streamers and Viewers like never before. This is not just a game; it is a stage for your community to stand shoulder to shoulder, building and fighting for a common goal.                    <br />
-Here, the chat channel is not just soulless lines of text, but living characters, resources, and the key leading to victory.                  </p>
-                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-u8gxyP3e_-text style-local-33-text" data-kubio="kubio/text">To suit every user need, the game is divided into 2 separate content packages. Please read carefully before choosing:</p>
+{t("a next-generation interactive game designed specifically to connect Streamers and Viewers like never before. This is not just a game; it is a stage for your community to stand shoulder to shoulder, building and fighting for a common goal.")}{" "}<br />
+{t("Here, the chat channel is not just soulless lines of text, but living characters, resources, and the key leading to victory.")}{" "}</p>
+                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-u8gxyP3e_-text style-local-33-text" data-kubio="kubio/text">{t("To suit every user need, the game is divided into 2 separate content packages. Please read carefully before choosing:")}</p>
                   <div className="wp-block wp-block-kubio-row position-relative wp-block-kubio-row__container style-wMr2tBIlEXp-container style-local-34-container gutters-row-lg-2 gutters-row-v-lg-2 gutters-row-md-2 gutters-row-v-md-2 gutters-row-0 gutters-row-v-0" data-kubio="kubio/row">
                     <div className="background-wrapper">
                       <div className="background-layer background-layer-media-container-lg"></div>
@@ -61,10 +64,10 @@ Here, the chat channel is not just soulless lines of text, but living characters
                             <div className="background-layer background-layer-media-container"></div>
                           </div>
                           <div className="position-relative wp-block-kubio-column__align style-jEzyj0E3frM-align style-local-35-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                            <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-8lXTLdDmS-text style-local-36-text" data-kubio="kubio/heading">Offline Standard Edition</h4>
+                            <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-8lXTLdDmS-text style-local-36-text" data-kubio="kubio/heading">{t("Offline Standard Edition")}</h4>
                             <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-DRSot87gx-text style-local-37-text" data-kubio="kubio/text">
-                              <strong>Target Audience:</strong>
- For new Streamers who want to get used to the game, test the stream flow, or casual gamers who want to experience the gameplay.                            </p>
+                              <strong>{t("Target Audience:")}</strong>
+ {t("For new Streamers who want to get used to the game, test the stream flow, or casual gamers who want to experience the gameplay.")}{" "}</p>
                           </div>
                         </div>
                       </div>
@@ -76,10 +79,10 @@ Here, the chat channel is not just soulless lines of text, but living characters
                             <div className="background-layer background-layer-media-container"></div>
                           </div>
                           <div className="position-relative wp-block-kubio-column__align style-jEzyj0E3frM-align style-local-38-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                            <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-ZU9jzxEjo-text style-local-39-text" data-kubio="kubio/heading">Online Expansion Pack</h4>
+                            <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-ZU9jzxEjo-text style-local-39-text" data-kubio="kubio/heading">{t("Online Expansion Pack")}</h4>
                             <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-J1EBniI0u-text style-local-40-text" data-kubio="kubio/text">
-                              <strong>Target Audience:</strong>
- Recommended for professional Streamers or channels with stable interaction (average of                               <strong>over 50 concurrent viewers</strong>
+                              <strong>{t("Target Audience:")}</strong>
+ {t("Recommended for professional Streamers or channels with stable interaction (average of")}{" "}<strong>{t("over 50 concurrent viewers")}</strong>
 ).                            </p>
                           </div>
                         </div>

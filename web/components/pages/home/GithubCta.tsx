@@ -1,6 +1,9 @@
 // Section 5: Follow us on Github
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function GithubCta() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function GithubCta() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-bEewH8oABce-outer style-local-98-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="call-to-action-2">
       <div className="background-wrapper">
@@ -58,9 +61,9 @@ export default function GithubCta() {
                           </div>
                           <div className="position-relative wp-block-kubio-column__align style-fwc5k341PEd-align style-local-104-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-center align-self-md-center align-self-center">
                             <a href="https://github.com/SaiGame-studio" target="_blank" className="d-block h-link position-relative wp-block-kubio-heading__ style-YcEonaAXUbp- style-local-105-">
-                              <h3 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-YcEonaAXUbp-text style-local-105-text" data-kubio="kubio/heading">Follow us on Github</h3>
+                              <h3 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-YcEonaAXUbp-text style-local-105-text" data-kubio="kubio/heading">{t("Follow us on Github")}</h3>
                             </a>
-                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-G6-Zf2bGNGy-text style-local-106-text" data-kubio="kubio/text">Become part of our community and collaborate on projects with us.</p>
+                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-G6-Zf2bGNGy-text style-local-106-text" data-kubio="kubio/text">{t("Become part of our community and collaborate on projects with us.")}</p>
                           </div>
                         </div>
                       </div>
@@ -76,7 +79,7 @@ export default function GithubCta() {
                               <div className="position-relative wp-block-kubio-buttongroup__spacing style-4Rcm7NzxG0P-spacing style-local-108-spacing h-x-container-inner">
                                 <span className="wp-block wp-block-kubio-button position-relative wp-block-kubio-button__outer style-4NeIE9jDERM-outer style-local-109-outer kubio-button-container" data-kubio="kubio/button">
                                   <a className="position-relative wp-block-kubio-button__link style-4NeIE9jDERM-link style-local-109-link h-w-100 h-global-transition" href="https://github.com/SaiGame-studio" target="_blank">
-                                    <span className="position-relative wp-block-kubio-button__text style-4NeIE9jDERM-text style-local-109-text kubio-inherit-typography">Join Now</span>
+                                    <span className="position-relative wp-block-kubio-button__text style-4NeIE9jDERM-text style-local-109-text kubio-inherit-typography">{t("Join Now")}</span>
                                   </a>
                                   <div className="position-relative wp-block-kubio-button__recommendationPageIframe style-4NeIE9jDERM-recommendationPageIframe style-local-109-recommendationPageIframe"></div>
                                 </span>

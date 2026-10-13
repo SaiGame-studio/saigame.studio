@@ -5,7 +5,7 @@ usage: python tools/convert_page.py <page.local.html> <slug> <route> <out_dir> <
   route : app route ('' for /, 'games', 'purgatory', ...)
 Output (inside out_dir):
   components/pages/<slug>/*.tsx       one component per section (navigation, hero, sections, footer)
-  components/pages/<slug>/styles.json stylesheet list in the original cascade order
+  components/pages/<slug>/styles.json stylesheet list in the original cascade order (input of build_global_styles.py)
   public/css/<slug>/inline-*.css      the page's inline <style> blocks
   app/<route>/page.tsx                the route, composing the sections
 """
@@ -173,21 +173,26 @@ COMP_DIR = f"{OUT}/components/pages/{SLUG}"
 os.makedirs(COMP_DIR, exist_ok=True)
 site = soup.select_one(".wp-site-blocks")
 header = site.select_one(":scope > .wp-block-kubio-header")
-content = site.select_one(":scope > .entry-content")
 footer = site.select_one(":scope > .wp-block-kubio-footer")
+# Most pages wrap their sections in .entry-content; template-based pages (e.g. Brizy blank template)
+# put the Kubio sections directly under .wp-site-blocks.
+content = site.select_one(":scope > .entry-content")
+middle = content.find_all(recursive=False) if content else [c for c in site.find_all(recursive=False) if c is not header and c is not footer]
 nav = header.select_one(":scope > #navigation")
 hero = header.select_one(":scope > #hero")
 
 HOME_NAMES = {"features": "TopGames", "call-to-action-3": "YoutubeCta", "content-2": "GameDevCourses",
               "call-to-action": "DiscordAndCourses", "call-to-action-2": "GithubCta"}
-NAMES = {("games", 1): "PurgatoryCard", ("games", 2): "TheImmortalCard", ("games", 3): "TheWatcherCard"}
+NAMES = {("games", 1): "PurgatoryCard", ("games", 2): "TheImmortalCard", ("games", 3): "TheWatcherCard",
+         ("courses", 1): "CoursesContent", ("unity-dev-basic", 1): "CourseModules",
+         ("co-ban-sai-server", 1): "SaiServerContent"}
 for g in ("purgatory", "the-immortal", "the-watcher"):
     NAMES[(g, 1)] = "GameOverview"
     NAMES[(g, 2)] = "GameFeatures"
 files = {"Navigation": component("Navigation", nav, "Top navigation bar (logo, menu with dropdowns, language switcher)"),
          "Hero": component("Hero", hero, "Hero: " + first_heading(hero))}
 order = []
-for i, sec in enumerate(content.find_all(recursive=False), 1):
+for i, sec in enumerate(middle, 1):
     if not sec.get_text(strip=True) and not sec.find(["img", "iframe", "video"]):
         name = "Spacer"
     elif SLUG == "home" and sec.get("id") in HOME_NAMES:
@@ -199,6 +204,8 @@ for i, sec in enumerate(content.find_all(recursive=False), 1):
     files[name] = component(name, sec, f"Section {i}: {first_heading(sec) or sec.get('id') or 'spacer'}")
     order.append(name)
 files["Footer"] = component("Footer", footer, "Footer")
+# Site decision: drop the "Created with ❤ using WordPress and Kubio" credit from the footer
+files["Footer"] = re.sub(r' Created with <img[^>]*/> using WordPress and\s*<a[^>]*>Kubio</a>', "", files["Footer"])
 for n, src in files.items():
     open(f"{COMP_DIR}/{n}.tsx", "w", encoding="utf8").write(src)
 
@@ -236,25 +243,29 @@ canonical = (soup.find("link", rel="canonical") or {}).get("href", "")
 canonical = re.sub(r"^https?://saigame\.studio", "", canonical) or "/"
 vi = soup.find("link", attrs={"hreflang": "vi"})
 vi = re.sub(r"^https?://saigame\.studio", "", vi["href"]) if vi else None
-content_attrs = attrs_to_jsx(content)
+content_attrs = attrs_to_jsx(content) if content is not None else None
 header_attrs = attrs_to_jsx(header)
 imp = lambda n: f'import {n} from "@/components/pages/{SLUG}/{n}";'
-lines = ['import type { Metadata } from "next";', 'import WpStyles from "@/components/WpStyles";',
-         f'import styles from "@/components/pages/{SLUG}/styles.json";', imp("Navigation"), imp("Hero")]
+lines = ['import type { Metadata } from "next";', imp("Navigation"), imp("Hero")]
 lines += [imp(n) for n in order] + [imp("Footer"), "",
           "export const metadata: Metadata = {",
           f"  title: {json.dumps(title)},",
-          f"  alternates: {{ canonical: {json.dumps(canonical)}" + (f", languages: {{ \"en-US\": {json.dumps(canonical)}, vi: {json.dumps(vi)} }}" if vi else "") + " },",
+          f"  alternates: {{ canonical: {json.dumps(canonical)} }},",
           "};", "",
-          f"export default function {pascal(SLUG)}Page() {{", "  return (", "    <>",
-          "      <WpStyles styles={styles} />", '      <div className="wp-site-blocks">',
-          f"        <div{header_attrs}>", "          <Navigation />", "          <Hero />", "        </div>",
-          f"        <div{content_attrs}>"]
-lines += [f"          <{n} />" for n in order]
-lines += ["        </div>", "        <Footer />", "      </div>", "    </>", "  );", "}", ""]
+          "// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).",
+          f"export default function {pascal(SLUG)}Page() {{", "  return (",
+          f'    <div data-wp-page="{SLUG}" style={{{{ display: "contents" }}}}>', '      <div className="wp-site-blocks">',
+          f"        <div{header_attrs}>", "          <Navigation />", "          <Hero />", "        </div>"]
+if content is not None:
+    lines += [f"        <div{content_attrs}>"] + [f"          <{n} />" for n in order] + ["        </div>"]
+else:
+    lines += [f"        <{n} />" for n in order]
+lines += ["        <Footer />", "      </div>", "    </div>", "  );", "}", ""]
 route_dir = f"{OUT}/app/{ROUTE}" if ROUTE else f"{OUT}/app"
 os.makedirs(route_dir, exist_ok=True)
 open(f"{route_dir}/page.tsx", "w", encoding="utf8").write("\n".join(lines))
+print("next: python tools/build_global_styles.py web   (rebuilds the global, page-scoped stylesheet list)")
+print("      node tools/i18n_apply.mjs web                (language-aware texts, see web/README.md)")
 print(SLUG, "->", "/" + ROUTE, "| components:", list(files), "| styles:", len(styles), "| title:", title)
 os.makedirs(f"{OUT}/emoji", exist_ok=True)
 open(f"{OUT}/emoji/{SLUG}.txt", "w").write("\n".join(sorted(EMOJI_USED)))

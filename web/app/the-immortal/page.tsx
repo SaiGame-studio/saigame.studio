@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import WpStyles from "@/components/WpStyles";
-import styles from "@/components/pages/the-immortal/styles.json";
 import Navigation from "@/components/pages/the-immortal/Navigation";
 import Hero from "@/components/pages/the-immortal/Hero";
 import GameOverview from "@/components/pages/the-immortal/GameOverview";
@@ -10,13 +8,13 @@ import Footer from "@/components/pages/the-immortal/Footer";
 
 export const metadata: Metadata = {
   title: "The Immortal \u2013 SaiGame",
-  alternates: { canonical: "/the-immortal/", languages: { "en-US": "/the-immortal/", vi: "/vi/the-immortal/" } },
+  alternates: { canonical: "/the-immortal/" },
 };
 
+// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
 export default function TheImmortalPage() {
   return (
-    <>
-      <WpStyles styles={styles} />
+    <div data-wp-page="the-immortal" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
           <Navigation />
@@ -29,6 +27,6 @@ export default function TheImmortalPage() {
         </div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

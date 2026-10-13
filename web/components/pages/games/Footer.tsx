@@ -110,7 +110,7 @@ export default function Footer() {
                                       <div className="position-relative wp-block-kubio-column__align style-jQ4WZZM_VRf-align style-local-95-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                                         <div className="wp-block wp-block-kubio-copyright position-relative wp-block-kubio-copyright__outer style-7IJPrvERFVa-outer style-local-96-outer" data-kubio="kubio/copyright">
                                           <p>
-© 2026 SaiGame. Created with <img draggable="false" role="img" className="emoji" alt="\u2764\ufe0f" src="/wp-emoji/2764.svg" /> using WordPress and                                             <a target="_blank" href="https://kubiobuilder.com" rel="noreferrer noopener">Kubio</a>
+© 2026 SaiGame.
                                           </p>
                                         </div>
                                       </div>
@@ -136,7 +136,7 @@ export default function Footer() {
                   <div className="position-relative wp-block-kubio-column__align style-nJpox2eRXHV-align style-local-97-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                     <div className="wp-block wp-block-kubio-copyright position-relative wp-block-kubio-copyright__outer style-tF8kitdcL-outer style-local-98-outer" data-kubio="kubio/copyright">
                       <p>
-© 2026 SaiGame. Created with <img draggable="false" role="img" className="emoji" alt="\u2764" src="/wp-emoji/2764.svg" /> using WordPress and                         <a href="https://kubiobuilder.com" target="_blank" rel="noopener">Kubio</a>
+© 2026 SaiGame.
                       </p>
                     </div>
                   </div>

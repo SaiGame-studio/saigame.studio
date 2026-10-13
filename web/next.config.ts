@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 // Game pages live at the root like on WordPress (/purgatory/); the menu links to /games/<slug>,
 // which WordPress redirected — keep the same 301s.
 const GAME_PAGES: string[] = ["purgatory", "the-immortal", "the-watcher"];
+// Course pages: the /courses/ cards link to /courses/<slug>, also redirected by WordPress.
+const COURSE_PAGES: string[] = ["unity-dev-basic"];
 
 const nextConfig: NextConfig = {
   // allow the dev server to be opened through http://local.saigame.studio
@@ -11,7 +13,10 @@ const nextConfig: NextConfig = {
   // WordPress URLs end with a slash (/games/, /purgatory/)
   trailingSlash: true,
   async redirects() {
-    return GAME_PAGES.map((slug) => ({ source: `/games/${slug}`, destination: `/${slug}/`, permanent: true }));
+    return [
+      ...GAME_PAGES.map((slug) => ({ source: `/games/${slug}`, destination: `/${slug}/`, permanent: true })),
+      ...COURSE_PAGES.map((slug) => ({ source: `/courses/${slug}`, destination: `/${slug}/`, permanent: true })),
+    ];
   },
 };
 

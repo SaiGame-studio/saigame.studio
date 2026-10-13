@@ -1,6 +1,9 @@
 // Section 1: PC
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function PurgatoryCard() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function PurgatoryCard() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-h2j98a19m-outer style-local-26-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="content-1">
       <div className="background-wrapper">
@@ -26,7 +29,7 @@ export default function PurgatoryCard() {
                 <div className="position-relative wp-block-kubio-column__align style--_0u1yW6G-align style-local-28-align h-y-container h-column__content h-column__v-align flex-basis-auto align-self-lg-center align-self-md-center align-self-center">
                   <figure className="wp-block wp-block-kubio-image position-relative wp-block-kubio-image__outer style--sexgLxaa-outer style-local-29-outer size-full align-items-center" data-kubio="kubio/image">
                     <div className="position-relative wp-block-kubio-image__captionContainer style--sexgLxaa-captionContainer style-local-29-captionContainer">
-                      <a href="/games/sai-pikachu" className="position-relative wp-block-kubio-image__ style--sexgLxaa- style-local-29-">
+                      <a href="http://local.saigame.studio/purgatory/" className="position-relative wp-block-kubio-image__ style--sexgLxaa- style-local-29-">
                         <div className="position-relative wp-block-kubio-image__frameContainer style--sexgLxaa-frameContainer style-local-29-frameContainer">
                           <img fetchPriority="high" decoding="async" width="748" height="896" className="position-relative wp-block-kubio-image__image style--sexgLxaa-image style-local-29-image d-flex wp-image-620" alt="" src="/wp-content/uploads/2025/11/store_capsule_vertical.jpg" srcSet="/wp-content/uploads/2025/11/store_capsule_vertical.jpg 748w, /wp-content/uploads/2025/11/store_capsule_vertical-250x300.jpg 250w, /wp-content/uploads/2025/11/store_capsule_vertical-10x12.jpg 10w, /wp-content/uploads/2025/11/store_capsule_vertical-600x719.jpg 600w" sizes="(max-width: 748px) 100vw, 748px" />
                         </div>
@@ -45,10 +48,10 @@ export default function PurgatoryCard() {
                 </div>
                 <div className="position-relative wp-block-kubio-column__align style-8OJNIWvuy0-align style-local-30-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                   <h5 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-XYBNXM7-Li-text style-local-31-text" data-kubio="kubio/heading">PC</h5>
-                  <a href="/games/sai-pikachu" className="d-block h-link position-relative wp-block-kubio-heading__ style-lHXvIGIoA- style-local-32-">
+                  <a href="http://local.saigame.studio/purgatory/" className="d-block h-link position-relative wp-block-kubio-heading__ style-lHXvIGIoA- style-local-32-">
                     <h2 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-lHXvIGIoA-text style-local-32-text" data-kubio="kubio/heading">Purgatory</h2>
                   </a>
-                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-Ro0W6aSQQPa-text style-local-33-text" data-kubio="kubio/text">a next-generation interactive game designed specifically to connect Streamers and Viewers like never before. This is not just a game; it is a stage for your community to stand shoulder to shoulder, building and fighting for a common goal.</p>
+                  <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-Ro0W6aSQQPa-text style-local-33-text" data-kubio="kubio/text">{t("a next-generation interactive game designed specifically to connect Streamers and Viewers like never before. This is not just a game; it is a stage for your community to stand shoulder to shoulder, building and fighting for a common goal.")}</p>
                   <div className="wp-block wp-block-kubio-row position-relative wp-block-kubio-row__container style-wMr2tBIlEXp-container style-local-34-container gutters-row-lg-2 gutters-row-v-lg-2 gutters-row-md-2 gutters-row-v-md-2 gutters-row-0 gutters-row-v-0" data-kubio="kubio/row">
                     <div className="background-wrapper">
                       <div className="background-layer background-layer-media-container-lg"></div>
@@ -64,10 +67,10 @@ export default function PurgatoryCard() {
                             <div className="background-layer background-layer-media-container"></div>
                           </div>
                           <div className="position-relative wp-block-kubio-column__align style-jEzyj0E3frM-align style-local-35-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                            <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-36-text" data-kubio="kubio/heading">Offline Standard Edition</h4>
+                            <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-fIvPBV87X-text style-local-36-text" data-kubio="kubio/heading">{t("Offline Standard Edition")}</h4>
                             <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-cdxQwpp9h6v-text style-local-37-text" data-kubio="kubio/text">
-                              <strong>Target Audience:</strong>
- For new Streamers who want to get used to the game, test the stream flow, or casual gamers who want to experience the gameplay.                            </p>
+                              <strong>{t("Target Audience:")}</strong>
+ {t("For new Streamers who want to get used to the game, test the stream flow, or casual gamers who want to experience the gameplay.")}{" "}</p>
                             <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-rnSKWA8Vp-text style-local-38-text" data-kubio="kubio/text">.</p>
                           </div>
                         </div>
@@ -81,11 +84,11 @@ export default function PurgatoryCard() {
                           </div>
                           <div className="position-relative wp-block-kubio-column__align style-jEzyj0E3frM-align style-local-39-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                             <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-W1_l4R8RV-text style-local-40-text" data-kubio="kubio/heading">
-                              <strong>Online Expansion Pack</strong>
+                              <strong>{t("Online Expansion Pack")}</strong>
                             </h4>
                             <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-cdxQwpp9h6v-text style-local-41-text" data-kubio="kubio/text">
-                              <strong>Target Audience:</strong>
- Recommended for professional Streamers or channels with stable interaction (average of                               <strong>over 50 concurrent viewers</strong>
+                              <strong>{t("Target Audience:")}</strong>
+ {t("Recommended for professional Streamers or channels with stable interaction (average of")}{" "}<strong>{t("over 50 concurrent viewers")}</strong>
 ).                            </p>
                           </div>
                         </div>

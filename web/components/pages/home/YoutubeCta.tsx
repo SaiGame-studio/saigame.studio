@@ -1,6 +1,9 @@
 // Section 2: Join Us on Youtube
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function YoutubeCta() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function YoutubeCta() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-pbL2qZbPOr7-outer style-local-42-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="call-to-action-3">
       <div className="background-wrapper">
@@ -60,9 +63,9 @@ export default function YoutubeCta() {
                           </div>
                           <div className="position-relative wp-block-kubio-column__align style-FTXBnZDTyFc-align style-local-48-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-center align-self-md-center align-self-center">
                             <a href="https://www.youtube.com/@SaiGame" target="_blank" className="d-block h-link position-relative wp-block-kubio-heading__ style-R70-3mocfbq- style-local-49-">
-                              <h3 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-R70-3mocfbq-text style-local-49-text" data-kubio="kubio/heading">Join Us on Youtube</h3>
+                              <h3 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-R70-3mocfbq-text style-local-49-text" data-kubio="kubio/heading">{t("Join Us on Youtube")}</h3>
                             </a>
-                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-kQfgBlNLqJN-text style-local-50-text" data-kubio="kubio/text">Discover new games and interact with our community!</p>
+                            <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-kQfgBlNLqJN-text style-local-50-text" data-kubio="kubio/text">{t("Discover new games and interact with our community!")}</p>
                           </div>
                         </div>
                       </div>
@@ -78,7 +81,7 @@ export default function YoutubeCta() {
                               <div className="position-relative wp-block-kubio-buttongroup__spacing style-H3iniPQzEPq-spacing style-local-52-spacing h-x-container-inner">
                                 <span className="wp-block wp-block-kubio-button position-relative wp-block-kubio-button__outer style-m-MyF9NMem4-outer style-local-53-outer kubio-button-container" data-kubio="kubio/button">
                                   <a className="position-relative wp-block-kubio-button__link style-m-MyF9NMem4-link style-local-53-link h-w-100 h-global-transition" href="https://www.youtube.com/@SaiGame" target="_blank">
-                                    <span className="position-relative wp-block-kubio-button__text style-m-MyF9NMem4-text style-local-53-text kubio-inherit-typography">Join now</span>
+                                    <span className="position-relative wp-block-kubio-button__text style-m-MyF9NMem4-text style-local-53-text kubio-inherit-typography">{t("Join now")}</span>
                                   </a>
                                   <div className="position-relative wp-block-kubio-button__recommendationPageIframe style-m-MyF9NMem4-recommendationPageIframe style-local-53-recommendationPageIframe"></div>
                                 </span>
