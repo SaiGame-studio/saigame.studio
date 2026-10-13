@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 // Game pages live at the root like on WordPress (/purgatory/); the menu links to /games/<slug>,
 // which WordPress redirected — keep the same 301s.
-const GAME_PAGES: string[] = [];
+const GAME_PAGES: string[] = ["purgatory"];
 
 const nextConfig: NextConfig = {
   // allow the dev server to be opened through http://local.saigame.studio
