@@ -8,6 +8,10 @@
   "media": "all"
  },
  {
+  "href": "/css/scoped/co-ban-sai-server--kubio-block-library-inline-css.css",
+  "media": "all"
+ },
+ {
   "href": "/css/scoped/courses--kubio-block-library-inline-css.css",
   "media": "all"
  },
@@ -72,11 +76,11 @@
   "media": "all"
  },
  {
-  "href": "/fonts/css_99e8340abd.css",
+  "href": "/fonts/css_65b4845155.css",
   "media": "all"
  },
  {
-  "href": "/fonts/css_65b4845155.css",
+  "href": "/fonts/css_99e8340abd.css",
   "media": "all"
  },
  {
