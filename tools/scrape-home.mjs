@@ -2,6 +2,8 @@
 // Usage: node tools/scrape-home.mjs [path]   (default "/")
 import fs from "node:fs/promises";
 import path from "node:path";
+import crypto from "node:crypto";
+import { existsSync } from "node:fs";
 
 const ORIGIN = "https://saigame.studio";
 const OUT = path.resolve("_mirror");
@@ -25,7 +27,7 @@ function localPath(u) {
   let p = decodeURIComponent(url.pathname);
   if (url.host !== "saigame.studio") p = "/_ext/" + url.host + p;
   if (p.endsWith("/")) p += "index";
-  if (url.search && !path.extname(p)) p += "_" + url.search.replace(/[^a-z0-9]/gi, "") + ".css";
+  if (url.search && !path.extname(p)) p += "_" + crypto.createHash("md5").update(url.search).digest("hex").slice(0, 10) + ".css";
   return p;
 }
 
@@ -37,6 +39,7 @@ async function save(u, kind) {
   if (done.has(abs)) return done.get(abs);
   const rel = localPath(abs);
   done.set(abs, rel);
+  if (existsSync(path.join(OUT, "public", rel))) return rel; // already mirrored
   try {
     await sleep(900);
     let body = await get(abs, kind === "css");

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import KubioScripts from "@/components/KubioScripts";
-import styles from "./wp-styles.json";
-import meta from "./wp-meta.json";
 
 export const metadata: Metadata = {
   title: "SaiGame",
@@ -13,23 +11,17 @@ export const metadata: Metadata = {
     ],
     apple: "/wp-content/uploads/2025/02/SAI_no_light-300x300.png",
   },
-  alternates: {
-    canonical: "/",
-    languages: { "en-US": "/", vi: "/vi/" },
-  },
 };
 
+// Stylesheets are rendered per page (see components/WpStyles.tsx): every WordPress page
+// has its own inline Kubio CSS.
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={meta.html.lang} id={meta.html.id} suppressHydrationWarning>
+    <html lang="en-US" id="kubio" suppressHydrationWarning>
       <head>
-        {/* Same stylesheets, same cascade order as the original WordPress page */}
-        {styles.map((s) => (
-          <link key={s.href} rel="stylesheet" href={s.href} media={s.media} />
-        ))}
         <Script src="/js/kubio-attachment-check.js" strategy="beforeInteractive" />
       </head>
-      <body className={meta.bodyClass} suppressHydrationWarning>
+      <body className="wp-singular page wp-custom-logo wp-theme-kubio theme-kubio woocommerce-js translatepress-en_US" suppressHydrationWarning>
         <div id="page-top" tabIndex={-1}></div>
         {children}
         <KubioScripts />
