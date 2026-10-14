@@ -1,6 +1,9 @@
 // Footer
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
-export default function Footer() {
+import { getI18n } from "@/lib/i18n";
+
+export default async function Footer() {
+  const { t } = await getI18n();
   return (
     <div className="wp-block wp-block-kubio-footer position-relative wp-block-kubio-footer__container style-theme-gt1_zEKay-container style-local-78-container" data-kubio="kubio/footer" data-kubio-component="footer-parallax" data-kubio-settings={"{\"isEnabled\":null}"}>
       <div className="wp-block wp-block-kubio-section position-relative wp-block-kubio-section__outer style-vP0mYzy99sE-outer style-local-79-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/section" id="footer">
@@ -29,13 +32,7 @@ export default function Footer() {
                       <div className="wp-block wp-block-kubio-menu-items position-relative wp-block-kubio-menu-items__outer style-mJOSqQ38c5-outer style-local-83-outer kubio-menu" data-kubio="kubio/menu-items">
                         <ul id="menu-footer" className="menu kubio-has-gap-fallback">
                           <li id="menu-item-319" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-319">
-                            <a href="/privacy-policy/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Privacy Policy</a>
-                          </li>
-                           <li id="menu-item-321" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-321">
-                            <a href="/shop/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Shop</a>
-                          </li>
-                           <li id="menu-item-320" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-320">
-                            <a href="/cart/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Cart</a>
+                            <a href="/privacy-policy/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Privacy Policy")}</a>
                           </li>
                          </ul>
                       </div>
@@ -82,13 +79,7 @@ export default function Footer() {
                                 <div className="wp-block wp-block-kubio-menu-items position-relative wp-block-kubio-menu-items__outer style-wBLxTx5jvoM-outer style-local-90-outer kubio-menu" data-kubio="kubio/menu-items">
                                   <ul id="menu-footer" className="menu kubio-has-gap-fallback">
                                     <li id="menu-item-319" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-319">
-                                      <a href="/privacy-policy/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Privacy Policy</a>
-                                    </li>
-                                     <li id="menu-item-321" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-321">
-                                      <a href="/shop/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Shop</a>
-                                    </li>
-                                     <li id="menu-item-320" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-320">
-                                      <a href="/cart/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Cart</a>
+                                      <a href="/privacy-policy/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Privacy Policy")}</a>
                                     </li>
                                    </ul>
                                 </div>
