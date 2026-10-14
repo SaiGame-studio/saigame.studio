@@ -96,9 +96,6 @@ export default async function Navigation() {
                              <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
                               <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
                             </li>
-                             <li id="menu-item-241" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-241">
-                              <a href="/my-account/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("My account")}</a>
-                            </li>
                              <li id="menu-item-61" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-has-children current-language-menu-item menu-item-61">
                               <a href="#" data-lang={flags.current.code} style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
                                 <span>

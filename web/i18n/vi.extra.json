@@ -1,4 +1,5 @@
 {
  "Backend Logic in Lua, Right Inside Unity": "Viết logic Backend bằng Lua ngay trong Unity",
- "Write your game's backend logic as Lua scripts without leaving the Unity Editor. Rewards, validations and gameplay rules live alongside the rest of your project and run on Sai Server, so you can build server-side features without setting up a separate backend or learning a new stack.": "Viết logic backend cho game bằng Lua script mà không cần rời Unity Editor. Phần thưởng, kiểm tra hợp lệ và luật chơi nằm ngay cạnh phần còn lại của dự án và chạy trên Sai Server, nhờ đó bạn xây dựng tính năng phía server mà không cần dựng một backend riêng hay học thêm công nghệ mới."
+ "Write your game's backend logic as Lua scripts without leaving the Unity Editor. Rewards, validations and gameplay rules live alongside the rest of your project and run on Sai Server, so you can build server-side features without setting up a separate backend or learning a new stack.": "Viết logic backend cho game bằng Lua script mà không cần rời Unity Editor. Phần thưởng, kiểm tra hợp lệ và luật chơi nằm ngay cạnh phần còn lại của dự án và chạy trên Sai Server, nhờ đó bạn xây dựng tính năng phía server mà không cần dựng một backend riêng hay học thêm công nghệ mới.",
+ "Privacy Policy": "Chính sách quyền riêng tư"
 }

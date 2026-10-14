@@ -20,6 +20,10 @@
   "media": "all"
  },
  {
+  "href": "/css/scoped/privacy-policy--kubio-block-library-inline-css.css",
+  "media": "all"
+ },
+ {
   "href": "/css/scoped/purgatory--kubio-block-library-inline-css.css",
   "media": "all"
  },
@@ -37,6 +41,10 @@
  },
  {
   "href": "/css/shared/wp-block-image-inline-css.css",
+  "media": "all"
+ },
+ {
+  "href": "/css/shared/wp-block-heading-inline-css.css",
   "media": "all"
  },
  {
