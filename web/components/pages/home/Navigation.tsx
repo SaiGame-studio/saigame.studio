@@ -93,6 +93,9 @@ export default async function Navigation() {
                                 </li>
                                </ul>
                              </li>
+                             <li id="menu-item-sai-server" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-sai-server">
+                              <a href="/sai-server" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Sai Server</a>
+                            </li>
                              <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
                               <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
                             </li>
@@ -197,6 +200,9 @@ export default async function Navigation() {
                                           </li>
                                          </ul>
                                        </li>
+                                       <li id="menu-item-sai-server" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-sai-server">
+                                        <a href="/sai-server" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Sai Server</a>
+                                      </li>
                                        <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
                                         <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
                                       </li>

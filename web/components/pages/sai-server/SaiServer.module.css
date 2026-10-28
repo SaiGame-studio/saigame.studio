@@ -1,0 +1,413 @@
+/* /sai-server landing page. Ported from the Tailwind design (nakama_landing_page.html) to plain CSS.
+   Every rule is prefixed with .root so it outranks the site-wide WordPress/Kubio element styles
+   that the layout loads for every page; the reset uses :where() so component rules always win. */
+
+.root {
+  --brand-50: #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-300: #93c5fd;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --discord-500: #5865f2;
+  --discord-600: #4752c4;
+  --indigo-50: #eef2ff;
+  --indigo-100: #e0e7ff;
+  --s50: #f8fafc;
+  --s100: #f1f5f9;
+  --s200: #e2e8f0;
+  --s300: #cbd5e1;
+  --s400: #94a3b8;
+  --s500: #64748b;
+  --s600: #475569;
+  --s700: #334155;
+  --s800: #1e293b;
+  --s900: #0f172a;
+  --line: rgba(226, 232, 240, 0.6);
+  --line-strong: rgba(226, 232, 240, 0.8);
+  --mono: var(--font-sai-mono), "JetBrains Mono", ui-monospace, monospace;
+
+  font-family: var(--font-sai-sans), "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--s800);
+  background: #fff;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- reset (zero specificity inside .root) ---------- */
+.root :where(*, *::before, *::after) { box-sizing: border-box; }
+.root :where(h1, h2, h3, h4, p, ul, li, form, span, div, a, button, input) { margin: 0; padding: 0; }
+.root :where(h1, h2, h3, h4) { font: inherit; color: inherit; letter-spacing: normal; text-transform: none; }
+.root :where(ul) { list-style: none; }
+.root :where(a) { color: inherit; text-decoration: none; }
+.root a:hover, .root a:focus { text-decoration: none; }
+.root :where(button, input) { font: inherit; color: inherit; letter-spacing: normal; text-transform: none; }
+.root :where(button) { background: none; border: 0; cursor: pointer; box-shadow: none; }
+.root :where(svg) { display: block; flex-shrink: 0; }
+.root ::selection { background: var(--brand-600); color: #fff; }
+
+.root .main { flex-grow: 1; }
+.root .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+.root .containerMd { max-width: 1152px; margin: 0 auto; padding: 0 16px; }
+.root .containerSm { max-width: 1024px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 640px) {
+  .root .container, .root .containerMd, .root .containerSm { padding: 0 24px; }
+}
+@media (min-width: 1024px) {
+  .root .container, .root .containerMd, .root .containerSm { padding: 0 32px; }
+}
+
+/* ---------- header ---------- */
+.root .header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-strong);
+}
+.root .headerRow { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.root .brand { display: flex; align-items: center; gap: 12px; }
+/* Sai Game logo (white lettering) on a dark tile so it reads on the white header */
+.root .logoBox {
+  width: 72px; height: 56px; border-radius: 12px; overflow: hidden;
+  padding: 3px 4px;
+  background: linear-gradient(145deg, #475569, var(--s900));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.25), 0 2px 4px -2px rgba(15, 23, 42, 0.2);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.root .brand:hover .logoBox { box-shadow: 0 8px 14px -3px rgba(15, 23, 42, 0.35); transform: translateY(-1px); }
+.root .logoBox img, .root .footerLogo img { display: block; width: 100%; height: 100%; object-fit: contain; max-width: none; border: 0; box-shadow: none; }
+.root .brandText { display: flex; flex-direction: column; }
+.root .brandName { font-weight: 800; font-size: 20px; line-height: 28px; letter-spacing: -0.025em; color: var(--s900); }
+.root .brandTag {
+  font-family: var(--mono); font-size: 10px; line-height: 15px; font-weight: 600;
+  color: var(--brand-600); letter-spacing: 0.05em; text-transform: uppercase; margin-top: -4px;
+}
+
+.root .nav { display: none; align-items: center; gap: 32px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--s600); }
+.root .navLink { color: var(--s600); transition: color 0.15s; }
+.root .navLink:hover, .root .navLinkActive { color: var(--brand-600); }
+.root .navCommunity { display: flex; align-items: center; gap: 6px; }
+.root .navCommunity svg { width: 16px; height: 16px; color: var(--discord-500); }
+.root .navCommunity:hover { color: var(--discord-500); }
+
+.root .actions { display: none; align-items: center; gap: 12px; }
+.root .lang { display: flex; align-items: center; gap: 2px; font-family: var(--mono); font-size: 12px; font-weight: 600; margin-right: 4px; }
+.root .langLink { padding: 4px 6px; border-radius: 6px; color: var(--s400); transition: color 0.15s, background-color 0.15s; }
+.root .langLink:hover { color: var(--s700); }
+.root .langActive { color: var(--s900); background: var(--s100); }
+
+.root .btnDiscordSoft {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 16px; border-radius: 12px;
+  font-size: 14px; line-height: 20px; font-weight: 600;
+  color: var(--discord-500); background: var(--indigo-50); border: 1px solid var(--indigo-100);
+  transition: background-color 0.15s;
+}
+.root .btnDiscordSoft:hover { background: var(--indigo-100); color: var(--discord-500); }
+.root .btnDiscordSoft svg { width: 16px; height: 16px; }
+
+.root .btnPrimarySm {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 20px; border-radius: 12px;
+  font-size: 14px; line-height: 20px; font-weight: 600;
+  color: #fff; background: var(--brand-600);
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2), 0 2px 4px -2px rgba(59, 130, 246, 0.2);
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+.root .btnPrimarySm:hover { background: var(--brand-700); color: #fff; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+
+.root .menuBtn { display: flex; padding: 8px; border-radius: 8px; color: var(--s600); transition: background-color 0.15s; }
+.root .menuBtn:hover { background: var(--s100); }
+.root .menuBtn svg { width: 22px; height: 22px; }
+
+.root .mobileMenu {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 8px 16px 24px;
+  border-bottom: 1px solid var(--s200);
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.root .mobileLink {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 8px;
+  font-size: 16px; line-height: 24px; font-weight: 600; color: var(--s700);
+}
+.root .mobileLink:hover { background: var(--s50); }
+.root .mobileLinkActive { color: var(--brand-600); }
+.root .mobileLinkDiscord { color: var(--discord-500); }
+.root .mobileLinkDiscord:hover { background: var(--indigo-50); }
+.root .mobileLinkDiscord svg { width: 18px; height: 18px; }
+.root .mobileActions { padding-top: 8px; border-top: 1px solid var(--s100); display: flex; flex-direction: column; gap: 8px; }
+.root .mobileActions .lang { justify-content: center; margin: 0 0 4px; }
+.root .block { width: 100%; }
+
+.root .brandName, .root .navLink, .root .btnDiscordSoft, .root .btnPrimarySm { white-space: nowrap; }
+
+/* The site has more top-level pages than the design's 4 links, so the full bar needs ≥1024px;
+   the "Community" link (same target as the Discord button) only shows when there is room. */
+@media (min-width: 1024px) {
+  .root .nav, .root .actions { display: flex; }
+  .root .nav { gap: 24px; }
+  .root .navCommunity { display: none; }
+  .root .menuBtn, .root .mobileMenu { display: none; }
+}
+@media (min-width: 1280px) {
+  .root .nav { gap: 32px; }
+  .root .navCommunity { display: flex; }
+}
+
+/* ---------- hero ---------- */
+.root .hero {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 80px;
+  background-color: #fff;
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 1024px) { .root .hero { padding: 112px 0 128px; } }
+.root .heroInner { position: relative; z-index: 1; max-width: 896px; margin: 0 auto; text-align: center; }
+
+.root .badge {
+  display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px;
+  padding: 6px 16px; border-radius: 9999px;
+  background: var(--s100); border: 1px solid var(--s200);
+  font-size: 12px; line-height: 16px; font-weight: 600; color: var(--s700);
+  margin-bottom: 32px;
+}
+.root .pulseDot { width: 8px; height: 8px; border-radius: 9999px; background: var(--brand-600); animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.root .badgeCode { font-family: var(--mono); color: var(--brand-700); }
+.root .badgeSep { color: var(--s300); }
+.root .badgeText { color: var(--s600); }
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.root .h1 {
+  font-size: 36px; line-height: 1.25; font-weight: 800; letter-spacing: -0.025em;
+  color: var(--s900); margin-bottom: 32px; text-wrap: balance;
+}
+@media (min-width: 640px) { .root .h1 { font-size: 60px; } }
+@media (min-width: 1024px) { .root .h1 { font-size: 72px; } }
+.root .gradientText {
+  display: block;
+  background-image: linear-gradient(to right, var(--brand-600), #4f46e5, var(--brand-700));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.root .lead { font-size: 18px; line-height: 1.625; color: var(--s600); max-width: 768px; margin: 0 auto 40px; }
+@media (min-width: 640px) { .root .lead { font-size: 20px; } }
+
+.root .ctaRow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+.root .btnPrimary, .root .btnSecondary {
+  width: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 32px; border-radius: 12px;
+  font-size: 16px; line-height: 24px; font-weight: 600;
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+.root .btnPrimary {
+  color: #fff; background: var(--brand-600);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2), 0 4px 6px -4px rgba(59, 130, 246, 0.2);
+}
+.root .btnPrimary:hover { color: #fff; background: var(--brand-700); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+.root .btnPrimary svg { width: 14px; height: 14px; }
+.root .btnSecondary { color: var(--s700); background: var(--s50); border: 1px solid var(--s200); }
+.root .btnSecondary:hover { color: var(--s700); background: var(--s100); }
+.root .btnSecondary svg { width: 16px; height: 16px; color: var(--s400); }
+@media (min-width: 640px) {
+  .root .ctaRow { flex-direction: row; }
+  .root .btnPrimary, .root .btnSecondary { width: auto; }
+}
+
+/* ---------- features ---------- */
+.root .features { padding: 80px 0; background: var(--s50); border-bottom: 1px solid var(--line); scroll-margin-top: 80px; }
+@media (min-width: 640px) { .root .features { padding: 112px 0; } }
+.root .sectionHead { max-width: 672px; margin: 0 auto 64px; text-align: center; }
+.root .eyebrow { display: block; font-size: 12px; line-height: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-600); }
+.root .h2 { font-size: 30px; line-height: 36px; font-weight: 800; letter-spacing: -0.025em; color: var(--s900); margin-top: 8px; }
+@media (min-width: 640px) { .root .h2 { font-size: 36px; line-height: 40px; } }
+.root .sectionLead { margin-top: 16px; font-size: 18px; line-height: 28px; color: var(--s600); }
+
+.root .grid { display: grid; gap: 32px; }
+@media (min-width: 768px) { .root .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .root .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.root .card {
+  padding: 32px; border-radius: 16px;
+  background: #fff; border: 1px solid var(--line-strong);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.root .card:hover { border-color: var(--brand-300); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); }
+.root .cardIcon {
+  width: 48px; height: 48px; border-radius: 12px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--brand-50); color: var(--brand-600); border: 1px solid var(--brand-100);
+  transition: background-color 0.15s, color 0.15s;
+}
+.root .cardIcon svg { width: 22px; height: 22px; }
+.root .card:hover .cardIcon { background: var(--brand-600); color: #fff; }
+.root .cardTitle { font-size: 20px; line-height: 28px; font-weight: 700; color: var(--s900); margin-bottom: 12px; }
+.root .cardText { font-size: 14px; line-height: 1.625; color: var(--s600); }
+
+/* ---------- discord ---------- */
+.root .community { padding: 80px 0; background: #fff; border-bottom: 1px solid var(--line); scroll-margin-top: 80px; }
+.root .discordCard {
+  position: relative; overflow: hidden;
+  padding: 32px; border-radius: 24px; color: #fff;
+  background: linear-gradient(to bottom right, #312e81, var(--s900), var(--s900));
+  border: 1px solid var(--s800);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 640px) { .root .discordCard { padding: 56px; } }
+.root .discordBg { position: absolute; right: -48px; bottom: -48px; opacity: 0.1; color: var(--discord-500); pointer-events: none; }
+.root .discordBg svg { width: 280px; height: 280px; }
+.root .discordGrid { position: relative; z-index: 1; display: grid; gap: 32px; align-items: center; }
+@media (min-width: 1024px) { .root .discordGrid { grid-template-columns: 7fr 5fr; } }
+.root .discordLeft { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.root .pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 9999px;
+  background: rgba(88, 101, 242, 0.2); border: 1px solid rgba(88, 101, 242, 0.4);
+  font-size: 12px; line-height: 16px; font-weight: 600; color: var(--discord-500);
+}
+.root .pill svg { width: 14px; height: 14px; }
+.root .h2Light { font-size: 30px; line-height: 36px; font-weight: 800; letter-spacing: -0.025em; color: #fff; }
+@media (min-width: 640px) { .root .h2Light { font-size: 36px; line-height: 40px; } }
+.root .discordText { font-size: 16px; line-height: 1.625; color: var(--s300); }
+@media (min-width: 640px) { .root .discordText { font-size: 18px; } }
+.root .metrics { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 16px; border-top: 1px solid var(--s800); }
+.root .metricValue { font-family: var(--mono); font-size: 20px; line-height: 28px; font-weight: 800; color: #fff; }
+@media (min-width: 640px) { .root .metricValue { font-size: 24px; line-height: 32px; } }
+.root .metricLabel { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--s400); }
+
+.root .ctaBox {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  padding: 32px; border-radius: 16px;
+  background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(51, 65, 85, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.root .ctaIcon {
+  width: 64px; height: 64px; border-radius: 16px; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--discord-500); color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(88, 101, 242, 0.3), 0 4px 6px -4px rgba(88, 101, 242, 0.3);
+}
+.root .ctaIcon svg { width: 32px; height: 32px; }
+.root .ctaTitle { font-size: 18px; line-height: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.root .ctaText { font-size: 12px; line-height: 16px; color: var(--s400); margin-bottom: 24px; }
+.root .btnDiscord {
+  width: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 24px; border-radius: 12px;
+  font-weight: 700; color: #fff; background: var(--discord-500);
+  box-shadow: 0 10px 15px -3px rgba(88, 101, 242, 0.25), 0 4px 6px -4px rgba(88, 101, 242, 0.25);
+  transition: background-color 0.15s;
+}
+.root .btnDiscord:hover { color: #fff; background: var(--discord-600); }
+.root .btnDiscord svg { width: 18px; height: 18px; }
+
+/* ---------- newsletter ---------- */
+.root .newsletter { padding: 80px 0; background: var(--s50); }
+.root .newsCard {
+  position: relative; overflow: hidden; text-align: center; color: #fff;
+  padding: 32px; border-radius: 24px; background: var(--s900);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 640px) { .root .newsCard { padding: 48px; } }
+.root .newsInner { position: relative; z-index: 1; max-width: 672px; margin: 0 auto; }
+.root .newsTitle { font-size: 30px; line-height: 36px; font-weight: 800; letter-spacing: -0.025em; color: #fff; margin-bottom: 16px; }
+@media (min-width: 640px) { .root .newsTitle { font-size: 36px; line-height: 40px; } }
+.root .newsText { font-size: 18px; line-height: 28px; color: var(--s300); margin-bottom: 32px; }
+.root .form { display: flex; flex-direction: column; justify-content: center; gap: 12px; max-width: 448px; margin: 0 auto; }
+@media (min-width: 640px) { .root .form { flex-direction: row; } }
+.root .input {
+  flex-grow: 1; min-width: 0; width: 100%; height: auto;
+  padding: 14px 16px; border-radius: 12px;
+  background: var(--s800); border: 1px solid var(--s700); color: #fff;
+  font-size: 14px; line-height: 20px; box-shadow: none; outline: none;
+}
+.root .input::placeholder { color: var(--s400); opacity: 1; }
+.root .input:focus { border-color: var(--brand-500); outline: none; box-shadow: none; }
+.root .btnSubmit {
+  padding: 14px 24px; border-radius: 12px; white-space: nowrap;
+  font-size: 14px; line-height: 20px; font-weight: 600;
+  color: #fff; background: var(--brand-600);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s;
+}
+.root .btnSubmit:hover { color: #fff; background: var(--brand-500); }
+
+/* ---------- footer ---------- */
+.root .footer { padding: 64px 0 48px; background: var(--s50); border-top: 1px solid var(--line-strong); font-size: 14px; line-height: 20px; color: var(--s600); }
+.root .footerGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-bottom: 48px; }
+@media (min-width: 768px) { .root .footerGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.root .footerBrand { grid-column: span 2 / span 2; }
+.root .footerLogoRow { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.root .footerLogo {
+  width: 62px; height: 48px; border-radius: 10px; overflow: hidden; padding: 3px 4px;
+  background: linear-gradient(145deg, #475569, var(--s900));
+  display: flex; align-items: center; justify-content: center;
+}
+.root .footerName { font-size: 18px; line-height: 28px; font-weight: 800; letter-spacing: -0.025em; color: var(--s900); }
+.root .footerText { max-width: 384px; line-height: 1.625; color: var(--s500); margin-bottom: 24px; }
+.root .socials { display: flex; gap: 16px; color: var(--s500); }
+.root .socials a { transition: color 0.15s; }
+.root .socials a:hover { color: var(--discord-500); }
+.root .socials svg { width: 20px; height: 20px; }
+.root .footerHeading { font-weight: 700; color: var(--s900); margin-bottom: 16px; }
+.root .footerList { display: flex; flex-direction: column; gap: 10px; }
+.root .footerLink { color: var(--s600); transition: color 0.15s; }
+.root .footerLink:hover { color: var(--brand-600); }
+.root .footerLinkDiscord { display: inline-flex; align-items: center; gap: 6px; }
+.root .footerLinkDiscord svg { width: 12px; height: 12px; }
+.root .footerLinkDiscord:hover { color: var(--discord-500); }
+.root .footerBottom {
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 16px;
+  padding-top: 32px; border-top: 1px solid var(--line-strong);
+  font-size: 12px; line-height: 16px; color: var(--s500);
+}
+@media (min-width: 640px) { .root .footerBottom { flex-direction: row; } }
+.root .footerBottomLinks { display: flex; gap: 24px; }
+.root .footerBottomLinks a:hover { text-decoration: underline; }
+
+/* ---------- toast ---------- */
+.root .toast {
+  position: fixed; right: 24px; bottom: 24px; z-index: 50;
+  display: flex; align-items: center; gap: 12px;
+  max-width: calc(100vw - 48px);
+  padding: 14px 20px; border-radius: 12px;
+  background: var(--s900); color: #fff; border: 1px solid var(--s700);
+  font-size: 14px; line-height: 20px; font-weight: 500;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(80px); opacity: 0; pointer-events: none;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.root .toastShow { transform: translateY(0); opacity: 1; }
+.root .toast svg { width: 16px; height: 16px; color: #34d399; }
+
+@media (prefers-reduced-motion: reduce) {
+  .root .pulseDot { animation: none; }
+  .root .toast { transition: none; }
+}
