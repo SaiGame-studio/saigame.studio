@@ -3,7 +3,7 @@ import Navigation from "@/components/pages/privacy-policy/Navigation";
 import Hero from "@/components/pages/privacy-policy/Hero";
 import PrivacyPolicyContent from "@/components/pages/privacy-policy/PrivacyPolicyContent";
 import Spacer from "@/components/pages/privacy-policy/Spacer";
-import Footer from "@/components/pages/privacy-policy/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Privacy Policy \u2013 SaiGame",
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
           <PrivacyPolicyContent />
           <Spacer />
         </div>
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

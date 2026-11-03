@@ -7,9 +7,11 @@ Click link nội bộ **không reload trang**: chỉ đổi nội dung và URL (
 |---|---|
 | `/` | Trang chủ |
 | `/games/` | Danh sách game |
-| `/purgatory/` | Purgatory (menu link `/games/purgatory` → redirect 308) |
-| `/the-immortal/` | The Immortal (`/games/the-immortal` → redirect) |
-| `/the-watcher/` | The Watcher (`/games/the-watcher` → redirect) |
+| `/games/purgatory/` | Purgatory (URL cũ `/purgatory/` → redirect 308) |
+| `/games/the-immortal/` | The Immortal (URL cũ `/the-immortal/` → redirect) |
+| `/games/the-watcher/` | The Watcher (URL cũ `/the-watcher/` → redirect) |
+| `/products/` | Sản phẩm: Sai Server, Sai Play (trang mới, layout giống `/games/`, CSS copy từ `games`) |
+| `/game-courses/` | Khóa học Unity Dev Basic (URL cũ `/unity-dev-basic/`, `/courses/unity-dev-basic` → redirect 308). Component vẫn ở `components/pages/unity-dev-basic/` (CSS scope `unity-dev-basic`) |
 
 ## Chạy
 
@@ -75,6 +77,10 @@ npm run start        # http://localhost:3000  (hoặc npm run dev khi sửa code
 | `components/LangSync.tsx` | Đồng bộ localStorage ↔ cookie |
 | `proxy.ts` | `/vi/...` → bỏ `/vi`, nhớ tiếng Việt |
 | `i18n/vi.json`, `i18n/vi.extra.json` | Từ điển EN → VI |
+
+Tiếng Nhật: `i18n/ja.json` (EN → JA), Privacy Policy tiếng Nhật ở `content/privacy-policy-ja.ts`.
+Câu có trật tự từ khác nhau giữa các ngôn ngữ dùng mẫu `{tên}` + `fill()` (`lib/fill.tsx`), ví dụ `t("Build on {server}.")`.
+Kiểm tra không thiếu bản dịch: `python tools/i18n_check.py web` (từ thư mục `saigame.studio`).
 
 Cập nhật bản dịch:
 

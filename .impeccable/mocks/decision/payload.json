@@ -1,0 +1,27 @@
+{
+  "title": "Choose the /products layout",
+  "question": "Three layouts for the Products page, all in the site's existing dark look. Lock one, steer, or re-roll.",
+  "options": [
+    {"id":"spine","kind":"assigned","kicker":"THE ROLL","label":"Shared spine",
+     "thesis":"Sai Server and Sai Play face each other, joined by one Sai account in the middle.",
+     "palette":["#33343f","#262733","#2f7cf6","#ffffff"],"materials":["Kubio dark panels","blue rule"],
+     "viewport":"Two equal product panels with a vertical blue spine labelled One Sai account + sGem between them.",
+     "risk":"Equal weight underplays Sai Server, the product studios came for.",
+     "html":".impeccable/mocks/decision/spine.html"},
+    {"id":"journey","kind":"dealt","label":"Player journey",
+     "thesis":"Follow one player from a studio's game on Sai Server to their account on Sai Play.",
+     "palette":["#33343f","#2f7cf6","#9cc0ff","#ffffff"],"materials":["Kubio dark ground","numbered blue rules"],
+     "viewport":"Headline 'Build on Sai Server. Your players land on Sai Play.' over three numbered steps and two buttons.",
+     "risk":"No product imagery above the fold; relies on copy.",
+     "html":".impeccable/mocks/decision/journey.html"},
+    {"id":"switch","kind":"dealt","label":"Two-sided switcher",
+     "thesis":"Pick your side: 'I make games' shows Sai Server, 'I play games' shows Sai Play.",
+     "palette":["#33343f","#262733","#2f7cf6","#ffffff"],"materials":["Kubio dark panels","left-rule tabs"],
+     "viewport":"Left: headline and two side tabs; right: the selected product's panel with image, text and button.",
+     "risk":"Sai Play hides behind a click; needs a no-JS fallback.",
+     "html":".impeccable/mocks/decision/switch.html"}
+  ],
+  "reroll": true,
+  "buildPath": {"value":"code","toggle":false},
+  "steer": true
+}

@@ -1,0 +1,102 @@
+/* Site-wide tweaks on top of the Kubio stylesheets (app/wp-styles.json). */
+
+/* top menu: a soft shadow keeps the links readable over hero images */
+#kubio #menu-primary-menu > li > a {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75), 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* "Sai Server" mentions in body copy link to the tutorials (components/SaiServerLink.tsx) */
+.sai-server-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #5f9bff;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.sai-server-link:hover {
+  color: #9cc0ff;
+}
+
+.sai-server-link:focus-visible {
+  outline: 2px solid #9cc0ff;
+  outline-offset: 2px;
+}
+
+/* ---------- language switcher (top menu): flag icons, dark dropdown ---------- */
+.lang-flag {
+  display: block;
+  width: 27px;
+  height: 18px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.85), 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 160ms ease-out, transform 160ms ease-out;
+}
+
+#kubio #menu-primary-menu > li.trp-language-switcher-container > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#kubio #menu-primary-menu > li.trp-language-switcher-container > a:hover .lang-flag,
+#kubio #menu-primary-menu > li.trp-language-switcher-container:focus-within > a .lang-flag {
+  box-shadow: 0 0 0 2px #9cc0ff, 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* small chevron, same white as the menu text */
+#kubio #menu-primary-menu > li.trp-language-switcher-container > a .kubio-menu-item-icon {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+  opacity: 0.8;
+}
+
+/* the dropdown: a small dark panel holding the other flag */
+#kubio #menu-primary-menu > li.trp-language-switcher-container > .sub-menu {
+  min-width: 0;
+  width: auto;
+  padding: 6px;
+  border: 1px solid #3a3c4d;
+  border-radius: 8px;
+  background: #262733;
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.7);
+}
+
+#kubio #menu-primary-menu > li.trp-language-switcher-container > .sub-menu > li {
+  background: transparent;
+  border: 0;
+}
+
+#kubio #menu-primary-menu > li.trp-language-switcher-container > .sub-menu > li > a {
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  box-shadow: none;
+}
+
+#kubio #menu-primary-menu > li.trp-language-switcher-container > .sub-menu > li > a:hover {
+  background: #33354a;
+}
+
+#kubio #menu-primary-menu > li.trp-language-switcher-container > .sub-menu > li > a:hover .lang-flag {
+  transform: scale(1.08);
+}
+
+#kubio #menu-primary-menu .trp-language-switcher-container a:focus-visible {
+  outline: 2px solid #9cc0ff;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* no Kubio hover underline on the flags */
+#kubio #menu-primary-menu li.trp-language-switcher-container::before,
+#kubio #menu-primary-menu li.trp-language-switcher-container::after,
+#kubio #menu-primary-menu li.trp-language-switcher-container a::before,
+#kubio #menu-primary-menu li.trp-language-switcher-container a::after {
+  display: none;
+}

@@ -5,6 +5,7 @@ import ClientRouter from "@/components/ClientRouter";
 import LangSync from "@/components/LangSync";
 import { getLang } from "@/lib/i18n";
 import styles from "./wp-styles.json";
+import "./site.css";
 
 export const metadata: Metadata = {
   title: "SaiGame",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const lang = await getLang();
   return (
-    <html lang={lang === "vi" ? "vi" : "en-US"} id="kubio" suppressHydrationWarning>
+    <html lang={lang === "en" ? "en-US" : lang} id="kubio" suppressHydrationWarning>
       <head>
         {styles.map((s) => (
           <link key={s.href} rel="stylesheet" href={s.href} media={s.media === "all" ? undefined : s.media} />
@@ -31,7 +32,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Script src="/js/kubio-attachment-check.js" strategy="beforeInteractive" />
       </head>
       <body
-        className={`wp-singular page wp-custom-logo wp-theme-kubio theme-kubio woocommerce-js translatepress-${lang === "vi" ? "vi" : "en_US"}`}
+        className={`wp-singular page wp-custom-logo wp-theme-kubio theme-kubio woocommerce-js translatepress-${lang === "en" ? "en_US" : lang}`}
         suppressHydrationWarning
       >
         <div id="page-top" tabIndex={-1}></div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/courses/Navigation";
 import Hero from "@/components/pages/courses/Hero";
 import CoursesContent from "@/components/pages/courses/CoursesContent";
-import Footer from "@/components/pages/courses/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Courses \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function CoursesPage() {
           <Hero />
         </div>
         <CoursesContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

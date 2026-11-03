@@ -127,7 +127,9 @@ def ident_of(href):
 
 
 # ---- load every page's ordered list
-pages = sorted(os.listdir(PAGES_DIR), key=lambda p: (p != "home", p))
+# pages without styles.json (e.g. sai-server) are not Kubio pages and bring their own CSS
+pages = sorted((p for p in os.listdir(PAGES_DIR) if os.path.isfile(os.path.join(PAGES_DIR, p, "styles.json"))),
+               key=lambda p: (p != "home", p))
 lists = {p: json.load(open(os.path.join(PAGES_DIR, p, "styles.json"))) for p in pages}
 
 # ---- merge orders (insert unseen keys right after the previous key of that page)

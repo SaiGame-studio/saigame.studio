@@ -1,6 +1,7 @@
 // Top navigation bar (logo, menu with dropdowns, language switcher)
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
 import { getI18n } from "@/lib/i18n";
+import LangFlag from "@/components/LangFlag";
 
 export default async function Navigation() {
   const { t, flags } = await getI18n();
@@ -60,7 +61,7 @@ export default async function Navigation() {
                             </li>
                              <li id="menu-item-37" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37">
                               <a href="/games" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                <span>Games</span>
+                                <span>{t("Games")}</span>
                                 <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
                                    <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
                                 </svg>
@@ -77,30 +78,26 @@ export default async function Navigation() {
                                 </li>
                                </ul>
                              </li>
-                             <li id="menu-item-46" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-46">
-                              <a href="/courses" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                <span>{t("Courses")}</span>
-                                <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
-                                   <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                                </svg>
-                              </a>
-                               <ul className="sub-menu">
-                                 <li id="menu-item-505" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-505">
-                                  <a href="/unity-dev-basic/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Unity Dev Basic")}</a>
-                                </li>
-                                 <li id="menu-item-811" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-811">
-                                  <a href="/co-ban-sai-server/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Basic Sai Server")}</a>
-                                </li>
-                               </ul>
-                             </li>
+                             <li id="menu-item-products" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-products">
+                              <a href="/products/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Products")}</a>
+                            </li>
+                             <li id="menu-item-game-courses" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-game-courses">
+                              <a href="/game-courses/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Game Courses")}</a>
+                            </li>
                              <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
-                              <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
+                              <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Blog")}</a>
+                            </li>
+                             <li id="menu-item-careers" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-careers">
+                              <a href="/careers/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Careers")}</a>
+                            </li>
+                             <li id="menu-item-contact-us" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-contact-us">
+                              <a href="/contact-us/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Contact Us")}</a>
                             </li>
                              <li id="menu-item-61" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-has-children current-language-menu-item menu-item-61">
                               <a href="#" data-lang={flags.current.code} style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
                                 <span>
                                   <span data-no-translation="">
-                                    <img decoding="async" className="trp-flag-image" src={flags.current.src} width="18" height="12" alt={flags.current.alt} title={flags.current.title} />
+                                    <LangFlag code={flags.current.code} />
                                   </span>
                                 </span>
                                 <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
@@ -108,13 +105,15 @@ export default async function Navigation() {
                                 </svg>
                               </a>
                                <ul className="sub-menu">
-                                 <li id="menu-item-59" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-59">
-                                  <a href="#" data-lang={flags.other.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
-                                    <span data-no-translation="">
-                                      <img decoding="async" className="trp-flag-image" src={flags.other.src} width="18" height="12" alt={flags.other.alt} title={flags.other.title} />
-                                    </span>
-                                  </a>
-                                </li>
+                                 {flags.others.map((lang) => (
+                                   <li key={lang.code} id={`menu-item-lang-${lang.code}`} className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-lang">
+                                    <a href="#" data-lang={lang.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
+                                      <span data-no-translation="">
+                                        <LangFlag code={lang.code} />
+                                      </span>
+                                    </a>
+                                  </li>
+                                 ))}
                                </ul>
                              </li>
                            </ul>
@@ -164,7 +163,7 @@ export default async function Navigation() {
                                       </li>
                                        <li id="menu-item-37" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37">
                                         <a href="/games" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                          <span>Games</span>
+                                          <span>{t("Games")}</span>
                                           <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
                                              <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
                                           </svg>
@@ -181,30 +180,26 @@ export default async function Navigation() {
                                           </li>
                                          </ul>
                                        </li>
-                                       <li id="menu-item-46" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-46">
-                                        <a href="/courses" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                          <span>{t("Courses")}</span>
-                                          <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
-                                             <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                                          </svg>
-                                        </a>
-                                         <ul className="sub-menu">
-                                           <li id="menu-item-505" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-505">
-                                            <a href="/unity-dev-basic/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Unity Dev Basic")}</a>
-                                          </li>
-                                           <li id="menu-item-811" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-811">
-                                            <a href="/co-ban-sai-server/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Basic Sai Server")}</a>
-                                          </li>
-                                         </ul>
-                                       </li>
+                                       <li id="menu-item-products" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-products">
+                                        <a href="/products/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Products")}</a>
+                                      </li>
+                                       <li id="menu-item-game-courses" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-game-courses">
+                                        <a href="/game-courses/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Game Courses")}</a>
+                                      </li>
                                        <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
-                                        <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
+                                        <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Blog")}</a>
+                                      </li>
+                                       <li id="menu-item-careers" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-careers">
+                                        <a href="/careers/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Careers")}</a>
+                                      </li>
+                                       <li id="menu-item-contact-us" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-contact-us">
+                                        <a href="/contact-us/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Contact Us")}</a>
                                       </li>
                                        <li id="menu-item-61" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-has-children current-language-menu-item menu-item-61">
                                         <a href="#" data-lang={flags.current.code} style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
                                           <span>
                                             <span data-no-translation="">
-                                              <img decoding="async" className="trp-flag-image" src={flags.current.src} width="18" height="12" alt={flags.current.alt} title={flags.current.title} />
+                                              <LangFlag code={flags.current.code} />
                                             </span>
                                           </span>
                                           <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
@@ -212,13 +207,15 @@ export default async function Navigation() {
                                           </svg>
                                         </a>
                                          <ul className="sub-menu">
-                                           <li id="menu-item-59" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-59">
-                                            <a href="#" data-lang={flags.other.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
-                                              <span data-no-translation="">
-                                                <img decoding="async" className="trp-flag-image" src={flags.other.src} width="18" height="12" alt={flags.other.alt} title={flags.other.title} />
-                                              </span>
-                                            </a>
-                                          </li>
+                                           {flags.others.map((lang) => (
+                                             <li key={lang.code} id={`menu-item-lang-${lang.code}`} className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-lang">
+                                              <a href="#" data-lang={lang.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
+                                                <span data-no-translation="">
+                                                  <LangFlag code={lang.code} />
+                                                </span>
+                                              </a>
+                                            </li>
+                                           ))}
                                          </ul>
                                        </li>
                                      </ul>
