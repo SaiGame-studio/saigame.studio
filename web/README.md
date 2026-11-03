@@ -10,6 +10,7 @@ Click link nội bộ **không reload trang**: chỉ đổi nội dung và URL (
 | `/purgatory/` | Purgatory (menu link `/games/purgatory` → redirect 308) |
 | `/the-immortal/` | The Immortal (`/games/the-immortal` → redirect) |
 | `/the-watcher/` | The Watcher (`/games/the-watcher` → redirect) |
+| `/products/` | Sản phẩm: Sai Server, Sai Play (trang mới, layout giống `/games/`, CSS copy từ `games`) |
 
 ## Chạy
 

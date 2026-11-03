@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "dev": "next dev -H local.saigame.studio -p 85",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3000",
     "start:80": "next start -H 0.0.0.0 -p 80"

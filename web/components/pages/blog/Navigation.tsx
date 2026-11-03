@@ -93,8 +93,8 @@ export default async function Navigation() {
                                 </li>
                                </ul>
                              </li>
-                             <li id="menu-item-sai-server" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-sai-server">
-                              <a href="/sai-server" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Sai Server</a>
+                             <li id="menu-item-products" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-products">
+                              <a href="/products/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Products")}</a>
                             </li>
                              <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-18">
                               <a href="/blog" aria-current="page" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>

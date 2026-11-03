@@ -9,8 +9,8 @@ import {
 } from "./icons";
 
 // next/font downloads the fonts at build time and serves them from the site (no Google request at runtime).
-const sans = Inter({ subsets: ["latin", "vietnamese"], weight: ["300", "400", "500", "600", "700", "800"], variable: "--font-sai-sans", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin", "vietnamese"], weight: ["400", "500", "600", "800"], variable: "--font-sai-mono", display: "swap" });
+const sans = Inter({ subsets: ["latin", "vietnamese"], variable: "--font-sai-sans", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin", "vietnamese"], variable: "--font-sai-mono", display: "swap" });
 
 const FEATURES = [
   {
