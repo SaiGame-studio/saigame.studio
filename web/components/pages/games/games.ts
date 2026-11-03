@@ -24,7 +24,6 @@ export const GAMES: Game[] = [
     steamUrl: "https://store.steampowered.com/app/3983490/Purgatory",
     steamAppId: "3983490",
     community: [
-      { label: "Telegram", href: "https://t.me/+VXjv4nLR2chhOGE1" },
       { label: "Discord", href: "https://discord.gg/eRb2qMDAnP" },
     ],
   },
