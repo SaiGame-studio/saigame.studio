@@ -154,7 +154,6 @@
  "Explore Sai Server": "Khám phá Sai Server",
  "A developer working on Sai Server at a desk with several monitors": "Một lập trình viên làm việc với Sai Server bên bàn nhiều màn hình",
  "Sai Play is where your players live: the player site shared by every game running on Sai Server.": "Sai Play là nơi dành cho người chơi của bạn: trang người chơi dùng chung cho mọi game chạy trên Sai Server.",
- "Learn it in the Basic Sai Server course": "Học trong khóa Cơ bản Sai Server",
  "Sai Server gives your studio one console for your team, your games and the game servers they run on.": "Sai Server cho studio của bạn một bảng điều khiển duy nhất cho đội ngũ, các game và game server mà chúng chạy trên đó.",
  "Illustration of a Sai Play account: played games and an sGem balance": "Minh họa một tài khoản Sai Play: các game đã chơi và số dư sGem",
  "Sai account": "Tài khoản Sai",
@@ -167,5 +166,8 @@
  "The SDK connects your game client to login, player progression, inventory, quests, shops and leaderboards. Write your backend logic as Lua scripts alongside your game project and deploy it to run on Sai Server, with no separate backend to set up.": "SDK kết nối client game của bạn với đăng nhập, tiến trình người chơi, kho đồ, nhiệm vụ, cửa hàng và bảng xếp hạng. Viết logic backend bằng Lua script ngay trong dự án game rồi deploy để chạy trên Sai Server, không cần dựng backend riêng.",
  "Available SDKs": "Các SDK hiện có",
  "Build on": "Xây game trên",
- "Your players land on": "Người chơi của bạn đến với"
+ "Read the get-started tutorial": "Đọc hướng dẫn bắt đầu",
+ "Game Courses": "Khóa Học Game",
+ "Your players": "Người chơi của bạn",
+ "land on": "đến với"
 }

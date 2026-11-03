@@ -11,6 +11,7 @@ Click link nội bộ **không reload trang**: chỉ đổi nội dung và URL (
 | `/the-immortal/` | The Immortal (`/games/the-immortal` → redirect) |
 | `/the-watcher/` | The Watcher (`/games/the-watcher` → redirect) |
 | `/products/` | Sản phẩm: Sai Server, Sai Play (trang mới, layout giống `/games/`, CSS copy từ `games`) |
+| `/game-courses/` | Khóa học Unity Dev Basic (URL cũ `/unity-dev-basic/`, `/courses/unity-dev-basic` → redirect 308). Component vẫn ở `components/pages/unity-dev-basic/` (CSS scope `unity-dev-basic`) |
 
 ## Chạy
 

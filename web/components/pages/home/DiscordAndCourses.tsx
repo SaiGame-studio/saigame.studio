@@ -189,7 +189,7 @@ export default async function DiscordAndCourses() {
                                       <div className="background-layer background-layer-media-container"></div>
                                     </div>
                                     <div className="position-relative wp-block-kubio-column__align style-1nuPj1AQu5-align style-local-89-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
-                                      <a href="/courses/unity-dev-basic" className="d-block h-link position-relative wp-block-kubio-heading__ style-y6bPr9pL1- style-local-90-">
+                                      <a href="/game-courses/" className="d-block h-link position-relative wp-block-kubio-heading__ style-y6bPr9pL1- style-local-90-">
                                         <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-y6bPr9pL1-text style-local-90-text" data-kubio="kubio/heading" id="heading-10">{t("Unity Dev Basic")}</h4>
                                       </a>
                                       <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-TBOOb2n5m-text style-local-91-text" data-kubio="kubio/text" id="paragraph-6">{t("This course is designed for beginners who want to learn the fundamentals of creating games using the powerful Unity engine.")}</p>

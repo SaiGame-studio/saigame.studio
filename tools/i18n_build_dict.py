@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup, Comment, NavigableString
 
 MIRROR, OUT = sys.argv[1], sys.argv[2]
 EXTRA = sys.argv[3:]
-PAGES = ["home", "_games_", "_purgatory_", "_the-immortal_", "_the-watcher_", "_courses_", "_unity-dev-basic_", "_co-ban-sai-server_"]
+PAGES = ["home", "_games_", "_purgatory_", "_the-immortal_", "_the-watcher_", "_courses_", "_unity-dev-basic_"]
 WS = re.compile(r"[ \t\n\r\f\v]+")
 EMOJI_RE = re.compile("(?:[☀-➿⬀-⯿\U0001F000-\U0001FAFF](?:️)?(?:‍[☀-➿\U0001F000-\U0001FAFF]️?)*)")
 ATTRS = ("alt", "title", "aria-label", "placeholder")

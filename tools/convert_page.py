@@ -184,8 +184,7 @@ hero = header.select_one(":scope > #hero")
 HOME_NAMES = {"features": "TopGames", "call-to-action-3": "YoutubeCta", "content-2": "GameDevCourses",
               "call-to-action": "DiscordAndCourses", "call-to-action-2": "GithubCta"}
 NAMES = {("games", 1): "PurgatoryCard", ("games", 2): "TheImmortalCard", ("games", 3): "TheWatcherCard",
-         ("courses", 1): "CoursesContent", ("unity-dev-basic", 1): "CourseModules",
-         ("co-ban-sai-server", 1): "SaiServerContent"}
+         ("courses", 1): "CoursesContent", ("unity-dev-basic", 1): "CourseModules"}
 for g in ("purgatory", "the-immortal", "the-watcher"):
     NAMES[(g, 1)] = "GameOverview"
     NAMES[(g, 2)] = "GameFeatures"

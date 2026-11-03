@@ -239,7 +239,6 @@ export default async function SaiServerLanding() {
                   </a>
                 </li>
                 <li><a href="/blog/" className={s.footerLink}>{t("Blog")}</a></li>
-                <li><a href={GET_STARTED_URL} className={s.footerLink}>{t("Basic Sai Server")}</a></li>
               </ul>
             </div>
 

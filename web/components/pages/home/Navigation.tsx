@@ -77,24 +77,11 @@ export default async function Navigation() {
                                 </li>
                                </ul>
                              </li>
-                             <li id="menu-item-46" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-46">
-                              <a href="/courses" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                <span>{t("Courses")}</span>
-                                <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
-                                   <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                                </svg>
-                              </a>
-                               <ul className="sub-menu">
-                                 <li id="menu-item-505" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-505">
-                                  <a href="/unity-dev-basic/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Unity Dev Basic")}</a>
-                                </li>
-                                 <li id="menu-item-811" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-811">
-                                  <a href="/co-ban-sai-server/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Basic Sai Server")}</a>
-                                </li>
-                               </ul>
-                             </li>
                              <li id="menu-item-products" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-products">
                               <a href="/products/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Products")}</a>
+                            </li>
+                             <li id="menu-item-game-courses" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-game-courses">
+                              <a href="/game-courses/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Game Courses")}</a>
                             </li>
                              <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
                               <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
@@ -184,24 +171,11 @@ export default async function Navigation() {
                                           </li>
                                          </ul>
                                        </li>
-                                       <li id="menu-item-46" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-46">
-                                        <a href="/courses" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                          <span>{t("Courses")}</span>
-                                          <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
-                                             <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                                          </svg>
-                                        </a>
-                                         <ul className="sub-menu">
-                                           <li id="menu-item-505" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-505">
-                                            <a href="/unity-dev-basic/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Unity Dev Basic")}</a>
-                                          </li>
-                                           <li id="menu-item-811" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-811">
-                                            <a href="/co-ban-sai-server/" style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>{t("Basic Sai Server")}</a>
-                                          </li>
-                                         </ul>
-                                       </li>
                                        <li id="menu-item-products" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-products">
                                         <a href="/products/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Products")}</a>
+                                      </li>
+                                       <li id="menu-item-game-courses" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-game-courses">
+                                        <a href="/game-courses/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Game Courses")}</a>
                                       </li>
                                        <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
                                         <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>

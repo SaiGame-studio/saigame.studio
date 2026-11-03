@@ -6,7 +6,7 @@ import s from "./Products.module.css";
 
 const SAI_SERVER_URL = "https://server.saigame.studio/why-sai-server";
 const SAI_PLAY_URL = "https://play.saigame.studio/";
-const COURSE_URL = "/co-ban-sai-server/";
+const TUTORIAL_URL = "https://server.saigame.studio/tutorials/basic/get-started/create-a-studio";
 // client SDKs for building games on Sai Server; more engines will be added here
 const SDKS = [{ name: "Unity SDK", href: "https://github.com/SaiGame-studio/ss-unity/releases" }];
 // sample content for the illustrative Sai Play panel: SaiGame's own games, a made-up balance
@@ -46,7 +46,7 @@ export default async function ProductsJourney() {
               {t("Build on")} <span className={`${s.productName} ${s.nameServer}`}>Sai Server</span>.
             </span>
             <span className={s.titleLine}>
-              {t("Your players land on")} <span className={`${s.productName} ${s.namePlay}`}>Sai Play</span>.
+              <span className={`${s.productName} ${s.namePlayers}`}>{t("Your players")}</span> {t("land on")} <span className={`${s.productName} ${s.namePlay}`}>Sai Play</span>.
             </span>
           </h1>
           <p className={s.lead}>{t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform.")}</p>
@@ -65,7 +65,7 @@ export default async function ProductsJourney() {
             <a className={s.button} href={SAI_SERVER_URL}>
               {t("Start with Sai Server")} <Arrow />
             </a>
-            <a className={s.buttonGhost} href={SAI_PLAY_URL}>
+            <a className={s.button} href={SAI_PLAY_URL}>
               {t("Visit Sai Play")}
             </a>
           </div>
@@ -121,7 +121,7 @@ export default async function ProductsJourney() {
             <span className={s.stageNumber}>3</span>
             <h2 id="product-sai-play" className={s.productTitle}>Sai Play</h2>
             <p className={s.productText}>{t("Sai Play is where your players live: the player site shared by every game running on Sai Server.")}</p>
-            <a className={s.buttonGhost} href={SAI_PLAY_URL}>
+            <a className={s.button} href={SAI_PLAY_URL}>
               {t("Visit Sai Play")} <Arrow />
             </a>
           </div>
@@ -154,7 +154,7 @@ export default async function ProductsJourney() {
             <a className={s.button} href={SAI_SERVER_URL}>
               {t("Start with Sai Server")} <Arrow />
             </a>
-            <a className={s.textLink} href={COURSE_URL}>{t("Learn it in the Basic Sai Server course")}</a>
+            <a className={s.textLink} href={TUTORIAL_URL}>{t("Read the get-started tutorial")}</a>
           </div>
         </div>
       </section>

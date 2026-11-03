@@ -8,6 +8,7 @@
   --blue-1: #2f7cf6;
   --blue-2: #5f9bff;
   --blue-3: #9cc0ff;
+  --players: #f5c451;
   background: var(--ink);
   color: var(--text);
   font-family: Mulish, Helvetica, Arial, sans-serif;
@@ -57,6 +58,10 @@
 
 .namePlay {
   color: var(--blue-3);
+}
+
+.namePlayers {
+  color: var(--players);
 }
 
 .lead {
@@ -183,8 +188,7 @@
   gap: 14px;
 }
 
-.button,
-.buttonGhost {
+.button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -194,10 +198,7 @@
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
-  transition: background-color 160ms ease-out, border-color 160ms ease-out, color 160ms ease-out;
-}
-
-.button {
+  transition: background-color 160ms ease-out, color 160ms ease-out;
   background: var(--blue-1);
   color: #fff;
 }
@@ -207,18 +208,9 @@
   color: #fff;
 }
 
-.buttonGhost {
-  border: 1px solid #6b6f86;
-  color: var(--text);
-}
 
-.buttonGhost:hover {
-  border-color: var(--blue-3);
-  color: var(--blue-3);
-}
 
 .button:focus-visible,
-.buttonGhost:focus-visible,
 .textLink:focus-visible {
   outline: 2px solid var(--blue-3);
   outline-offset: 3px;
