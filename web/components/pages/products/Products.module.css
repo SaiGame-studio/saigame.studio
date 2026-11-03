@@ -34,6 +34,29 @@
   padding-top: clamp(40px, 6vw, 80px);
 }
 
+/* title and lead on the left, the Sai Server image top-right, aligned with the title's top */
+.heroTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.heroMedia {
+  justify-self: end;
+  width: clamp(270px, 27vw, 360px);
+}
+
+@media (max-width: 900px) {
+  .heroTop {
+    grid-template-columns: 1fr;
+  }
+
+  .heroMedia {
+    justify-self: end;
+  }
+}
+
 .title {
   font-size: clamp(2.5rem, 5.6vw, 4.5rem);
   line-height: 1.06;
@@ -54,6 +77,12 @@
 
 .nameServer {
   color: var(--blue-2);
+}
+
+/* "Sai Server" links keep the title's colour over the global .sai-server-link (color: inherit) */
+.serverLink.nameServer {
+  color: var(--blue-2);
+  text-decoration: none;
 }
 
 .namePlay {

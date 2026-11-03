@@ -14,6 +14,11 @@ const SDKS = [{ name: "Unity SDK", href: "https://github.com/SaiGame-studio/ss-u
 // sample balance for the illustrative Sai Play panel
 const SAMPLE_SGEM = "1,250";
 
+/** every "Sai Server" link on /products: why-sai-server, title colour, no underline */
+function serverLink(text: string) {
+  return linkSaiServer(text, SAI_SERVER_URL, `${s.productName} ${s.nameServer} ${s.serverLink}`);
+}
+
 function Arrow() {
   return (
     <svg className={s.arrow} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -43,6 +48,8 @@ export default async function ProductsJourney() {
     <div className={s.page}>
       <section className={`${s.hero} h-navigation-padding`} aria-labelledby="products-title">
         <div className={`${s.wrap} ${s.heroInner}`}>
+          <div className={s.heroTop}>
+          <div>
           <h1 id="products-title" className={s.title}>
             <span className={s.titleLine}>
               {fill(t("Build on {server}."), { server: <span className={`${s.productName} ${s.nameServer}`}>Sai Server</span> })}
@@ -54,7 +61,12 @@ export default async function ProductsJourney() {
               })}
             </span>
           </h1>
-          <p className={s.lead}>{linkSaiServer(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
+          <p className={s.lead}>{serverLink(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
+          </div>
+          <figure className={`${s.media} ${s.heroMedia}`}>
+            <img className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} decoding="async" />
+          </figure>
+          </div>
           <ol className={s.steps}>
             {steps.map((step, i) => (
               <li key={step.id} className={s.step}>
@@ -82,7 +94,7 @@ export default async function ProductsJourney() {
           <div>
             <span className={s.stageNumber}>1</span>
             <h2 id="product-sai-server" className={s.productTitle}>Sai Server</h2>
-            <p className={s.productText}>{linkSaiServer(t("Sai Server gives your studio one console for your team, your games and the game servers they run on."))}</p>
+            <p className={s.productText}>{serverLink(t("Sai Server gives your studio one console for your team, your games and the game servers they run on."))}</p>
             <ul className={s.list}>
               {serverPoints.map((point) => (
                 <li key={point} className={s.listItem}>{point}</li>
@@ -92,9 +104,6 @@ export default async function ProductsJourney() {
               {t("Explore Sai Server")} <Arrow />
             </a>
           </div>
-          <figure className={s.media}>
-            <img className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} loading="lazy" decoding="async" />
-          </figure>
         </div>
       </section>
 
@@ -105,7 +114,7 @@ export default async function ProductsJourney() {
             <h2 id="product-sai-build" className={s.bandTitle}>{t("Build your game, deploy to Sai Server")}</h2>
           </div>
           <div>
-            <p className={s.bandText}>{linkSaiServer(t("The SDK connects your game client to login, player progression, inventory, quests, shops and leaderboards. Write your backend logic as Lua scripts alongside your game project and deploy it to run on Sai Server, with no separate backend to set up."))}</p>
+            <p className={s.bandText}>{serverLink(t("The SDK connects your game client to login, player progression, inventory, quests, shops and leaderboards. Write your backend logic as Lua scripts alongside your game project and deploy it to run on Sai Server, with no separate backend to set up."))}</p>
             <h3 className={s.sdkHeading}>{t("Available SDKs")}</h3>
             <ul className={s.sdkList}>
               {SDKS.map((sdk) => (
@@ -125,7 +134,7 @@ export default async function ProductsJourney() {
           <div>
             <span className={s.stageNumber}>3</span>
             <h2 id="product-sai-play" className={s.productTitle}>Sai Play</h2>
-            <p className={s.productText}>{linkSaiServer(t("Sai Play is where your players live: the player site shared by every game running on Sai Server."))}</p>
+            <p className={s.productText}>{serverLink(t("Sai Play is where your players live: the player site shared by every game running on Sai Server."))}</p>
             <ul className={s.list}>
               {playPoints.map((point) => (
                 <li key={point} className={s.listItem}>{point}</li>
