@@ -1,6 +1,7 @@
 // Top navigation bar (logo, menu with dropdowns, language switcher)
 // Auto-converted from the original saigame.studio markup (Kubio). Keep classNames: the original CSS depends on them.
 import { getI18n } from "@/lib/i18n";
+import LangFlag from "@/components/LangFlag";
 
 export default async function Navigation() {
   const { t, flags } = await getI18n();
@@ -96,7 +97,7 @@ export default async function Navigation() {
                               <a href="#" data-lang={flags.current.code} style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
                                 <span>
                                   <span data-no-translation="">
-                                    <img decoding="async" className="trp-flag-image" src={flags.current.src} width="18" height="12" alt={flags.current.alt} title={flags.current.title} />
+                                    <LangFlag code={flags.current.code} />
                                   </span>
                                 </span>
                                 <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
@@ -107,7 +108,7 @@ export default async function Navigation() {
                                  <li id="menu-item-59" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-59">
                                   <a href="#" data-lang={flags.other.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
                                     <span data-no-translation="">
-                                      <img decoding="async" className="trp-flag-image" src={flags.other.src} width="18" height="12" alt={flags.other.alt} title={flags.other.title} />
+                                      <LangFlag code={flags.other.code} />
                                     </span>
                                   </a>
                                 </li>
