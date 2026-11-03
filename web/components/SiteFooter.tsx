@@ -23,10 +23,10 @@ export default async function SiteFooter() {
       ],
     },
     {
-      title: t("Company"),
+      title: t("Contact Us"),
       links: [
-        { href: "/nguon-goc-sai-game/", label: t("About Us") },
-        { href: "/privacy-policy/", label: t("Privacy Policy") },
+        { href: "/contact-us/", label: t("Contact page") },
+        { href: "mailto:simon@saigame.studio", label: "simon@saigame.studio" },
       ],
     },
     {
@@ -65,6 +65,7 @@ export default async function SiteFooter() {
       </div>
       <div className={s.bottom}>
         <p className={s.copy}>© 2026 SaiGame. {t("All rights reserved.")}</p>
+        <a className={s.link} href="/privacy-policy/">{t("Privacy Policy")}</a>
       </div>
     </footer>
   );
