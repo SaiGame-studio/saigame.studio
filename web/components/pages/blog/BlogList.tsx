@@ -1,14 +1,10 @@
 // /blog/ content: the newest post as a lead story, the rest as a dated list. Dark style shared with /products.
 // Not Kubio markup: styled by Blog.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
-import { BLOG_POSTS, type BlogPost } from "./posts";
+import { BLOG_POSTS } from "./posts";
+import { formatDate, postHref as href } from "./format";
 import s from "./Blog.module.css";
 
-function formatDate(iso: string, lang: string) {
-  return new Intl.DateTimeFormat(lang === "vi" ? "vi-VN" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(iso));
-}
-
-const href = (post: BlogPost) => `/blog/${post.slug}/`;
 
 export default async function BlogList() {
   const { t, lang } = await getI18n();

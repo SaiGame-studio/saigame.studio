@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-sai-game-lore-1/Navigation";
-import Hero from "@/components/pages/post-sai-game-lore-1/Hero";
-import PostContent from "@/components/pages/post-sai-game-lore-1/PostContent";
+import PostBody from "@/components/pages/post-sai-game-lore-1/PostBody";
+import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
@@ -9,16 +9,17 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog/sai-game-lore-1/" },
 };
 
-// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
+// The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostSaiGameLore1Page() {
   return (
     <div data-wp-page="post-sai-game-lore-1" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-single-theme-Zam-Tq5W3-container" data-kubio="kubio/header">
           <Navigation />
-          <Hero />
         </div>
-        <PostContent />
+        <BlogPostLayout slug="sai-game-lore-1">
+          <PostBody />
+        </BlogPostLayout>
         <SiteFooter />
       </div>
     </div>

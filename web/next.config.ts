@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
-// Game pages live at the root like on WordPress (/purgatory/); the menu links to /games/<slug>,
-// which WordPress redirected — keep the same 301s.
+// Game pages live under /games/<slug>/; WordPress served them at the root (/purgatory/).
 const GAME_PAGES: string[] = ["purgatory", "the-immortal", "the-watcher"];
 // Blog posts live under /blog/<slug>/; WordPress served them at the root.
 const BLOG_POSTS: string[] = [
@@ -23,7 +22,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
-      ...GAME_PAGES.map((slug) => ({ source: `/games/${slug}`, destination: `/${slug}/`, permanent: true })),
+      ...GAME_PAGES.map((slug) => ({ source: `/${slug}`, destination: `/games/${slug}/`, permanent: true })),
       ...BLOG_POSTS.map((slug) => ({ source: `/${slug}`, destination: `/blog/${slug}/`, permanent: true })),
       // the Unity Dev Basic course moved to /game-courses/ (old WordPress URLs included)
       { source: "/unity-dev-basic", destination: "/game-courses/", permanent: true },

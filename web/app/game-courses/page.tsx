@@ -1,28 +1,24 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/pages/unity-dev-basic/Navigation";
-import Hero from "@/components/pages/unity-dev-basic/Hero";
-import CourseModules from "@/components/pages/unity-dev-basic/CourseModules";
-import Spacer from "@/components/pages/unity-dev-basic/Spacer";
+import GameCourses from "@/components/pages/unity-dev-basic/GameCourses";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Courses Unity Dev Basic \u2013 SaiGame",
+  title: "Game Courses – SaiGame",
+  description: "Free Unity video courses from SaiGame on YouTube, from C# basics to complete 2D and 3D game projects.",
   alternates: { canonical: "/game-courses/" },
 };
 
-// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
-export default function UnityDevBasicPage() {
+// The Kubio nav keeps the site chrome (this page's scoped Kubio CSS, slug "unity-dev-basic");
+// the content is its own design (components/pages/unity-dev-basic/GameCourses.tsx) and the footer is the shared SiteFooter.
+export default function GameCoursesPage() {
   return (
     <div data-wp-page="unity-dev-basic" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
           <Navigation />
-          <Hero />
         </div>
-        <div className="entry-content wp-block-post-content style--container style-local--container wp-block-kubio-core-post-content__container is-layout-flow wp-block-post-content-is-layout-flow">
-          <CourseModules />
-          <Spacer />
-        </div>
+        <GameCourses />
         <SiteFooter />
       </div>
     </div>

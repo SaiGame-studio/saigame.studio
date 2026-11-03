@@ -62,14 +62,14 @@ export default async function TopGames() {
                 <div className="position-relative wp-block-kubio-column__align style-Vur3ADYeEv-align style-local-34-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                   <figure className="wp-block wp-block-kubio-image position-relative wp-block-kubio-image__outer style-pCwh1N2BX-outer style-local-35-outer size-full align-items-center" data-kubio="kubio/image" id="image-3">
                     <div className="position-relative wp-block-kubio-image__captionContainer style-pCwh1N2BX-captionContainer style-local-35-captionContainer">
-                      <a href="/purgatory" className="position-relative wp-block-kubio-image__ style-pCwh1N2BX- style-local-35-">
+                      <a href="/games/purgatory/" className="position-relative wp-block-kubio-image__ style-pCwh1N2BX- style-local-35-">
                         <div className="position-relative wp-block-kubio-image__frameContainer style-pCwh1N2BX-frameContainer style-local-35-frameContainer">
                           <img fetchPriority="high" decoding="async" width="747" height="748" className="position-relative wp-block-kubio-image__image style-pCwh1N2BX-image style-local-35-image d-flex wp-image-644" alt="" src="/wp-content/uploads/2025/11/store_capsule_vertical-edited.jpg" srcSet="/wp-content/uploads/2025/11/store_capsule_vertical-edited.jpg 747w, /wp-content/uploads/2025/11/store_capsule_vertical-edited-300x300.jpg 300w, /wp-content/uploads/2025/11/store_capsule_vertical-edited-150x150.jpg 150w, /wp-content/uploads/2025/11/store_capsule_vertical-edited-12x12.jpg 12w, /wp-content/uploads/2025/11/store_capsule_vertical-edited-600x601.jpg 600w, /wp-content/uploads/2025/11/store_capsule_vertical-edited-100x100.jpg 100w" sizes="(max-width: 747px) 100vw, 747px" />
                         </div>
                       </a>
                     </div>
                   </figure>
-                  <a href="/purgatory" className="d-block h-link position-relative wp-block-kubio-heading__ style-8NBRiFs-5- style-local-36-">
+                  <a href="/games/purgatory/" className="d-block h-link position-relative wp-block-kubio-heading__ style-8NBRiFs-5- style-local-36-">
                     <h4 className="wp-block wp-block-kubio-heading position-relative wp-block-kubio-heading__text style-8NBRiFs-5-text style-local-36-text" data-kubio="kubio/heading" id="heading-7">Purgatory</h4>
                   </a>
                   <p className="wp-block wp-block-kubio-text position-relative wp-block-kubio-text__text style-GVn8ovXra-text style-local-37-text" data-kubio="kubio/text" id="paragraph-4">{t("a next-generation interactive game designed specifically to connect Streamers and Viewers like never before. This is not just a game; it is a stage for your community to stand shoulder to shoulder, building and fighting for a common goal.")}</p>

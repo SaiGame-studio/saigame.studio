@@ -5,6 +5,8 @@ export type BlogPost = {
   /** ISO date, shown in the visitor's language */
   date: string;
   image?: string;
+  /** the post opens with a video embed: the list still shows the image, the post page skips it */
+  video?: boolean;
   excerpt?: string;
 };
 
@@ -45,18 +47,21 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "sai-rewind-2024-nhat-ky-e3",
+    video: true,
     title: "Sai Rewind 2024 – Nhật ký E3",
     date: "2025-06-01",
     image: "/wp-content/uploads/2025/06/maxresdefault.webp",
   },
   {
     slug: "cu-phot-unity-2023-nhat-ky-e2",
+    video: true,
     title: "Cú phốt Unity 2023 – Nhật Ký – E2",
     date: "2025-06-01",
     image: "/wp-content/uploads/2025/06/maxresdefault.jpg",
   },
   {
     slug: "nguon-goc-sai-game",
+    video: true,
     title: "Nguồn gốc Sai Game – Nhật Ký – E1",
     date: "2025-02-25",
     image: "/wp-content/uploads/2025/02/maxresdefault.jpg",
