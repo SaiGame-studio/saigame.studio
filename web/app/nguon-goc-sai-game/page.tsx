@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-nguon-goc-sai-game/Navigation";
 import Hero from "@/components/pages/post-nguon-goc-sai-game/Hero";
 import PostContent from "@/components/pages/post-nguon-goc-sai-game/PostContent";
-import Footer from "@/components/pages/post-nguon-goc-sai-game/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Ngu\u1ed3n g\u1ed1c Sai Game \u2013 Nh\u1eadt K\u00fd \u2013 E1 \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostNguonGocSaiGamePage() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

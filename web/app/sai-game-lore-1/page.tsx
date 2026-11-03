@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-sai-game-lore-1/Navigation";
 import Hero from "@/components/pages/post-sai-game-lore-1/Hero";
 import PostContent from "@/components/pages/post-sai-game-lore-1/PostContent";
-import Footer from "@/components/pages/post-sai-game-lore-1/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Sai Game Lore #1 \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostSaiGameLore1Page() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

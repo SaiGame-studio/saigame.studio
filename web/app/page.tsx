@@ -6,7 +6,7 @@ import YoutubeCta from "@/components/pages/home/YoutubeCta";
 import GameDevCourses from "@/components/pages/home/GameDevCourses";
 import DiscordAndCourses from "@/components/pages/home/DiscordAndCourses";
 import GithubCta from "@/components/pages/home/GithubCta";
-import Footer from "@/components/pages/home/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "SaiGame",
@@ -29,7 +29,7 @@ export default function HomePage() {
           <DiscordAndCourses />
           <GithubCta />
         </div>
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

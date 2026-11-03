@@ -3,7 +3,8 @@ import { getI18n } from "@/lib/i18n";
 import s from "./SaiServer.module.css";
 import Header from "./Header";
 import SubscribeForm from "./SubscribeForm";
-import { DISCORD_URL, GET_STARTED_URL, LOGO_SRC } from "./links";
+import SiteFooter from "@/components/SiteFooter";
+import { DISCORD_URL, GET_STARTED_URL } from "./links";
 import {
   ArrowRightIcon, CalendarCheckIcon, CloudIcon, DiscordIcon, GemIcon, NetworkIcon, ServerIcon, SlidersIcon, UsersIcon,
 } from "./icons";
@@ -197,70 +198,7 @@ export default async function SaiServerLanding() {
         </section>
       </main>
 
-      <footer id="contact" className={s.footer}>
-        <div className={s.container}>
-          <div className={s.footerGrid}>
-            <div className={s.footerBrand}>
-              <div className={s.footerLogoRow}>
-                <div className={s.footerLogo}>
-                  {/* eslint-disable-next-line @next/next/no-img-element -- static asset served from /public, same as the homepage */}
-                  <img src={LOGO_SRC} alt="Sai Game" width={549} height={425} loading="lazy" decoding="async" />
-                </div>
-                <span className={s.footerName}>SAI STUDIO</span>
-              </div>
-              <p className={s.footerText}>
-                {t("Sai Server is an all-in-one solution that helps game studios manage servers, monitor players, and operate their games professionally.")}
-              </p>
-              <div className={s.socials}>
-                <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" title="Discord" aria-label="Discord">
-                  <DiscordIcon />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h4 className={s.footerHeading}>Sai Server</h4>
-              <ul className={s.footerList}>
-                {["Fleet Management", "Player Monitoring", "LiveOps Economy", "Matchmaking"].map((label) => (
-                  <li key={label}>
-                    <a href="#features" className={s.footerLink}>{t(label)}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className={s.footerHeading}>{t("Community")}</h4>
-              <ul className={s.footerList}>
-                <li>
-                  <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className={`${s.footerLink} ${s.footerLinkDiscord}`}>
-                    <DiscordIcon />
-                    {t("Discord Server")}
-                  </a>
-                </li>
-                <li><a href="/blog/" className={s.footerLink}>{t("Blog")}</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className={s.footerHeading}>{t("Company")}</h4>
-              <ul className={s.footerList}>
-                <li><a href="/nguon-goc-sai-game/" className={s.footerLink}>{t("About Us")}</a></li>
-                <li><a href="/games/" className={s.footerLink}>{t("Games")}</a></li>
-                <li><a href="/courses/" className={s.footerLink}>{t("Courses")}</a></li>
-                <li><a href="/privacy-policy/" className={s.footerLink}>{t("Privacy Policy")}</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className={s.footerBottom}>
-            <span>© {new Date().getFullYear()} SAI STUDIO. {t("All rights reserved.")}</span>
-            <div className={s.footerBottomLinks}>
-              <a href="/privacy-policy/">{t("Privacy")}</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

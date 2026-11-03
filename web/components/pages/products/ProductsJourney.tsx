@@ -9,8 +9,7 @@ const SAI_PLAY_URL = "https://play.saigame.studio/";
 const TUTORIAL_URL = "https://server.saigame.studio/tutorials/basic/get-started/create-a-studio";
 // client SDKs for building games on Sai Server; more engines will be added here
 const SDKS = [{ name: "Unity SDK", href: "https://github.com/SaiGame-studio/ss-unity/releases" }];
-// sample content for the illustrative Sai Play panel: SaiGame's own games, a made-up balance
-const SAMPLE_GAMES = ["Purgatory", "The Immortal", "The Watcher"];
+// sample balance for the illustrative Sai Play panel
 const SAMPLE_SGEM = "1,250";
 
 function Arrow() {
@@ -36,6 +35,7 @@ export default async function ProductsJourney() {
     { id: "step-sai-play", title: t("Players land on Sai Play"), text: t("Players sign in with one Sai account and see their games and sGem balance in one place.") },
   ];
   const serverPoints = [t("Studios and team members"), t("Games and their game servers"), t("Docs and step-by-step tutorials")];
+  const playPoints = [t("Player accounts and sGem balance"), t("Game shops"), t("In-app purchases (IAP) for your game")];
 
   return (
     <div className={s.page}>
@@ -121,26 +121,29 @@ export default async function ProductsJourney() {
             <span className={s.stageNumber}>3</span>
             <h2 id="product-sai-play" className={s.productTitle}>Sai Play</h2>
             <p className={s.productText}>{t("Sai Play is where your players live: the player site shared by every game running on Sai Server.")}</p>
+            <ul className={s.list}>
+              {playPoints.map((point) => (
+                <li key={point} className={s.listItem}>{point}</li>
+              ))}
+            </ul>
             <a className={s.button} href={SAI_PLAY_URL}>
               {t("Visit Sai Play")} <Arrow />
             </a>
           </div>
           <figure className={s.media}>
-            <div className={s.account} role="img" aria-label={t("Illustration of a Sai Play account: played games and an sGem balance")}>
+            <div className={s.account} role="img" aria-label={t("Illustration of a Sai Play player account: an sGem balance, game shops and in-app purchases")}>
               <div className={s.accountHead}>
-                <span className={s.avatar} aria-hidden="true">S</span>
-                <span className={s.accountName}>{t("Sai account")}</span>
+                <span className={s.avatar} aria-hidden="true">P</span>
+                <span className={s.accountName}>{t("Player Account")}</span>
               </div>
               <div className={s.balance}>
                 <img className={s.gem} src="/images/products/sgem.svg" width={40} height={40} alt="" />
                 <span className={s.balanceValue}>{SAMPLE_SGEM}</span>
                 <span className={s.balanceLabel}>sGem</span>
               </div>
-              <p className={s.accountLabel}>{t("Games played")}</p>
-              <ul className={s.games}>
-                {SAMPLE_GAMES.map((game) => (
-                  <li key={game} className={s.game}>{game}</li>
-                ))}
+              <ul className={s.features}>
+                <li className={s.feature}>{t("Game Shops")}</li>
+                <li className={s.feature}>{t("In-App Purchases")}</li>
               </ul>
             </div>
           </figure>

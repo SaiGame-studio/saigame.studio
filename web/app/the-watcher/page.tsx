@@ -4,7 +4,7 @@ import Hero from "@/components/pages/the-watcher/Hero";
 import GameOverview from "@/components/pages/the-watcher/GameOverview";
 import GameFeatures from "@/components/pages/the-watcher/GameFeatures";
 import Spacer from "@/components/pages/the-watcher/Spacer";
-import Footer from "@/components/pages/the-watcher/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "The Watcher \u2013 SaiGame",
@@ -25,7 +25,7 @@ export default function TheWatcherPage() {
           <GameFeatures />
           <Spacer />
         </div>
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

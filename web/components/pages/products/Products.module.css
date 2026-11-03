@@ -346,6 +346,23 @@
   color: var(--muted);
 }
 
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature {
+  padding: 10px 0;
+  font-weight: 700;
+  border-bottom: 1px solid var(--line);
+}
+
+.feature:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 /* SDK list under step 2 */
 .sdkHeading {
   margin: 28px 0 12px;
@@ -443,27 +460,9 @@
   font-weight: 700;
 }
 
-.accountLabel {
-  margin: 0 0 10px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--muted);
-}
 
-.games {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
-.game {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-}
 
-.game:last-child {
-  border-bottom: 0;
-}
 
 
 /* closing */

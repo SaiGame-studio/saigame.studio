@@ -4,7 +4,7 @@ import Hero from "@/components/pages/purgatory/Hero";
 import GameOverview from "@/components/pages/purgatory/GameOverview";
 import GameFeatures from "@/components/pages/purgatory/GameFeatures";
 import Spacer from "@/components/pages/purgatory/Spacer";
-import Footer from "@/components/pages/purgatory/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Purgatory \u2013 SaiGame",
@@ -25,7 +25,7 @@ export default function PurgatoryPage() {
           <GameFeatures />
           <Spacer />
         </div>
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

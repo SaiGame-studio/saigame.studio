@@ -4,7 +4,7 @@ import Hero from "@/components/pages/the-immortal/Hero";
 import GameOverview from "@/components/pages/the-immortal/GameOverview";
 import GameFeatures from "@/components/pages/the-immortal/GameFeatures";
 import Spacer from "@/components/pages/the-immortal/Spacer";
-import Footer from "@/components/pages/the-immortal/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "The Immortal \u2013 SaiGame",
@@ -25,7 +25,7 @@ export default function TheImmortalPage() {
           <GameFeatures />
           <Spacer />
         </div>
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

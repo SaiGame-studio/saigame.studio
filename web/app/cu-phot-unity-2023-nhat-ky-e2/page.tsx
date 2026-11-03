@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-cu-phot-unity-2023/Navigation";
 import Hero from "@/components/pages/post-cu-phot-unity-2023/Hero";
 import PostContent from "@/components/pages/post-cu-phot-unity-2023/PostContent";
-import Footer from "@/components/pages/post-cu-phot-unity-2023/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "C\u00fa ph\u1ed1t Unity 2023 \u2013 Nh\u1eadt K\u00fd \u2013 E2 \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostCuPhotUnity2023Page() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

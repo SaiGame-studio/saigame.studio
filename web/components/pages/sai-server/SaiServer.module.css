@@ -85,7 +85,7 @@
   transition: box-shadow 0.15s, transform 0.15s;
 }
 .root .brand:hover .logoBox { box-shadow: 0 8px 14px -3px rgba(15, 23, 42, 0.35); transform: translateY(-1px); }
-.root .logoBox img, .root .footerLogo img { display: block; width: 100%; height: 100%; object-fit: contain; max-width: none; border: 0; box-shadow: none; }
+.root .logoBox img { display: block; width: 100%; height: 100%; object-fit: contain; max-width: none; border: 0; box-shadow: none; }
 .root .brandText { display: flex; flex-direction: column; }
 .root .brandName { font-weight: 800; font-size: 20px; line-height: 28px; letter-spacing: -0.025em; color: var(--s900); }
 .root .brandTag {
@@ -358,39 +358,6 @@
   transition: background-color 0.15s;
 }
 .root .btnSubmit:hover { color: #fff; background: var(--brand-500); }
-
-/* ---------- footer ---------- */
-.root .footer { padding: 64px 0 48px; background: var(--s50); border-top: 1px solid var(--line-strong); font-size: 14px; line-height: 20px; color: var(--s600); }
-.root .footerGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-bottom: 48px; }
-@media (min-width: 768px) { .root .footerGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-.root .footerBrand { grid-column: span 2 / span 2; }
-.root .footerLogoRow { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.root .footerLogo {
-  width: 62px; height: 48px; border-radius: 10px; overflow: hidden; padding: 3px 4px;
-  background: linear-gradient(145deg, #475569, var(--s900));
-  display: flex; align-items: center; justify-content: center;
-}
-.root .footerName { font-size: 18px; line-height: 28px; font-weight: 800; letter-spacing: -0.025em; color: var(--s900); }
-.root .footerText { max-width: 384px; line-height: 1.625; color: var(--s500); margin-bottom: 24px; }
-.root .socials { display: flex; gap: 16px; color: var(--s500); }
-.root .socials a { transition: color 0.15s; }
-.root .socials a:hover { color: var(--discord-500); }
-.root .socials svg { width: 20px; height: 20px; }
-.root .footerHeading { font-weight: 700; color: var(--s900); margin-bottom: 16px; }
-.root .footerList { display: flex; flex-direction: column; gap: 10px; }
-.root .footerLink { color: var(--s600); transition: color 0.15s; }
-.root .footerLink:hover { color: var(--brand-600); }
-.root .footerLinkDiscord { display: inline-flex; align-items: center; gap: 6px; }
-.root .footerLinkDiscord svg { width: 12px; height: 12px; }
-.root .footerLinkDiscord:hover { color: var(--discord-500); }
-.root .footerBottom {
-  display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 16px;
-  padding-top: 32px; border-top: 1px solid var(--line-strong);
-  font-size: 12px; line-height: 16px; color: var(--s500);
-}
-@media (min-width: 640px) { .root .footerBottom { flex-direction: row; } }
-.root .footerBottomLinks { display: flex; gap: 24px; }
-.root .footerBottomLinks a:hover { text-decoration: underline; }
 
 /* ---------- toast ---------- */
 .root .toast {

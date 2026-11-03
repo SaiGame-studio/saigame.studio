@@ -155,9 +155,6 @@
  "A developer working on Sai Server at a desk with several monitors": "Một lập trình viên làm việc với Sai Server bên bàn nhiều màn hình",
  "Sai Play is where your players live: the player site shared by every game running on Sai Server.": "Sai Play là nơi dành cho người chơi của bạn: trang người chơi dùng chung cho mọi game chạy trên Sai Server.",
  "Sai Server gives your studio one console for your team, your games and the game servers they run on.": "Sai Server cho studio của bạn một bảng điều khiển duy nhất cho đội ngũ, các game và game server mà chúng chạy trên đó.",
- "Illustration of a Sai Play account: played games and an sGem balance": "Minh họa một tài khoản Sai Play: các game đã chơi và số dư sGem",
- "Sai account": "Tài khoản Sai",
- "Games played": "Game đã chơi",
  "Ready to run your game on Sai Server?": "Sẵn sàng vận hành game của bạn trên Sai Server?",
  "Set up your studio on Sai Server": "Thiết lập studio trên Sai Server",
  "Players sign in with one Sai account and see their games and sGem balance in one place.": "Người chơi đăng nhập bằng một tài khoản Sai và xem các game cùng số dư sGem ở cùng một nơi.",
@@ -169,5 +166,15 @@
  "Read the get-started tutorial": "Đọc hướng dẫn bắt đầu",
  "Game Courses": "Khóa Học Game",
  "Your players": "Người chơi của bạn",
- "land on": "đến với"
+ "land on": "đến với",
+ "Explore": "Khám phá",
+ "SaiGame makes games and the platform to run them.": "SaiGame làm game và nền tảng để vận hành game.",
+ "Footer": "Chân trang",
+ "Player Account": "Tài khoản người chơi",
+ "Game Shops": "Cửa hàng game",
+ "Player accounts and sGem balance": "Tài khoản người chơi và số dư sGem",
+ "Game shops": "Cửa hàng game",
+ "In-app purchases (IAP) for your game": "Mua hàng trong game (IAP) cho game của bạn",
+ "In-App Purchases": "Mua hàng trong game (IAP)",
+ "Illustration of a Sai Play player account: an sGem balance, game shops and in-app purchases": "Minh họa tài khoản người chơi Sai Play: số dư sGem, cửa hàng game và mua hàng trong game"
 }

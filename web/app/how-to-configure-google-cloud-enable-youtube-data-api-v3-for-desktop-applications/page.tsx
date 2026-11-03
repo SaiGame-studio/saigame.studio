@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-google-cloud-youtube-api/Navigation";
 import Hero from "@/components/pages/post-google-cloud-youtube-api/Hero";
 import PostContent from "@/components/pages/post-google-cloud-youtube-api/PostContent";
-import Footer from "@/components/pages/post-google-cloud-youtube-api/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "How to Configure Google Cloud & Enable YouTube Data API v3 (for Desktop Applications) \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostGoogleCloudYoutubeApiPage() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

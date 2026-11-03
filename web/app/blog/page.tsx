@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/blog/Navigation";
 import Hero from "@/components/pages/blog/Hero";
 import BlogPosts from "@/components/pages/blog/BlogPosts";
-import Footer from "@/components/pages/blog/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Blog \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function BlogPage() {
           <Hero />
         </div>
         <BlogPosts />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

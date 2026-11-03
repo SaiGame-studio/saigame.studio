@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-purgatory-game-tutorial/Navigation";
 import Hero from "@/components/pages/post-purgatory-game-tutorial/Hero";
 import PostContent from "@/components/pages/post-purgatory-game-tutorial/PostContent";
-import Footer from "@/components/pages/post-purgatory-game-tutorial/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Purgatory \u2013 Game Tutorial \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostPurgatoryGameTutorialPage() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

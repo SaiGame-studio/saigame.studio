@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-sai-rewind-2024/Navigation";
 import Hero from "@/components/pages/post-sai-rewind-2024/Hero";
 import PostContent from "@/components/pages/post-sai-rewind-2024/PostContent";
-import Footer from "@/components/pages/post-sai-rewind-2024/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Sai Rewind 2024 \u2013 Nh\u1eadt k\u00fd E3 \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostSaiRewind2024Page() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

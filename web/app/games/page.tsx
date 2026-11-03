@@ -4,7 +4,7 @@ import Hero from "@/components/pages/games/Hero";
 import PurgatoryCard from "@/components/pages/games/PurgatoryCard";
 import TheImmortalCard from "@/components/pages/games/TheImmortalCard";
 import TheWatcherCard from "@/components/pages/games/TheWatcherCard";
-import Footer from "@/components/pages/games/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Games \u2013 SaiGame",
@@ -25,7 +25,7 @@ export default function GamesPage() {
           <TheImmortalCard />
           <TheWatcherCard />
         </div>
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

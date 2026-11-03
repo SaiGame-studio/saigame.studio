@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-thu-thach-lam-game/Navigation";
 import Hero from "@/components/pages/post-thu-thach-lam-game/Hero";
 import PostContent from "@/components/pages/post-thu-thach-lam-game/PostContent";
-import Footer from "@/components/pages/post-thu-thach-lam-game/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Th\u1eed Th\u00e1ch L\u00e0m Game \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostThuThachLamGamePage() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

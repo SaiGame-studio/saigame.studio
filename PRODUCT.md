@@ -29,6 +29,7 @@ Sai Server and Sai Play share one backend (`ss-go`) and one account: a game buil
 - Verified Sai Server areas (studio site routes): studios, teams, games, servers, payment, docs, tutorials, roadmap. API roles: Super admin, Studio owner, Studio member, Provider, Player.
 - Sai Server landing (`/sai-server/`) states: game server fleet management, backend logic written in Lua inside Unity, and more (see `web/components/pages/sai-server/SaiServerLanding.tsx`).
 - Sai Play: SSO with the studio site via a shared refresh cookie on `.saigame.studio`; sGem is the in-system currency.
+- Sai Play also offers game shops and in-app purchases (IAP) for games on Sai Server (confirmed by the user).
 - Site stack: Next.js 16 (App Router) rebuild of a WordPress/Kubio site; pages keep Kubio markup and per-page scoped CSS. `/sai-server/` is the exception, with its own CSS module design.
 - Bilingual EN/VI: every visible string goes through `t()` with Vietnamese in `web/i18n/vi.extra.json` and `web/i18n/vi.json`.
 - Engine-neutral copy: say "SDK" generically (never "Sai SDK" or "Sai Unity SDK") and never present Sai Server as Unity-only; Sai Server is planned to integrate with more game engines. Engines appear only in an SDK list, currently one entry: Unity SDK (https://github.com/SaiGame-studio/ss-unity/releases).

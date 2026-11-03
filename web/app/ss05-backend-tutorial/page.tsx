@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/pages/post-ss05-backend-tutorial/Navigation";
 import Hero from "@/components/pages/post-ss05-backend-tutorial/Hero";
 import PostContent from "@/components/pages/post-ss05-backend-tutorial/PostContent";
-import Footer from "@/components/pages/post-ss05-backend-tutorial/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Purgatory \u2013 Backend Tutorial \u2013 SaiGame",
@@ -19,7 +19,7 @@ export default function PostSs05BackendTutorialPage() {
           <Hero />
         </div>
         <PostContent />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Navigation from "@/components/pages/unity-dev-basic/Navigation";
 import Hero from "@/components/pages/unity-dev-basic/Hero";
 import CourseModules from "@/components/pages/unity-dev-basic/CourseModules";
 import Spacer from "@/components/pages/unity-dev-basic/Spacer";
-import Footer from "@/components/pages/unity-dev-basic/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Courses Unity Dev Basic \u2013 SaiGame",
@@ -23,7 +23,7 @@ export default function UnityDevBasicPage() {
           <CourseModules />
           <Spacer />
         </div>
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );

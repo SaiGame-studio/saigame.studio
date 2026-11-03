@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/pages/products/Navigation";
 import ProductsJourney from "@/components/pages/products/ProductsJourney";
-import Footer from "@/components/pages/products/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Products – SaiGame",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/products/" },
 };
 
-// The Kubio nav and footer keep the site chrome (CSS copied from the games page, tools/build_global_styles.py);
+// The Kubio nav keeps the site chrome (CSS copied from the games page, tools/build_global_styles.py), the footer is the shared SiteFooter;
 // the content between them is its own design (components/pages/products/ProductsJourney.tsx).
 export default function ProductsPage() {
   return (
@@ -19,7 +19,7 @@ export default function ProductsPage() {
           <Navigation />
         </div>
         <ProductsJourney />
-        <Footer />
+        <SiteFooter />
       </div>
     </div>
   );
