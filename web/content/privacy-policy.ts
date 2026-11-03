@@ -1,12 +1,11 @@
-// Privacy Policy content (EN / VI / JA; the Japanese text lives in privacy-policy-ja.ts). Rendered by components/pages/privacy-policy/PrivacyPolicyContent.tsx.
+// Privacy Policy content (EN / VI / JA; the Japanese text lives in privacy-policy-ja.ts). Rendered by components/pages/privacy-policy/PrivacyPolicy.tsx.
 // Inline links use the form [label](url); **text** is bold.
 //
-// TODO before publishing: set CONTACT_EMAIL to a mailbox that receives privacy requests.
 import type { Lang } from "@/lib/lang";
 import { ja } from "./privacy-policy-ja";
 
 export const LAST_UPDATED: Record<Lang, string> = { en: "October 14, 2026", vi: "14/10/2026", ja: "2026年10月14日" };
-export const CONTACT_EMAIL = ""; // e.g. "privacy@saigame.studio" — the contact line is hidden while empty
+export const CONTACT_EMAIL = "simon@saigame.studio"; // section 12 links it directly
 export const DISCORD_URL = "https://discord.gg/UU3YarmVde";
 
 export type Block =
@@ -82,7 +81,7 @@ const en: Block[] = [
   { type: "p", text: "We may update this policy as our games and services evolve or when the law changes. The \"last updated\" date below shows when it was last revised; for significant changes we will provide a more visible notice." },
 
   { type: "h2", text: "12. Contact us" },
-  { type: "p", text: "For any question or request about your personal data, contact SaiGame through our [Discord server](DISCORD_URL){{EMAIL}}." },
+  { type: "p", text: "For any question or request about your personal data, contact SaiGame by email at [simon@saigame.studio](mailto:simon@saigame.studio)." },
 ];
 
 const vi: Block[] = [
@@ -153,7 +152,7 @@ const vi: Block[] = [
   { type: "p", text: "Chúng tôi có thể cập nhật chính sách này khi game, dịch vụ hoặc quy định pháp luật thay đổi. Ngày \"cập nhật lần cuối\" bên dưới cho biết thời điểm sửa đổi gần nhất; với các thay đổi quan trọng, chúng tôi sẽ thông báo rõ ràng hơn." },
 
   { type: "h2", text: "12. Liên hệ" },
-  { type: "p", text: "Mọi câu hỏi hoặc yêu cầu liên quan đến dữ liệu cá nhân của bạn, vui lòng liên hệ SaiGame qua [Discord server](DISCORD_URL){{EMAIL}}." },
+  { type: "p", text: "Mọi câu hỏi hoặc yêu cầu liên quan đến dữ liệu cá nhân của bạn, vui lòng liên hệ SaiGame qua email [simon@saigame.studio](mailto:simon@saigame.studio)." },
 ];
 
 export const PRIVACY_POLICY: Record<Lang, Block[]> = { en, vi, ja };

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/post-sai-rewind-2024/Navigation";
+import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-sai-rewind-2024/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
 import SiteFooter from "@/components/SiteFooter";
@@ -15,7 +15,7 @@ export default function PostSaiRewind2024Page() {
     <div data-wp-page="post-sai-rewind-2024" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-single-theme-Zam-Tq5W3-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="post-sai-rewind-2024" active="blog" />
         </div>
         <BlogPostLayout slug="sai-rewind-2024-nhat-ky-e3">
           <PostBody />
