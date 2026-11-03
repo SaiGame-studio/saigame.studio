@@ -12,7 +12,7 @@ export default async function GamesList() {
     <div className={s.page}>
       <section className={`${s.listHero} h-navigation-padding`} aria-labelledby="games-title">
         <div className={s.wrap}>
-          <h1 id="games-title" className={s.title}>Games</h1>
+          <h1 id="games-title" className={s.title}>{t("Games")}</h1>
           <p className={s.lead}>{t("Games made by the SaiGame team, available on Steam.")}</p>
         </div>
       </section>

@@ -3,18 +3,21 @@
 import { cache } from "react";
 import { cookies } from "next/headers";
 import vi from "@/i18n/vi.json";
-import { LANG_COOKIE, type Lang } from "@/lib/lang";
+import ja from "@/i18n/ja.json";
+import { LANG_COOKIE, LANGS, isLang, type Lang } from "@/lib/lang";
 
-const DICTIONARIES: Record<Lang, Record<string, string>> = { en: {}, vi };
+const DICTIONARIES: Record<Lang, Record<string, string>> = { en: {}, vi, ja };
 
-// TranslatePress flags of the original site
-const FLAGS: Record<Lang, { code: Lang; src: string; alt: string; title: string }> = {
-  en: { code: "en", src: "/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png", alt: "en_US", title: "English" },
-  vi: { code: "vi", src: "/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png", alt: "vi", title: "Tiếng Việt" },
+/** the languages offered by the top-menu switcher; the flag icon is drawn by components/LangFlag.tsx */
+const FLAGS: Record<Lang, { code: Lang; title: string }> = {
+  en: { code: "en", title: "English" },
+  vi: { code: "vi", title: "Tiếng Việt" },
+  ja: { code: "ja", title: "日本語" },
 };
 
 export const getLang = cache(async (): Promise<Lang> => {
-  return (await cookies()).get(LANG_COOKIE)?.value === "vi" ? "vi" : "en";
+  const value = (await cookies()).get(LANG_COOKIE)?.value;
+  return isLang(value) ? value : "en";
 });
 
 /** Per-request translator: t(englishText) -> text in the visitor's language (falls back to English). */
@@ -22,6 +25,6 @@ export const getI18n = cache(async () => {
   const lang = await getLang();
   const dict = DICTIONARIES[lang];
   const t = (en: string) => dict[en] ?? en;
-  const other: Lang = lang === "vi" ? "en" : "vi";
-  return { lang, t, flags: { current: FLAGS[lang], other: FLAGS[other] } };
+  const others = LANGS.filter((code) => code !== lang).map((code) => FLAGS[code]);
+  return { lang, t, flags: { current: FLAGS[lang], others } };
 });

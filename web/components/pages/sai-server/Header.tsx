@@ -4,20 +4,21 @@ import { useState } from "react";
 import s from "./SaiServer.module.css";
 import { CloseIcon, DiscordIcon, MenuIcon } from "./icons";
 import { DISCORD_URL, GET_STARTED_URL, LOGO_SRC } from "./links";
+import { LANGS, type Lang } from "@/lib/lang";
 
 type NavItem = { href: string; label: string; active?: boolean };
 
 type Props = {
-  lang: "en" | "vi";
+  lang: Lang;
   nav: NavItem[];
   labels: { community: string; discord: string; discordCommunity: string; joinDiscord: string; getStarted: string; toggleMenu: string };
 };
 
 // Language links reuse the site's mechanism: ClientRouter handles clicks on [data-lang].
-function LangSwitch({ lang }: { lang: "en" | "vi" }) {
+function LangSwitch({ lang }: { lang: Lang }) {
   return (
     <div className={s.lang}>
-      {(["en", "vi"] as const).map((code) => (
+      {LANGS.map((code) => (
         <a key={code} href="#" data-lang={code} className={`${s.langLink} ${lang === code ? s.langActive : ""}`} aria-current={lang === code ? "true" : undefined}>
           {code.toUpperCase()}
         </a>

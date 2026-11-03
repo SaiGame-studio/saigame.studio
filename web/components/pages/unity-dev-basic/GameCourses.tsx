@@ -1,6 +1,7 @@
 // /game-courses/ content: the Unity Dev Basic course and its five YouTube series, in the dark style of /products.
 // Not Kubio markup: styled by GameCourses.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
+import { fill } from "@/lib/fill";
 import s from "./GameCourses.module.css";
 
 const YOUTUBE_CHANNEL = "https://www.youtube.com/@SaiGame";
@@ -32,7 +33,7 @@ export default async function GameCourses() {
         <div className={`${s.wrap} ${s.heroGrid}`}>
           <div>
             <h1 id="courses-title" className={s.title}>
-              {t("Learn to make games with")} <span className={s.accent}>Unity</span>.
+              {fill(t("Learn to make games with {unity}."), { unity: <span className={s.accent}>Unity</span> })}
             </h1>
             <p className={s.lead}>{t("Free video courses from SaiGame on YouTube, from your first line of C# to complete 2D and 3D game projects.")}</p>
             <div className={s.actions}>

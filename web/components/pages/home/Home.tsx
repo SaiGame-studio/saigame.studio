@@ -1,6 +1,7 @@
 // Homepage content in the site's dark style (/products, /games, /blog): hero, games, products, courses, blog, community.
 // Not Kubio markup: styled by Home.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
+import { fill } from "@/lib/fill";
 import { linkSaiServer } from "@/components/SaiServerLink";
 import { GAMES, gameHref } from "@/components/pages/games/games";
 import { BLOG_POSTS } from "@/components/pages/blog/posts";
@@ -33,7 +34,7 @@ export default async function Home() {
         <img className={s.heroImage} src={HERO_IMAGE} alt="" decoding="async" fetchPriority="high" />
         <div className={`${s.wrap} ${s.heroInner}`}>
           <h1 id="home-title" className={s.title}>
-            {t("It's not the destination,")} <span className={s.titleLine}>{t("but the")} <span className={s.accent}>{t("journey")}</span>.</span>
+            {t("It's not the destination,")} <span className={s.titleLine}>{fill(t("but the {journey}."), { journey: <span className={s.accent}>{t("journey")}</span> })}</span>
           </h1>
           <p className={s.lead}>{linkSaiServer(t("SaiGame makes games, teaches game development, and builds Sai Server, the platform to run them."))}</p>
           <div className={s.actions}>

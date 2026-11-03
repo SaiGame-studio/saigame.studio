@@ -1,6 +1,7 @@
 // /contact-us content: the ways to reach SaiGame, in the dark style of /products.
 // Not Kubio markup: styled by Contact.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
+import { fill } from "@/lib/fill";
 import { linkSaiServer } from "@/components/SaiServerLink";
 import s from "./Contact.module.css";
 
@@ -48,7 +49,7 @@ export default async function ContactContent() {
         <div className={`${s.wrap} ${s.heroGrid}`}>
           <div>
             <h1 id="contact-title" className={s.title}>
-              {t("Let's talk about")} <span className={s.accent}>{t("your game")}</span>.
+              {fill(t("Let's talk about {game}."), { game: <span className={s.accent}>{t("your game")}</span> })}
             </h1>
             <p className={s.lead}>{t("Whether you run a studio, play our games or want to work with us, write to us. We read every message.")}</p>
           </div>

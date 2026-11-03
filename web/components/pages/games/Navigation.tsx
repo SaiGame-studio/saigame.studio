@@ -61,7 +61,7 @@ export default async function Navigation() {
                             </li>
                              <li id="menu-item-37" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-has-children menu-item-37">
                               <a href="/games" aria-current="page" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>
-                                <span>Games</span>
+                                <span>{t("Games")}</span>
                                 <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
                                    <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
                                 </svg>
@@ -85,7 +85,7 @@ export default async function Navigation() {
                               <a href="/game-courses/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Game Courses")}</a>
                             </li>
                              <li id="menu-item-18" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-18">
-                              <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>Blog</a>
+                              <a href="/blog" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Blog")}</a>
                             </li>
                              <li id="menu-item-careers" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-careers">
                               <a href="/careers/" style={{ "--kubio-menu-item-depth": "0" } as React.CSSProperties}>{t("Careers")}</a>
@@ -105,13 +105,15 @@ export default async function Navigation() {
                                 </svg>
                               </a>
                                <ul className="sub-menu">
-                                 <li id="menu-item-59" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-59">
-                                  <a href="#" data-lang={flags.other.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
-                                    <span data-no-translation="">
-                                      <LangFlag code={flags.other.code} />
-                                    </span>
-                                  </a>
-                                </li>
+                                 {flags.others.map((lang) => (
+                                   <li key={lang.code} id={`menu-item-lang-${lang.code}`} className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-lang">
+                                    <a href="#" data-lang={lang.code} style={{ "--kubio-menu-item-depth": "1" } as React.CSSProperties}>
+                                      <span data-no-translation="">
+                                        <LangFlag code={lang.code} />
+                                      </span>
+                                    </a>
+                                  </li>
+                                 ))}
                                </ul>
                              </li>
                            </ul>

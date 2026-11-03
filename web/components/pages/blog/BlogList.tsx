@@ -14,7 +14,7 @@ export default async function BlogList() {
     <div className={s.page}>
       <section className={`${s.hero} h-navigation-padding`} aria-labelledby="blog-title">
         <div className={s.wrap}>
-          <h1 id="blog-title" className={s.title}>Blog</h1>
+          <h1 id="blog-title" className={s.title}>{t("Blog")}</h1>
           <p className={s.lead}>{t("Devlogs, lore and tutorials from the SaiGame team.")}</p>
 
           <article className={lead.image ? s.leadPost : `${s.leadPost} ${s.leadPostText}`}>

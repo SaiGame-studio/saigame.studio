@@ -13,7 +13,7 @@ export default async function GameLayout({ slug, children }: { slug: string; chi
       <section className={`${s.detailHero} h-navigation-padding`} aria-labelledby="game-title">
         <div className={s.wrap}>
           <a className={s.back} href="/games/">
-            <Arrow back /> Games
+            <Arrow back /> {t("Games")}
           </a>
           <div className={s.detailGrid}>
             <img className={s.coverStatic} src={game.cover} alt="" decoding="async" />

@@ -26,7 +26,7 @@ export default async function BlogPostLayout({ slug, children }: { slug: string;
       <article className="h-navigation-padding" aria-labelledby="post-title">
         <header className={`${s.wrap} ${s.header}`}>
           <a className={s.back} href="/blog/">
-            <Arrow back /> Blog
+            <Arrow back /> {t("Blog")}
           </a>
           <time className={s.date} dateTime={post.date}>{formatDate(post.date, lang)}</time>
           <h1 id="post-title" className={s.title}>{post.title}</h1>

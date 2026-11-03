@@ -1,6 +1,7 @@
 // /careers/ content: open positions at SaiGame, currently the Intern Game Dev post. Dark style shared with /products.
 // Not Kubio markup: styled by Careers.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
+import { fill } from "@/lib/fill";
 import { linkSaiServer } from "@/components/SaiServerLink";
 import s from "./Careers.module.css";
 
@@ -43,7 +44,7 @@ export default async function Careers() {
     t("Write your CV in Google Docs and share it as a link that can be viewed online. Offline files are not accepted."),
     t("Prepare one link that gathers your Git repositories and the YouTube demo videos of your 3 solo games."),
     <>
-      {t("Send both to")} <a href={`mailto:${EMAIL}`}>{EMAIL}</a> {t("with the subject")} <code>[SaiGame] Intern Game Dev - {t("Full Name")}</code>
+      {fill(t("Send both to {email} with the subject {subject}"), { email: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>, subject: <code>[SaiGame] Intern Game Dev - {t("Full Name")}</code> })}
     </>,
   ];
 

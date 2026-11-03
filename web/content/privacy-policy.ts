@@ -1,8 +1,11 @@
-// Privacy Policy content (EN / VI). Rendered by components/pages/privacy-policy/PrivacyPolicyContent.tsx.
+// Privacy Policy content (EN / VI / JA; the Japanese text lives in privacy-policy-ja.ts). Rendered by components/pages/privacy-policy/PrivacyPolicyContent.tsx.
 // Inline links use the form [label](url); **text** is bold.
 //
 // TODO before publishing: set CONTACT_EMAIL to a mailbox that receives privacy requests.
-export const LAST_UPDATED = { en: "October 14, 2026", vi: "14/10/2026" };
+import type { Lang } from "@/lib/lang";
+import { ja } from "./privacy-policy-ja";
+
+export const LAST_UPDATED: Record<Lang, string> = { en: "October 14, 2026", vi: "14/10/2026", ja: "2026年10月14日" };
 export const CONTACT_EMAIL = ""; // e.g. "privacy@saigame.studio" — the contact line is hidden while empty
 export const DISCORD_URL = "https://discord.gg/UU3YarmVde";
 
@@ -153,8 +156,9 @@ const vi: Block[] = [
   { type: "p", text: "Mọi câu hỏi hoặc yêu cầu liên quan đến dữ liệu cá nhân của bạn, vui lòng liên hệ SaiGame qua [Discord server](DISCORD_URL){{EMAIL}}." },
 ];
 
-export const PRIVACY_POLICY: Record<"en" | "vi", Block[]> = { en, vi };
+export const PRIVACY_POLICY: Record<Lang, Block[]> = { en, vi, ja };
 export const LABELS = {
   en: { lastUpdated: "Last updated", email: " or by email at " },
   vi: { lastUpdated: "Cập nhật lần cuối", email: " hoặc qua email " },
+  ja: { lastUpdated: "最終更新日", email: "、またはメール " },
 };

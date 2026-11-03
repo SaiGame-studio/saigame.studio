@@ -2,6 +2,7 @@
 // Not Kubio markup: styled by Products.module.css; the page keeps the site's Kubio nav and footer around it.
 // The sections below the hero continue the three steps, each opening on its step's rule colour.
 import { getI18n } from "@/lib/i18n";
+import { fill } from "@/lib/fill";
 import { linkSaiServer } from "@/components/SaiServerLink";
 import s from "./Products.module.css";
 
@@ -44,10 +45,13 @@ export default async function ProductsJourney() {
         <div className={`${s.wrap} ${s.heroInner}`}>
           <h1 id="products-title" className={s.title}>
             <span className={s.titleLine}>
-              {t("Build on")} <span className={`${s.productName} ${s.nameServer}`}>Sai Server</span>.
+              {fill(t("Build on {server}."), { server: <span className={`${s.productName} ${s.nameServer}`}>Sai Server</span> })}
             </span>
             <span className={s.titleLine}>
-              <span className={`${s.productName} ${s.namePlayers}`}>{t("Your players")}</span> {t("land on")} <span className={`${s.productName} ${s.namePlay}`}>Sai Play</span>.
+              {fill(t("{players} land on {play}."), {
+                players: <span className={`${s.productName} ${s.namePlayers}`}>{t("Your players")}</span>,
+                play: <span className={`${s.productName} ${s.namePlay}`}>Sai Play</span>,
+              })}
             </span>
           </h1>
           <p className={s.lead}>{linkSaiServer(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>

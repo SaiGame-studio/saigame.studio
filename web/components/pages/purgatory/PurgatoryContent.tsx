@@ -1,5 +1,6 @@
 // Purgatory's own content on /games/purgatory/, rendered inside GameLayout (copy from the original page).
 import { getI18n } from "@/lib/i18n";
+import { fill } from "@/lib/fill";
 import s from "@/components/pages/games/Games.module.css";
 
 const SCREENSHOTS = [
@@ -30,8 +31,7 @@ export default async function PurgatoryContent() {
             <div className={s.note}>
               <h4>{t("Online Expansion Pack")}</h4>
               <p>
-                <strong>{t("Target Audience:")}</strong> {t("Recommended for professional Streamers or channels with stable interaction (average of")}{" "}
-                <strong>{t("over 50 concurrent viewers")}</strong>).
+                <strong>{t("Target Audience:")}</strong> {fill(t("Recommended for professional Streamers or channels with stable interaction (average of {viewers})."), { viewers: <strong>{t("over 50 concurrent viewers")}</strong> })}
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default async function PurgatoryContent() {
             <img src="/wp-content/uploads/2025/11/Screenshot_6-1.jpg" alt={t("1. Streamer Dashboard (Backend)")} loading="lazy" />
           </figure>
 
-          <h4>2. Game Client (On-Stream)</h4>
+          <h4>{t("2. Game Client (On-Stream)")}</h4>
           <p>{t("Main display interface for the audience This is what viewers will see on the livestream screen. Intuitive graphics and vivid effects display the interaction results of the entire community.")}</p>
 
           <h3>{t("Gameplay Modes")}</h3>
@@ -120,9 +120,9 @@ export default async function PurgatoryContent() {
           <div>
             <h3 id="purgatory-docs">{t("Game Documents")}</h3>
             <ul className={s.links}>
-              <li><a href="/blog/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/">How to Configure Youtube Client ID</a></li>
-              <li><a href="/blog/ss05-backend-tutorial/">Backend Tutorial</a></li>
-              <li><a href="/blog/purgatory-game-tutorial/">Game Client Tutorial</a></li>
+              <li><a href="/blog/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/">{t("How to Configure Youtube Client ID")}</a></li>
+              <li><a href="/blog/ss05-backend-tutorial/">{t("Backend Tutorial")}</a></li>
+              <li><a href="/blog/purgatory-game-tutorial/">{t("Game Client Tutorial")}</a></li>
             </ul>
           </div>
           <div>

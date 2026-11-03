@@ -17,9 +17,9 @@ export default async function SiteFooter() {
     {
       title: t("Explore"),
       links: [
-        { href: "/games/", label: "Games" },
+        { href: "/games/", label: t("Games") },
         { href: "/game-courses/", label: t("Game Courses") },
-        { href: "/blog/", label: "Blog" },
+        { href: "/blog/", label: t("Blog") },
         { href: "/careers/", label: t("Careers") },
       ],
     },
