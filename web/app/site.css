@@ -100,3 +100,22 @@
 #kubio #menu-primary-menu li.trp-language-switcher-container a::after {
   display: none;
 }
+
+/* Reserve the overlapping top menu's height before JS runs: KubioScripts sets the exact padding after load,
+   and without this the first paint shows the content under the menu, then jumps down. */
+#kubio .h-navigation-padding {
+  padding-top: 160px;
+}
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  /* the 7-item menu wraps to two lines here */
+  #kubio .h-navigation-padding {
+    padding-top: 204px;
+  }
+}
+
+@media (max-width: 767px) {
+  #kubio .h-navigation-padding {
+    padding-top: 140px;
+  }
+}
