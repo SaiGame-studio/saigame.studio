@@ -1,34 +1,24 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/pages/home/Navigation";
-import Hero from "@/components/pages/home/Hero";
-import TopGames from "@/components/pages/home/TopGames";
-import YoutubeCta from "@/components/pages/home/YoutubeCta";
-import GameDevCourses from "@/components/pages/home/GameDevCourses";
-import DiscordAndCourses from "@/components/pages/home/DiscordAndCourses";
-import GithubCta from "@/components/pages/home/GithubCta";
+import Home from "@/components/pages/home/Home";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "SaiGame",
+  description: "SaiGame makes games, teaches game development, and builds Sai Server, the platform to run them.",
   alternates: { canonical: "/" },
 };
 
-// The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
+// The Kubio nav keeps the site chrome (this page's scoped Kubio CSS);
+// the content is its own design (components/pages/home/Home.tsx) and the footer is the shared SiteFooter.
 export default function HomePage() {
   return (
     <div data-wp-page="home" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
           <Navigation />
-          <Hero />
         </div>
-        <div className="entry-content wp-block-post-content style--container style-local--container wp-block-kubio-core-post-content__container is-layout-flow wp-block-post-content-is-layout-flow">
-          <TopGames />
-          <YoutubeCta />
-          <GameDevCourses />
-          <DiscordAndCourses />
-          <GithubCta />
-        </div>
+        <Home />
         <SiteFooter />
       </div>
     </div>
