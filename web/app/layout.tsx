@@ -5,6 +5,7 @@ import ClientRouter from "@/components/ClientRouter";
 import LangSync from "@/components/LangSync";
 import { getLang } from "@/lib/i18n";
 import styles from "./wp-styles.json";
+import "./site.css";
 
 export const metadata: Metadata = {
   title: "SaiGame",
