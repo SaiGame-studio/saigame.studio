@@ -93,7 +93,7 @@ export default async function ProductsJourney() {
             </a>
           </div>
           <figure className={s.media}>
-            <img className={s.image} src="/wp-content/uploads/2026/04/Gemini_Generated_Image_vmtnw6vmtnw6vmtn.png" width={1024} height={1024} alt={t("A developer working on Sai Server at a desk with several monitors")} loading="lazy" decoding="async" />
+            <img className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} loading="lazy" decoding="async" />
           </figure>
         </div>
       </section>

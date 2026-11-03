@@ -59,7 +59,6 @@
  "Games and their game servers": "Game và game server của từng game",
  "Docs and step-by-step tutorials": "Tài liệu và hướng dẫn từng bước",
  "Explore Sai Server": "Khám phá Sai Server",
- "A developer working on Sai Server at a desk with several monitors": "Một lập trình viên làm việc với Sai Server bên bàn nhiều màn hình",
  "Sai Play is where your players live: the player site shared by every game running on Sai Server.": "Sai Play là nơi dành cho người chơi của bạn: trang người chơi dùng chung cho mọi game chạy trên Sai Server.",
  "Sai Server gives your studio one console for your team, your games and the game servers they run on.": "Sai Server cho studio của bạn một bảng điều khiển duy nhất cho đội ngũ, các game và game server mà chúng chạy trên đó.",
  "Ready to run your game on Sai Server?": "Sẵn sàng vận hành game của bạn trên Sai Server?",
@@ -158,7 +157,6 @@
  "Remote": "Làm việc Remote (từ xa)",
  "Probation": "Thời gian thử việc",
  "Up to 3 months": "Tối đa 3 tháng",
- "Probation salary": "Lương thử việc",
  "2.5 to 3 million VND / month, negotiable": "Từ 2tr5 đến 3tr, tùy thỏa thuận",
  "Project": "Dự án",
  "An online game built with Sai Server": "Sử dụng Sai Server để làm một game online",
@@ -203,5 +201,7 @@
  "The Watcher": "The Watcher",
  "This is running game in 2D Platform, enemies will appear on the way, kill them all if you want to reach the end of the land. You have to focus on the game 100%, just one hit of enemy everything will back to the beginning.": "Đây là game chạy màn 2D Platform, kẻ địch sẽ xuất hiện trên đường đi, hãy tiêu diệt hết nếu muốn đến được cuối vùng đất. Bạn phải tập trung 100%, chỉ cần trúng một đòn của kẻ địch là mọi thứ sẽ quay lại từ đầu.",
  "but the {journey}.": "mà là {journey}.",
- "{players} land on {play}.": "{players} đến với {play}."
+ "{players} land on {play}.": "{players} đến với {play}.",
+ "Salary": "Lương",
+ "A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors": "Một lập trình viên bên góc làm việc ấm cúng, hai màn hình mở Unity và bảng điều khiển Sai Server"
 }

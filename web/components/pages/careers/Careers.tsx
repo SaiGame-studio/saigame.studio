@@ -23,7 +23,7 @@ export default async function Careers() {
   const facts = [
     { label: t("Work type"), value: t("Remote") },
     { label: t("Probation"), value: t("Up to 3 months") },
-    { label: t("Probation salary"), value: t("2.5 to 3 million VND / month, negotiable") },
+    { label: t("Salary"), value: t("2.5 to 3 million VND / month, negotiable") },
     { label: t("Project"), value: linkSaiServer(t("An online game built with Sai Server")) },
   ];
   const requirements = [
