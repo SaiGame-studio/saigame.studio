@@ -1,6 +1,7 @@
 // /contact-us content: the ways to reach SaiGame, in the dark style of /products.
 // Not Kubio markup: styled by Contact.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
+import { linkSaiServer } from "@/components/SaiServerLink";
 import s from "./Contact.module.css";
 
 const EMAIL = "simon@saigame.studio";
@@ -35,7 +36,7 @@ function Arrow() {
 export default async function ContactContent() {
   const { t } = await getI18n();
   const topics = [
-    { title: "Sai Server", text: t("Setting up your studio, your games and their game servers.") },
+    { title: linkSaiServer("Sai Server"), text: t("Setting up your studio, your games and their game servers.") },
     { title: "Sai Play", text: t("Player accounts, sGem, game shops and in-app purchases.") },
     { title: t("Partnerships"), text: t("Working together on games, events or business.") },
     { title: t("Game Courses"), text: t("Questions about our courses and learning with SaiGame.") },
@@ -82,7 +83,7 @@ export default async function ContactContent() {
           <h2 id="contact-topics" className={s.sectionTitle}>{t("What you can reach us about")}</h2>
           <dl className={s.topicList}>
             {topics.map((topic) => (
-              <div key={topic.title} className={s.topic}>
+              <div key={topic.text} className={s.topic}>
                 <dt className={s.topicTitle}>{topic.title}</dt>
                 <dd className={s.topicText}>{topic.text}</dd>
               </div>

@@ -20,6 +20,7 @@ export default async function SiteFooter() {
         { href: "/games/", label: "Games" },
         { href: "/game-courses/", label: t("Game Courses") },
         { href: "/blog/", label: "Blog" },
+        { href: "/careers/", label: t("Careers") },
       ],
     },
     {

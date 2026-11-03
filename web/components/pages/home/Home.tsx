@@ -1,6 +1,7 @@
 // Homepage content in the site's dark style (/products, /games, /blog): hero, games, products, courses, blog, community.
 // Not Kubio markup: styled by Home.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
+import { linkSaiServer } from "@/components/SaiServerLink";
 import { GAMES, gameHref } from "@/components/pages/games/games";
 import { BLOG_POSTS } from "@/components/pages/blog/posts";
 import { formatDate, postHref } from "@/components/pages/blog/format";
@@ -34,7 +35,7 @@ export default async function Home() {
           <h1 id="home-title" className={s.title}>
             {t("It's not the destination,")} <span className={s.titleLine}>{t("but the")} <span className={s.accent}>{t("journey")}</span>.</span>
           </h1>
-          <p className={s.lead}>{t("SaiGame makes games, teaches game development, and builds Sai Server, the platform to run them.")}</p>
+          <p className={s.lead}>{linkSaiServer(t("SaiGame makes games, teaches game development, and builds Sai Server, the platform to run them."))}</p>
           <div className={s.actions}>
             <a className={s.button} href="/games/">
               {t("Explore our games")} <Arrow />
@@ -73,7 +74,7 @@ export default async function Home() {
             <span className={s.nameServer}>Sai Server</span> & <span className={s.namePlay}>Sai Play</span>
           </h2>
           <div>
-            <p className={s.sectionText}>{t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform.")}</p>
+            <p className={s.sectionText}>{linkSaiServer(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
             <div className={s.actions}>
               <a className={s.button} href="/products/">
                 {t("Discover our products")} <Arrow />

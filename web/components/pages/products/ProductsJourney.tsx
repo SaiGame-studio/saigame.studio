@@ -2,6 +2,7 @@
 // Not Kubio markup: styled by Products.module.css; the page keeps the site's Kubio nav and footer around it.
 // The sections below the hero continue the three steps, each opening on its step's rule colour.
 import { getI18n } from "@/lib/i18n";
+import { linkSaiServer } from "@/components/SaiServerLink";
 import s from "./Products.module.css";
 
 const SAI_SERVER_URL = "https://server.saigame.studio/why-sai-server";
@@ -49,7 +50,7 @@ export default async function ProductsJourney() {
               <span className={`${s.productName} ${s.namePlayers}`}>{t("Your players")}</span> {t("land on")} <span className={`${s.productName} ${s.namePlay}`}>Sai Play</span>.
             </span>
           </h1>
-          <p className={s.lead}>{t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform.")}</p>
+          <p className={s.lead}>{linkSaiServer(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
           <ol className={s.steps}>
             {steps.map((step, i) => (
               <li key={step.id} className={s.step}>
@@ -77,7 +78,7 @@ export default async function ProductsJourney() {
           <div>
             <span className={s.stageNumber}>1</span>
             <h2 id="product-sai-server" className={s.productTitle}>Sai Server</h2>
-            <p className={s.productText}>{t("Sai Server gives your studio one console for your team, your games and the game servers they run on.")}</p>
+            <p className={s.productText}>{linkSaiServer(t("Sai Server gives your studio one console for your team, your games and the game servers they run on."))}</p>
             <ul className={s.list}>
               {serverPoints.map((point) => (
                 <li key={point} className={s.listItem}>{point}</li>
@@ -100,7 +101,7 @@ export default async function ProductsJourney() {
             <h2 id="product-sai-build" className={s.bandTitle}>{t("Build your game, deploy to Sai Server")}</h2>
           </div>
           <div>
-            <p className={s.bandText}>{t("The SDK connects your game client to login, player progression, inventory, quests, shops and leaderboards. Write your backend logic as Lua scripts alongside your game project and deploy it to run on Sai Server, with no separate backend to set up.")}</p>
+            <p className={s.bandText}>{linkSaiServer(t("The SDK connects your game client to login, player progression, inventory, quests, shops and leaderboards. Write your backend logic as Lua scripts alongside your game project and deploy it to run on Sai Server, with no separate backend to set up."))}</p>
             <h3 className={s.sdkHeading}>{t("Available SDKs")}</h3>
             <ul className={s.sdkList}>
               {SDKS.map((sdk) => (
@@ -120,7 +121,7 @@ export default async function ProductsJourney() {
           <div>
             <span className={s.stageNumber}>3</span>
             <h2 id="product-sai-play" className={s.productTitle}>Sai Play</h2>
-            <p className={s.productText}>{t("Sai Play is where your players live: the player site shared by every game running on Sai Server.")}</p>
+            <p className={s.productText}>{linkSaiServer(t("Sai Play is where your players live: the player site shared by every game running on Sai Server."))}</p>
             <ul className={s.list}>
               {playPoints.map((point) => (
                 <li key={point} className={s.listItem}>{point}</li>
