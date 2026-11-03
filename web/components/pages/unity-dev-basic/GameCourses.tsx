@@ -6,7 +6,7 @@ import s from "./GameCourses.module.css";
 
 const YOUTUBE_CHANNEL = "https://www.youtube.com/@SaiGame";
 const PLAYLIST = "https://www.youtube.com/playlist?list=";
-const COURSE_IMAGE = "/wp-content/uploads/2026/01/Gemini_Generated_Image_tle0p4tle0p4tle0.png";
+const COURSE_IMAGE = "/images/courses/midnight-session.jpg";
 
 function Arrow() {
   return (
@@ -44,7 +44,7 @@ export default async function GameCourses() {
             </div>
           </div>
           <figure className={s.media}>
-            <img className={s.image} src={COURSE_IMAGE} alt="" decoding="async" />
+            <img className={s.image} src={COURSE_IMAGE} width={1086} height={1448} alt="" decoding="async" />
           </figure>
         </div>
       </section>

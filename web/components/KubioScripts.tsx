@@ -44,12 +44,31 @@ function load(src: string) {
 
 const currentPage = () => document.querySelector<HTMLElement>("[data-wp-page]")?.dataset.wpPage ?? "";
 
+const NAV_SELECTOR = '[data-colibri-navigation-overlap="true"], .h-navigation_overlap';
+let navObserver: ResizeObserver | null = null;
+
+// The overlapping top menu needs the content below it pushed down by its height. Kubio's own overlap script
+// writes ".h-navigation-padding{padding-top:Xpx !important}", and while a client-side navigation swaps the menu
+// it measures the detached menu as 0px, so the page jumps up under the menu. This rule wins over Kubio's
+// (#kubio adds specificity) and only ever takes a real, non-zero height.
 function navigationPadding() {
-  const nav = document.querySelector<HTMLElement>('[data-colibri-navigation-overlap="true"], .h-navigation_overlap');
-  if (!nav) return;
-  document.querySelectorAll<HTMLElement>(".h-navigation-padding").forEach((el) => {
-    el.style.paddingTop = nav.offsetHeight + "px";
+  const nav = document.querySelector<HTMLElement>(NAV_SELECTOR);
+  const height = nav?.offsetHeight ?? 0;
+  if (!nav || height === 0) return;
+  let sheet = document.getElementById("nav-padding") as HTMLStyleElement | null;
+  if (!sheet) {
+    sheet = document.createElement("style");
+    sheet.id = "nav-padding";
+    document.head.appendChild(sheet);
+  }
+  sheet.textContent = `#kubio .h-navigation-padding{padding-top:${height}px !important}`;
+  // follow the menu's own size changes (fonts loading, wrapping at narrow widths)
+  navObserver?.disconnect();
+  navObserver = new ResizeObserver(() => {
+    const h = nav.offsetHeight;
+    if (h > 0 && sheet) sheet.textContent = `#kubio .h-navigation-padding{padding-top:${h}px !important}`;
   });
+  navObserver.observe(nav);
 }
 
 function tagMovedPanels() {

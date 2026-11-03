@@ -5,7 +5,6 @@
  "2.5 to 3 million VND / month, negotiable": "月 250万〜300万ベトナムドン（応相談）",
  "2D": "2D",
  "A course for beginners that gets you comfortable with Unity, one of the most powerful and popular game engines today. Take the series in order.": "現在もっとも強力で人気のあるゲームエンジンのひとつ、Unity に慣れるための初心者向けコースです。シリーズは順番に受講してください。",
- "A developer working on Sai Server at a desk with several monitors": "複数のモニターに囲まれて Sai Server で作業する開発者",
  "A flexible working environment that values initiative and results.": "主体性と成果を重視する、柔軟な働き方ができる環境。",
  "A full Unity 2D game project.": "Unity 2D のゲームを一本まるごと作るプロジェクト。",
  "A full Unity 3D game project.": "Unity 3D のゲームを一本まるごと作るプロジェクト。",
@@ -156,7 +155,6 @@
  "Prepare one link that gathers your Git repositories and the YouTube demo videos of your 3 solo games.": "Git リポジトリと、ソロ制作したゲーム 3 本の YouTube デモ動画をまとめたリンクを用意してください。",
  "Privacy Policy": "プライバシーポリシー",
  "Probation": "試用期間",
- "Probation salary": "試用期間中の給与",
  "Processor": "プロセッサー",
  "Products": "製品",
  "Project": "プロジェクト",
@@ -251,5 +249,7 @@
  "over 50 concurrent viewers": "同時視聴者 50 人以上",
  "provide you with the skills and knowledge to bring your game ideas to life.": "が、あなたのゲームのアイデアを形にするスキルと知識を提供します。",
  "series": "シリーズ",
- "your game": "あなたのゲーム"
+ "your game": "あなたのゲーム",
+ "Salary": "給与",
+ "A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors": "居心地のよいデスクで、2 台のモニターに Unity と Sai Server のダッシュボードを開いて作業する開発者"
 }
