@@ -97,12 +97,12 @@ Storage: 400 MB available space                  </p>
                   <p className="has-text-align-left has-kubio-color-5-color has-text-color has-link-color wp-block-paragraph">
                     <strong>Game Documents</strong>
                     <br />
-                    <a href="/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/"></a>
-                    <a href="/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/">How to Configure Youtube Client ID</a>
+                    <a href="/blog/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/"></a>
+                    <a href="/blog/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/">How to Configure Youtube Client ID</a>
                     <br />
-                    <a href="/ss05-backend-tutorial/">Backend Tutorial</a>
+                    <a href="/blog/ss05-backend-tutorial/">Backend Tutorial</a>
                     <br />
-                    <a href="/purgatory-game-tutorial/" data-type="link" data-id="https://saigame.studio/purgatory-game-tutorial/">Game Client Tutorial</a>
+                    <a href="/blog/purgatory-game-tutorial/" data-type="link" data-id="https://saigame.studio/purgatory-game-tutorial/">Game Client Tutorial</a>
                   </p>
                   <p className="wp-block-paragraph"></p>
                   <figure className="wp-block-image size-large">

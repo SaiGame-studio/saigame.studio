@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Sai Game Lore #1 \u2013 SaiGame",
-  alternates: { canonical: "/sai-game-lore-1/" },
+  alternates: { canonical: "/blog/sai-game-lore-1/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

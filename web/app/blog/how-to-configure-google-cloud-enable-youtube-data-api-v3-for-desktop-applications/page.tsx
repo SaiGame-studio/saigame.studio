@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "How to Configure Google Cloud & Enable YouTube Data API v3 (for Desktop Applications) \u2013 SaiGame",
-  alternates: { canonical: "/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/" },
+  alternates: { canonical: "/blog/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

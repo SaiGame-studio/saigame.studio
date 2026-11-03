@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "C\u00fa ph\u1ed1t Unity 2023 \u2013 Nh\u1eadt K\u00fd \u2013 E2 \u2013 SaiGame",
-  alternates: { canonical: "/cu-phot-unity-2023-nhat-ky-e2/" },
+  alternates: { canonical: "/blog/cu-phot-unity-2023-nhat-ky-e2/" },
 };
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).

@@ -1,0 +1,236 @@
+/* /blog/: same dark palette as /products and /contact-us. */
+.page {
+  --ink: #1d1e27;
+  --panel: #262733;
+  --line: #3a3c4d;
+  --text: #ffffff;
+  --muted: #c9ccd8;
+  --blue-1: #2f7cf6;
+  --blue-3: #9cc0ff;
+  background: var(--ink);
+  color: var(--text);
+  font-family: Mulish, Helvetica, Arial, sans-serif;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.page ::selection {
+  background: var(--blue-1);
+  color: #fff;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 48px);
+}
+
+.hero {
+  padding-bottom: clamp(56px, 8vw, 96px);
+}
+
+.title {
+  margin: 0;
+  padding-top: clamp(40px, 6vw, 80px);
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.lead {
+  margin: 18px 0 0;
+  max-width: 56ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* newest post */
+.leadPost {
+  margin-top: clamp(40px, 6vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+
+.leadPostText {
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+}
+
+.leadMedia {
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.55);
+}
+
+.leadImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.leadMedia:hover .leadImage {
+  transform: scale(1.03);
+}
+
+.date,
+.rowDate {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--blue-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.leadTitle {
+  margin: 10px 0 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.12;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease-out;
+}
+
+.titleLink:hover {
+  color: var(--blue-3);
+}
+
+.excerpt {
+  margin: 16px 0 0;
+  max-width: 52ch;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.readMore {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 3px;
+  background: var(--blue-1);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease-out;
+}
+
+.readMore:hover {
+  background: #1f66d8;
+  color: #fff;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+}
+
+.titleLink:focus-visible,
+.readMore:focus-visible {
+  outline: 2px solid var(--blue-3);
+  outline-offset: 3px;
+}
+
+/* the other posts, as a dated list */
+.archive {
+  border-top: 1px solid var(--line);
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+
+.archiveTitle {
+  margin: 0 0 24px;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) 200px;
+  gap: 32px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.rowTitle {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.rowExcerpt {
+  margin: 8px 0 0;
+  max-width: 62ch;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.thumbLink {
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumb,
+.thumbEmpty {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.thumbEmpty {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .leadPost {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    grid-template-columns: minmax(0, 1fr) 120px;
+    gap: 6px 20px;
+  }
+
+  .rowDate {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leadImage {
+    transition: none;
+  }
+}

@@ -156,7 +156,7 @@ Tháng 3:                                 <a href="https://www.youtube.com/playl
                           <div className="position-relative wp-block-kubio-column__align style-single-3ndM77FkZV-align style-local-42-align h-y-container h-column__content h-column__v-align flex-basis-100 align-self-lg-start align-self-md-start align-self-start">
                             <div className="position-relative wp-block-kubio-pagination-nav-button__spacing style-single-ELgmeRXRD--spacing style-local-43-spacing">
                               <span className="wp-block wp-block-kubio-pagination-nav-button position-relative wp-block-kubio-pagination-nav-button__outer style-single-ELgmeRXRD--outer style-local-43-outer kubio-button-container" data-kubio="kubio/pagination-nav-button">
-                                <a className="position-relative wp-block-kubio-pagination-nav-button__link style-single-ELgmeRXRD--link style-local-43-link h-w-100 h-global-transition" href="/sai-game-lore-1/">
+                                <a className="position-relative wp-block-kubio-pagination-nav-button__link style-single-ELgmeRXRD--link style-local-43-link h-w-100 h-global-transition" href="/blog/sai-game-lore-1/">
                                   <span className="position-relative wp-block-kubio-pagination-nav-button__text style-single-ELgmeRXRD--text style-local-43-text kubio-inherit-typography">Previous</span>
                                 </a>
                               </span>
