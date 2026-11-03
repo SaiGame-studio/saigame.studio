@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/the-watcher/Navigation";
+import TopMenu from "@/components/TopMenu";
 import GameLayout from "@/components/pages/games/GameLayout";
 import TheWatcherContent from "@/components/pages/the-watcher/TheWatcherContent";
 import SiteFooter from "@/components/SiteFooter";
@@ -15,7 +15,7 @@ export default function TheWatcherPage() {
     <div data-wp-page="the-watcher" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="the-watcher" active="games" />
         </div>
         <GameLayout slug="the-watcher">
           <TheWatcherContent />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/contact-us/Navigation";
+import TopMenu from "@/components/TopMenu";
 import ContactContent from "@/components/pages/contact-us/ContactContent";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -16,7 +16,7 @@ export default function ContactUsPage() {
     <div data-wp-page="contact-us" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="contact-us" active="contact-us" />
         </div>
         <ContactContent />
         <SiteFooter />

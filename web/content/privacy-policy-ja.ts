@@ -69,5 +69,5 @@ export const ja: Block[] = [
   { type: "p", text: "ゲームやサービスの変化、または法令の改正に応じて、本ポリシーを更新することがあります。下記の「最終更新日」が最新の改定日を示します。重要な変更の場合は、よりわかりやすい形でお知らせします。" },
 
   { type: "h2", text: "12. お問い合わせ" },
-  { type: "p", text: "個人データに関するご質問やご依頼は、[Discord サーバー](DISCORD_URL){{EMAIL}}から SaiGame までご連絡ください。" },
+  { type: "p", text: "個人データに関するご質問やご依頼は、メール（[simon@saigame.studio](mailto:simon@saigame.studio)）で SaiGame までご連絡ください。" },
 ];

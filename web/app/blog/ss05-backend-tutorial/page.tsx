@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/post-ss05-backend-tutorial/Navigation";
+import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-ss05-backend-tutorial/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
 import SiteFooter from "@/components/SiteFooter";
@@ -15,7 +15,7 @@ export default function PostSs05BackendTutorialPage() {
     <div data-wp-page="post-ss05-backend-tutorial" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-single-theme-Zam-Tq5W3-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="post-ss05-backend-tutorial" active="blog" />
         </div>
         <BlogPostLayout slug="ss05-backend-tutorial">
           <PostBody />

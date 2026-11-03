@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/blog/Navigation";
+import TopMenu from "@/components/TopMenu";
 import BlogList from "@/components/pages/blog/BlogList";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -16,7 +16,7 @@ export default function BlogPage() {
     <div data-wp-page="blog" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-theme-Zam-Tq5W3-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="blog" active="blog" />
         </div>
         <BlogList />
         <SiteFooter />

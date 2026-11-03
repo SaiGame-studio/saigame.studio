@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/games/Navigation";
+import TopMenu from "@/components/TopMenu";
 import GamesList from "@/components/pages/games/GamesList";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -16,7 +16,7 @@ export default function GamesPage() {
     <div data-wp-page="games" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="games" active="games" />
         </div>
         <GamesList />
         <SiteFooter />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/products/Navigation";
+import TopMenu from "@/components/TopMenu";
 import ProductsJourney from "@/components/pages/products/ProductsJourney";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -16,7 +16,7 @@ export default function ProductsPage() {
     <div data-wp-page="products" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="products" active="products" />
         </div>
         <ProductsJourney />
         <SiteFooter />

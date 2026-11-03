@@ -73,8 +73,11 @@ function navigationPadding() {
 
 function tagMovedPanels() {
   const page = currentPage();
-  document.querySelectorAll<HTMLElement>(`body > ${MOVED}:not([data-wp-owner])`).forEach((el) => {
-    el.dataset.wpOwner = page;
+  // data-wp-host: the page the panel belongs to (for cleanup); data-wp-owner: whose scoped CSS styles it
+  // (the shared TopMenu sets its own owner, so it is only filled in when missing).
+  document.querySelectorAll<HTMLElement>(`body > ${MOVED}:not([data-wp-host])`).forEach((el) => {
+    el.dataset.wpHost = page;
+    if (!el.dataset.wpOwner) el.dataset.wpOwner = page;
   });
 }
 
@@ -100,8 +103,8 @@ export default function KubioScripts() {
   // every page (first load and client-side navigations)
   useEffect(() => {
     const page = currentPage();
-    document.querySelectorAll<HTMLElement>(`body > ${MOVED}[data-wp-owner]`).forEach((el) => {
-      if (el.dataset.wpOwner !== page) el.remove();
+    document.querySelectorAll<HTMLElement>(`body > ${MOVED}[data-wp-host]`).forEach((el) => {
+      if (el.dataset.wpHost !== page) el.remove();
     });
     document.documentElement.classList.remove("no-scroll", "h-offcanvas-opened"); // scroll lock left by an open mobile menu
     document.body.classList.remove("no-scroll", "h-offcanvas-opened");

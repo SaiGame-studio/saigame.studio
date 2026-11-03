@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/pages/careers/Navigation";
+import TopMenu from "@/components/TopMenu";
 import Careers from "@/components/pages/careers/Careers";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -16,7 +16,7 @@ export default function CareersPage() {
     <div data-wp-page="careers" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-          <Navigation />
+          <TopMenu page="careers" active="careers" />
         </div>
         <Careers />
         <SiteFooter />
