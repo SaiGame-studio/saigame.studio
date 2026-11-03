@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Game Courses – SaiGame",
-  description: "Free Unity video courses from SaiGame on YouTube, from C# basics to complete 2D and 3D game projects.",
+  description: "Unity video courses from SaiGame, from C# basics to complete 2D and 3D game projects.",
   alternates: { canonical: "/game-courses/" },
 };
 

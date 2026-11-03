@@ -35,7 +35,7 @@ export default async function GameCourses() {
             <h1 id="courses-title" className={s.title}>
               {fill(t("Learn to make games with {unity}."), { unity: <span className={s.accent}>Unity</span> })}
             </h1>
-            <p className={s.lead}>{t("Free video courses from SaiGame on YouTube, from your first line of C# to complete 2D and 3D game projects.")}</p>
+            <p className={s.lead}>{t("Video courses from SaiGame, from your first line of C# to complete 2D and 3D game projects.")}</p>
             <div className={s.actions}>
               <a className={s.button} href={`${PLAYLIST}${series[0].list}`}>
                 {t("Start with C0")} <Arrow />
