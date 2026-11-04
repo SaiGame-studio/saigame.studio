@@ -85,6 +85,11 @@
   text-decoration: none;
 }
 
+.serverLink.namePlay {
+  color: var(--blue-3);
+  text-decoration: none;
+}
+
 .namePlay {
   color: var(--blue-3);
 }

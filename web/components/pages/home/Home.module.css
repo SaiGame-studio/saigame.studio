@@ -234,6 +234,17 @@
   white-space: nowrap;
 }
 
+/* "Sai Server" links keep the blue over the global .sai-server-link (color: inherit) */
+.serverLink.nameServer {
+  color: var(--blue-2);
+  text-decoration: none;
+}
+
+.serverLink.namePlay {
+  color: var(--blue-3);
+  text-decoration: none;
+}
+
 .namePlay {
   color: var(--blue-3);
   white-space: nowrap;

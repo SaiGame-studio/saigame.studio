@@ -3,20 +3,24 @@
 // The sections below the hero continue the three steps, each opening on its step's rule colour.
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
-import { linkSaiServer } from "@/components/SaiServerLink";
+import { linkProducts, SAI_PLAY_URL, SAI_SERVER_URL } from "@/components/SaiServerLink";
 import s from "./Products.module.css";
 
-const SAI_SERVER_URL = "https://server.saigame.studio/why-sai-server";
-const SAI_PLAY_URL = "https://play.saigame.studio/";
 const TUTORIAL_URL = "https://server.saigame.studio/tutorials/basic/get-started/create-a-studio";
 // client SDKs for building games on Sai Server; more engines will be added here
 const SDKS = [{ name: "Unity SDK", href: "https://github.com/SaiGame-studio/ss-unity/releases" }];
 // sample balance for the illustrative Sai Play panel
 const SAMPLE_SGEM = "1,250";
 
-/** every "Sai Server" link on /products: why-sai-server, title colour, no underline */
-function serverLink(text: string) {
-  return linkSaiServer(text, SAI_SERVER_URL, `${s.productName} ${s.nameServer} ${s.serverLink}`);
+/** CSS classes for product names on /products: title colours, no underline (saigame.studio/AGENTS.md) */
+const NAMES = {
+  server: `${s.productName} ${s.nameServer} ${s.serverLink}`,
+  play: `${s.productName} ${s.namePlay} ${s.serverLink}`,
+};
+
+/** every "Sai Server" / "Sai Play" in body copy and headings links to its product */
+function productLinks(text: string) {
+  return linkProducts(text, NAMES);
 }
 
 function Arrow() {
@@ -27,11 +31,9 @@ function Arrow() {
   );
 }
 
-/** keeps the product names whole (never split across lines) inside translated text */
+/** product names inside an existing link: coloured, kept whole, no nested link */
 function keepNames(text: string) {
-  return text.split(/(Sai Server|Sai Play)/).map((part, i) =>
-    i % 2 ? <span key={i} className={s.productName}>{part}</span> : part,
-  );
+  return linkProducts(text, NAMES, false);
 }
 
 export default async function ProductsJourney() {
@@ -52,16 +54,16 @@ export default async function ProductsJourney() {
           <div>
           <h1 id="products-title" className={s.title}>
             <span className={s.titleLine}>
-              {fill(t("Build on {server}."), { server: <span className={`${s.productName} ${s.nameServer}`}>Sai Server</span> })}
+              {fill(t("Build on {server}."), { server: <a className={NAMES.server} href={SAI_SERVER_URL}>Sai Server</a> })}
             </span>
             <span className={s.titleLine}>
               {fill(t("{players} land on {play}."), {
                 players: <span className={`${s.productName} ${s.namePlayers}`}>{t("Your players")}</span>,
-                play: <span className={`${s.productName} ${s.namePlay}`}>Sai Play</span>,
+                play: <a className={NAMES.play} href={SAI_PLAY_URL}>Sai Play</a>,
               })}
             </span>
           </h1>
-          <p className={s.lead}>{serverLink(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
+          <p className={s.lead}>{productLinks(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
           </div>
           <figure className={`${s.media} ${s.heroMedia}`}>
             <img className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} decoding="async" />
@@ -93,8 +95,8 @@ export default async function ProductsJourney() {
         <div className={`${s.wrap} ${s.stageGrid}`}>
           <div>
             <span className={s.stageNumber}>1</span>
-            <h2 id="product-sai-server" className={s.productTitle}>Sai Server</h2>
-            <p className={s.productText}>{serverLink(t("Sai Server gives your studio one console for your team, your games and the game servers they run on."))}</p>
+            <h2 id="product-sai-server" className={s.productTitle}>{productLinks("Sai Server")}</h2>
+            <p className={s.productText}>{productLinks(t("Sai Server gives your studio one console for your team, your games and the game servers they run on."))}</p>
             <ul className={s.list}>
               {serverPoints.map((point) => (
                 <li key={point} className={s.listItem}>{point}</li>
@@ -114,7 +116,7 @@ export default async function ProductsJourney() {
             <h2 id="product-sai-build" className={s.bandTitle}>{t("Build your game, deploy to Sai Server")}</h2>
           </div>
           <div>
-            <p className={s.bandText}>{serverLink(t("The SDK connects your game client to login, player progression, inventory, quests, shops and leaderboards. Write your backend logic as Lua scripts alongside your game project and deploy it to run on Sai Server, with no separate backend to set up."))}</p>
+            <p className={s.bandText}>{productLinks(t("The SDK connects your game client to login, player progression, inventory, quests, shops and leaderboards. Write your backend logic as Lua scripts alongside your game project and deploy it to run on Sai Server, with no separate backend to set up."))}</p>
             <h3 className={s.sdkHeading}>{t("Available SDKs")}</h3>
             <ul className={s.sdkList}>
               {SDKS.map((sdk) => (
@@ -133,8 +135,8 @@ export default async function ProductsJourney() {
         <div className={`${s.wrap} ${s.stageGrid}`}>
           <div>
             <span className={s.stageNumber}>3</span>
-            <h2 id="product-sai-play" className={s.productTitle}>Sai Play</h2>
-            <p className={s.productText}>{serverLink(t("Sai Play is where your players live: the player site shared by every game running on Sai Server."))}</p>
+            <h2 id="product-sai-play" className={s.productTitle}>{productLinks("Sai Play")}</h2>
+            <p className={s.productText}>{productLinks(t("Sai Play is where your players live: the player site shared by every game running on Sai Server."))}</p>
             <ul className={s.list}>
               {playPoints.map((point) => (
                 <li key={point} className={s.listItem}>{point}</li>
