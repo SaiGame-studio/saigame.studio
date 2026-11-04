@@ -2,7 +2,20 @@
 // Not Kubio markup: styled by Home.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
-import { linkSaiServer } from "@/components/SaiServerLink";
+import { linkProducts } from "@/components/SaiServerLink";
+
+/** CSS classes for product names: colour, no underline (saigame.studio/AGENTS.md) */
+const NAMES = { server: `${s.nameServer} ${s.serverLink}`, play: `${s.namePlay} ${s.serverLink}` };
+
+/** every "Sai Server" / "Sai Play" in body copy and headings links to its product */
+function productLinks(text: string) {
+  return linkProducts(text, NAMES);
+}
+
+/** product names inside an existing link: coloured only, no nested link */
+function productNames(text: string) {
+  return linkProducts(text, NAMES, false);
+}
 import { GAMES, gameHref } from "@/components/pages/games/games";
 import { BLOG_POSTS } from "@/components/pages/blog/posts";
 import { formatDate, postHref } from "@/components/pages/blog/format";
@@ -36,12 +49,12 @@ export default async function Home() {
           <h1 id="home-title" className={s.title}>
             {t("It's not the destination,")} <span className={s.titleLine}>{fill(t("but the {journey}."), { journey: <span className={s.accent}>{t("journey")}</span> })}</span>
           </h1>
-          <p className={s.lead}>{linkSaiServer(t("SaiGame makes games, teaches game development, and builds Sai Server, the platform to run them."))}</p>
+          <p className={s.lead}>{productLinks(t("SaiGame makes games, teaches game development, and builds Sai Server, the platform to run them."))}</p>
           <div className={s.actions}>
             <a className={s.button} href="/games/">
               {t("Explore our games")} <Arrow />
             </a>
-            <a className={s.textLink} href="/products/">{t("Discover Sai Server & Sai Play")}</a>
+            <a className={s.textLink} href="/products/">{productNames(t("Discover Sai Server & Sai Play"))}</a>
           </div>
         </div>
       </section>
@@ -72,10 +85,10 @@ export default async function Home() {
       <section className={`${s.section} ${s.band}`} aria-labelledby="home-products">
         <div className={`${s.wrap} ${s.split}`}>
           <h2 id="home-products" className={s.sectionTitle}>
-            <span className={s.nameServer}>Sai Server</span> & <span className={s.namePlay}>Sai Play</span>
+            {productLinks("Sai Server")} & {productLinks("Sai Play")}
           </h2>
           <div>
-            <p className={s.sectionText}>{linkSaiServer(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
+            <p className={s.sectionText}>{productLinks(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
             <div className={s.actions}>
               <a className={s.button} href="/products/">
                 {t("Discover our products")} <Arrow />
