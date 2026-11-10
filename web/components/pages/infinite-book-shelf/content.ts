@@ -45,8 +45,8 @@ export const SHOTS = {
   engineering: { n: 8, file: "engineering-800b-books.webp", width: 1918, height: 957, ready: true, alt: "A level in play: shelves packed with colored books framed by tropical flowers, the book counter in the corner, a magic wand cursor and the book tray with its chained slots" },
 } satisfies Record<string, Shot>;
 
-/** #14 social share card; added to the page metadata once it exists */
-export const OG_IMAGE = { n: 14, file: "og-image.png", width: 1200, height: 630, ready: false };
+/** #14 social share card, built by tools/build-og-images.mjs */
+export const OG_IMAGE = { n: 14, file: "og-image.png", width: 1200, height: 630, ready: true };
 
 export const COPY = {
   metaTitle: "Infinite Book Shelf – Built on Sai Server",

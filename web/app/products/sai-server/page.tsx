@@ -4,22 +4,12 @@ import SaiServerProduct from "@/components/pages/product-sai-server/SaiServerPro
 import { COPY } from "@/components/pages/product-sai-server/content";
 import SiteFooter from "@/components/SiteFooter";
 import { getI18n } from "@/lib/i18n";
+import { shareMetadata } from "@/lib/share";
 
-const SITE_URL = "https://saigame.studio";
-const PATH = "/products/sai-server/";
-
-// title and description follow the visitor's language, like the page content
+// title and description follow the visitor's language, like the page content; the share card is tools/build-og-images.mjs
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await getI18n();
-  const title = t(COPY.metaTitle);
-  const description = t(COPY.metaDescription);
-  return {
-    title,
-    description,
-    alternates: { canonical: PATH },
-    openGraph: { type: "website", url: `${SITE_URL}${PATH}`, siteName: "SaiGame", title, description },
-    twitter: { card: "summary", title, description },
-  };
+  return shareMetadata({ path: "/products/sai-server/", title: t(COPY.metaTitle), description: t(COPY.metaDescription), image: "/images/products/sai-server/og-image.png" });
 }
 
 // Same chrome as /products/infinite-book-shelf: data-wp-page gives the page its own slug (off-canvas menu cleanup in
