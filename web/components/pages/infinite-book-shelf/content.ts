@@ -1,6 +1,6 @@
-// All copy for /products/infinity-book-shelf (brief: saigame.studio/sg01-LandingPageBrief.md).
+// All copy for /products/infinite-book-shelf (brief: saigame.studio/sg01-LandingPageBrief.md).
 // Strings are English source text: the page passes each one through t(), so vi/ja only need dictionary
-// entries in i18n/vi.json and i18n/ja.json, with no change here.
+// entries in i18n/vi.json and i18n/ja.json, with no change here. **text** marks bold words (keep the markers when translating).
 // Facts and numbers follow section 4 of the brief, except platforms: the game ships to the stores in STORES.
 // Do not inflate the numbers.
 
@@ -24,8 +24,8 @@ export const STORES: Store[] = [
   { id: "google-play", name: "Google Play", platform: "Android", url: null },
 ];
 
-/** where the screenshots live once the owner adds them (public/images/products/infinity-book-shelf/) */
-export const IMAGE_DIR = "/images/products/infinity-book-shelf";
+/** where the screenshots live once the owner adds them (public/images/products/infinite-book-shelf/) */
+export const IMAGE_DIR = "/images/products/infinite-book-shelf";
 
 export type Shot = {
   /** number from the brief's image table (section 5): the owner's file list refers to it */
@@ -39,16 +39,10 @@ export type Shot = {
 };
 
 export const SHOTS = {
-  hero: { n: 1, file: "hero.webp", width: 1920, height: 1080, ready: false, alt: "Tropical bookshelves under warm light with flowers in bloom, one book being dragged with leaf particles around it" },
-  drag: { n: 2, file: "gameplay-drag.webp", width: 1200, height: 800, ready: false, alt: "A book dragged over a shelf compartment, with leaf particles gathering and the slot highlighted" },
-  bloom: { n: 3, file: "gameplay-bloom.webp", width: 1200, height: 800, ready: false, alt: "A full compartment with all of its flowers in bloom" },
-  tray: { n: 4, file: "gameplay-tray.webp", width: 1200, height: 800, ready: false, alt: "The book tray with open slots and locked, chained slots" },
-  login: { n: 5, file: "login-google.webp", width: 1200, height: 800, ready: false, alt: "The login screen with Google sign-in and the language picker" },
-  stress: { n: 8, file: "stress-4000-books.webp", width: 1600, height: 900, ready: false, alt: "The stress-test scene with 4,000 instanced books on screen" },
-  streaming: { n: 9, file: "streaming-overview.webp", width: 1600, height: 900, ready: false, alt: "Zoomed-out view over the level grid, showing the shelf clusters" },
-  procedural: { n: 10, file: "procedural-shelves.webp", width: 1600, height: 900, ready: false, alt: "Four different generated shelf layouts side by side" },
-  leaves: { n: 11, file: "polish-leaves.webm", width: 800, height: 600, ready: false, alt: "Leaves burst from a shelf when a book is dropped into place" },
-  bird: { n: 12, file: "easter-egg-bird.webp", width: 800, height: 600, ready: false, alt: "The book bird flying across the screen" },
+  hero: { n: 1, file: "hero.webp", width: 1400, height: 788, ready: true, alt: "Wooden bookshelves packed with colored books, flowers blooming above each sorted compartment, and a magic wand cursor picking up a yellow book" },
+  login: { n: 5, file: "login-google.webp", width: 752, height: 492, ready: true, alt: "The game's login panel with a single Sign in with Google button and the build version" },
+  inspector: { n: 15, file: "sdk-inspector.webp", width: 648, height: 831, ready: true, alt: "The SaiServer prefab in the Unity Inspector: Sai Auth settings for persisted tokens, auto login and auto refresh, with the Google Backend Login, Gamer Progress and other module components below" },
+  engineering: { n: 8, file: "engineering-800b-books.webp", width: 1918, height: 957, ready: true, alt: "A level in play: shelves packed with colored books framed by tropical flowers, the book counter in the corner, a magic wand cursor and the book tray with its chained slots" },
 } satisfies Record<string, Shot>;
 
 /** #14 social share card; added to the page metadata once it exists */
@@ -57,11 +51,11 @@ export const OG_IMAGE = { n: 14, file: "og-image.png", width: 1200, height: 630,
 export const COPY = {
   metaTitle: "Infinite Book Shelf – Built on Sai Server",
   metaDescription:
-    "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud. Built with Unity and Sai Server. Coming to Unity Play, Itch.io, Steam and Google Play.",
+    "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud. Built with Unity and Sai Server. Out now on Unity Play, coming to Itch.io, Steam and Google Play.",
 
   hero: {
     eyebrow: "Tech showcase",
-    title: "{game}, powered by {server}.",
+    title: "{game} powered by {server}.",
     lead: "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud, so no progress is lost.",
     play: "Where to play",
     build: "Build with Sai Server",
@@ -76,19 +70,18 @@ export const COPY = {
   },
 
   game: {
-    kicker: "The game in 15 seconds",
-    title: "Sort the books. Grow the garden.",
-    cards: [
-      { title: "Sort by color", text: "Drag books back to the shelf compartment of their color." },
-      { title: "Make it bloom", text: "Each correct book makes a flower bloom: hibiscus, frangipani, lotus, orchid and more." },
-      { title: "Clear huge levels", text: "Use the tray, the empty compartment and Fuzzy Fruit, an auto-sort helper, to clear huge, randomly generated levels. Play in Relax Mode or Hardcore Mode." },
-    ],
+    kicker: "Gameplay",
+    title: "Infinite books. Endless shelves.",
+    tagline: "Never run out of books.",
+    /** YouTube video id (https://youtu.be/0u0mkD7qBFY) */
+    videoId: "0u0mkD7qBFY",
+    videoTitle: "Infinite Book Shelf gameplay video",
   },
 
   server: {
     kicker: "Powered by Sai Server",
     title: "What the game asks of its backend",
-    lead: "Infinite Book Shelf uses two Sai Server modules for sign-in and cloud saves. Here is what each one does in the game.",
+    lead: "Infinite Book Shelf uses two Sai Server modules for **sign-in** and **cloud saves**. Here is what each one does in the game.",
     features: [
       { name: "SaiAuth", text: "Google sign-in through the backend, token sessions with auto refresh, and auto-login on return. A session guard sends the player back to login safely when the refresh token expires." },
       { name: "GamerProgress", tag: "custom game_data", text: "The whole level is stored in the cloud: the seed, the position of every moved book, the tray contents and the Fuzzy Fruit count." },
@@ -107,17 +100,6 @@ export const COPY = {
       ships: "ship the WebGL, PC and Android builds",
     },
     archAlt: "Architecture: the game client (WebGL, PC or Android) talks to the SaiServer prefab (SaiAuth, GamerProgress), which calls the Sai backend over a REST API. Unity Play, Itch.io, Steam and Google Play ship the builds.",
-    saveTitle: "How auto-save decides",
-    save: {
-      check: "fingerprint check",
-      change: "change",
-      quiet: "quiet period",
-      save: "save",
-      cap: "max delay cap",
-    },
-    saveAlt: "Auto-save timeline: fingerprint checks run on an interval; after a change, the game waits for a quiet period and then saves. A maximum delay cap forces a save if changes keep coming.",
-    codeTitle: "Drop in the prefab",
-    code: "// Drop the SaiServer prefab in the scene, set Game ID, then:\nSaiServer.Instance.SaiAuth.OnLoginSuccess += LoadLevelFromCloud;",
     alsoTitle: "Also available in the SDK",
     alsoLead: "Not used by this game. One drop-in prefab, modular and event-driven.",
     also: ["Mailbox", "Inventory / Items", "Crafting", "Gacha", "Shop", "Quests", "Leaderboards", "Journey analytics", "Battle sessions", "Lua scripting"],
@@ -125,8 +107,8 @@ export const COPY = {
 
   engineering: {
     kicker: "Engineering highlights",
-    title: "Measured, not promised",
-    note: "Editor measurements: Unity Editor on Windows, November 3, 2026. These are not device FPS numbers.",
+    title: "Measured in the final build",
+    imageCaption: "Tested with 800 billion books.",
     metrics: [
       { from: "4,177", to: "55", unit: "draw calls", text: "with 4,000 books on screen: GPU instancing and one shared 4K cover atlas." },
       { from: "35.1 MB", to: "22.4 MB", unit: "texture memory", text: "about 36% less." },
@@ -137,21 +119,9 @@ export const COPY = {
       { title: "Endless-feeling levels", text: "A grid of shelves is split into clusters. Shelves are generated only when the camera needs them and streamed in and out as you pan." },
       { title: "Procedural shelves", text: "Each shelf is built from rules: rows of 10 books, compartments of 2–7, stepped boards and one empty compartment. The rules are validated over 20,000 seeds." },
       { title: "Cross-shelf shuffle", text: "Books swap between shelves inside a cluster, fully reproducible from the seed." },
-      { title: "Startup work budget", text: "Loading is spread across frames, so the browser never freezes." },
+      { title: "Startup work budget", text: "Loading is spread across frames, so the game never freezes while a level loads, on any platform." },
       { title: "Per-platform rendering", text: "Desktop and mobile feature profiles: a mobile render pipeline asset, BC7 textures on desktop and ASTC on mobile." },
       { title: "Pooling everywhere", text: "Books, shelves, flowers and effects come from one scene-authored pool." },
-    ],
-  },
-
-  polish: {
-    kicker: "Polish details",
-    title: "The small things",
-    items: [
-      { title: "Leaf particles", text: "Leaves gather when you drag over a slot and burst when you drop." },
-      { title: "Leaf transition", text: "A wave of leaves closes each finished level." },
-      { title: "Magic wand cursor", text: "The cursor is a small magic wand." },
-      { title: "Book bird", text: "Stay idle for a while and a book bird flies across the screen." },
-      { title: "Three languages", text: "The UI is localized in English, Vietnamese and Japanese." },
     ],
   },
 

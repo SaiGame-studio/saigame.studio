@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
       { source: "/courses/unity-dev-basic", destination: "/game-courses/", permanent: true },
       // the Basic Sai Server page was removed; Sai Server is presented on /products/
       { source: "/co-ban-sai-server", destination: "/products/", permanent: true },
+      // the Infinite Book Shelf page first shipped at /products/infinity-book-shelf/
+      { source: "/products/infinity-book-shelf", destination: "/products/infinite-book-shelf/", permanent: true },
     ];
   },
 };

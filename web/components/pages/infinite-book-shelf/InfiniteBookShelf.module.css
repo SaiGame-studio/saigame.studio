@@ -1,4 +1,4 @@
-/* /products/infinity-book-shelf: "botanical journal meets engineering blog" on a leaf-dark ground.
+/* /products/infinite-book-shelf: "botanical journal meets engineering blog" on a leaf-dark ground.
    Palette from the game's flowers (brief section 2); product names keep the site-wide blues (saigame.studio/AGENTS.md). */
 .page {
   --ink: #121a12;
@@ -53,6 +53,12 @@
   white-space: nowrap;
 }
 
+/* key words marked **bold** in content.ts */
+.strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
 /* type */
 .eyebrow,
 .kicker {
@@ -71,6 +77,17 @@
   letter-spacing: -0.02em;
   font-weight: 800;
   text-wrap: balance;
+}
+
+/* Japanese only (<html lang="ja">): CJK glyphs run wider, so the hero title is set smaller and the
+   game name may wrap between its words instead of overflowing under the hero image */
+.title:lang(ja) {
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+  line-height: 1.25;
+}
+
+.title:lang(ja) .gameName {
+  white-space: normal;
 }
 
 .h2 {
@@ -101,10 +118,6 @@
 .text {
   margin: 0;
   line-height: 1.6;
-  color: var(--muted);
-}
-
-.muted {
   color: var(--muted);
 }
 
@@ -284,6 +297,15 @@
   box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
 }
 
+/* sits above its image */
+.caption {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--wood);
+  text-align: center;
+}
+
 .placeholder {
   position: relative;
   display: grid;
@@ -317,47 +339,34 @@
   color: #b9bbb4;
 }
 
-/* 3.2 game cards */
-.cards {
-  list-style: none;
-  margin: 40px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+/* 3.2 gameplay: the endless library is the hook */
+.gameTitle {
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
+
+.tagline {
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* 3.2 gameplay video */
+.video {
+  margin-top: 40px;
+  aspect-ratio: 16 / 9;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--panel);
   overflow: hidden;
+  background: #000;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
 }
 
-.card .placeholder,
-.card .image {
-  border-radius: 0;
-  border-width: 0 0 2px;
-  box-shadow: none;
-}
-
-.cardBody {
-  padding: 20px 22px 24px;
-}
-
-.cardNumber {
-  display: inline-grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  margin-bottom: 12px;
-  border-radius: 50%;
-  background: var(--hibiscus);
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 800;
+.video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* 3.3 Sai Server */
@@ -369,9 +378,10 @@
   align-items: start;
 }
 
-.stickyMedia {
-  position: sticky;
-  top: 24px;
+/* #5 login and #15 Inspector, stacked beside the feature list */
+.sideMedia {
+  display: grid;
+  gap: 20px;
 }
 
 .featureList {
@@ -412,11 +422,9 @@
   color: var(--muted);
 }
 
+/* architecture, under the feature list in column 1 */
 .diagrams {
-  margin-top: clamp(48px, 6vw, 72px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+  margin-top: 36px;
 }
 
 .diagram {
@@ -484,110 +492,9 @@
   color: var(--muted);
 }
 
-/* #7 auto-save timeline */
-.timeline {
-  display: block;
-  width: 100%;
-  height: 120px;
-}
-
-.tlAxis,
-.tlTick {
-  stroke: var(--muted);
-  stroke-width: 0.5;
-  vector-effect: non-scaling-stroke;
-}
-
-.tlTick {
-  stroke-width: 2;
-}
-
-.tlCap {
-  fill: var(--wood);
-  opacity: 0.7;
-}
-
-.tlQuiet {
-  fill: var(--leaf);
-  opacity: 0.35;
-}
-
-.tlChange {
-  fill: var(--hibiscus);
-}
-
-.tlSave {
-  fill: var(--leaf);
-}
-
-.legend {
-  list-style: none;
-  margin: 16px 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.legend li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.swatch {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-}
-
-.swTick {
-  width: 2px;
-  background: var(--muted);
-}
-
-.swChange {
-  border-radius: 50%;
-  background: var(--hibiscus);
-}
-
-.swQuiet {
-  background: var(--leaf);
-  opacity: 0.35;
-}
-
-.swSave {
-  border-radius: 50%;
-  background: var(--leaf);
-}
-
-.swCap {
-  height: 4px;
-  background: var(--wood);
-}
-
 .sdkGrid {
   margin-top: clamp(48px, 6vw, 72px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-}
-
-.code {
-  margin: 12px 0 0;
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #0b100b;
-  color: #d7e8c0;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
+  max-width: 760px;
 }
 
 .chips {
@@ -608,14 +515,6 @@
 }
 
 /* 3.4 engineering */
-.note {
-  margin: 16px 0 0;
-  padding-left: 12px;
-  border-left: 3px solid var(--wood);
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
 .metrics {
   list-style: none;
   margin: 36px 0 0;
@@ -681,44 +580,6 @@
   border-top: 1px solid var(--line);
 }
 
-.pair {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-/* 3.5 polish */
-.polishGrid {
-  margin-top: 36px;
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
-}
-
-.polishList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.polishItem {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  line-height: 1.55;
-}
-
-.polishItem strong {
-  color: var(--hibiscus);
-}
-
-.polishMedia {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
 /* 3.6 closing */
 .close {
   padding: clamp(64px, 8vw, 96px) 0;
@@ -758,25 +619,15 @@
 
 @media (max-width: 900px) {
   .heroGrid,
-  .serverGrid,
-  .diagrams,
-  .sdkGrid,
-  .polishGrid,
-  .cards {
+  .serverGrid {
     grid-template-columns: 1fr;
-  }
-
-  .stickyMedia {
-    position: static;
   }
 }
 
 @media (max-width: 600px) {
   .stores,
   .metrics,
-  .points,
-  .pair,
-  .polishMedia {
+  .points {
     grid-template-columns: 1fr;
   }
 }

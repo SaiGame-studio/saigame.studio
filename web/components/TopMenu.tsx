@@ -25,7 +25,7 @@ const GAMES: SubLink[] = [
   { id: "menu-item-40", href: "/games/the-watcher", label: "The Watcher", translate: false },
 ];
 const PRODUCTS: SubLink[] = [
-  { id: "menu-item-infinite-book-shelf", href: "/products/infinity-book-shelf/", label: "Infinite Book Shelf", translate: false },
+  { id: "menu-item-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false },
 ];
 const LINKS_AFTER_PRODUCTS: Link[] = [
   { key: "game-courses", id: "menu-item-game-courses", href: "/game-courses/", label: "Game Courses" },
