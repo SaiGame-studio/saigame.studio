@@ -1,4 +1,5 @@
 // Blog posts shown on /blog/, newest first. Each post page lives at /blog/<slug>/ (app/blog/<slug>/page.tsx).
+// title and excerpt pass through t(): English ones get vi/ja entries in i18n/, Vietnamese ones are shown as is.
 export type BlogPost = {
   slug: string;
   title: string;
@@ -12,10 +13,10 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: "thu-thach-lam-game",
-    title: "Thử Thách Làm Game",
+    slug: "game-making-challenge",
+    title: "Game Making Challenge",
     date: "2026-02-01",
-    excerpt: "Tháng 1: Hạnh đầu đà. Tháng 3: Thánh Gióng. Tháng 6: SG11.",
+    excerpt: "January: Hạnh đầu đà. March: Thánh Gióng. June: SG11. October: Infinite Book Shelf.",
   },
   {
     slug: "sai-game-lore-1",

@@ -4,7 +4,6 @@ import type { NextConfig } from "next";
 const GAME_PAGES: string[] = ["purgatory", "the-immortal", "the-watcher"];
 // Blog posts live under /blog/<slug>/; WordPress served them at the root.
 const BLOG_POSTS: string[] = [
-  "thu-thach-lam-game",
   "sai-game-lore-1",
   "purgatory-game-tutorial",
   "ss05-backend-tutorial",
@@ -24,6 +23,9 @@ const nextConfig: NextConfig = {
     return [
       ...GAME_PAGES.map((slug) => ({ source: `/${slug}`, destination: `/games/${slug}/`, permanent: true })),
       ...BLOG_POSTS.map((slug) => ({ source: `/${slug}`, destination: `/blog/${slug}/`, permanent: true })),
+      // "Thử Thách Làm Game" moved to an English slug (old WordPress root URL included)
+      { source: "/thu-thach-lam-game", destination: "/blog/game-making-challenge/", permanent: true },
+      { source: "/blog/thu-thach-lam-game", destination: "/blog/game-making-challenge/", permanent: true },
       // the Unity Dev Basic course moved to /game-courses/ (old WordPress URLs included)
       { source: "/unity-dev-basic", destination: "/game-courses/", permanent: true },
       { source: "/courses/unity-dev-basic", destination: "/game-courses/", permanent: true },

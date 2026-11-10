@@ -26,9 +26,9 @@ export default async function BlogList() {
             <div className={s.leadBody}>
               <time className={s.date} dateTime={lead.date}>{formatDate(lead.date, lang)}</time>
               <h2 className={s.leadTitle}>
-                <a className={s.titleLink} href={href(lead)}>{lead.title}</a>
+                <a className={s.titleLink} href={href(lead)}>{t(lead.title)}</a>
               </h2>
-              {lead.excerpt && <p className={s.excerpt}>{lead.excerpt}</p>}
+              {lead.excerpt && <p className={s.excerpt}>{t(lead.excerpt)}</p>}
               <a className={s.readMore} href={href(lead)}>
                 {t("Read the post")}
                 <svg className={s.arrow} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -49,9 +49,9 @@ export default async function BlogList() {
                 <time className={s.rowDate} dateTime={post.date}>{formatDate(post.date, lang)}</time>
                 <div className={s.rowBody}>
                   <h3 className={s.rowTitle}>
-                    <a className={s.titleLink} href={href(post)}>{post.title}</a>
+                    <a className={s.titleLink} href={href(post)}>{t(post.title)}</a>
                   </h3>
-                  {post.excerpt && <p className={s.rowExcerpt}>{post.excerpt}</p>}
+                  {post.excerpt && <p className={s.rowExcerpt}>{t(post.excerpt)}</p>}
                 </div>
                 {post.image ? (
                   <a className={s.thumbLink} href={href(post)} tabIndex={-1} aria-hidden="true">

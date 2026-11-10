@@ -29,7 +29,7 @@ export default async function BlogPostLayout({ slug, children }: { slug: string;
             <Arrow back /> {t("Blog")}
           </a>
           <time className={s.date} dateTime={post.date}>{formatDate(post.date, lang)}</time>
-          <h1 id="post-title" className={s.title}>{post.title}</h1>
+          <h1 id="post-title" className={s.title}>{t(post.title)}</h1>
         </header>
 
         {post.image && !post.video && (
@@ -47,13 +47,13 @@ export default async function BlogPostLayout({ slug, children }: { slug: string;
             {older ? (
               <a className={s.pagerLink} href={postHref(older)}>
                 <span className={s.pagerLabel}><Arrow back /> {t("Older post")}</span>
-                <span className={s.pagerTitle}>{older.title}</span>
+                <span className={s.pagerTitle}>{t(older.title)}</span>
               </a>
             ) : <span />}
             {newer && (
               <a className={`${s.pagerLink} ${s.pagerNext}`} href={postHref(newer)}>
                 <span className={s.pagerLabel}>{t("Newer post")} <Arrow /></span>
-                <span className={s.pagerTitle}>{newer.title}</span>
+                <span className={s.pagerTitle}>{t(newer.title)}</span>
               </a>
             )}
           </div>

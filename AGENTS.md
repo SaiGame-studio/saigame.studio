@@ -46,3 +46,10 @@ Every "Sai Play" follows the same rules as "Sai Server" above, with its own link
 
 Page titles and headings link too. Skip the link (keep the colour) only when the text is already
 inside a link or button. Build these links with `linkProducts` from `web/components/SaiServerLink.tsx`, not by hand.
+
+## Menu links to a section (`#anchor`)
+
+Kubio's menu scroll-spy (`wp-content/plugins/kubio/build/scripts/index.js`) registers every menu link that
+contains `#` and rewrites the URL hash while the page scrolls. Pages change client-side here, so a registered
+section keeps writing its hash into the URL of every page visited afterwards. Any element a menu link
+points to (e.g. `#pricing` on `/products/sai-server/`) must carry `skip-scroll-spy="true"` (a non-empty value: Kubio tests it with jQuery `attr()`, and an empty string counts as not set).
