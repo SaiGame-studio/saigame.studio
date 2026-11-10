@@ -1,6 +1,7 @@
 // /products/infinite-book-shelf: a tech showcase of Infinite Book Shelf, a Unity game (browser, PC, Android) built on Sai Server.
 // Not Kubio markup: styled by InfiniteBookShelf.module.css; the page keeps the site's Kubio nav and footer around it.
 // All copy lives in content.ts. Screenshots render as numbered placeholders until their `ready` flag is set.
+import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { linkProducts, SAI_SERVER_URL } from "@/components/SaiServerLink";
@@ -64,7 +65,7 @@ function Media({ shot, t, eager = false, className = "", caption }: { shot: Shot
       {shot.file.endsWith(".webm") ? (
         <video className={s.image} src={src} width={shot.width} height={shot.height} autoPlay muted loop playsInline aria-label={t(shot.alt)} />
       ) : (
-        <img className={s.image} src={src} width={shot.width} height={shot.height} alt={t(shot.alt)} loading={eager ? "eager" : "lazy"} decoding="async" />
+        <img data-zoom tabIndex={0} className={s.image} src={src} width={shot.width} height={shot.height} alt={t(shot.alt)} loading={eager ? "eager" : "lazy"} decoding="async" />
       )}
     </figure>
   );
@@ -108,6 +109,7 @@ export default async function InfiniteBookShelf() {
 
   return (
     <div className={s.page}>
+      <ImageLightbox closeLabel={t("Close")} />
       {/* 3.1 hero */}
       <section className={`${s.hero} h-navigation-padding`} aria-labelledby="ibs-title">
         <div className={`${s.wrap} ${s.heroGrid}`}>

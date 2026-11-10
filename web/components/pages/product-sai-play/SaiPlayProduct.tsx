@@ -1,6 +1,7 @@
 // /products/sai-play: the Sai Play product landing, in the layout of /products/infinite-book-shelf.
 // Not Kubio markup: styled by product-landing/ProductLanding.module.css; the page keeps the site's Kubio nav and footer.
 // All copy lives in content.ts. The UI pictures are HTML illustrations with sample values, labelled as such.
+import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { SAI_PLAY_URL, SAI_SERVER_URL } from "@/components/SaiServerLink";
@@ -115,6 +116,7 @@ export default async function SaiPlayProduct() {
 
   return (
     <div className={`${s.page} ${s.themePlay}`}>
+      <ImageLightbox closeLabel={t("Close")} />
       {/* hero */}
       <section className={`${s.hero} h-navigation-padding`} aria-labelledby="sp-title">
         <div className={`${s.wrap} ${s.heroGrid}`}>

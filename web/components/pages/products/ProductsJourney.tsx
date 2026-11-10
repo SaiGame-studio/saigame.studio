@@ -1,6 +1,7 @@
 // /products content: the path from a studio's game on Sai Server to the player's account on Sai Play.
 // Not Kubio markup: styled by Products.module.css; the page keeps the site's Kubio nav and footer around it.
 // The sections below the hero continue the three steps, each opening on its step's rule colour.
+import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { linkProducts, SAI_PLAY_URL, SAI_SERVER_URL } from "@/components/SaiServerLink";
@@ -59,6 +60,7 @@ export default async function ProductsJourney() {
 
   return (
     <div className={s.page}>
+      <ImageLightbox closeLabel={t("Close")} />
       <section className={`${s.hero} h-navigation-padding`} aria-labelledby="products-title">
         <div className={`${s.wrap} ${s.heroInner}`}>
           <div className={s.heroTop}>
@@ -77,7 +79,7 @@ export default async function ProductsJourney() {
           <p className={s.lead}>{productLinks(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
           </div>
           <figure className={`${s.media} ${s.heroMedia}`}>
-            <img className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} decoding="async" />
+            <img data-zoom tabIndex={0} className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} decoding="async" />
           </figure>
           </div>
           <ol className={s.steps}>
@@ -183,7 +185,7 @@ export default async function ProductsJourney() {
             {SHOWCASES.map((game, i) => (
               <li key={game.href}>
                 <a className={s.showcase} href={game.href}>
-                  <img className={s.showcaseImage} src={game.image.src} width={game.image.width} height={game.image.height} alt={t(game.alt)} loading="lazy" decoding="async" />
+                  <img data-zoom tabIndex={0} className={s.showcaseImage} src={game.image.src} width={game.image.width} height={game.image.height} alt={t(game.alt)} loading="lazy" decoding="async" />
                   <span className={s.showcaseBody}>
                     <span className={s.showcaseNumber}>#{i + 1} · {t("Tech showcase")}</span>
                     <span className={s.showcaseName}>{game.name}</span>

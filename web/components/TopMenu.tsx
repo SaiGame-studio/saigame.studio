@@ -16,7 +16,7 @@ type Props = {
 
 type Link = { key: TopMenuItem; id: string; href: string; label: string };
 /** a dropdown entry; product and game names stay untranslated unless `translate` is set */
-type SubLink = { id: string; href: string; label: string; translate: boolean };
+type SubLink = { id: string; href: string; label: string; translate: boolean; /** a game: shows a gamepad icon on the right */ game?: boolean };
 
 const LINKS_BEFORE_GAMES: Link[] = [{ key: "home", id: "menu-item-17", href: "/", label: "Home" }];
 const GAMES: SubLink[] = [
@@ -27,7 +27,7 @@ const GAMES: SubLink[] = [
 const PRODUCTS: SubLink[] = [
   { id: "menu-item-sai-server", href: "/products/sai-server/", label: "Sai Server", translate: false },
   { id: "menu-item-sai-play", href: "/products/sai-play/", label: "Sai Play", translate: false },
-  { id: "menu-item-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false },
+  { id: "menu-item-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false, game: true },
 ];
 const LINKS_AFTER_PRODUCTS: Link[] = [
   { key: "game-courses", id: "menu-item-game-courses", href: "/game-courses/", label: "Game Courses" },
@@ -39,6 +39,16 @@ const LINKS_AFTER_PRODUCTS: Link[] = [
 const OWNER = "home";
 const depth = (d: number) => ({ "--kubio-menu-item-depth": String(d) }) as React.CSSProperties;
 const current = (on: boolean) => (on ? " current-menu-item current_page_item" : "");
+
+/** marks a dropdown entry that is a game (styles in app/site.css) */
+const GamepadIcon = () => (
+  <svg className="menu-game-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M6.5 7h11a4.5 4.5 0 0 1 4.4 5.5l-1 4.4a2.6 2.6 0 0 1-4.6 1l-1.8-2.4h-5l-1.8 2.4a2.6 2.6 0 0 1-4.6-1l-1-4.4A4.5 4.5 0 0 1 6.5 7z" />
+    <path d="M7.5 10.5v3M6 12h3" />
+    <circle cx="15.5" cy="11" r="0.6" fill="currentColor" />
+    <circle cx="17.5" cy="13" r="0.6" fill="currentColor" />
+  </svg>
+);
 
 const Chevron = () => (
   <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
@@ -70,7 +80,18 @@ async function MenuItems({ active }: { active?: TopMenuItem }) {
       <ul className="sub-menu">
         {items.map((item) => (
           <li key={item.id} id={item.id} className={`menu-item menu-item-type-custom menu-item-object-custom ${item.id}`}>
-            <a href={item.href} style={depth(1)}>{item.translate ? t(item.label) : item.label}</a>
+            <a href={item.href} style={depth(1)}>
+              {item.game ? (
+                <span className="menu-game-link">
+                  <span>{item.translate ? t(item.label) : item.label}</span>
+                  <GamepadIcon />
+                </span>
+              ) : item.translate ? (
+                t(item.label)
+              ) : (
+                item.label
+              )}
+            </a>
           </li>
         ))}
       </ul>

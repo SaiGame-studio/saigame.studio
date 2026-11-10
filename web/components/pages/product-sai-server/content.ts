@@ -19,6 +19,33 @@ export const SHOWCASE = {
   image: { file: "/images/products/infinite-book-shelf/hero.webp", width: 1400, height: 788 },
 };
 
+/** the limits a Materia stack raises, in display order */
+export const LIMITS = ["CCU", "Player profiles", "Items", "Shops", "Quests", "Journey nodes", "Event types", "Leaderboards", "Scripts", "Entity defs"] as const;
+type Limits = Record<(typeof LIMITS)[number], number | null>;
+
+/** a game's capacity before any Materia (Sai Server plugin help texts); null = no published base */
+export const FREE_BASE: Limits = {
+  CCU: 20, "Player profiles": 100, Items: 100, Shops: 2, Quests: 30,
+  "Journey nodes": 100, "Event types": 100, Leaderboards: 2, Scripts: 10, "Entity defs": null,
+};
+
+export type Tier = { id: "uncommon" | "rare" | "epic" | "legendary"; name: string; price: number; slots: number; grants: Limits };
+
+/** the Materia catalog in the Sai Server web admin (games/[id]/plugins). Prices are sCoin per stack per month;
+ *  slots = how many stacks of that Materia one game can hold. Copy new values from the catalog when they change. */
+export const TIERS: Tier[] = [
+  { id: "uncommon", name: "Uncommon", price: 100, slots: 7, grants: { CCU: 60, "Player profiles": 1_000, Items: 100, Shops: 2, Quests: 30, "Journey nodes": 0, "Event types": 0, Leaderboards: 0, Scripts: 0, "Entity defs": 0 } },
+  { id: "rare", name: "Rare", price: 7_000, slots: 3, grants: { CCU: 4_000, "Player profiles": 20_000, Items: 4_000, Shops: 100, Quests: 300, "Journey nodes": 100, "Event types": 100, Leaderboards: 10, Scripts: 100, "Entity defs": 100 } },
+  { id: "epic", name: "Epic", price: 15_000, slots: 3, grants: { CCU: 10_000, "Player profiles": 200_000, Items: 10_000, Shops: 1_000, Quests: 3_000, "Journey nodes": 1_000, "Event types": 1_000, Leaderboards: 50, Scripts: 1_000, "Entity defs": 1_000 } },
+  { id: "legendary", name: "Legendary", price: 150_000, slots: 3, grants: { CCU: 100_000, "Player profiles": 5_000_000, Items: 100_000, Shops: 7_000, Quests: 30_000, "Journey nodes": 10_000, "Event types": 10_000, Leaderboards: 200, Scripts: 10_000, "Entity defs": 10_000 } },
+];
+
+/** sCoin packages in the Sai Server Payment page run at $1 per 100 sCoin (100 = $0.99 … 100,000 = $1,000) */
+export const USD_PER_SCOIN = 0.01;
+
+export const MATERIA_DIR = `${IMAGE_DIR}/materia`;
+export const SCOIN_SRC = `${IMAGE_DIR}/scoin.svg`;
+
 export const COPY = {
   metaTitle: "Sai Server – The backend for your game",
   metaDescription:
@@ -125,6 +152,26 @@ export const COPY = {
     text: "A 3D puzzle for browser, PC and Android. Sign-in and cloud saves run on Sai Server, so every book, shelf and flower is kept across devices.",
     link: "See the tech showcase",
     alt: "Wooden bookshelves packed with colored books, flowers blooming above each sorted compartment, and a magic wand cursor picking up a yellow book",
+  },
+
+  pricing: {
+    kicker: "Pricing",
+    title: "Start free. Add capacity when your game grows.",
+    lead: "Every game starts on a **free base**. When it needs more, socket **Materia** into it from the web admin: each stack adds capacity on top of the base for one month, paid in sCoin.",
+    freeName: "Free base",
+    freePrice: "Free",
+    freeNote: "included in every game",
+    perMonth: "/ stack · month",
+    inScoin: "{amount} sCoin",
+    slots: "Up to {slots} stacks per game",
+    perStack: "Per stack",
+    included: "Included",
+    notes: [
+      "Stacks add up: the game's limit is the free base plus every active stack.",
+      "Prices in USD at the sCoin package rate: 100 sCoin for $0.99, about $0.01 per sCoin.",
+      "Activate your studio once for 1 sCoin to unlock Materia.",
+      "Buy sCoin on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.",
+    ],
   },
 
   close: {

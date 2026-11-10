@@ -242,10 +242,6 @@
   gap: 16px;
 }
 
-.cards3 {
-  --cols: 3;
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -324,6 +320,40 @@
 
 .splitReverse {
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
+
+/* a narrow copy column beside a large screenshot, level with its middle */
+.splitCenter {
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+}
+
+/* numbered steps stacked top to bottom, compact so the screenshot gets the room */
+.stepList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.stepList .card {
+  gap: 4px;
+  padding: 14px 16px;
+}
+
+.stepList .cardTitle {
+  font-size: 1.02rem;
+}
+
+.stepList .cardText {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.sdkTitle {
+  margin-top: 32px;
 }
 
 /* definition list of features */
@@ -702,6 +732,174 @@
   font-size: 0.8rem;
   color: var(--muted);
   text-align: center;
+}
+
+/* pricing: the free base, then one card per Materia tier in its rarity colour */
+.tiers {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.tier {
+  --tier: var(--muted);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid color-mix(in srgb, var(--tier) 45%, var(--line));
+  border-radius: 10px;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.tier[data-tier="uncommon"] {
+  --tier: #4ade80;
+}
+
+.tier[data-tier="rare"] {
+  --tier: #60a5fa;
+}
+
+.tier[data-tier="epic"] {
+  --tier: #f87171;
+}
+
+.tier[data-tier="legendary"] {
+  --tier: #facc15;
+}
+
+.tierFree {
+  border-style: dashed;
+}
+
+.tierHead {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 22px 16px 16px;
+  background: color-mix(in srgb, var(--tier) 12%, var(--ink));
+  border-bottom: 1px solid color-mix(in srgb, var(--tier) 30%, var(--line));
+}
+
+.tierOrb {
+  width: 84px;
+  height: 84px;
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--tier) 55%, transparent));
+}
+
+.tierOrbFree {
+  width: 84px;
+  height: 84px;
+  border: 2px dashed var(--line);
+  border-radius: 50%;
+}
+
+.tierName {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tier);
+}
+
+.tierPrice {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 18px 16px 6px;
+  text-align: center;
+}
+
+.tierAmount {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.tier[data-tier] .tierAmount {
+  color: #fcd34d;
+}
+
+.coin {
+  width: 16px;
+  height: 16px;
+}
+
+.tierScoin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fcd34d;
+  font-variant-numeric: tabular-nums;
+}
+
+.tierUnit {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tierSlots {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.limits {
+  margin: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.limitsTitle {
+  margin: 0 0 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.limitList {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.limit {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.limit dt {
+  color: var(--muted);
+}
+
+.limit dd {
+  margin: 0;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.limit .limitNone {
+  font-weight: 600;
+  color: var(--muted);
+  opacity: 0.5;
 }
 
 /* closing */

@@ -40,7 +40,7 @@ export function Arrow() {
 export function Media({ dir, shot, t, eager = false, caption, className = "" }: { dir: string; shot: Shot; t: T; eager?: boolean; caption?: string; className?: string }) {
   return (
     <figure className={`${s.media} ${className}`}>
-      <img className={s.image} src={`${dir}/${shot.file}`} width={shot.width} height={shot.height} alt={t(shot.alt)} loading={eager ? "eager" : "lazy"} decoding="async" />
+      <img data-zoom tabIndex={0} className={s.image} src={`${dir}/${shot.file}`} width={shot.width} height={shot.height} alt={t(shot.alt)} loading={eager ? "eager" : "lazy"} decoding="async" />
       {caption && <figcaption className={s.caption}>{caption}</figcaption>}
     </figure>
   );

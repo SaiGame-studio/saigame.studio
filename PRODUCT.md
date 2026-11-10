@@ -33,7 +33,8 @@ Sai Server and Sai Play share one backend (`ss-go`) and one account: a game buil
 - Site stack: Next.js 16 (App Router) rebuild of a WordPress/Kubio site; pages keep Kubio markup and per-page scoped CSS. `/sai-server/` is the exception, with its own CSS module design.
 - Bilingual EN/VI: every visible string goes through `t()` with Vietnamese in `web/i18n/vi.extra.json` and `web/i18n/vi.json`.
 - Engine-neutral copy: say "SDK" generically (never "Sai SDK" or "Sai Unity SDK") and never present Sai Server as Unity-only; Sai Server is planned to integrate with more game engines. Engines appear only in an SDK list, currently one entry: Unity SDK (https://github.com/SaiGame-studio/ss-unity/releases).
-- Undecided: pricing, plans, customer list, performance numbers. None may be invented.
+- Pricing (confirmed by the owner, 2026-11-11): every game has a free base; capacity is added with Materia stacks (Uncommon, Rare, Epic, Legendary) paid monthly in sCoin, as in the Sai Server web admin's Materia catalog. Values live in `web/components/pages/product-sai-server/content.ts` (`FREE_BASE`, `TIERS`); copy changes from the catalog, never estimate them. USD prices use the sCoin package rate (`USD_PER_SCOIN` = $0.01: packages run from 100 sCoin for $0.99 to 100,000 sCoin for $1,000).
+- Undecided: customer list, performance numbers. None may be invented.
 
 ## Brand Commitments
 

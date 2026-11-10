@@ -1,20 +1,23 @@
 // /products/sai-server: the Sai Server product landing, in the layout of /products/infinite-book-shelf.
 // Not Kubio markup: styled by product-landing/ProductLanding.module.css; the page keeps the site's Kubio nav and footer.
 // All copy lives in content.ts.
+import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { SAI_SERVER_URL } from "@/components/SaiServerLink";
 import { Arrow, DISCORD_URL, keepNames, LOGO_SRC, Media, NAMES, productLinks, rich, s, SDKS, TUTORIAL_URL } from "../product-landing/shared";
 import { COPY, IMAGE_DIR, SHOTS, SHOWCASE } from "./content";
+import Pricing from "./Pricing";
 
 const SAI_PLAY_PAGE = "/products/sai-play/";
 
 export default async function SaiServerProduct() {
-  const { t } = await getI18n();
+  const { lang, t } = await getI18n();
   const { hero, facts, steps, features, lua, trust, sdks, play, showcase, close } = COPY;
 
   return (
     <div className={`${s.page} ${s.themeServer}`}>
+      <ImageLightbox closeLabel={t("Close")} />
       {/* hero */}
       <section className={`${s.hero} h-navigation-padding`} aria-labelledby="ss-title">
         <div className={`${s.wrap} ${s.heroGrid}`}>
@@ -42,23 +45,23 @@ export default async function SaiServerProduct() {
         </div>
       </section>
 
-      {/* integration: three steps, then the SDK in the engine */}
+      {/* integration: the three steps stacked on the left, the SDK screenshot beside them on the right */}
       <section className={`${s.section} ${s.cardsSection}`} aria-labelledby="ss-steps">
         <div className={s.wrap}>
           <p className={s.kicker}>{t(steps.kicker)}</p>
           <h2 id="ss-steps" className={s.h2}>{t(steps.title)}</h2>
-          <ol className={`${s.cards} ${s.cards3}`}>
-            {steps.items.map((step, i) => (
-              <li key={step.title} className={s.card}>
-                <span className={s.cardNumber}>0{i + 1}</span>
-                <h3 className={s.cardTitle}>{t(step.title)}</h3>
-                <p className={s.cardText}>{productLinks(t(step.text))}</p>
-              </li>
-            ))}
-          </ol>
-          <div className={`${s.split} ${s.splitReverse}`}>
+          <div className={`${s.split} ${s.splitCenter}`}>
             <div>
-              <h3 className={s.h3}>{t(sdks.title)}</h3>
+              <ol className={s.stepList}>
+                {steps.items.map((step, i) => (
+                  <li key={step.title} className={s.card}>
+                    <span className={s.cardNumber}>0{i + 1}</span>
+                    <h3 className={s.cardTitle}>{t(step.title)}</h3>
+                    <p className={s.cardText}>{productLinks(t(step.text))}</p>
+                  </li>
+                ))}
+              </ol>
+              <h3 className={`${s.h3} ${s.sdkTitle}`}>{t(sdks.title)}</h3>
               <p className={s.text}>{t(sdks.lead)}</p>
               <ul className={s.chips}>
                 {SDKS.map((sdk) => (
@@ -141,7 +144,7 @@ export default async function SaiServerProduct() {
           </a>
 
           <article className={s.showcase} aria-labelledby="ss-showcase">
-            <img className={s.image} src={SHOWCASE.image.file} width={SHOWCASE.image.width} height={SHOWCASE.image.height} alt={t(showcase.alt)} loading="lazy" decoding="async" />
+            <img data-zoom tabIndex={0} className={s.image} src={SHOWCASE.image.file} width={SHOWCASE.image.width} height={SHOWCASE.image.height} alt={t(showcase.alt)} loading="lazy" decoding="async" />
             <div>
               <p className={s.kicker}>{keepNames(t(showcase.kicker))}</p>
               <h3 id="ss-showcase" className={s.h2}>{showcase.title}</h3>
@@ -154,8 +157,10 @@ export default async function SaiServerProduct() {
         </div>
       </section>
 
+      <Pricing t={t} lang={lang} />
+
       {/* final CTA */}
-      <section className={`${s.close} ${s.band}`} aria-labelledby="ss-close">
+      <section className={s.close} aria-labelledby="ss-close">
         <div className={s.wrap}>
           <img className={s.logo} src={LOGO_SRC} alt="SaiGame" width={160} height={160} loading="lazy" decoding="async" />
           <h2 id="ss-close" className={s.closeTitle}>{t(close.title)}</h2>
