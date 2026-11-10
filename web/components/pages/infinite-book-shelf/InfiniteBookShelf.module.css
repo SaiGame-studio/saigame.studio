@@ -1,0 +1,654 @@
+/* /products/infinite-book-shelf: "botanical journal meets engineering blog" on a leaf-dark ground.
+   Palette from the game's flowers (brief section 2); product names keep the site-wide blues (saigame.studio/AGENTS.md). */
+.page {
+  --ink: #121a12;
+  --panel: #1a241a;
+  --panel-2: #213021;
+  --line: #34452f;
+  --text: #f3f1e8;
+  --muted: #c3c8b6;
+  --leaf: #84b842;
+  /* the game's signature green: reserved for its name, so it reads the same everywhere on the page */
+  --game: #84b842;
+  --leaf-deep: #2f4a22;
+  --hibiscus: #ef3a38;
+  --wood: #c99a62;
+  --blue-2: #5f9bff;
+  --blue-3: #9cc0ff;
+  background: var(--ink);
+  color: var(--text);
+  font-family: Mulish, Helvetica, Arial, sans-serif;
+}
+
+.page ::selection {
+  background: var(--leaf);
+  color: var(--ink);
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 48px);
+}
+
+/* product names: own colour, no underline, never split */
+.productName {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.page .nameServer {
+  color: var(--blue-2);
+  text-decoration: none;
+}
+
+.page .namePlay {
+  color: var(--blue-3);
+  text-decoration: none;
+}
+
+/* the game's name: one green, never split */
+.gameName {
+  color: var(--game);
+  white-space: nowrap;
+}
+
+/* key words marked **bold** in content.ts */
+.strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
+/* type */
+.eyebrow,
+.kicker {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wood);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+/* Japanese only (<html lang="ja">): CJK glyphs run wider, so the hero title is set smaller and the
+   game name may wrap between its words instead of overflowing under the hero image */
+.title:lang(ja) {
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+  line-height: 1.25;
+}
+
+.title:lang(ja) .gameName {
+  white-space: normal;
+}
+
+.h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.lead,
+.sectionLead {
+  margin: 22px 0 0;
+  max-width: 60ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.text {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* buttons */
+.actions,
+.closeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.button,
+.buttonGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease-out, border-color 160ms ease-out, color 160ms ease-out;
+}
+
+/* deep green, so product names inside keep their own blue (saigame.studio/AGENTS.md) */
+.button {
+  border: 1px solid var(--leaf);
+  background: var(--leaf-deep);
+  color: var(--text);
+}
+
+.button:hover {
+  background: #3b5d2a;
+  color: var(--text);
+}
+
+.buttonGhost {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.buttonGhost:hover {
+  border-color: var(--leaf);
+  color: var(--text);
+}
+
+.button:focus-visible,
+.buttonGhost:focus-visible {
+  outline: 2px solid var(--leaf);
+  outline-offset: 3px;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* hero */
+.hero {
+  padding-bottom: clamp(56px, 8vw, 96px);
+  background: radial-gradient(120% 80% at 100% 0%, var(--leaf-deep) 0%, transparent 60%), var(--ink);
+}
+
+.heroGrid {
+  padding-top: clamp(40px, 6vw, 80px);
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.facts {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fact {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* sections */
+.section {
+  padding: clamp(64px, 9vw, 112px) 0;
+}
+
+.band {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* where to play */
+.storesSection {
+  padding-top: clamp(48px, 6vw, 72px);
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 24px;
+}
+
+.stores {
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.store {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.storeName {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.storePlatform {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.storeLink,
+.storeSoon {
+  margin-top: auto;
+  padding-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.storeLink {
+  color: var(--leaf);
+  text-decoration: none;
+}
+
+.storeLink:hover {
+  color: var(--text);
+}
+
+.storeLink:focus-visible {
+  outline: 2px solid var(--leaf);
+  outline-offset: 3px;
+}
+
+.storeSoon {
+  color: var(--wood);
+}
+
+/* media and numbered placeholders */
+.media {
+  margin: 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
+}
+
+/* sits above its image */
+.caption {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--wood);
+  text-align: center;
+}
+
+.placeholder {
+  position: relative;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 16px;
+  border: 2px dashed #6b6f68;
+  border-radius: 6px;
+  background: repeating-linear-gradient(135deg, #3b3e3a 0 14px, #363935 14px 28px);
+  color: #e6e6e0;
+  text-align: center;
+}
+
+.placeholderNumber {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.placeholderFile {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.placeholderSize {
+  font-size: 0.8rem;
+  color: #b9bbb4;
+}
+
+/* 3.2 gameplay: the endless library is the hook */
+.gameTitle {
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+}
+
+
+.tagline {
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* 3.2 gameplay video */
+.video {
+  margin-top: 40px;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
+}
+
+.video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 3.3 Sai Server */
+.serverGrid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+/* #5 login and #15 Inspector, stacked beside the feature list */
+.sideMedia {
+  display: grid;
+  gap: 20px;
+}
+
+.featureList {
+  margin: 0;
+}
+
+.feature {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.feature:first-child {
+  padding-top: 0;
+}
+
+.featureName {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.tag {
+  padding: 1px 8px;
+  border-radius: 3px;
+  background: var(--panel-2);
+  color: var(--wood);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.featureText {
+  margin: 6px 0 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* a feature's link, e.g. the game's shop on Sai Play */
+.featureLink {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--leaf);
+  text-decoration: none;
+}
+
+.featureLink:hover {
+  color: var(--text);
+}
+
+.featureLink:focus-visible {
+  outline: 2px solid var(--leaf);
+  outline-offset: 3px;
+}
+
+/* architecture, under the feature list in column 1 */
+.diagrams {
+  margin-top: 36px;
+}
+
+.diagram {
+  margin: 12px 0 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--ink);
+}
+
+/* #6 architecture */
+.archHost {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-bottom: 16px;
+}
+
+.archHostLabel {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.archFlow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+}
+
+.archNode {
+  position: relative;
+  display: block;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-2);
+}
+
+.archFlow .archNode:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  width: 2px;
+  height: 14px;
+  background: var(--leaf);
+}
+
+.archAccent {
+  border-color: var(--leaf);
+}
+
+.archStores {
+  display: inline-block;
+  border-color: var(--wood);
+}
+
+.archSub {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.sdkGrid {
+  margin-top: clamp(48px, 6vw, 72px);
+  max-width: 760px;
+}
+
+.chips {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* 3.4 engineering */
+.metrics {
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--leaf);
+  border-radius: 6px;
+  background: var(--panel);
+}
+
+.metricValue {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.metricFrom {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--hibiscus);
+}
+
+.metricUnit {
+  font-weight: 700;
+  color: var(--wood);
+}
+
+.metricText {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.wide {
+  margin-top: 40px;
+}
+
+.points {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.point {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+/* 3.6 closing */
+.close {
+  padding: clamp(64px, 8vw, 96px) 0;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: 96px;
+  height: auto;
+  margin: 0 auto 24px;
+}
+
+.closeTitle {
+  margin: 0 auto;
+  max-width: 22ch;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.closeActions {
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .stores,
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .heroGrid,
+  .serverGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .stores,
+  .metrics,
+  .points {
+    grid-template-columns: 1fr;
+  }
+}

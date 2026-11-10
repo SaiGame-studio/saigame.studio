@@ -1,11 +1,11 @@
-// Shared top menu (logo, menu with dropdowns, language switcher, mobile off-canvas menu), used by every page.
+// Shared top menu (logo, menu with Games and Products dropdowns, language switcher, mobile off-canvas menu), used by every page.
 // Markup comes from the home page's Kubio navigation. Keep classNames: the Kubio CSS depends on them.
 // Kubio CSS is scoped per page; data-wp-owner="home" makes the home page's navigation styles apply on any page,
 // so the menu looks the same everywhere. The off-canvas panels carry it too because Kubio moves them to <body>.
 import { getI18n } from "@/lib/i18n";
 import LangFlag from "@/components/LangFlag";
 
-export type TopMenuItem = "home" | "games" | "products" | "game-courses" | "blog" | "careers" | "contact-us";
+export type TopMenuItem = "home" | "games" | "products" | "game-courses" | "blog" | "careers" | "pricing";
 
 type Props = {
   /** The data-wp-page slug of the page rendering the menu; keeps the off-canvas panel id unique per page. */
@@ -15,24 +15,41 @@ type Props = {
 };
 
 type Link = { key: TopMenuItem; id: string; href: string; label: string };
+/** a dropdown entry; product and game names stay untranslated unless `translate` is set */
+type SubLink = { id: string; href: string; label: string; translate: boolean; /** a game: shows a gamepad icon on the right */ game?: boolean };
 
 const LINKS_BEFORE_GAMES: Link[] = [{ key: "home", id: "menu-item-17", href: "/", label: "Home" }];
-const GAMES = [
+const GAMES: SubLink[] = [
   { id: "menu-item-649", href: "/games/purgatory", label: "Purgatory", translate: false },
   { id: "menu-item-39", href: "/games/the-immortal", label: "The Immortal", translate: true },
   { id: "menu-item-40", href: "/games/the-watcher", label: "The Watcher", translate: false },
 ];
-const LINKS_AFTER_GAMES: Link[] = [
-  { key: "products", id: "menu-item-products", href: "/products/", label: "Products" },
+const PRODUCTS: SubLink[] = [
+  { id: "menu-item-sai-server", href: "/products/sai-server/", label: "Sai Server", translate: false },
+  { id: "menu-item-sai-play", href: "/products/sai-play/", label: "Sai Play", translate: false },
+  { id: "menu-item-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false, game: true },
+];
+const LINKS_AFTER_PRODUCTS: Link[] = [
+  // opens the pricing table on the Sai Server product page; Contact Us lives in the footer (SiteFooter)
+  { key: "pricing", id: "menu-item-pricing", href: "/products/sai-server/#pricing", label: "Pricing" },
   { key: "game-courses", id: "menu-item-game-courses", href: "/game-courses/", label: "Game Courses" },
   { key: "blog", id: "menu-item-18", href: "/blog", label: "Blog" },
   { key: "careers", id: "menu-item-careers", href: "/careers/", label: "Careers" },
-  { key: "contact-us", id: "menu-item-contact-us", href: "/contact-us/", label: "Contact Us" },
 ];
 
 const OWNER = "home";
 const depth = (d: number) => ({ "--kubio-menu-item-depth": String(d) }) as React.CSSProperties;
 const current = (on: boolean) => (on ? " current-menu-item current_page_item" : "");
+
+/** marks a dropdown entry that is a game (styles in app/site.css) */
+const GamepadIcon = () => (
+  <svg className="menu-game-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M6.5 7h11a4.5 4.5 0 0 1 4.4 5.5l-1 4.4a2.6 2.6 0 0 1-4.6 1l-1.8-2.4h-5l-1.8 2.4a2.6 2.6 0 0 1-4.6-1l-1-4.4A4.5 4.5 0 0 1 6.5 7z" />
+    <path d="M7.5 10.5v3M6 12h3" />
+    <circle cx="15.5" cy="11" r="0.6" fill="currentColor" />
+    <circle cx="17.5" cy="13" r="0.6" fill="currentColor" />
+  </svg>
+);
 
 const Chevron = () => (
   <svg className="kubio-menu-item-icon" role="img" viewBox="0 0 320 512">
@@ -55,23 +72,38 @@ async function MenuItems({ active }: { active?: TopMenuItem }) {
       <a href={l.href} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>{t(l.label)}</a>
     </li>
   );
+  const dropdown = (l: Link, items: SubLink[]) => (
+    <li id={l.id} className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${l.id}${current(active === l.key)}`}>
+      <a href={l.href} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>
+        <span>{t(l.label)}</span>
+        <Chevron />
+      </a>
+      <ul className="sub-menu">
+        {items.map((item) => (
+          <li key={item.id} id={item.id} className={`menu-item menu-item-type-custom menu-item-object-custom ${item.id}`}>
+            <a href={item.href} style={depth(1)}>
+              {item.game ? (
+                <span className="menu-game-link">
+                  <span>{item.translate ? t(item.label) : item.label}</span>
+                  <GamepadIcon />
+                </span>
+              ) : item.translate ? (
+                t(item.label)
+              ) : (
+                item.label
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
   return (
     <ul id="menu-primary-menu" className="menu kubio-has-gap-fallback">
       {LINKS_BEFORE_GAMES.map(link)}
-      <li id="menu-item-37" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37${current(active === "games")}`}>
-        <a href="/games" aria-current={active === "games" ? "page" : undefined} style={depth(0)}>
-          <span>{t("Games")}</span>
-          <Chevron />
-        </a>
-        <ul className="sub-menu">
-          {GAMES.map((g) => (
-            <li key={g.id} id={g.id} className={`menu-item menu-item-type-custom menu-item-object-custom ${g.id}`}>
-              <a href={g.href} style={depth(1)}>{g.translate ? t(g.label) : g.label}</a>
-            </li>
-          ))}
-        </ul>
-      </li>
-      {LINKS_AFTER_GAMES.map(link)}
+      {dropdown({ key: "games", id: "menu-item-37", href: "/games", label: "Games" }, GAMES)}
+      {dropdown({ key: "products", id: "menu-item-products", href: "/products/", label: "Products" }, PRODUCTS)}
+      {LINKS_AFTER_PRODUCTS.map(link)}
       <li id="menu-item-61" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-has-children current-language-menu-item menu-item-61">
         <a href="#" data-lang={flags.current.code} style={depth(0)}>
           <span>

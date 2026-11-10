@@ -1,6 +1,7 @@
 // /products content: the path from a studio's game on Sai Server to the player's account on Sai Play.
 // Not Kubio markup: styled by Products.module.css; the page keeps the site's Kubio nav and footer around it.
 // The sections below the hero continue the three steps, each opening on its step's rule colour.
+import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { linkProducts, SAI_PLAY_URL, SAI_SERVER_URL } from "@/components/SaiServerLink";
@@ -11,6 +12,17 @@ const TUTORIAL_URL = "https://server.saigame.studio/tutorials/basic/get-started/
 const SDKS = [{ name: "Unity SDK", href: "https://github.com/SaiGame-studio/ss-unity/releases" }];
 // sample balance for the illustrative Sai Play panel
 const SAMPLE_SGEM = "1,250";
+// games built on Sai Server, first shipped first; each links to its tech showcase page
+const SHOWCASES = [
+  {
+    name: "Infinite Book Shelf",
+    href: "/products/infinite-book-shelf/",
+    image: { src: "/images/products/infinite-book-shelf/hero.webp", width: 1400, height: 788 },
+    alt: "Wooden bookshelves packed with colored books, flowers blooming above each sorted compartment, and a magic wand cursor picking up a yellow book",
+    text: "A 3D puzzle for browser, PC and Android. Sign-in and cloud saves run on Sai Server, so every book, shelf and flower is kept across devices.",
+    tags: ["Unity 6", "WebGL · PC · Android", "Google sign-in"],
+  },
+];
 
 /** CSS classes for product names on /products: title colours, no underline (saigame.studio/AGENTS.md) */
 const NAMES = {
@@ -48,6 +60,7 @@ export default async function ProductsJourney() {
 
   return (
     <div className={s.page}>
+      <ImageLightbox closeLabel={t("Close")} />
       <section className={`${s.hero} h-navigation-padding`} aria-labelledby="products-title">
         <div className={`${s.wrap} ${s.heroInner}`}>
           <div className={s.heroTop}>
@@ -66,7 +79,7 @@ export default async function ProductsJourney() {
           <p className={s.lead}>{productLinks(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
           </div>
           <figure className={`${s.media} ${s.heroMedia}`}>
-            <img className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} decoding="async" />
+            <img data-zoom tabIndex={0} className={s.image} src="/images/products/cozy-sai-server.jpg" width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} decoding="async" />
           </figure>
           </div>
           <ol className={s.steps}>
@@ -94,7 +107,6 @@ export default async function ProductsJourney() {
       <section id="step-sai-server" className={`${s.stage} ${s.stage1}`} aria-labelledby="product-sai-server">
         <div className={`${s.wrap} ${s.stageGrid}`}>
           <div>
-            <span className={s.stageNumber}>1</span>
             <h2 id="product-sai-server" className={s.productTitle}>{productLinks("Sai Server")}</h2>
             <p className={s.productText}>{productLinks(t("Sai Server gives your studio one console for your team, your games and the game servers they run on."))}</p>
             <ul className={s.list}>
@@ -112,7 +124,6 @@ export default async function ProductsJourney() {
       <section id="step-sai-build" className={`${s.stage} ${s.stage2} ${s.band}`} aria-labelledby="product-sai-build">
         <div className={`${s.wrap} ${s.bandGrid}`}>
           <div>
-            <span className={s.stageNumber}>2</span>
             <h2 id="product-sai-build" className={s.bandTitle}>{t("Build your game, deploy to Sai Server")}</h2>
           </div>
           <div>
@@ -134,7 +145,6 @@ export default async function ProductsJourney() {
       <section id="step-sai-play" className={`${s.stage} ${s.stage3}`} aria-labelledby="product-sai-play">
         <div className={`${s.wrap} ${s.stageGrid}`}>
           <div>
-            <span className={s.stageNumber}>3</span>
             <h2 id="product-sai-play" className={s.productTitle}>{productLinks("Sai Play")}</h2>
             <p className={s.productText}>{productLinks(t("Sai Play is where your players live: the player site shared by every game running on Sai Server."))}</p>
             <ul className={s.list}>
@@ -163,6 +173,36 @@ export default async function ProductsJourney() {
               </ul>
             </div>
           </figure>
+        </div>
+      </section>
+
+      <section id="showcase" className={`${s.stage} ${s.showcaseStage}`} aria-labelledby="products-showcase">
+        <div className={s.wrap}>
+          <p className={s.kicker}>{t("Showcase")}</p>
+          <h2 id="products-showcase" className={s.bandTitle}>{productLinks(t("Games built on Sai Server"))}</h2>
+          <p className={s.productText}>{productLinks(t("Real games running on Sai Server, and how each one uses it."))}</p>
+          <ul className={s.showcases}>
+            {SHOWCASES.map((game, i) => (
+              <li key={game.href}>
+                <a className={s.showcase} href={game.href}>
+                  <img data-zoom tabIndex={0} className={s.showcaseImage} src={game.image.src} width={game.image.width} height={game.image.height} alt={t(game.alt)} loading="lazy" decoding="async" />
+                  <span className={s.showcaseBody}>
+                    <span className={s.showcaseNumber}>#{i + 1} · {t("Tech showcase")}</span>
+                    <span className={s.showcaseName}>{game.name}</span>
+                    <span className={s.showcaseText}>{keepNames(t(game.text))}</span>
+                    <span className={s.showcaseTags}>
+                      {game.tags.map((tag) => (
+                        <span key={tag} className={s.showcaseTag}>{tag}</span>
+                      ))}
+                    </span>
+                    <span className={s.showcaseMore}>
+                      {t("See the tech showcase")} <Arrow />
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
