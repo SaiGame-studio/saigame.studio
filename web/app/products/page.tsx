@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import ProductsJourney from "@/components/pages/products/ProductsJourney";
 import SiteFooter from "@/components/SiteFooter";
+import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = shareMetadata({
+  path: "/products/",
   title: "Products – SaiGame",
   description: "Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform.",
-  alternates: { canonical: "/products/" },
-};
+  image: "/images/products/og-products.png",
+});
 
 // The Kubio nav keeps the site chrome (CSS copied from the games page, tools/build_global_styles.py), the footer is the shared SiteFooter;
 // the content between them is its own design (components/pages/products/ProductsJourney.tsx).
