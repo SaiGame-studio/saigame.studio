@@ -126,7 +126,7 @@ export default async function Home() {
             {latestPosts.map((post) => (
               <li key={post.slug} className={s.post}>
                 <time className={s.postDate} dateTime={post.date}>{formatDate(post.date, lang)}</time>
-                <a className={s.postTitle} href={postHref(post)}>{post.title}</a>
+                <a className={s.postTitle} href={postHref(post)}>{t(post.title)}</a>
               </li>
             ))}
           </ol>

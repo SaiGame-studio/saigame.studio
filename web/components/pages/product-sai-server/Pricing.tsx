@@ -16,7 +16,9 @@ export default function Pricing({ t, lang }: { t: T; lang: string }) {
     n ? <td key={key}>{`${plus ? "+" : ""}${compact.format(n)}`}</td> : <td key={key} className={s.cellNone}>—</td>;
 
   return (
-    <section id="pricing" className={`${s.section} ${s.band}`} aria-labelledby="ss-pricing">
+    // skip-scroll-spy: the top menu links here ("Pricing"). Without it Kubio's menu scroll-spy registers this section and,
+    // because pages change client-side, keeps writing "#pricing" into the URL of every page visited afterwards.
+    <section id="pricing" skip-scroll-spy="true" className={`${s.section} ${s.band}`} aria-labelledby="ss-pricing">
       <div className={s.wrap}>
         <p className={s.kicker}>{t(p.kicker)}</p>
         <h2 id="ss-pricing" className={s.h2}>{t(p.title)}</h2>
