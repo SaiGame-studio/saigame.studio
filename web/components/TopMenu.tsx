@@ -5,7 +5,7 @@
 import { getI18n } from "@/lib/i18n";
 import LangFlag from "@/components/LangFlag";
 
-export type TopMenuItem = "home" | "games" | "products" | "game-courses" | "blog" | "careers" | "contact-us";
+export type TopMenuItem = "home" | "games" | "products" | "game-courses" | "blog" | "careers" | "pricing";
 
 type Props = {
   /** The data-wp-page slug of the page rendering the menu; keeps the off-canvas panel id unique per page. */
@@ -30,10 +30,11 @@ const PRODUCTS: SubLink[] = [
   { id: "menu-item-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false, game: true },
 ];
 const LINKS_AFTER_PRODUCTS: Link[] = [
+  // opens the pricing table on the Sai Server product page; Contact Us lives in the footer (SiteFooter)
+  { key: "pricing", id: "menu-item-pricing", href: "/products/sai-server/#pricing", label: "Pricing" },
   { key: "game-courses", id: "menu-item-game-courses", href: "/game-courses/", label: "Game Courses" },
   { key: "blog", id: "menu-item-18", href: "/blog", label: "Blog" },
   { key: "careers", id: "menu-item-careers", href: "/careers/", label: "Careers" },
-  { key: "contact-us", id: "menu-item-contact-us", href: "/contact-us/", label: "Contact Us" },
 ];
 
 const OWNER = "home";

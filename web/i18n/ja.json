@@ -497,5 +497,6 @@
  "Close": "閉じる",
  "Code games, not infra. {server}.": "インフラではなく、ゲームを作ろう。{server}。",
  "{link} on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.": "{link}:Sai Server Web 管理画面の支払いページで、$0.99 から $1,000 までのパッケージを購入できます。",
- "Buy sCoin": "sCoin を購入"
+ "Buy sCoin": "sCoin を購入",
+ "Create Studio to get started": "スタジオを作成して始めましょう"
 }

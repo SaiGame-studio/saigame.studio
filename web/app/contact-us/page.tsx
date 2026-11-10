@@ -16,7 +16,7 @@ export default function ContactUsPage() {
     <div data-wp-page="contact-us" style={{ display: "contents" }}>
       <div className="wp-site-blocks">
         <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-          <TopMenu page="contact-us" active="contact-us" />
+          <TopMenu page="contact-us" />
         </div>
         <ContactContent />
         <SiteFooter />

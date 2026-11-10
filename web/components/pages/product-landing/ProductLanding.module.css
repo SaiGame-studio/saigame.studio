@@ -751,102 +751,125 @@
   text-align: center;
 }
 
-/* pricing: the free base, then one card per Materia tier in its rarity colour */
-.tiers {
-  list-style: none;
-  margin: 40px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
-}
-
-.tier {
-  --tier: var(--muted);
-  display: flex;
-  flex-direction: column;
-  border: 1px solid color-mix(in srgb, var(--tier) 45%, var(--line));
-  border-radius: 10px;
+/* pricing: a comparison table, one column per plan in its rarity colour (Materia catalog in the Sai Server web admin) */
+.priceFrame {
+  margin-top: 40px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
   background: var(--ink);
-  overflow: hidden;
 }
 
-.tier[data-tier="uncommon"] {
+.priceFrame:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.priceTable {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.priceTable [data-tier="free"] {
+  --tier: var(--muted);
+}
+
+.priceTable [data-tier="uncommon"] {
   --tier: #4ade80;
   --glow: #22c55e;
 }
 
-.tier[data-tier="rare"] {
+.priceTable [data-tier="rare"] {
   --tier: #60a5fa;
   --glow: #3b82f6;
 }
 
-.tier[data-tier="epic"] {
+.priceTable [data-tier="epic"] {
   --tier: #f87171;
   --glow: #ef4444;
 }
 
-.tier[data-tier="legendary"] {
+.priceTable [data-tier="legendary"] {
   --tier: #facc15;
   --glow: #eab308;
 }
 
-.tierFree {
-  border-style: dashed;
+/* plan header: orb, name, price, slots; tinted in the plan's colour with a rule on top */
+.planHead {
+  width: 17%;
+  padding: 28px 12px 20px;
+  vertical-align: top;
+  text-align: center;
+  font-weight: inherit;
+  border-top: 3px solid var(--tier);
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--glow, var(--tier)) 14%, transparent), transparent);
 }
 
-.tierHead {
-  display: grid;
-  justify-items: center;
-  gap: 10px;
-  padding: 28px 16px 18px;
-  background: color-mix(in srgb, var(--glow, var(--tier)) 10%, var(--ink));
-  border-bottom: 1px solid color-mix(in srgb, var(--tier) 30%, var(--line));
+.planHead > * {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cornerCell {
+  width: 15%;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--ink);
 }
 
 /* same size and double glow as the Materia catalog in the Sai Server web admin (games/[id]/plugins) */
 .tierOrb {
-  width: 96px;
-  height: 96px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
   filter: drop-shadow(0 0 20px var(--glow)) drop-shadow(0 0 8px var(--glow));
 }
 
 .tierOrbFree {
-  width: 96px;
-  height: 96px;
+  width: 72px;
+  height: 72px;
   border: 2px dashed var(--line);
   border-radius: 50%;
 }
 
 .tierName {
-  margin: 0;
-  font-size: 0.95rem;
+  margin-top: 16px;
+  font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--tier);
 }
 
-.tierPrice {
-  display: grid;
-  justify-items: center;
-  gap: 4px;
-  padding: 18px 16px 6px;
-  text-align: center;
-}
-
 .tierAmount {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  margin-top: 10px;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
   font-weight: 800;
   line-height: 1.1;
-  font-variant-numeric: tabular-nums;
+  color: var(--text);
 }
 
-.tier[data-tier] .tierAmount {
+.tierUnit {
+  margin-top: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.planHead .tierScoin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: #fcd34d;
 }
 
@@ -855,74 +878,69 @@
   height: 16px;
 }
 
-.tierScoin {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 4px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #fcd34d;
-  font-variant-numeric: tabular-nums;
-}
-
-.tierUnit {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .tierSlots {
   margin-top: 6px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
-.limits {
-  margin: 12px;
-  padding: 12px 14px;
-  border-radius: 8px;
-  background: var(--panel);
-}
-
-.limitsTitle {
-  margin: 0 0 8px;
+/* "Included" / "Per stack" labels above the numbers */
+.groupRow td {
+  padding: 10px 12px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--muted);
 }
 
-.limitList {
-  margin: 0;
-  display: grid;
-  gap: 6px;
+.groupRow .cornerCell {
+  background: var(--panel-2);
 }
 
-.limit {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 0.88rem;
+.priceTable tbody th,
+.priceTable tbody td {
+  padding: 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  font-size: 0.95rem;
 }
 
-.limit dt {
-  color: var(--muted);
+.priceTable tbody tr:last-child th,
+.priceTable tbody tr:last-child td {
+  border-bottom: 0;
 }
 
-.limit dd {
-  margin: 0;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-
-.limit .limitNone {
+/* limit names: pinned to the left while the table scrolls on narrow screens */
+.priceTable tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  padding-left: 20px;
+  background: var(--ink);
+  text-align: left;
   font-weight: 600;
   color: var(--muted);
-  opacity: 0.5;
+  white-space: nowrap;
+}
+
+.priceTable tbody td {
+  text-align: center;
+  font-weight: 800;
+}
+
+.priceTable tbody tr:hover th,
+.priceTable tbody tr:hover td {
+  background: var(--panel);
+}
+
+.priceTable .cellNone {
+  font-weight: 600;
+  color: var(--muted);
+  opacity: 0.45;
 }
 
 /* closing */

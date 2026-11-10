@@ -46,6 +46,9 @@ export const USD_PER_SCOIN = 0.01;
 /** the Payment page of the Sai Server web admin, where studios buy sCoin */
 export const PAYMENT_URL = "https://server.saigame.studio/payment";
 
+/** the Sai Server studio site, where a new studio is created */
+export const STUDIO_URL = "https://server.saigame.studio/";
+
 export const MATERIA_DIR = `${IMAGE_DIR}/materia`;
 export const SCOIN_SRC = `${IMAGE_DIR}/scoin.svg`;
 
@@ -173,6 +176,7 @@ export const COPY = {
     /** {link} is the "Buy sCoin" link to the Payment page */
     buy: "{link} on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.",
     buyLink: "Buy sCoin",
+    start: "Create Studio to get started",
   },
 
   close: {
