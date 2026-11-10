@@ -43,6 +43,9 @@ export const TIERS: Tier[] = [
 /** sCoin packages in the Sai Server Payment page run at $1 per 100 sCoin (100 = $0.99 … 100,000 = $1,000) */
 export const USD_PER_SCOIN = 0.01;
 
+/** the Payment page of the Sai Server web admin, where studios buy sCoin */
+export const PAYMENT_URL = "https://server.saigame.studio/payment";
+
 export const MATERIA_DIR = `${IMAGE_DIR}/materia`;
 export const SCOIN_SRC = `${IMAGE_DIR}/scoin.svg`;
 
@@ -53,7 +56,7 @@ export const COPY = {
 
   hero: {
     eyebrow: "Game backend platform",
-    title: "Code games, not infra. {server} runs the backend.",
+    title: "Code games, not infra. {server}.",
     lead: "Accounts, cloud save, inventory, in-game economy, quests, leaderboards, analytics and server-side Lua logic: prebuilt, managed from one web admin, and connected to your game through the SDK.",
     start: "Start with Sai Server",
     tutorial: "Read the get-started tutorial",
@@ -166,12 +169,10 @@ export const COPY = {
     slots: "Up to {slots} stacks per game",
     perStack: "Per stack",
     included: "Included",
-    notes: [
-      "Stacks add up: the game's limit is the free base plus every active stack.",
-      "Prices in USD at the sCoin package rate: 100 sCoin for $0.99, about $0.01 per sCoin.",
-      "Activate your studio once for 1 sCoin to unlock Materia.",
-      "Buy sCoin on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.",
-    ],
+    notes: ["Stacks add up: the game's limit is the free base plus every active stack."],
+    /** {link} is the "Buy sCoin" link to the Payment page */
+    buy: "{link} on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.",
+    buyLink: "Buy sCoin",
   },
 
   close: {

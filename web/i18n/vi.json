@@ -374,7 +374,6 @@
  "Sai Server – The backend for your game": "Sai Server – Backend cho game của bạn",
  "Accounts, cloud save, inventory, in-game economy, quests, leaderboards, analytics and server-side Lua logic: prebuilt, managed from one web admin and connected to your game through the SDK.": "Tài khoản, lưu trữ đám mây, kho đồ, kinh tế trong game, nhiệm vụ, bảng xếp hạng, phân tích và logic Lua phía server: dựng sẵn, quản lý trong một trang quản trị web và kết nối với game của bạn qua SDK.",
  "Game backend platform": "Nền tảng backend cho game",
- "Code games, not infra. {server} runs the backend.": "Hãy làm game, đừng làm hạ tầng. {server} lo phần backend.",
  "Accounts, cloud save, inventory, in-game economy, quests, leaderboards, analytics and server-side Lua logic: prebuilt, managed from one web admin, and connected to your game through the SDK.": "Tài khoản, lưu trữ đám mây, kho đồ, kinh tế trong game, nhiệm vụ, bảng xếp hạng, phân tích và logic Lua phía server: dựng sẵn, quản lý trong một trang quản trị web, và kết nối với game của bạn qua SDK.",
  "Every feature lives in one web admin and can be changed without rebuilding the game.": "Mọi tính năng nằm trong một trang quản trị web và thay đổi được mà không cần build lại game.",
  "At a glance": "Tổng quan",
@@ -524,7 +523,6 @@
  "Per stack": "Mỗi stack",
  "Included": "Có sẵn",
  "Stacks add up: the game's limit is the free base plus every active stack.": "Các stack được cộng dồn: giới hạn của game là gói nền miễn phí cộng với mọi stack đang hoạt động.",
- "Activate your studio once for 1 sCoin to unlock Materia.": "Kích hoạt studio một lần với 1 sCoin để mở khóa Materia.",
  "CCU": "CCU",
  "Player profiles": "Hồ sơ người chơi",
  "Items": "Vật phẩm",
@@ -537,7 +535,8 @@
  "Epic": "Epic",
  "Legendary": "Legendary",
  "{amount} sCoin": "{amount} sCoin",
- "Prices in USD at the sCoin package rate: 100 sCoin for $0.99, about $0.01 per sCoin.": "Giá USD tính theo giá gói sCoin: 100 sCoin giá $0.99, khoảng $0.01 mỗi sCoin.",
- "Buy sCoin on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.": "Mua sCoin ở trang Thanh toán trong trang quản trị web Sai Server, với các gói từ $0.99 đến $1,000.",
- "Close": "Đóng"
+ "Close": "Đóng",
+ "Code games, not infra. {server}.": "Hãy làm game, đừng làm hạ tầng. {server}.",
+ "{link} on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.": "{link} ở trang Thanh toán trong trang quản trị web Sai Server, với các gói từ $0.99 đến $1,000.",
+ "Buy sCoin": "Mua sCoin"
 }

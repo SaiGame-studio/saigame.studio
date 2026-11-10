@@ -333,7 +333,6 @@
  "Sai Server – The backend for your game": "Sai Server – あなたのゲームのためのバックエンド",
  "Accounts, cloud save, inventory, in-game economy, quests, leaderboards, analytics and server-side Lua logic: prebuilt, managed from one web admin and connected to your game through the SDK.": "アカウント、クラウドセーブ、インベントリ、ゲーム内経済、クエスト、リーダーボード、分析、サーバーサイド Lua ロジック。すべて構築済みで、1 つの Web 管理画面から管理し、SDK でゲームにつながります。",
  "Game backend platform": "ゲームバックエンドプラットフォーム",
- "Code games, not infra. {server} runs the backend.": "インフラではなく、ゲームを作ろう。バックエンドは {server} に。",
  "Accounts, cloud save, inventory, in-game economy, quests, leaderboards, analytics and server-side Lua logic: prebuilt, managed from one web admin, and connected to your game through the SDK.": "アカウント、クラウドセーブ、インベントリ、ゲーム内経済、クエスト、リーダーボード、分析、サーバーサイド Lua ロジック。すべて構築済みで、1 つの Web 管理画面から管理し、SDK でゲームにつながります。",
  "Every feature lives in one web admin and can be changed without rebuilding the game.": "すべての機能が 1 つの Web 管理画面にまとまり、ゲームをリビルドせずに変更できます。",
  "At a glance": "概要",
@@ -483,7 +482,6 @@
  "Per stack": "1 スタックあたり",
  "Included": "含まれる容量",
  "Stacks add up: the game's limit is the free base plus every active stack.": "スタックは合算されます。ゲームの上限は無料ベースと有効なすべてのスタックの合計です。",
- "Activate your studio once for 1 sCoin to unlock Materia.": "1 sCoin でスタジオを一度有効化すると、Materia が使えるようになります。",
  "CCU": "CCU",
  "Player profiles": "プレイヤープロフィール",
  "Items": "アイテム",
@@ -496,7 +494,8 @@
  "Epic": "エピック",
  "Legendary": "レジェンダリー",
  "{amount} sCoin": "{amount} sCoin",
- "Prices in USD at the sCoin package rate: 100 sCoin for $0.99, about $0.01 per sCoin.": "USD 価格は sCoin パッケージの価格で換算しています。100 sCoin で $0.99、1 sCoin あたり約 $0.01 です。",
- "Buy sCoin on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.": "sCoin は Sai Server Web 管理画面の支払いページで、$0.99 から $1,000 までのパッケージで購入できます。",
- "Close": "閉じる"
+ "Close": "閉じる",
+ "Code games, not infra. {server}.": "インフラではなく、ゲームを作ろう。{server}。",
+ "{link} on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.": "{link}:Sai Server Web 管理画面の支払いページで、$0.99 から $1,000 までのパッケージを購入できます。",
+ "Buy sCoin": "sCoin を購入"
 }

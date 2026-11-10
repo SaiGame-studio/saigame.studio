@@ -2,13 +2,13 @@
 // (data in content.ts: FREE_BASE, TIERS). Numbers are formatted compactly in the visitor's language.
 import { fill } from "@/lib/fill";
 import { productLinks, rich, s, type T } from "../product-landing/shared";
-import { COPY, FREE_BASE, LIMITS, MATERIA_DIR, SCOIN_SRC, TIERS, USD_PER_SCOIN } from "./content";
+import { COPY, FREE_BASE, LIMITS, MATERIA_DIR, SCOIN_SRC, PAYMENT_URL, TIERS, USD_PER_SCOIN } from "./content";
 
 export default function Pricing({ t, lang }: { t: T; lang: string }) {
   const p = COPY.pricing;
   const compact = new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1 });
   const full = new Intl.NumberFormat(lang);
-  // USD always as "$1,500", matching the sCoin package prices quoted in the notes
+  // USD always as "$1,500", matching the sCoin package prices quoted in the buy note
   const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
   const grant = (n: number | null, plus: boolean) => (n ? `${plus ? "+" : ""}${compact.format(n)}` : "—");
 
@@ -56,6 +56,11 @@ export default function Pricing({ t, lang }: { t: T; lang: string }) {
           {p.notes.map((note) => (
             <li key={note} className={s.tick}>{productLinks(t(note))}</li>
           ))}
+          <li className={s.tick}>
+            {t(p.buy)
+              .split("{link}")
+              .flatMap((part, i) => (i === 0 ? [productLinks(part)] : [<a key={i} className={s.inlineLink} href={PAYMENT_URL}>{t(p.buyLink)}</a>, productLinks(part)]))}
+          </li>
         </ul>
       </div>
     </section>
