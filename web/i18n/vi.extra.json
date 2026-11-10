@@ -447,5 +447,8 @@
  "Code games, not infra. {server}.": "Hãy làm game, đừng làm hạ tầng. {server}.",
  "{link} on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.": "{link} ở trang Thanh toán trong trang quản trị web Sai Server, với các gói từ $0.99 đến $1,000.",
  "Buy sCoin": "Mua sCoin",
- "Create Studio to get started": "Tạo Studio để bắt đầu"
+ "Create Studio to get started": "Tạo Studio để bắt đầu",
+ "Web store on Sai Play": "Web store trên Sai Play",
+ "The game's shop also opens on Sai Play, the player site shared by every game on Sai Server. Players sign in with the same account and buy in the browser; purchases arrive in the game's mailbox or inventory.": "Cửa hàng của game cũng mở trên Sai Play, trang người chơi dùng chung cho mọi game trên Sai Server. Người chơi đăng nhập bằng cùng tài khoản và mua ngay trên trình duyệt; món đã mua được gửi vào hộp thư trong game hoặc vào kho đồ.",
+ "Open the shop on Sai Play": "Mở cửa hàng trên Sai Play"
 }

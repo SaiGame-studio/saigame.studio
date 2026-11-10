@@ -88,6 +88,11 @@ export const COPY = {
       { name: "Smart auto-save", text: "A cheap fingerprint of the level is checked on an interval. The game saves only when data changed, after it settles, with a maximum delay cap. It also force-saves on logout or exit, and saves to the device on mobile. Few requests, no lost progress." },
       { name: "Seed-based restore", text: "A saved level is rebuilt deterministically from its seed and only the differences are applied, so saves stay small." },
       { name: "Release-safe config", text: "Release builds take the GAME_ID from build config, strip dev credentials and allow only Google sign-in. Dev builds keep the debug login and debug info." },
+      {
+        name: "Web store on Sai Play",
+        text: "The game's shop also opens on Sai Play, the player site shared by every game on Sai Server. Players sign in with the same account and buy in the browser; purchases arrive in the game's mailbox or inventory.",
+        link: { href: "https://play.saigame.studio/games/01a192d6-94e1-7715-9ae7-1703a46851d0/shops/01a1973a-776b-7da1-bbb0-253a0ad0f427", label: "Open the shop on Sai Play" },
+      },
     ],
     archTitle: "Architecture",
     arch: {

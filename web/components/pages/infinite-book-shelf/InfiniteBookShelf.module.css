@@ -422,6 +422,27 @@
   color: var(--muted);
 }
 
+/* a feature's link, e.g. the game's shop on Sai Play */
+.featureLink {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--leaf);
+  text-decoration: none;
+}
+
+.featureLink:hover {
+  color: var(--text);
+}
+
+.featureLink:focus-visible {
+  outline: 2px solid var(--leaf);
+  outline-offset: 3px;
+}
+
 /* architecture, under the feature list in column 1 */
 .diagrams {
   margin-top: 36px;

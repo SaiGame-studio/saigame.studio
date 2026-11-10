@@ -498,5 +498,8 @@
  "Code games, not infra. {server}.": "インフラではなく、ゲームを作ろう。{server}。",
  "{link} on the Payment page of the Sai Server web admin, in packages from $0.99 to $1,000.": "{link}:Sai Server Web 管理画面の支払いページで、$0.99 から $1,000 までのパッケージを購入できます。",
  "Buy sCoin": "sCoin を購入",
- "Create Studio to get started": "スタジオを作成して始めましょう"
+ "Create Studio to get started": "スタジオを作成して始めましょう",
+ "Web store on Sai Play": "Sai Play の Web ストア",
+ "The game's shop also opens on Sai Play, the player site shared by every game on Sai Server. Players sign in with the same account and buy in the browser; purchases arrive in the game's mailbox or inventory.": "ゲームのショップは、Sai Server のすべてのゲームが共有するプレイヤーサイト Sai Play でも開いています。プレイヤーは同じアカウントでサインインしてブラウザで購入でき、購入品はゲームのメールボックスかインベントリに届きます。",
+ "Open the shop on Sai Play": "Sai Play でショップを開く"
 }

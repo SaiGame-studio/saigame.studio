@@ -194,10 +194,17 @@ export default async function InfiniteBookShelf() {
                 {server.features.map((f) => (
                   <div key={f.name} className={s.feature}>
                     <dt className={s.featureName}>
-                      {t(f.name)}
+                      {productLinks(t(f.name))}
                       {"tag" in f && <code className={s.tag}>{f.tag}</code>}
                     </dt>
-                    <dd className={s.featureText}>{t(f.text)}</dd>
+                    <dd className={s.featureText}>
+                      {productLinks(t(f.text))}
+                      {"link" in f && f.link && (
+                        <a className={s.featureLink} href={f.link.href}>
+                          {keepNames(t(f.link.label))} <Arrow />
+                        </a>
+                      )}
+                    </dd>
                   </div>
                 ))}
               </dl>
