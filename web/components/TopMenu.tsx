@@ -25,6 +25,8 @@ const GAMES: SubLink[] = [
   { id: "menu-item-40", href: "/games/the-watcher", label: "The Watcher", translate: false },
 ];
 const PRODUCTS: SubLink[] = [
+  { id: "menu-item-sai-server", href: "/products/sai-server/", label: "Sai Server", translate: false },
+  { id: "menu-item-sai-play", href: "/products/sai-play/", label: "Sai Play", translate: false },
   { id: "menu-item-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false },
 ];
 const LINKS_AFTER_PRODUCTS: Link[] = [
