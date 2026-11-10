@@ -1,4 +1,4 @@
-// Shared top menu (logo, menu with dropdowns, language switcher, mobile off-canvas menu), used by every page.
+// Shared top menu (logo, menu with Games and Products dropdowns, language switcher, mobile off-canvas menu), used by every page.
 // Markup comes from the home page's Kubio navigation. Keep classNames: the Kubio CSS depends on them.
 // Kubio CSS is scoped per page; data-wp-owner="home" makes the home page's navigation styles apply on any page,
 // so the menu looks the same everywhere. The off-canvas panels carry it too because Kubio moves them to <body>.
@@ -15,15 +15,19 @@ type Props = {
 };
 
 type Link = { key: TopMenuItem; id: string; href: string; label: string };
+/** a dropdown entry; product and game names stay untranslated unless `translate` is set */
+type SubLink = { id: string; href: string; label: string; translate: boolean };
 
 const LINKS_BEFORE_GAMES: Link[] = [{ key: "home", id: "menu-item-17", href: "/", label: "Home" }];
-const GAMES = [
+const GAMES: SubLink[] = [
   { id: "menu-item-649", href: "/games/purgatory", label: "Purgatory", translate: false },
   { id: "menu-item-39", href: "/games/the-immortal", label: "The Immortal", translate: true },
   { id: "menu-item-40", href: "/games/the-watcher", label: "The Watcher", translate: false },
 ];
-const LINKS_AFTER_GAMES: Link[] = [
-  { key: "products", id: "menu-item-products", href: "/products/", label: "Products" },
+const PRODUCTS: SubLink[] = [
+  { id: "menu-item-infinite-book-shelf", href: "/products/infinity-book-shelf/", label: "Infinite Book Shelf", translate: false },
+];
+const LINKS_AFTER_PRODUCTS: Link[] = [
   { key: "game-courses", id: "menu-item-game-courses", href: "/game-courses/", label: "Game Courses" },
   { key: "blog", id: "menu-item-18", href: "/blog", label: "Blog" },
   { key: "careers", id: "menu-item-careers", href: "/careers/", label: "Careers" },
@@ -55,23 +59,27 @@ async function MenuItems({ active }: { active?: TopMenuItem }) {
       <a href={l.href} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>{t(l.label)}</a>
     </li>
   );
+  const dropdown = (l: Link, items: SubLink[]) => (
+    <li id={l.id} className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${l.id}${current(active === l.key)}`}>
+      <a href={l.href} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>
+        <span>{t(l.label)}</span>
+        <Chevron />
+      </a>
+      <ul className="sub-menu">
+        {items.map((item) => (
+          <li key={item.id} id={item.id} className={`menu-item menu-item-type-custom menu-item-object-custom ${item.id}`}>
+            <a href={item.href} style={depth(1)}>{item.translate ? t(item.label) : item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
   return (
     <ul id="menu-primary-menu" className="menu kubio-has-gap-fallback">
       {LINKS_BEFORE_GAMES.map(link)}
-      <li id="menu-item-37" className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37${current(active === "games")}`}>
-        <a href="/games" aria-current={active === "games" ? "page" : undefined} style={depth(0)}>
-          <span>{t("Games")}</span>
-          <Chevron />
-        </a>
-        <ul className="sub-menu">
-          {GAMES.map((g) => (
-            <li key={g.id} id={g.id} className={`menu-item menu-item-type-custom menu-item-object-custom ${g.id}`}>
-              <a href={g.href} style={depth(1)}>{g.translate ? t(g.label) : g.label}</a>
-            </li>
-          ))}
-        </ul>
-      </li>
-      {LINKS_AFTER_GAMES.map(link)}
+      {dropdown({ key: "games", id: "menu-item-37", href: "/games", label: "Games" }, GAMES)}
+      {dropdown({ key: "products", id: "menu-item-products", href: "/products/", label: "Products" }, PRODUCTS)}
+      {LINKS_AFTER_PRODUCTS.map(link)}
       <li id="menu-item-61" className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-has-children current-language-menu-item menu-item-61">
         <a href="#" data-lang={flags.current.code} style={depth(0)}>
           <span>
