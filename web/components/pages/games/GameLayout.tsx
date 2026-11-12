@@ -23,8 +23,8 @@ export default async function GameLayout({ slug, children }: { slug: string; chi
               <GameSummary game={game} t={t} />
               <GameTags game={game} t={t} />
               <div className={s.actions}>
-                <a className={s.button} href={game.steamUrl}>
-                  {t("Download from Steam")} <Arrow />
+                <a className={s.button} href={game.store.url}>
+                  {t(game.store.label)} <Arrow />
                 </a>
                 {game.community?.map((link) => (
                   <a key={link.href} className={s.buttonGhost} href={link.href}>
@@ -39,12 +39,14 @@ export default async function GameLayout({ slug, children }: { slug: string; chi
 
       {children}
 
-      <section className={s.section} aria-labelledby="game-steam">
-        <div className={s.wrap}>
-          <h2 id="game-steam" className={s.sectionTitle}>{t("Get it on Steam")}</h2>
-          <iframe className={s.steamWidget} src={`https://store.steampowered.com/widget/${game.steamAppId}/`} title={`${t(game.title)} – Steam`} loading="lazy" />
-        </div>
-      </section>
+      {game.steamAppId && (
+        <section className={s.section} aria-labelledby="game-steam">
+          <div className={s.wrap}>
+            <h2 id="game-steam" className={s.sectionTitle}>{t("Get it on Steam")}</h2>
+            <iframe className={s.steamWidget} src={`https://store.steampowered.com/widget/${game.steamAppId}/`} title={`${t(game.title)} – Steam`} loading="lazy" />
+          </div>
+        </section>
+      )}
     </div>
   );
 }
