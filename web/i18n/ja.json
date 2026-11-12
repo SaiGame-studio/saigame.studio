@@ -81,7 +81,7 @@
  "Gameplay Modes": "ゲームモード",
  "Games": "ゲーム",
  "Games and their game servers": "ゲームとそのゲームサーバー",
- "Games made by the SaiGame team, available on Steam.": "SaiGame チームが制作したゲーム。Steam で配信中です。",
+ "Games made by the SaiGame team, available on Steam and Itch.io.": "SaiGame チームが制作したゲーム。Steam と Itch.io で配信中です。",
  "Get Started": "はじめる",
  "Get familiar with Unity 3D.": "Unity 3D に慣れるためのシリーズ。",
  "Get it on Steam": "Steam で入手",
@@ -327,7 +327,7 @@
  "The game's login panel with a single Sign in with Google button and the build version": "Sign in with Google ボタンとビルドバージョンだけが表示されたゲームのログイン画面",
  "The SaiServer prefab in the Unity Inspector: Sai Auth settings for persisted tokens, auto login and auto refresh, with the Google Backend Login, Gamer Progress and other module components below": "Unity Inspector に表示された SaiServer プレハブ。トークン保存、自動ログイン、自動更新の Sai Auth 設定と、その下に Google Backend Login、Gamer Progress などのモジュールコンポーネント",
  "Infinite Book Shelf – Built on Sai Server": "Infinite Book Shelf – Sai Server で構築",
- "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud. Built with Unity and Sai Server. Out now on Unity Play, coming to Itch.io, Steam and Google Play.": "本も棚も花もすべてクラウドに保存される、ブラウザ・PC・Android 向けの 3D パズル。Unity と Sai Server で開発。Unity Play で公開中、Itch.io、Steam、Google Play にも近日登場。",
+ "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud. Built with Unity and Sai Server. Out now on Unity Play and Itch.io, coming to Steam and Google Play.": "本も棚も花もすべてクラウドに保存される、ブラウザ・PC・Android 向けの 3D パズル。Unity と Sai Server で開発。Unity Play と Itch.io で公開中、Steam と Google Play にも近日登場。",
  "A level in play: shelves packed with colored books framed by tropical flowers, the book counter in the corner, a magic wand cursor and the book tray with its chained slots": "プレイ中のレベル。熱帯の花に縁取られた本棚に色とりどりの本が並び、隅には本のカウンター、魔法の杖のカーソル、鎖でロックされたスロットのある本のトレイ",
  "Tested with 800 billion books.": "8,000 億冊の本でテスト済み。",
  "Sai Server – The backend for your game": "Sai Server – あなたのゲームのためのバックエンド",
@@ -515,5 +515,8 @@
  "September": "9月",
  "October": "10月",
  "November": "11月",
- "December": "12月"
+ "December": "12月",
+ "3D Puzzle": "3D パズル",
+ "Cloud saves": "クラウドセーブ",
+ "Play on Itch.io": "Itch.io でプレイ"
 }

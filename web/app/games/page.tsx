@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Games – SaiGame",
-  description: "Games made by the SaiGame team, available on Steam.",
+  description: "Games made by the SaiGame team, available on Steam and Itch.io.",
   alternates: { canonical: "/games/" },
 };
 

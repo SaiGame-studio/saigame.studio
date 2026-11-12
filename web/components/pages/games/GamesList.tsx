@@ -13,7 +13,7 @@ export default async function GamesList() {
       <section className={`${s.listHero} h-navigation-padding`} aria-labelledby="games-title">
         <div className={s.wrap}>
           <h1 id="games-title" className={s.title}>{t("Games")}</h1>
-          <p className={s.lead}>{t("Games made by the SaiGame team, available on Steam.")}</p>
+          <p className={s.lead}>{t("Games made by the SaiGame team, available on Steam and Itch.io.")}</p>
         </div>
       </section>
 
@@ -34,8 +34,8 @@ export default async function GamesList() {
                 <a className={s.button} href={gameHref(game)}>
                   {t("View game")} <Arrow />
                 </a>
-                <a className={s.buttonGhost} href={game.steamUrl}>
-                  {t("Download from Steam")}
+                <a className={s.buttonGhost} href={game.store.url}>
+                  {t(game.store.label)}
                 </a>
               </div>
             </div>

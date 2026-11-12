@@ -19,7 +19,7 @@ export type Store = {
 /** where the game is published; paste each store link into `url` when the page goes live */
 export const STORES: Store[] = [
   { id: "unity-play", name: "Unity Play", platform: "Browser", url: "https://play.unity.com/en/games/b66579aa-f8f3-47af-8671-1fc194efaaeb/infinite-bookshelf" },
-  { id: "itch-io", name: "Itch.io", platform: "Browser / PC", url: null },
+  { id: "itch-io", name: "Itch.io", platform: "Browser / PC", url: "https://saigame.itch.io/infinite-bookshelf" },
   { id: "steam", name: "Steam", platform: "PC", url: null },
   { id: "google-play", name: "Google Play", platform: "Android", url: null },
 ];
@@ -51,7 +51,7 @@ export const OG_IMAGE = { n: 14, file: "og-image.png", width: 1200, height: 630,
 export const COPY = {
   metaTitle: "Infinite Book Shelf – Built on Sai Server",
   metaDescription:
-    "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud. Built with Unity and Sai Server. Out now on Unity Play, coming to Itch.io, Steam and Google Play.",
+    "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud. Built with Unity and Sai Server. Out now on Unity Play and Itch.io, coming to Steam and Google Play.",
 
   hero: {
     eyebrow: "Tech showcase",

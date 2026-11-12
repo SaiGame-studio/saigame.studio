@@ -20,6 +20,7 @@ type SubLink = { id: string; href: string; label: string; translate: boolean; /*
 
 const LINKS_BEFORE_GAMES: Link[] = [{ key: "home", id: "menu-item-17", href: "/", label: "Home" }];
 const GAMES: SubLink[] = [
+  { id: "menu-item-games-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false },
   { id: "menu-item-649", href: "/games/purgatory", label: "Purgatory", translate: false },
   { id: "menu-item-39", href: "/games/the-immortal", label: "The Immortal", translate: true },
   { id: "menu-item-40", href: "/games/the-watcher", label: "The Watcher", translate: false },
