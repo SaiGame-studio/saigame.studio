@@ -21,7 +21,8 @@ import { BLOG_POSTS } from "@/components/pages/blog/posts";
 import { formatDate, postHref } from "@/components/pages/blog/format";
 import s from "./Home.module.css";
 
-const HERO_IMAGE = "/wp-content/uploads/2025/03/saisaga-scaled-1.jpg";
+// A winding mountain trail at dawn echoes the journey in the headline.
+const HERO_IMAGE = "/images/home/journey-dawn.png";
 const COURSES_IMAGE = "/wp-content/uploads/2025/02/149340-anime-3D-Animation-watermarked-anime-girls-desk-computer-sitting-thigh-highs-room-artwork-digital-art-edited.jpg";
 
 function Arrow() {
