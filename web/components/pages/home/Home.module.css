@@ -57,23 +57,6 @@
   height: auto;
 }
 
-.heroInner {
-  width: 100%;
-  padding-top: clamp(24px, 4vw, 48px);
-  padding-bottom: clamp(32px, 4vw, 56px);
-  text-align: center;
-}
-
-.heroInner .lead {
-  max-width: 68ch;
-  margin: 0 auto;
-}
-
-.heroInner .actions {
-  justify-content: center;
-  margin-top: 24px;
-}
-
 .title {
   position: absolute;
   z-index: 1;
@@ -95,14 +78,6 @@
 
 .accent {
   color: var(--gold);
-}
-
-.lead {
-  margin: 24px 0 0;
-  max-width: 52ch;
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-  line-height: 1.65;
-  color: var(--muted);
 }
 
 .actions {
@@ -235,18 +210,26 @@
 }
 
 /* products: Sai Server and its illustration, the focus right under the hero */
-/* text top-left, tall portrait illustration on the right */
+/* text on the left; the illustration on the right is as tall as the text */
 .products {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   gap: clamp(24px, 3.5vw, 40px) clamp(24px, 5vw, 64px);
 }
 
+/* the frame stretches to the row height set by the text; the absolutely placed image adds no height of its own */
+.productMedia {
+  position: relative;
+  min-height: 280px;
+}
+
 .productImage {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center 40%;
   border-radius: 4px;
@@ -400,8 +383,8 @@
     grid-template-columns: 1fr;
   }
 
-  .productImage {
-    height: auto;
+  .productMedia {
+    min-height: 0;
     aspect-ratio: 4 / 3;
   }
 

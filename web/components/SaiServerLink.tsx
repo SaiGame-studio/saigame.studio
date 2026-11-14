@@ -24,15 +24,18 @@ export type ProductNameClasses = { server: string; play: string };
  * Turns every "Sai Server" and "Sai Play" in a (translated) text into a link to that product,
  * styled per saigame.studio/AGENTS.md. With `linked: false` it only colours the names, for text
  * that is already inside a link or button.
+ * With `idPrefix`, each name gets the id `{idPrefix}-{n}` and the shared class `{idPrefix}`.
  */
-export function linkProducts(text: string, classes: ProductNameClasses, linked = true) {
+export function linkProducts(text: string, classes: ProductNameClasses, linked = true, idPrefix?: string) {
   return text.split(/(Sai Server|Sai Play)/).map((part, i) => {
     if (i % 2 === 0) return part;
     const isServer = part === "Sai Server";
-    const className = isServer ? classes.server : classes.play;
-    if (!linked) return <span key={i} className={className}>{part}</span>;
+    const nameClass = isServer ? classes.server : classes.play;
+    const className = idPrefix ? `${idPrefix} ${nameClass}` : nameClass;
+    const id = idPrefix ? `${idPrefix}-${(i + 1) / 2}` : undefined;
+    if (!linked) return <span key={i} id={id} className={className}>{part}</span>;
     return (
-      <a key={i} className={`sai-server-link ${className}`} href={isServer ? SAI_SERVER_URL : SAI_PLAY_URL}>
+      <a key={i} id={id} className={`sai-server-link ${className}`} href={isServer ? SAI_SERVER_URL : SAI_PLAY_URL}>
         {part}
       </a>
     );
