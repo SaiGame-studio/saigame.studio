@@ -101,6 +101,12 @@
   display: none;
 }
 
+/* Follow the logo's transparent outline so it stays legible over banner artwork. */
+#kubio #navigation .kubio-logo-image {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 5px 12px rgba(0, 0, 0, 0.45));
+}
+
 /* Reserve the overlapping top menu's height before JS runs: KubioScripts sets the exact padding after load,
    and without this the first paint shows the content under the menu, then jumps down. */
 #kubio .h-navigation-padding {

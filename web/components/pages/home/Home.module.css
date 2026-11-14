@@ -31,49 +31,45 @@
   padding: 0 clamp(16px, 5vw, 48px);
 }
 
-/* ---------- hero: the journey photo, darkened toward the text ---------- */
+/* ---------- hero: uncropped artwork with a separate introduction ---------- */
 .hero {
-  position: relative;
-  min-height: min(88vh, 860px);
-  display: flex;
-  align-items: flex-end;
   overflow: hidden;
+}
+
+.heroArtwork {
+  position: relative;
   isolation: isolate;
 }
 
-.heroImage {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-.hero::after {
+.heroArtwork::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
   background:
-    linear-gradient(90deg, rgba(29, 30, 39, 0.92) 0%, rgba(29, 30, 39, 0.55) 55%, rgba(29, 30, 39, 0.2) 100%),
-    linear-gradient(0deg, var(--ink) 0%, rgba(29, 30, 39, 0) 40%);
+    linear-gradient(180deg, rgba(20, 25, 42, 0.65), transparent 32%),
+    linear-gradient(90deg, transparent 35%, rgba(20, 25, 42, 0.5) 100%);
+  pointer-events: none;
 }
 
-.heroInner {
+.heroImage {
+  display: block;
   width: 100%;
-  padding-top: 48px;
-  padding-bottom: clamp(56px, 9vw, 112px);
+  height: auto;
 }
 
 .title {
+  position: absolute;
+  z-index: 1;
+  top: max(160px, 18%);
+  right: 5%;
+  width: 43%;
   margin: 0;
-  max-width: 14ch;
-  font-size: clamp(2.75rem, 6.4vw, 5.5rem);
-  line-height: 1.02;
+  font-size: clamp(1.75rem, 4.4vw, 5rem);
+  line-height: 1.12;
   letter-spacing: -0.025em;
   font-weight: 800;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+  text-wrap: balance;
 }
 
 .titleLine {
@@ -82,14 +78,6 @@
 
 .accent {
   color: var(--gold);
-}
-
-.lead {
-  margin: 24px 0 0;
-  max-width: 52ch;
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-  line-height: 1.65;
-  color: var(--muted);
 }
 
 .actions {
@@ -180,7 +168,8 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* 2 x 2: the four released games */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 3vw, 32px);
 }
 
@@ -194,7 +183,8 @@
 .gameCover {
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 6;
+  /* landscape frame keeps the 2 x 2 grid compact; covers mix landscape, portrait and square art */
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -221,12 +211,31 @@
   color: var(--blue-3);
 }
 
-/* products band */
-.split {
+/* products: Sai Server and its illustration, the focus right under the hero */
+/* text on the left; the illustration on the right is as tall as the text */
+.products {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-  gap: clamp(24px, 5vw, 72px);
-  align-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(24px, 3.5vw, 40px) clamp(24px, 5vw, 64px);
+}
+
+/* the frame stretches to the row height set by the text; the absolutely placed image adds no height of its own */
+.productMedia {
+  position: relative;
+  min-height: 280px;
+}
+
+.productImage {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 4px;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.55);
 }
 
 .nameServer {
@@ -367,29 +376,39 @@
 }
 
 @media (max-width: 900px) {
-  .split,
   .feature {
     grid-template-columns: 1fr;
   }
 
-  .shelf {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* one column: text and button, then a landscape crop of the illustration */
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .productMedia {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 }
 
 @media (max-width: 600px) {
-  /* a swipeable row instead of three tall covers stacked */
-  .shelf {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 62%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 12px;
+  .title {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    padding: 24px 20px 0;
+    text-align: center;
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
   }
 
-  .shelf > li {
-    scroll-snap-align: start;
+  .heroArtwork::after {
+    background: linear-gradient(180deg, rgba(20, 25, 42, 0.65), transparent 45%);
+  }
+
+  /* keep the 2 x 2 grid on phones, with smaller game titles */
+  .gameTitle {
+    font-size: 1.05rem;
   }
 
   .post,
