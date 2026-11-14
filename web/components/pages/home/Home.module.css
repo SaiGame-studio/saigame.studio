@@ -168,7 +168,8 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* 2 x 2: the four released games */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 3vw, 32px);
 }
 
@@ -182,7 +183,8 @@
 .gameCover {
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 6;
+  /* landscape frame keeps the 2 x 2 grid compact; covers mix landscape, portrait and square art */
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -387,10 +389,6 @@
     min-height: 0;
     aspect-ratio: 4 / 3;
   }
-
-  .shelf {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 600px) {
@@ -408,18 +406,9 @@
     background: linear-gradient(180deg, rgba(20, 25, 42, 0.65), transparent 45%);
   }
 
-  /* a swipeable row instead of three tall covers stacked */
-  .shelf {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 62%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 12px;
-  }
-
-  .shelf > li {
-    scroll-snap-align: start;
+  /* keep the 2 x 2 grid on phones, with smaller game titles */
+  .gameTitle {
+    font-size: 1.05rem;
   }
 
   .post,
