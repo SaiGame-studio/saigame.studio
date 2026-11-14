@@ -1,4 +1,4 @@
-// Homepage content in the site's dark style (/products, /games, /blog): hero, games, products, courses, blog, community.
+// Homepage content in the site's dark style (/products, /games, /blog): hero, products, games, courses, blog, community.
 // Not Kubio markup: styled by Home.module.css; the page keeps the site's Kubio nav and the shared footer.
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
@@ -11,18 +11,14 @@ const NAMES = { server: `${s.nameServer} ${s.serverLink}`, play: `${s.namePlay} 
 function productLinks(text: string) {
   return linkProducts(text, NAMES);
 }
-
-/** product names inside an existing link: coloured only, no nested link */
-function productNames(text: string) {
-  return linkProducts(text, NAMES, false);
-}
 import { GAMES, gameHref } from "@/components/pages/games/games";
 import { BLOG_POSTS } from "@/components/pages/blog/posts";
 import { formatDate, postHref } from "@/components/pages/blog/format";
 import s from "./Home.module.css";
 
-// A winding mountain trail at dawn echoes the journey in the headline.
-const HERO_IMAGE = "/images/home/journey-dawn.png";
+// An anime traveler pauses to enjoy the journey at sunset.
+const HERO_IMAGE = "/images/home/journey-anime.png";
+const SERVER_IMAGE = "/images/products/cozy-sai-server.jpg";
 const COURSES_IMAGE = "/wp-content/uploads/2025/02/149340-anime-3D-Animation-watermarked-anime-girls-desk-computer-sitting-thigh-highs-room-artwork-digital-art-edited.jpg";
 
 function Arrow() {
@@ -44,19 +40,39 @@ export default async function Home() {
 
   return (
     <div className={s.page}>
-      <section className={`${s.hero} h-navigation-padding`} aria-labelledby="home-title">
-        <img className={s.heroImage} src={HERO_IMAGE} alt="" decoding="async" fetchPriority="high" />
-        <div className={`${s.wrap} ${s.heroInner}`}>
+      <section className={s.hero} aria-labelledby="home-title">
+        <div className={s.heroArtwork}>
+          <img className={s.heroImage} src={HERO_IMAGE} alt="" width="1672" height="941" decoding="async" fetchPriority="high" />
           <h1 id="home-title" className={s.title}>
             {t("It's not the destination,")} <span className={s.titleLine}>{fill(t("but the {journey}."), { journey: <span className={s.accent}>{t("journey")}</span> })}</span>
           </h1>
+        </div>
+        <div className={`${s.wrap} ${s.heroInner}`}>
           <p className={s.lead}>{productLinks(t("SaiGame makes games, teaches game development, and builds Sai Server, the platform to run them."))}</p>
           <div className={s.actions}>
-            <a className={s.button} href="/games/">
-              {t("Explore our games")} <Arrow />
+            <a className={s.button} href="/products/">
+              {t("Discover our products")} <Arrow />
             </a>
-            <a className={s.textLink} href="/products/">{productNames(t("Discover Sai Server & Sai Play"))}</a>
+            <a className={s.textLink} href="/games/">{t("Explore our games")}</a>
           </div>
+        </div>
+      </section>
+
+      {/* Sai Server comes first, right under the slogan; games follow. Sai Play is left out of the homepage for now. */}
+      <section className={`${s.section} ${s.band}`} aria-labelledby="home-products">
+        {/* text and button on the left, the tall illustration on the right */}
+        <div className={`${s.wrap} ${s.products}`}>
+          <div>
+            <h2 id="home-products" className={s.sectionTitle}>{productLinks("Sai Server")}</h2>
+            <p className={s.sectionText}>{productLinks(t("Sai Server is an all-in-one solution that helps game studios manage servers, monitor players, and operate their games professionally, all within a single interface."))}</p>
+            <p className={s.sectionText}>{productLinks(t("Sai Server speeds up game development: there is no separate backend to build, so your team spends its time on the game itself."))}</p>
+            <div className={s.actions}>
+              <a className={s.button} href="/products/sai-server/">
+                {t("Explore Sai Server")} <Arrow />
+              </a>
+            </div>
+          </div>
+          <img className={s.productImage} src={SERVER_IMAGE} width={1086} height={1448} alt={t("A developer at a cozy desk with Unity and the Sai Server dashboard on two monitors")} loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -80,22 +96,6 @@ export default async function Home() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className={`${s.section} ${s.band}`} aria-labelledby="home-products">
-        <div className={`${s.wrap} ${s.split}`}>
-          <h2 id="home-products" className={s.sectionTitle}>
-            {productLinks("Sai Server")} & {productLinks("Sai Play")}
-          </h2>
-          <div>
-            <p className={s.sectionText}>{productLinks(t("Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform."))}</p>
-            <div className={s.actions}>
-              <a className={s.button} href="/products/">
-                {t("Discover our products")} <Arrow />
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
