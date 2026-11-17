@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { currentDocumentLang, isLang, persistLang } from "@/lib/lang";
 
 // The page markup is converted 1:1 from WordPress and uses plain <a href>. Instead of rewriting every
@@ -25,8 +25,24 @@ function internalTarget(event: Event): URL | null {
   return url;
 }
 
+/** same page, ignoring the trailing slash (menu links omit it; trailingSlash adds it) */
+const pageKey = (url: { pathname: string; search: string }) => (url.pathname.replace(/\/+$/, "") || "/") + url.search;
+const samePage = (a: { pathname: string; search: string }, b: { pathname: string; search: string }) => pageKey(a) === pageKey(b);
+
+const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
 export default function ClientRouter() {
   const router = useRouter();
+  const pathname = usePathname();
+  // Next's scroll-to-top skips pages whose first element has no box (our display:contents page wrappers),
+  // so a link click asks for it and the page scrolls to the top once the new page (or its redirect) has rendered.
+  const scrollTopPending = useRef(false);
+
+  useEffect(() => {
+    if (!scrollTopPending.current) return;
+    scrollTopPending.current = false;
+    scrollToTop();
+  }, [pathname]);
 
   useEffect(() => {
     // Listen on window (bubble phase): it runs after Kubio's own handlers, so if Kubio already
@@ -50,6 +66,11 @@ export default function ClientRouter() {
       const here = window.location;
       if (url.pathname === here.pathname && url.search === here.search && url.hash) return; // in-page anchor
       e.preventDefault();
+      // a #section link is scrolled to by Next itself; a link to the current page only scrolls up
+      if (!url.hash) {
+        if (samePage(url, here)) scrollToTop();
+        else scrollTopPending.current = true;
+      }
       router.push(url.pathname + url.search + url.hash);
     };
     const prefetched = new Set<string>();
