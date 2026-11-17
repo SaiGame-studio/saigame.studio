@@ -4,7 +4,7 @@ import GamesList from "@/components/pages/games/GamesList";
 import SiteFooter from "@/components/SiteFooter";
 import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = shareMetadata({
+export const generateMetadata = (): Promise<Metadata> => shareMetadata({
   path: "/games/",
   title: "Games – SaiGame",
   description: "Games made by the SaiGame team, available on Steam and Itch.io.",

@@ -4,7 +4,7 @@ import ProductsJourney from "@/components/pages/products/ProductsJourney";
 import SiteFooter from "@/components/SiteFooter";
 import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = shareMetadata({
+export const generateMetadata = (): Promise<Metadata> => shareMetadata({
   path: "/products/",
   title: "Products – SaiGame",
   description: "Sai Server runs your game. Sai Play gives your players one account and one sGem balance across every game on the platform.",

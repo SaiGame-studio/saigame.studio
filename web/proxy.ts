@@ -1,19 +1,23 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { LANG_COOKIE, LANG_FROM_URL_COOKIE } from "@/lib/lang";
+import { DEFAULT_LANG, LANG_HEADER, PATH_HEADER, splitLangPath } from "@/lib/lang";
 
-// Old WordPress/TranslatePress URLs carried the language in the path (/vi/games/).
-// The language now lives on the client: remember "vi" and redirect to the same URL without /vi.
-// 307 (not 301/308) so browsers don't cache the redirect and skip setting the cookie next time.
+// The URL decides the language: /vi/... and /ja/... are rewritten to the shared page with the language in a request
+// header (lib/i18n.ts), so every language has its own URL for search engines and AI crawlers.
+// Every URL has a stable language regardless of cookies.
 export function proxy(request: NextRequest) {
+  const { lang, path } = splitLangPath(request.nextUrl.pathname);
+
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set(LANG_HEADER, lang);
+  requestHeaders.set(PATH_HEADER, path);
+  if (lang === DEFAULT_LANG) return NextResponse.next({ request: { headers: requestHeaders } });
+
   const url = request.nextUrl.clone();
-  url.pathname = url.pathname.replace(/^\/vi(?=\/|$)/, "") || "/";
-  const response = NextResponse.redirect(url, 307);
-  const cookie = { path: "/", sameSite: "lax" as const };
-  response.cookies.set(LANG_COOKIE, "vi", { ...cookie, maxAge: 60 * 60 * 24 * 365 });
-  response.cookies.set(LANG_FROM_URL_COOKIE, "1", { ...cookie, maxAge: 60 });
-  return response;
+  url.pathname = path;
+  return NextResponse.rewrite(url, { request: { headers: requestHeaders } });
 }
 
 export const config = {
-  matcher: ["/vi", "/vi/:path*"],
+  // pages only: not Next's files, the static asset folders or any file with an extension (robots.txt, sitemap.xml, llms.txt, images)
+  matcher: ["/((?!_next/|wp-content/|wp-includes/|wp-emoji/|images/|css/|js/|fonts/|.*\\.).*)"],
 };

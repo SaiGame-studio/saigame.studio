@@ -2,12 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { currentDocumentLang, isLang, persistLang } from "@/lib/lang";
+import { currentDocumentLang, isLang, localizePath, splitLangPath, persistLang } from "@/lib/lang";
 
 // The page markup is converted 1:1 from WordPress and uses plain <a href>. Instead of rewriting every
 // link to next/link, intercept clicks on internal links and let the App Router swap the content
 // (no full reload; the URL, title and history still update).
-// Language switcher links carry data-lang: they store the choice client-side and re-render in place.
+// Language switcher links navigate to the selected language URL.
 
 const STATIC_PATH = /^\/(wp-content|wp-includes|wp-emoji|_next|fonts|css|js)\//;
 const FILE_EXT = /\.[a-z0-9]{2,5}$/i;
@@ -22,6 +22,9 @@ function internalTarget(event: Event): URL | null {
   const url = new URL(el.href, window.location.href);
   if (url.origin !== window.location.origin) return null;
   if (STATIC_PATH.test(url.pathname) || FILE_EXT.test(url.pathname)) return null;
+  if (!el.hasAttribute("data-lang") && splitLangPath(url.pathname).lang === "en") {
+    url.pathname = localizePath(currentDocumentLang(), url.pathname);
+  }
   return url;
 }
 
@@ -56,7 +59,8 @@ export default function ClientRouter() {
         const lang = langLink.getAttribute("data-lang");
         if (isLang(lang) && lang !== currentDocumentLang()) {
           persistLang(lang);
-          router.refresh(); // server re-renders with the new language; URL and scroll stay
+          const { path } = splitLangPath(window.location.pathname);
+          window.location.assign(localizePath(lang, path) + window.location.search + window.location.hash);
         }
         return;
       }

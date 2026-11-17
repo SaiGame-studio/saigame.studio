@@ -4,7 +4,7 @@ import GameCourses from "@/components/pages/unity-dev-basic/GameCourses";
 import SiteFooter from "@/components/SiteFooter";
 import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = shareMetadata({
+export const generateMetadata = (): Promise<Metadata> => shareMetadata({
   path: "/game-courses/",
   title: "Game Courses – SaiGame",
   description: "Unity video courses from SaiGame, from C# basics to complete 2D and 3D game projects.",

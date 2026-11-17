@@ -4,7 +4,7 @@ import BlogList from "@/components/pages/blog/BlogList";
 import SiteFooter from "@/components/SiteFooter";
 import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = shareMetadata({
+export const generateMetadata = (): Promise<Metadata> => shareMetadata({
   path: "/blog/",
   title: "Blog – SaiGame",
   description: "Devlogs, lore and tutorials from the SaiGame team.",
