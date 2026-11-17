@@ -1,6 +1,8 @@
 // Shared layout for /blog/<slug>/ posts: same dark style as the /blog/ list.
 // The post body (components/pages/post-*/PostBody.tsx) is passed as children and styled by BlogPost.module.css.
+import JsonLd from "@/components/JsonLd";
 import { getI18n } from "@/lib/i18n";
+import { blogPostingJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import { BLOG_POSTS } from "./posts";
 import { formatDate, postHref } from "./format";
 import s from "./BlogPost.module.css";
@@ -23,6 +25,8 @@ export default async function BlogPostLayout({ slug, children }: { slug: string;
 
   return (
     <div className={s.page}>
+      <JsonLd data={blogPostingJsonLd(post, post.description)} />
+      <JsonLd data={breadcrumbJsonLd([["Blog", "/blog/"], [post.title, `/blog/${post.slug}/`]])} />
       <article className="h-navigation-padding" aria-labelledby="post-title">
         <header className={`${s.wrap} ${s.header}`}>
           <a className={s.back} href="/blog/">

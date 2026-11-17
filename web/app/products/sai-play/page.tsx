@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
+import JsonLd from "@/components/JsonLd";
 import SaiPlayProduct from "@/components/pages/product-sai-play/SaiPlayProduct";
 import { COPY } from "@/components/pages/product-sai-play/content";
 import SiteFooter from "@/components/SiteFooter";
 import { getI18n } from "@/lib/i18n";
 import { shareMetadata } from "@/lib/share";
+import { breadcrumbJsonLd, softwareJsonLd } from "@/lib/structured-data";
 
 // title and description follow the visitor's language, like the page content; the share card is tools/build-og-images.mjs
 export async function generateMetadata(): Promise<Metadata> {
@@ -18,6 +20,8 @@ export default function Page() {
   return (
     <div data-wp-page="products-sai-play" style={{ display: "contents" }}>
       <div data-wp-owner="products" style={{ display: "contents" }}>
+        <JsonLd data={softwareJsonLd({ name: "Sai Play", description: COPY.metaDescription, path: "/products/sai-play/", url: "https://play.saigame.studio", category: "GameApplication", image: "/images/products/sai-play/og-image.png" })} />
+        <JsonLd data={breadcrumbJsonLd([["Products", "/products/"], ["Sai Play", "/products/sai-play/"]])} />
         <div className="wp-site-blocks">
           <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
             <TopMenu page="products-sai-play" active="products" />

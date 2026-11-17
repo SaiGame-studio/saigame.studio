@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-purgatory-game-tutorial/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Purgatory \u2013 Game Tutorial \u2013 SaiGame",
-  alternates: { canonical: "/blog/purgatory-game-tutorial/" },
-};
+export const generateMetadata = (): Promise<Metadata> => postMetadata("purgatory-game-tutorial");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostPurgatoryGameTutorialPage() {

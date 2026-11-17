@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-nguon-goc-sai-game/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Ngu\u1ed3n g\u1ed1c Sai Game \u2013 Nh\u1eadt K\u00fd \u2013 E1 \u2013 SaiGame",
-  alternates: { canonical: "/blog/nguon-goc-sai-game/" },
-};
+export const generateMetadata = (): Promise<Metadata> => postMetadata("nguon-goc-sai-game");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostNguonGocSaiGamePage() {

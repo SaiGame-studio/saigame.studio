@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
-import PostBody, { POST_TITLE } from "@/components/pages/post-thu-thach-lam-game/PostBody";
+import PostBody from "@/components/pages/post-thu-thach-lam-game/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
-import { getI18n } from "@/lib/i18n";
 
-// the title follows the visitor's language, like the post content
-export async function generateMetadata(): Promise<Metadata> {
-  const { t } = await getI18n();
-  return {
-    title: `${t(POST_TITLE)} – SaiGame`,
-    alternates: { canonical: "/blog/game-making-challenge/" },
-  };
-}
+export const generateMetadata = (): Promise<Metadata> => postMetadata("game-making-challenge");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 // "post-thu-thach-lam-game" is the page's scoped-CSS id from the WordPress conversion (tools/), so it keeps the old slug.

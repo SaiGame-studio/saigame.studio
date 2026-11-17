@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import BlogList from "@/components/pages/blog/BlogList";
 import SiteFooter from "@/components/SiteFooter";
+import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = shareMetadata({
+  path: "/blog/",
   title: "Blog – SaiGame",
   description: "Devlogs, lore and tutorials from the SaiGame team.",
-  alternates: { canonical: "/blog/" },
-};
+});
 
 // The Kubio nav keeps the site chrome (this page's scoped Kubio CSS, tools/build_global_styles.py);
 // the post list is its own design (components/pages/blog/BlogList.tsx) and the footer is the shared SiteFooter.

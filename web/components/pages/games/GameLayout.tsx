@@ -1,6 +1,8 @@
 // Shared layout for /games/<slug>/: cover + overview on top, the game's own content (children), then the Steam widget.
+import JsonLd from "@/components/JsonLd";
 import { getI18n } from "@/lib/i18n";
-import { GAMES } from "./games";
+import { breadcrumbJsonLd, videoGameJsonLd } from "@/lib/structured-data";
+import { GAMES, gameHref } from "./games";
 import { Arrow, GameSummary, GameTags } from "./GameParts";
 import s from "./Games.module.css";
 
@@ -10,6 +12,8 @@ export default async function GameLayout({ slug, children }: { slug: string; chi
 
   return (
     <div className={s.page}>
+      <JsonLd data={videoGameJsonLd(game, gameHref(game), game.description)} />
+      <JsonLd data={breadcrumbJsonLd([["Games", "/games/"], [game.title, gameHref(game)]])} />
       <section className={`${s.detailHero} h-navigation-padding`} aria-labelledby="game-title">
         <div className={s.wrap}>
           <a className={s.back} href="/games/">

@@ -9,17 +9,21 @@ export type BlogPost = {
   /** the post opens with a video embed: the list still shows the image, the post page skips it */
   video?: boolean;
   excerpt?: string;
+  /** meta description and structured-data summary (English key for t(); Vietnamese posts keep Vietnamese) */
+  description: string;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "game-making-challenge",
+    description: "SaiGame's Game Making Challenge: the games made month by month, from Hạnh đầu đà and Thánh Gióng to SG11 and Infinite Book Shelf.",
     title: "Game Making Challenge",
     date: "2026-02-01",
     excerpt: "January: Hạnh đầu đà. March: Thánh Gióng. June: SG11. October: Infinite Book Shelf.",
   },
   {
     slug: "sai-game-lore-1",
+    description: "Bản soft release lore của Sai Game gồm 3 chương: Vết Nứt, 99.99% và Ông Chủ.",
     title: "Sai Game Lore #1",
     date: "2025-12-28",
     image: "/wp-content/uploads/2025/12/Gemini_Generated_Image_ca1d1ica1d1ica1d-scaled.png",
@@ -27,6 +31,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "purgatory-game-tutorial",
+    description: "How to play Purgatory: let chat viewers join with “join”, buy coupons, reset item prices with gold, open the rarity chests and equip your hero.",
     title: "Purgatory – Game Tutorial",
     date: "2025-12-18",
     image: "/wp-content/uploads/2025/12/Screenshot_2-1.jpg",
@@ -34,6 +39,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "ss05-backend-tutorial",
+    description: "Purgatory backend tutorial for streamers: open and close the game, set how much in-game gold a $1 donation gives, and show only VIP chat in the game.",
     title: "Purgatory – Backend Tutorial",
     date: "2025-12-02",
     image: "/wp-content/uploads/2025/12/Screenshot_3.jpg",
@@ -41,6 +47,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications",
+    description: "Step by step: enable YouTube Data API v3 in Google Cloud Console and create OAuth 2.0 credentials for a desktop application.",
     title: "How to Configure Google Cloud & Enable YouTube Data API v3 (for Desktop Applications)",
     date: "2025-11-25",
     image: "/wp-content/uploads/2025/11/Screenshot_26.jpg",
@@ -48,6 +55,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "sai-rewind-2024-nhat-ky-e3",
+    description: "Nhật ký Sai Game tập 3 (video): nhìn lại năm 2024 của Sai Game.",
     video: true,
     title: "Sai Rewind 2024 – Nhật ký E3",
     date: "2025-06-01",
@@ -55,6 +63,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cu-phot-unity-2023-nhat-ky-e2",
+    description: "Nhật ký Sai Game tập 2 (video): nhìn lại cú phốt Unity năm 2023.",
     video: true,
     title: "Cú phốt Unity 2023 – Nhật Ký – E2",
     date: "2025-06-01",
@@ -62,6 +71,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "nguon-goc-sai-game",
+    description: "Nhật ký Sai Game tập 1 (video): câu chuyện Sai Game bắt đầu như thế nào.",
     video: true,
     title: "Nguồn gốc Sai Game – Nhật Ký – E1",
     date: "2025-02-25",

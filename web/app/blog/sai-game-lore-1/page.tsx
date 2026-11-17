@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-sai-game-lore-1/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Sai Game Lore #1 \u2013 SaiGame",
-  alternates: { canonical: "/blog/sai-game-lore-1/" },
-};
+export const generateMetadata = (): Promise<Metadata> => postMetadata("sai-game-lore-1");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostSaiGameLore1Page() {

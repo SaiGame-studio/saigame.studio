@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import GameCourses from "@/components/pages/unity-dev-basic/GameCourses";
 import SiteFooter from "@/components/SiteFooter";
+import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = shareMetadata({
+  path: "/game-courses/",
   title: "Game Courses – SaiGame",
   description: "Unity video courses from SaiGame, from C# basics to complete 2D and 3D game projects.",
-  alternates: { canonical: "/game-courses/" },
-};
+});
 
 // The Kubio nav keeps the site chrome (this page's scoped Kubio CSS, slug "unity-dev-basic");
 // the content is its own design (components/pages/unity-dev-basic/GameCourses.tsx) and the footer is the shared SiteFooter.

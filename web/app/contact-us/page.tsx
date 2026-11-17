@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import ContactContent from "@/components/pages/contact-us/ContactContent";
 import SiteFooter from "@/components/SiteFooter";
+import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = shareMetadata({
+  path: "/contact-us/",
   title: "Contact Us – SaiGame",
   description: "Contact SaiGame by email or on Discord.",
-  alternates: { canonical: "/contact-us/" },
-};
+});
 
 // The Kubio nav keeps the site chrome (CSS copied from the products page, tools/build_global_styles.py),
 // the footer is the shared SiteFooter.

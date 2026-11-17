@@ -1,29 +1,21 @@
 import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
+import JsonLd from "@/components/JsonLd";
 import InfiniteBookShelf from "@/components/pages/infinite-book-shelf/InfiniteBookShelf";
 import { COPY, IMAGE_DIR, OG_IMAGE } from "@/components/pages/infinite-book-shelf/content";
+import { getGame } from "@/components/pages/games/games";
 import SiteFooter from "@/components/SiteFooter";
 import { getI18n } from "@/lib/i18n";
+import { shareMetadata } from "@/lib/share";
+import { breadcrumbJsonLd, videoGameJsonLd } from "@/lib/structured-data";
 
-const SITE_URL = "https://saigame.studio";
 const PATH = "/products/infinite-book-shelf/";
-// #14 social share card: only advertised once the file exists
-const ogImages = OG_IMAGE.ready
-  ? [{ url: `${SITE_URL}${IMAGE_DIR}/${OG_IMAGE.file}`, width: OG_IMAGE.width, height: OG_IMAGE.height }]
-  : undefined;
+const game = getGame("infinite-book-shelf");
 
-// title and description follow the visitor's language, like the page content
+// title and description follow the visitor's language, like the page content; the share card is tools/build-og-images.mjs
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await getI18n();
-  const title = t(COPY.metaTitle);
-  const description = t(COPY.metaDescription);
-  return {
-    title,
-    description,
-    alternates: { canonical: PATH },
-    openGraph: { type: "website", url: `${SITE_URL}${PATH}`, siteName: "SaiGame", title, description, images: ogImages },
-    twitter: { card: OG_IMAGE.ready ? "summary_large_image" : "summary", title, description, images: ogImages },
-  };
+  return shareMetadata({ path: PATH, title: t(COPY.metaTitle), description: t(COPY.metaDescription), image: `${IMAGE_DIR}/${OG_IMAGE.file}` });
 }
 
 // data-wp-page gives the page its own slug (off-canvas menu cleanup in KubioScripts); data-wp-owner="products"
@@ -32,9 +24,11 @@ export default function InfiniteBookShelfPage() {
   return (
     <div data-wp-page="infinite-book-shelf" style={{ display: "contents" }}>
       <div data-wp-owner="products" style={{ display: "contents" }}>
+        <JsonLd data={videoGameJsonLd(game, PATH, game.description)} />
+        <JsonLd data={breadcrumbJsonLd([["Games", "/games/"], [game.title, PATH]])} />
         <div className="wp-site-blocks">
           <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-            <TopMenu page="infinite-book-shelf" active="products" />
+            <TopMenu page="infinite-book-shelf" active="games" />
           </div>
           <InfiniteBookShelf />
           <SiteFooter />
