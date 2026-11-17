@@ -5,9 +5,10 @@ import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { SAI_SERVER_URL } from "@/components/SaiServerLink";
-import { Arrow, DISCORD_URL, keepNames, LOGO_SRC, Media, NAMES, productLinks, rich, s, SDKS, TUTORIAL_URL } from "../product-landing/shared";
+import { Arrow, DISCORD_URL, keepNames, Media, NAMES, productLinks, rich, s, SDKS, TUTORIAL_URL } from "../product-landing/shared";
 import { COPY, IMAGE_DIR, SHOTS, SHOWCASE } from "./content";
 import Pricing from "./Pricing";
+import Faq from "./Faq";
 
 const SAI_PLAY_PAGE = "/products/sai-play/";
 
@@ -159,10 +160,11 @@ export default async function SaiServerProduct() {
 
       <Pricing t={t} lang={lang} />
 
+      <Faq t={t} />
+
       {/* final CTA */}
       <section className={s.close} aria-labelledby="ss-close">
         <div className={s.wrap}>
-          <img className={s.logo} src={LOGO_SRC} alt="SaiGame" width={160} height={160} loading="lazy" decoding="async" />
           <h2 id="ss-close" className={s.closeTitle}>{t(close.title)}</h2>
           <p className={s.closeLead}>{productLinks(t(close.lead))}</p>
           <div className={s.closeActions}>

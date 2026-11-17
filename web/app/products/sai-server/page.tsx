@@ -6,7 +6,8 @@ import { COPY } from "@/components/pages/product-sai-server/content";
 import SiteFooter from "@/components/SiteFooter";
 import { getI18n } from "@/lib/i18n";
 import { shareMetadata } from "@/lib/share";
-import { breadcrumbJsonLd, saiServerJsonLd } from "@/lib/structured-data";
+import { breadcrumbJsonLd, faqJsonLd, saiServerJsonLd } from "@/lib/structured-data";
+import { faqEntries } from "@/components/pages/product-sai-server/Faq";
 
 // title and description follow the visitor's language, like the page content; the share card is tools/build-og-images.mjs
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,6 +22,7 @@ export default function Page() {
     <div data-wp-page="products-sai-server" style={{ display: "contents" }}>
       <div data-wp-owner="products" style={{ display: "contents" }}>
         <JsonLd data={saiServerJsonLd()} />
+        <JsonLd data={faqJsonLd(faqEntries((text) => text))} />
         <JsonLd data={breadcrumbJsonLd([["Products", "/products/"], ["Sai Server", "/products/sai-server/"]])} />
         <div className="wp-site-blocks">
           <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">

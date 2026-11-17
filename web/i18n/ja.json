@@ -519,5 +519,15 @@
  "3D Puzzle": "3D パズル",
  "Cloud saves": "クラウドセーブ",
  "Play on Itch.io": "Itch.io でプレイ",
- "Sai Server speeds up game development: there is no separate backend to build, so your team spends its time on the game itself.": "Sai Server でゲーム開発を加速。別途バックエンドを構築する必要がないので、チームはゲームそのものに時間を使えます。"
+ "Sai Server speeds up game development: there is no separate backend to build, so your team spends its time on the game itself.": "Sai Server でゲーム開発を加速。別途バックエンドを構築する必要がないので、チームはゲームそのものに時間を使えます。",
+ "Frequently asked questions": "よくある質問",
+ "What is Sai Server?": "Sai Server とは？",
+ "Which game engines does Sai Server support?": "Sai Server はどのゲームエンジンに対応していますか？",
+ "Unity, through the Sai Server Unity SDK: add the SaiServer prefab to your scene and set your Game ID. More game engines are planned.": "Unity に対応しています。Sai Server Unity SDK を使い、SaiServer プレハブをシーンに追加して Game ID を設定してください。他のゲームエンジンにも対応予定です。",
+ "How much does Sai Server cost?": "Sai Server の料金は？",
+ "Every game starts on a free base: {ccu} CCU, {profiles} player profiles, {items} items, {shops} shops and {quests} quests. When it needs more, add Materia stacks from the web admin, from {price} sCoin per stack per month. sCoin packages start at $0.99 for 100 sCoin.": "すべてのゲームは無料ベースから始まります：{ccu} CCU、プレイヤープロフィール {profiles}、アイテム {items}、ショップ {shops}、クエスト {quests}。さらに必要になったら、Web 管理画面から Materia スタックを追加します。料金は 1 スタックあたり月 {price} sCoin からです。sCoin パックは 100 sCoin = $0.99 からご購入いただけます。",
+ "Can I write my own server logic?": "独自のサーバーロジックを書けますか？",
+ "How is Sai Server different from PlayFab and Unity Gaming Services?": "Sai Server は PlayFab や Unity Gaming Services と何が違いますか？",
+ "PlayFab (by Microsoft) and Unity Gaming Services are broad platforms billed by usage: PlayFab meters each kind of usage, and Unity Gaming Services prices each service separately with its own free allowance. Sai Server is one backend built around a single Item Definition, so inventory, shops, gacha, crafting and quests share the same items from day one. You run everything from one web admin, write custom logic as Lua scripts uploaded from Unity, buy capacity in fixed monthly Materia stacks, and every game gets a home on Sai Play. PlayFab supports more game engines, and both also offer multiplayer server hosting; the Sai Server SDK is for Unity today, with more engines planned.": "PlayFab（Microsoft）と Unity Gaming Services は、利用量に応じて課金される幅広いプラットフォームです。PlayFab は利用の種類ごとに計量し、Unity Gaming Services はサービスごとに個別の料金と無料枠があります。Sai Server は 1 つの Item Definition を中心に作られたバックエンドで、インベントリ、ショップ、ガチャ、クラフト、クエストが最初から同じアイテムを共有します。すべてを 1 つの Web 管理画面で運用し、独自ロジックは Unity からアップロードする Lua スクリプトで書き、容量は月額固定の Materia スタックで購入します。さらに、すべてのゲームが Sai Play に掲載されます。PlayFab はより多くのゲームエンジンに対応し、両者ともマルチプレイヤーサーバーのホスティングも提供しています。Sai Server SDK は現在 Unity 向けで、他のエンジンにも対応予定です。",
+ "What is Sai Play?": "Sai Play とは？"
 }
