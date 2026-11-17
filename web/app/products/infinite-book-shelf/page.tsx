@@ -25,10 +25,10 @@ export default function InfiniteBookShelfPage() {
     <div data-wp-page="infinite-book-shelf" style={{ display: "contents" }}>
       <div data-wp-owner="products" style={{ display: "contents" }}>
         <JsonLd data={videoGameJsonLd(game, PATH, game.description)} />
-        <JsonLd data={breadcrumbJsonLd([["Products", "/products/"], [game.title, PATH]])} />
+        <JsonLd data={breadcrumbJsonLd([["Games", "/games/"], [game.title, PATH]])} />
         <div className="wp-site-blocks">
           <div className="wp-block wp-block-kubio-header position-relative wp-block-kubio-header__container style-RW_QAhu4iL-container" data-kubio="kubio/header">
-            <TopMenu page="infinite-book-shelf" active="products" />
+            <TopMenu page="infinite-book-shelf" active="games" />
           </div>
           <InfiniteBookShelf />
           <SiteFooter />

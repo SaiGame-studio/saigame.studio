@@ -8,7 +8,7 @@ WEB = sys.argv[1]
 OUT = sys.argv[2] if len(sys.argv) > 2 else None
 T_CALL = re.compile(r'\bt\(\s*"((?:[^"\\]|\\.)*)"\s*\)')
 DATA_FIELD = re.compile(r'(?:title|summary|text|label|value):\s*"((?:[^"\\]|\\.)*)"')
-DATA_FILES = ["components/pages/games/games.ts", "components/pages/sai-server/SaiServerLanding.tsx"]
+DATA_FILES = ["components/pages/games/games.ts"]
 
 keys = set()
 files = glob.glob(f"{WEB}/components/**/*.tsx", recursive=True) + glob.glob(f"{WEB}/app/**/*.tsx", recursive=True)

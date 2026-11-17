@@ -28,7 +28,6 @@ const GAMES: SubLink[] = [
 const PRODUCTS: SubLink[] = [
   { id: "menu-item-sai-server", href: "/products/sai-server/", label: "Sai Server", translate: false },
   { id: "menu-item-sai-play", href: "/products/sai-play/", label: "Sai Play", translate: false },
-  { id: "menu-item-infinite-book-shelf", href: "/products/infinite-book-shelf/", label: "Infinite Book Shelf", translate: false, game: true },
 ];
 const LINKS_AFTER_PRODUCTS: Link[] = [
   // opens the pricing table on the Sai Server product page; Contact Us lives in the footer (SiteFooter)
