@@ -6,6 +6,8 @@ export type Game = {
   /** vertical Steam capsule or key art */
   cover: string;
   summary: string;
+  /** meta description and structured-data summary (English key for t()) */
+  description: string;
   tags: { title: string; text?: string }[];
   /** the game's page; defaults to /games/<slug>/ */
   page?: string;
@@ -19,6 +21,7 @@ export type Game = {
 export const GAMES: Game[] = [
   {
     slug: "infinite-book-shelf",
+    description: "Infinite Book Shelf is a 3D puzzle game for browser, PC and Android where every book, shelf and flower is saved to the cloud, powered by Sai Server.",
     title: "Infinite Book Shelf",
     platform: "Itch.io · Unity Play",
     cover: "/images/products/infinite-book-shelf/hero.webp",
@@ -29,6 +32,7 @@ export const GAMES: Game[] = [
   },
   {
     slug: "purgatory",
+    description: "Purgatory is an interactive Steam game for streamers and viewers: chat joins the game and fights alongside the streamer for a common goal.",
     title: "Purgatory",
     platform: "Steam PC",
     cover: "/wp-content/uploads/2025/11/store_capsule_vertical.jpg",
@@ -43,6 +47,7 @@ export const GAMES: Game[] = [
   },
   {
     slug: "the-immortal",
+    description: "The Immortal is a 2D pixel-art platformer on Steam: run through the land, kill the enemies on your way and reach the end. One hit sends you back to the start.",
     title: "The Immortal",
     platform: "Steam PC",
     cover: "/wp-content/uploads/2025/02/hero_capsule-edited.jpg",
@@ -57,6 +62,7 @@ export const GAMES: Game[] = [
   },
   {
     slug: "the-watcher",
+    description: "The Watcher is a pixel-art incremental (idle) game on Steam: venture into a land full of monsters and discover where they come from.",
     title: "The Watcher",
     platform: "Steam PC",
     cover: "/wp-content/uploads/2025/02/the-watcher-edited.jpg",
@@ -72,3 +78,5 @@ export const GAMES: Game[] = [
 ];
 
 export const gameHref = (game: Game) => game.page ?? `/games/${game.slug}/`;
+
+export const getGame = (slug: string) => GAMES.find((game) => game.slug === slug)!;

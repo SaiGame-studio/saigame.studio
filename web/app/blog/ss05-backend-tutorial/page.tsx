@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-ss05-backend-tutorial/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Purgatory \u2013 Backend Tutorial \u2013 SaiGame",
-  alternates: { canonical: "/blog/ss05-backend-tutorial/" },
-};
+export const generateMetadata = (): Promise<Metadata> => postMetadata("ss05-backend-tutorial");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostSs05BackendTutorialPage() {

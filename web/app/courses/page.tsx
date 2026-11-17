@@ -3,11 +3,13 @@ import TopMenu from "@/components/TopMenu";
 import Hero from "@/components/pages/courses/Hero";
 import CoursesContent from "@/components/pages/courses/CoursesContent";
 import SiteFooter from "@/components/SiteFooter";
+import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = {
-  title: "Courses \u2013 SaiGame",
-  alternates: { canonical: "/courses/" },
-};
+export const metadata: Metadata = shareMetadata({
+  path: "/courses/",
+  title: "Courses – SaiGame",
+  description: "Game development courses from SaiGame: Unity Dev Basic for beginners and Unity Dev Advance for developers building complex, immersive games with Unity.",
+});
 
 // The display:contents wrapper adds no box; it scopes this page's Kubio CSS (tools/build_global_styles.py).
 export default function CoursesPage() {

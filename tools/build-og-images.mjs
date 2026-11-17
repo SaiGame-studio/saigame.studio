@@ -18,6 +18,15 @@ const LOGO = "wp-content/uploads/2025/12/LogoSaiGame_shadown.png";
 /** title parts: [text, colour]; one entry per line. shadeEnd = how dark the gradient stays on the right (art side) */
 const CARDS = [
   {
+    // site-wide default: pages without their own card (lib/seo.ts DEFAULT_OG_IMAGE)
+    out: "images/og-default.png",
+    art: { file: "images/home/journey-anime.png", position: "centre" },
+    tint: "#14131c",
+    kicker: "SAIGAME · GAME BACKEND PLATFORM",
+    lines: [[["Build your game on", "#ffffff"]], [["Sai Server.", "#5f9bff"]]],
+    sub: "Accounts, cloud save, economy, quests and leaderboards, from one web admin.",
+  },
+  {
     out: "images/products/og-products.png",
     art: { file: "images/products/cozy-sai-server.jpg", position: "centre" },
     tint: "#1d1e27",

@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PrivacyPolicy from "@/components/pages/privacy-policy/PrivacyPolicy";
 import SiteFooter from "@/components/SiteFooter";
+import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = shareMetadata({
+  path: "/privacy-policy/",
   title: "Privacy Policy – SaiGame",
-  alternates: { canonical: "/privacy-policy/" },
-};
+  description: "How SaiGame collects, uses, shares and protects personal data on its website, in its games and online services, and in its community and courses.",
+});
 
 // The shared TopMenu keeps the site chrome; the content is its own design
 // (components/pages/privacy-policy/PrivacyPolicy.tsx) and the footer is the shared SiteFooter.

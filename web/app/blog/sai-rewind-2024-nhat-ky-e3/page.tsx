@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-sai-rewind-2024/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Sai Rewind 2024 \u2013 Nh\u1eadt k\u00fd E3 \u2013 SaiGame",
-  alternates: { canonical: "/blog/sai-rewind-2024-nhat-ky-e3/" },
-};
+export const generateMetadata = (): Promise<Metadata> => postMetadata("sai-rewind-2024-nhat-ky-e3");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostSaiRewind2024Page() {

@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import GameLayout from "@/components/pages/games/GameLayout";
+import { gameMetadata } from "@/components/pages/games/meta";
 import TheImmortalContent from "@/components/pages/the-immortal/TheImmortalContent";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "The Immortal \u2013 SaiGame",
-  alternates: { canonical: "/games/the-immortal/" },
-};
+export const generateMetadata = (): Promise<Metadata> => gameMetadata("the-immortal");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the game page itself uses the shared dark GameLayout.
 export default function TheImmortalPage() {

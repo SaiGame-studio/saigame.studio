@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import GameLayout from "@/components/pages/games/GameLayout";
+import { gameMetadata } from "@/components/pages/games/meta";
 import TheWatcherContent from "@/components/pages/the-watcher/TheWatcherContent";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "The Watcher \u2013 SaiGame",
-  alternates: { canonical: "/games/the-watcher/" },
-};
+export const generateMetadata = (): Promise<Metadata> => gameMetadata("the-watcher");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the game page itself uses the shared dark GameLayout.
 export default function TheWatcherPage() {

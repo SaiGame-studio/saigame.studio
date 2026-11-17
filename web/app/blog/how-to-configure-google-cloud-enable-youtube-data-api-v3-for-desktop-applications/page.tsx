@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-google-cloud-youtube-api/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "How to Configure Google Cloud & Enable YouTube Data API v3 (for Desktop Applications) \u2013 SaiGame",
-  alternates: { canonical: "/blog/how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications/" },
-};
+export const generateMetadata = (): Promise<Metadata> => postMetadata("how-to-configure-google-cloud-enable-youtube-data-api-v3-for-desktop-applications");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostGoogleCloudYoutubeApiPage() {

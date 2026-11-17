@@ -3,11 +3,16 @@ import Script from "next/script";
 import KubioScripts from "@/components/KubioScripts";
 import ClientRouter from "@/components/ClientRouter";
 import LangSync from "@/components/LangSync";
+import JsonLd from "@/components/JsonLd";
 import { getLang } from "@/lib/i18n";
+import { SITE_URL } from "@/lib/share";
+import { organizationJsonLd } from "@/lib/structured-data";
 import styles from "./wp-styles.json";
 import "./site.css";
 
 export const metadata: Metadata = {
+  // relative canonical and image URLs resolve against the one canonical origin
+  metadataBase: new URL(SITE_URL),
   title: "SaiGame",
   icons: {
     icon: [
@@ -35,6 +40,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         className={`wp-singular page wp-custom-logo wp-theme-kubio theme-kubio woocommerce-js translatepress-${lang === "en" ? "en_US" : lang}`}
         suppressHydrationWarning
       >
+        <JsonLd data={organizationJsonLd} />
         <div id="page-top" tabIndex={-1}></div>
         {children}
         <ClientRouter />

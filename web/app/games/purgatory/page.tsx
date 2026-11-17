@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import GameLayout from "@/components/pages/games/GameLayout";
+import { gameMetadata } from "@/components/pages/games/meta";
 import PurgatoryContent from "@/components/pages/purgatory/PurgatoryContent";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "Purgatory \u2013 SaiGame",
-  alternates: { canonical: "/games/purgatory/" },
-};
+export const generateMetadata = (): Promise<Metadata> => gameMetadata("purgatory");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the game page itself uses the shared dark GameLayout.
 export default function PurgatoryPage() {

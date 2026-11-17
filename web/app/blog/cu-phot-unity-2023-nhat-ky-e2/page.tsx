@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import TopMenu from "@/components/TopMenu";
 import PostBody from "@/components/pages/post-cu-phot-unity-2023/PostBody";
 import BlogPostLayout from "@/components/pages/blog/BlogPostLayout";
+import { postMetadata } from "@/components/pages/blog/meta";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = {
-  title: "C\u00fa ph\u1ed1t Unity 2023 \u2013 Nh\u1eadt K\u00fd \u2013 E2 \u2013 SaiGame",
-  alternates: { canonical: "/blog/cu-phot-unity-2023-nhat-ky-e2/" },
-};
+export const generateMetadata = (): Promise<Metadata> => postMetadata("cu-phot-unity-2023-nhat-ky-e2");
 
 // The display:contents wrapper scopes this page's Kubio CSS (nav only); the post itself uses the shared dark BlogPostLayout.
 export default function PostCuPhotUnity2023Page() {
