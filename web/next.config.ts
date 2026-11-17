@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
   // WordPress URLs end with a slash (/games/, /purgatory/)
   trailingSlash: true,
   async redirects() {
-    return [
+    const redirects = [
       ...GAME_PAGES.map((slug) => ({ source: `/${slug}`, destination: `/games/${slug}/`, permanent: true })),
       ...BLOG_POSTS.map((slug) => ({ source: `/${slug}`, destination: `/blog/${slug}/`, permanent: true })),
       // "Thử Thách Làm Game" moved to an English slug (old WordPress root URL included)
@@ -36,6 +36,14 @@ const nextConfig: NextConfig = {
       // the Infinite Book Shelf page first shipped at /products/infinity-book-shelf/
       { source: "/products/infinity-book-shelf", destination: "/products/infinite-book-shelf/", permanent: true },
     ];
+    return redirects.flatMap((redirect) => [
+      redirect,
+      ...["vi", "ja"].map((lang) => ({
+        ...redirect,
+        source: `/${lang}${redirect.source}`,
+        destination: `/${lang}${redirect.destination}`,
+      })),
+    ]);
   },
 };
 

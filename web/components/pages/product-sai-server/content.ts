@@ -179,6 +179,22 @@ export const COPY = {
     start: "Create Studio to get started",
   },
 
+  /** answers reuse the page's own copy where it already says it (hero.lead, lua.lead, play.text, in Faq.tsx);
+   *  {name} placeholders in the price answer are filled from FREE_BASE and TIERS. Competitor statements stay
+   *  qualitative (no prices or limits of other platforms: they change often). */
+  faq: {
+    title: "Frequently asked questions",
+    whatIs: "What is Sai Server?",
+    engines: "Which game engines does Sai Server support?",
+    enginesAnswer: "Unity, through the Sai Server Unity SDK: add the SaiServer prefab to your scene and set your Game ID. More game engines are planned.",
+    price: "How much does Sai Server cost?",
+    priceAnswer: "Every game starts on a free base: {ccu} CCU, {profiles} player profiles, {items} items, {shops} shops and {quests} quests. When it needs more, add Materia stacks from the web admin, from {price} sCoin per stack per month. sCoin packages start at $0.99 for 100 sCoin.",
+    lua: "Can I write my own server logic?",
+    compare: "How is Sai Server different from PlayFab and Unity Gaming Services?",
+    compareAnswer: "PlayFab (by Microsoft) and Unity Gaming Services are broad platforms billed by usage: PlayFab meters each kind of usage, and Unity Gaming Services prices each service separately with its own free allowance. Sai Server is one backend built around a single Item Definition, so inventory, shops, gacha, crafting and quests share the same items from day one. You run everything from one web admin, write custom logic as Lua scripts uploaded from Unity, buy capacity in fixed monthly Materia stacks, and every game gets a home on Sai Play. PlayFab supports more game engines, and both also offer multiplayer server hosting; the Sai Server SDK is for Unity today, with more engines planned.",
+    play: "What is Sai Play?",
+  },
+
   close: {
     title: "Let your team get back to making games.",
     lead: "Talk with the Sai Server team about what your game needs and ask about the 6-month sponsored infrastructure program.",

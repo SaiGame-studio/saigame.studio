@@ -66,22 +66,22 @@ const Background = () => (
 );
 
 async function MenuItems({ active }: { active?: TopMenuItem }) {
-  const { t, flags } = await getI18n();
+  const { t, flags, href } = await getI18n();
   const link = (l: Link) => (
     <li key={l.id} id={l.id} className={`menu-item menu-item-type-custom menu-item-object-custom ${l.id}${current(active === l.key)}`}>
-      <a href={l.href} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>{t(l.label)}</a>
+      <a href={href(l.href)} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>{t(l.label)}</a>
     </li>
   );
   const dropdown = (l: Link, items: SubLink[]) => (
     <li id={l.id} className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children ${l.id}${current(active === l.key)}`}>
-      <a href={l.href} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>
+      <a href={href(l.href)} aria-current={active === l.key ? "page" : undefined} style={depth(0)}>
         <span>{t(l.label)}</span>
         <Chevron />
       </a>
       <ul className="sub-menu">
         {items.map((item) => (
           <li key={item.id} id={item.id} className={`menu-item menu-item-type-custom menu-item-object-custom ${item.id}`}>
-            <a href={item.href} style={depth(1)}>
+            <a href={href(item.href)} style={depth(1)}>
               {item.game ? (
                 <span className="menu-game-link">
                   <span>{item.translate ? t(item.label) : item.label}</span>
@@ -116,7 +116,7 @@ async function MenuItems({ active }: { active?: TopMenuItem }) {
         <ul className="sub-menu">
           {flags.others.map((lang) => (
             <li key={lang.code} id={`menu-item-lang-${lang.code}`} className="trp-language-switcher-container menu-item menu-item-type-post_type menu-item-object-language_switcher menu-item-lang">
-              <a href="#" data-lang={lang.code} style={depth(1)}>
+              <a href={lang.href} hrefLang={lang.code} data-lang={lang.code} style={depth(1)}>
                 <span data-no-translation="">
                   <LangFlag code={lang.code} />
                 </span>

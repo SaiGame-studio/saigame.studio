@@ -32,7 +32,6 @@ function rich(text: string) {
   return text.split(/\*\*(.+?)\*\*/).map((part, i) => (i % 2 ? <strong key={i} className={s.strong}>{brandNames(part)}</strong> : brandNames(part)));
 }
 
-const LOGO_SRC = "/wp-content/uploads/2025/12/LogoSaiGame_shadown.png";
 /** the "Where to play" section; every Play button scrolls to it */
 const STORES_ID = "where-to-play";
 
@@ -264,7 +263,6 @@ export default async function InfiniteBookShelf() {
       {/* 3.6 final CTA */}
       <section className={s.close} aria-labelledby="ibs-close">
         <div className={s.wrap}>
-          <img className={s.logo} src={LOGO_SRC} alt="SaiGame" width={160} height={160} loading="lazy" decoding="async" />
           <h2 id="ibs-close" className={s.closeTitle}>{brandNames(t(close.title))}</h2>
           <div className={s.closeActions}>
             <a className={s.button} href={playHref}>

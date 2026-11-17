@@ -5,7 +5,7 @@ import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { SAI_PLAY_URL, SAI_SERVER_URL } from "@/components/SaiServerLink";
-import { Arrow, keepNames, LOGO_SRC, NAMES, productLinks, rich, s, SGEM_SRC, type T } from "../product-landing/shared";
+import { Arrow, keepNames, NAMES, productLinks, rich, s, SGEM_SRC, type T } from "../product-landing/shared";
 import { COPY, SAMPLE } from "./content";
 
 const SAI_SERVER_PAGE = "/products/sai-server/";
@@ -225,7 +225,6 @@ export default async function SaiPlayProduct() {
       {/* final CTA */}
       <section className={s.close} aria-labelledby="sp-close">
         <div className={s.wrap}>
-          <img className={s.logo} src={LOGO_SRC} alt="SaiGame" width={160} height={160} loading="lazy" decoding="async" />
           <h2 id="sp-close" className={s.closeTitle}>{productLinks(t(close.title))}</h2>
           <div className={s.closeActions}>
             <a className={s.button} href={SAI_PLAY_URL}>

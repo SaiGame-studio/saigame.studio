@@ -4,7 +4,7 @@ import Careers from "@/components/pages/careers/Careers";
 import SiteFooter from "@/components/SiteFooter";
 import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = shareMetadata({
+export const generateMetadata = (): Promise<Metadata> => shareMetadata({
   path: "/careers/",
   title: "Careers – SaiGame",
   description: "Sai Game Studio is hiring Intern Game Devs to make an online game with Sai Server. Remote.",

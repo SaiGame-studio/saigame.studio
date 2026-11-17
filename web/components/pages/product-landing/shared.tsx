@@ -20,7 +20,6 @@ export function rich(text: string) {
   return text.split(/\*\*(.+?)\*\*/).map((part, i) => (i % 2 ? <strong key={i} className={s.strong}>{productLinks(part)}</strong> : productLinks(part)));
 }
 
-export const LOGO_SRC = "/wp-content/uploads/2025/12/LogoSaiGame_shadown.png";
 export const SGEM_SRC = "/images/products/sgem.svg";
 export const DISCORD_URL = "https://discord.gg/UU3YarmVde";
 export const TUTORIAL_URL = "https://server.saigame.studio/tutorials/basic/get-started/create-a-studio";

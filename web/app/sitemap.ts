@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { LANGS, localizePath } from "@/lib/lang";
 import { SITE_URL } from "@/lib/share";
 import { BLOG_POSTS } from "@/components/pages/blog/posts";
 import { GAMES, gameHref } from "@/components/pages/games/games";
@@ -26,5 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(path === "/blog/" && latestPost && { lastModified: latestPost }),
   }));
   const posts = BLOG_POSTS.map((post) => ({ url: `${SITE_URL}/blog/${post.slug}/`, lastModified: post.date }));
-  return [...pages, ...posts];
+  return [...pages, ...posts].flatMap((entry) => {
+    const path = entry.url.slice(SITE_URL.length);
+    const languages = Object.fromEntries(LANGS.map((lang) => [lang, `${SITE_URL}${localizePath(lang, path)}`]));
+    return LANGS.map((lang) => ({ ...entry, url: languages[lang], alternates: { languages: { ...languages, "x-default": entry.url } } }));
+  });
 }

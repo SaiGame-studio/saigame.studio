@@ -4,7 +4,7 @@ import ContactContent from "@/components/pages/contact-us/ContactContent";
 import SiteFooter from "@/components/SiteFooter";
 import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = shareMetadata({
+export const generateMetadata = (): Promise<Metadata> => shareMetadata({
   path: "/contact-us/",
   title: "Contact Us – SaiGame",
   description: "Contact SaiGame by email or on Discord.",

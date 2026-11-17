@@ -4,7 +4,7 @@ import Home from "@/components/pages/home/Home";
 import SiteFooter from "@/components/SiteFooter";
 import { shareMetadata } from "@/lib/share";
 
-export const metadata: Metadata = shareMetadata({
+export const generateMetadata = (): Promise<Metadata> => shareMetadata({
   path: "/",
   title: "SaiGame – Sai Server, the backend for your game",
   description: "SaiGame builds Sai Server, the game backend platform: accounts, cloud save, inventory, in-game economy, quests, leaderboards and server-side Lua, managed from one web admin. We make our own games on it too.",
