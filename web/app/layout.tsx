@@ -4,6 +4,7 @@ import KubioScripts from "@/components/KubioScripts";
 import ClientRouter from "@/components/ClientRouter";
 import LangSync from "@/components/LangSync";
 import JsonLd from "@/components/JsonLd";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { getLang } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/share";
 import { organizationJsonLd } from "@/lib/structured-data";
@@ -35,6 +36,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <link key={s.href} rel="stylesheet" href={s.href} media={s.media === "all" ? undefined : s.media} />
         ))}
         <Script src="/js/kubio-attachment-check.js" strategy="beforeInteractive" />
+        <GoogleAnalytics />
       </head>
       <body
         className={`wp-singular page wp-custom-logo wp-theme-kubio theme-kubio woocommerce-js translatepress-${lang === "en" ? "en_US" : lang}`}
