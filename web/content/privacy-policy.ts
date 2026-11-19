@@ -4,7 +4,7 @@
 import type { Lang } from "@/lib/lang";
 import { ja } from "./privacy-policy-ja";
 
-export const LAST_UPDATED: Record<Lang, string> = { en: "October 14, 2026", vi: "14/10/2026", ja: "2026年10月14日" };
+export const LAST_UPDATED: Record<Lang, string> = { en: "November 19, 2026", vi: "19/11/2026", ja: "2026年11月19日" };
 export const CONTACT_EMAIL = "simon@saigame.studio"; // section 12 links it directly
 export const DISCORD_URL = "https://discord.gg/UU3YarmVde";
 
@@ -42,7 +42,7 @@ const en: Block[] = [
   { type: "p", text: "We rely on the performance of our agreement with you, our legitimate interests (such as security, anti-cheat and service improvement), your consent where it is required, and our legal obligations. We do not sell your personal data and we do not use it for automated decisions that significantly affect you." },
 
   { type: "h2", text: "4. Cookies and local storage" },
-  { type: "p", text: "Our website stores your language choice in your browser so that pages are shown in the language you selected. This is strictly necessary for the feature you request and contains no tracking identifiers. We do not currently use advertising or analytics cookies on our website; if that changes, we will update this policy and ask for your consent where the law requires it." },
+  { type: "p", text: "Our website stores your language choice in your browser so that pages are shown in the language you selected. This is strictly necessary for the feature you request and contains no tracking identifiers. We use Google Analytics on saigame.studio and server.saigame.studio to understand page visits, traffic sources and actions such as following a product link, signing up or creating a studio or game. Google Analytics uses cookies to recognize browsers across these sites. Our custom analytics events do not include email addresses, passwords, studio or game names, or API keys." },
   { type: "p", text: "Embedded content from other websites, such as videos or store widgets, may set its own cookies when it loads. Its use is governed by the privacy policy of the provider." },
 
   { type: "h2", text: "5. Sharing your information" },
@@ -113,7 +113,7 @@ const vi: Block[] = [
   { type: "p", text: "Chúng tôi xử lý dữ liệu dựa trên việc thực hiện thỏa thuận với bạn, lợi ích hợp pháp của chúng tôi (như bảo mật, chống gian lận và cải thiện dịch vụ), sự đồng ý của bạn khi pháp luật yêu cầu, và nghĩa vụ pháp lý. Chúng tôi không bán dữ liệu cá nhân của bạn và không dùng dữ liệu để ra quyết định tự động gây ảnh hưởng đáng kể đến bạn." },
 
   { type: "h2", text: "4. Cookie và bộ nhớ trình duyệt" },
-  { type: "p", text: "Website lưu lựa chọn ngôn ngữ của bạn trong trình duyệt để hiển thị trang bằng ngôn ngữ bạn đã chọn. Đây là dữ liệu thực sự cần thiết cho tính năng bạn yêu cầu và không chứa mã định danh theo dõi. Hiện chúng tôi không dùng cookie quảng cáo hay phân tích trên website; nếu điều đó thay đổi, chúng tôi sẽ cập nhật chính sách và xin sự đồng ý của bạn khi pháp luật yêu cầu." },
+  { type: "p", text: "Website lưu lựa chọn ngôn ngữ của bạn trong trình duyệt để hiển thị trang bằng ngôn ngữ bạn đã chọn. Đây là dữ liệu thực sự cần thiết cho tính năng bạn yêu cầu và không chứa mã định danh theo dõi. Chúng tôi dùng Google Analytics trên saigame.studio và server.saigame.studio để tìm hiểu lượt truy cập, nguồn truy cập và các hành động như bấm liên kết sản phẩm, đăng ký hoặc tạo studio hay game. Google Analytics dùng cookie để nhận diện trình duyệt giữa hai website. Các sự kiện phân tích tùy chỉnh của chúng tôi không chứa email, mật khẩu, tên studio hay game, hoặc API key." },
   { type: "p", text: "Nội dung nhúng từ website khác, như video hoặc widget cửa hàng, có thể đặt cookie riêng khi tải. Việc này tuân theo chính sách quyền riêng tư của nhà cung cấp." },
 
   { type: "h2", text: "5. Chia sẻ thông tin" },
