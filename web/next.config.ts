@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
       // "Thử Thách Làm Game" moved to an English slug (old WordPress root URL included)
       { source: "/thu-thach-lam-game", destination: "/blog/game-making-challenge/", permanent: true },
       { source: "/blog/thu-thach-lam-game", destination: "/blog/game-making-challenge/", permanent: true },
+      // WordPress listing URLs now use the current blog and careers indexes.
+      { source: "/category/tutorial", destination: "/blog/", permanent: true },
+      { source: "/category/podcasts", destination: "/blog/", permanent: true },
+      { source: "/recruitment", destination: "/careers/", permanent: true },
       // the Unity Dev Basic course moved to /game-courses/ (old WordPress URLs included)
       { source: "/unity-dev-basic", destination: "/game-courses/", permanent: true },
       { source: "/courses/unity-dev-basic", destination: "/game-courses/", permanent: true },
