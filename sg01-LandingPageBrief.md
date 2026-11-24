@@ -1,10 +1,10 @@
-# Landing Page Brief: Infinite Book Shelf (tech showcase)
+# Landing Page Brief: Infinite Bookshelf (tech showcase)
 
 > For the agent building the page. Read all of this before you start. Lines marked **[TODO]** must be confirmed with the owner. Do not make up a value for them.
 
 ## 1. Goal
 
-Build a one-page landing site for **Infinite Book Shelf**. It is a 3D puzzle game where players sort books on tropical bookshelves, and it runs in the browser (Unity WebGL).
+Build a one-page landing site for **Infinite Bookshelf**. It is a 3D puzzle game where players sort books on tropical bookshelves, and it runs in the browser (Unity WebGL).
 
 The page has two jobs, in this order:
 
@@ -115,7 +115,7 @@ Optional: a short gameplay video `trailer.webm` (≤ 30 s) to autoplay muted in 
 - No tracking scripts unless the owner asks.
 
 ## 7. Open questions for the owner **[TODO]**
-1. Tagline (the game name is final: Infinite Book Shelf).
+1. Tagline (the game name is final: Infinite Bookshelf).
 2. What exactly is Sai Play, and what are its URL and logo?
 3. Play URL for the WebGL build.
 4. Can Easy Mode (paid) be mentioned?

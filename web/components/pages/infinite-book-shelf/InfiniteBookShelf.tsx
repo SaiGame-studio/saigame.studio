@@ -1,4 +1,4 @@
-// /products/infinite-book-shelf: a tech showcase of Infinite Book Shelf, a Unity game (browser, PC, Android) built on Sai Server.
+// /products/infinite-book-shelf: a tech showcase of Infinite Bookshelf, a Unity game (browser, PC, Android) built on Sai Server.
 // Not Kubio markup: styled by InfiniteBookShelf.module.css; the page keeps the site's Kubio nav and footer around it.
 // All copy lives in content.ts. Screenshots render as numbered placeholders until their `ready` flag is set.
 import ImageLightbox from "@/components/ImageLightbox";

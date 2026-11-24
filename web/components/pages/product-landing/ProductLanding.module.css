@@ -227,7 +227,7 @@
   border-bottom: 1px solid var(--line);
 }
 
-/* numbered step / card rows (the "Where to play" cards of the book shelf page) */
+/* numbered step / card rows (the "Where to play" cards of the bookshelf page) */
 .cardsSection {
   padding-top: clamp(48px, 6vw, 72px);
   border-top: 1px solid var(--line);
@@ -527,7 +527,7 @@
   border-top: 1px solid var(--line);
 }
 
-/* a highlighted card linking to another page (Sai Play, the book shelf showcase) */
+/* a highlighted card linking to another page (Sai Play, the bookshelf showcase) */
 .showcase {
   margin-top: 40px;
   display: grid;

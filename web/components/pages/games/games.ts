@@ -21,8 +21,8 @@ export type Game = {
 export const GAMES: Game[] = [
   {
     slug: "infinite-book-shelf",
-    description: "Infinite Book Shelf is a 3D puzzle game for browser, PC and Android where every book, shelf and flower is saved to the cloud, powered by Sai Server.",
-    title: "Infinite Book Shelf",
+    description: "Infinite Bookshelf is a 3D puzzle game for browser, PC and Android where every book, shelf and flower is saved to the cloud, powered by Sai Server.",
+    title: "Infinite Bookshelf",
     platform: "Itch.io · Unity Play",
     cover: "/images/products/infinite-book-shelf/hero.webp",
     summary: "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud, so no progress is lost.",

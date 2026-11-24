@@ -7,7 +7,7 @@
 /** sample values for the illustrations; not real player data */
 export const SAMPLE = {
   balance: "1,250",
-  game: { name: "Infinite Book Shelf", cover: "/images/products/infinite-book-shelf/hero.webp", level: 12, xp: 64 },
+  game: { name: "Infinite Bookshelf", cover: "/images/products/infinite-book-shelf/hero.webp", level: 12, xp: 64 },
 };
 
 export const COPY = {

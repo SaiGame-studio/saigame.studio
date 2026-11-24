@@ -1,6 +1,6 @@
 // Body of the "Game Making Challenge" post (/blog/game-making-challenge/), rendered inside BlogPostLayout.
 // Strings are English source text passed through t(); vi/ja live in i18n/vi.json and i18n/ja.json.
-// Project names (Hạnh đầu đà, Thánh Gióng, SG11, Infinite Book Shelf) are shown as is.
+// Project names (Hạnh đầu đà, Thánh Gióng, SG11, Infinite Bookshelf) are shown as is.
 import { getI18n } from "@/lib/i18n";
 import s from "./PostBody.module.css";
 
@@ -24,7 +24,7 @@ const MONTHS: Month[] = [
   { label: "July" },
   { label: "August" },
   { label: "September" },
-  { label: "October", game: { label: "Infinite Book Shelf", href: "/products/infinite-book-shelf/" } },
+  { label: "October", game: { label: "Infinite Bookshelf", href: "/products/infinite-book-shelf/" } },
   { label: "November" },
   { label: "December" },
 ];
