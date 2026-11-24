@@ -1,4 +1,4 @@
-// /products/sai-play: the Sai Play product landing, in the layout of /products/infinite-book-shelf.
+// /products/sai-play: the Sai Play product landing, in the layout of /products/infinite-bookshelf.
 // Not Kubio markup: styled by product-landing/ProductLanding.module.css; the page keeps the site's Kubio nav and footer.
 // All copy lives in content.ts. The UI pictures are HTML illustrations with sample values, labelled as such.
 import ImageLightbox from "@/components/ImageLightbox";

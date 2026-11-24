@@ -55,8 +55,8 @@ const CARDS = [
     sub: "Your games, progress, items, game shops and one sGem balance.",
   },
   {
-    out: "images/products/infinite-book-shelf/og-image.png",
-    art: { file: "images/products/infinite-book-shelf/hero.webp", position: "centre" },
+    out: "images/products/infinite-bookshelf/og-image.png",
+    art: { file: "images/products/infinite-bookshelf/hero.webp", position: "centre" },
     tint: "#121a12",
     shadeEnd: 0.1,
     kicker: "TECH SHOWCASE",

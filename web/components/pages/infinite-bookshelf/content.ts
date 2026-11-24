@@ -1,4 +1,4 @@
-// All copy for /products/infinite-book-shelf (brief: saigame.studio/sg01-LandingPageBrief.md).
+// All copy for /products/infinite-bookshelf (brief: saigame.studio/sg01-LandingPageBrief.md).
 // Strings are English source text: the page passes each one through t(), so vi/ja only need dictionary
 // entries in i18n/vi.json and i18n/ja.json, with no change here. **text** marks bold words (keep the markers when translating).
 // Facts and numbers follow section 4 of the brief, except platforms: the game ships to the stores in STORES.
@@ -24,8 +24,8 @@ export const STORES: Store[] = [
   { id: "google-play", name: "Google Play", platform: "Android", url: null },
 ];
 
-/** where the screenshots live once the owner adds them (public/images/products/infinite-book-shelf/) */
-export const IMAGE_DIR = "/images/products/infinite-book-shelf";
+/** where the screenshots live once the owner adds them (public/images/products/infinite-bookshelf/) */
+export const IMAGE_DIR = "/images/products/infinite-bookshelf";
 
 export type Shot = {
   /** number from the brief's image table (section 5): the owner's file list refers to it */

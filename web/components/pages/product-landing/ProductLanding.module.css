@@ -1,5 +1,5 @@
 /* Shared layout for the product landing pages (/products/sai-server, /products/sai-play).
-   Same rhythm, type and components as /products/infinite-book-shelf (InfiniteBookShelf.module.css);
+   Same rhythm, type and components as /products/infinite-bookshelf (InfiniteBookShelf.module.css);
    each page picks its palette with a theme class. Product names keep the site-wide blues (saigame.studio/AGENTS.md). */
 .page {
   --blue-2: #5f9bff;

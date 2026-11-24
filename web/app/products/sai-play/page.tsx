@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return shareMetadata({ path: "/products/sai-play/", title: t(COPY.metaTitle), description: t(COPY.metaDescription), image: "/images/products/sai-play/og-image.png" });
 }
 
-// Same chrome as /products/infinite-book-shelf: data-wp-page gives the page its own slug (off-canvas menu cleanup in
+// Same chrome as /products/infinite-bookshelf: data-wp-page gives the page its own slug (off-canvas menu cleanup in
 // KubioScripts); data-wp-owner="products" borrows the /products page's scoped Kubio CSS for the header.
 export default function Page() {
   return (

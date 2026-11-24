@@ -24,7 +24,7 @@ const MONTHS: Month[] = [
   { label: "July" },
   { label: "August" },
   { label: "September" },
-  { label: "October", game: { label: "Infinite Bookshelf", href: "/products/infinite-book-shelf/" } },
+  { label: "October", game: { label: "Infinite Bookshelf", href: "/products/infinite-bookshelf/" } },
   { label: "November" },
   { label: "December" },
 ];
