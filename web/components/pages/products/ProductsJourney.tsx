@@ -15,7 +15,7 @@ const SAMPLE_SGEM = "1,250";
 // games built on Sai Server, first shipped first; each links to its tech showcase page
 const SHOWCASES = [
   {
-    name: "Infinite Book Shelf",
+    name: "Infinite Bookshelf",
     href: "/products/infinite-book-shelf/",
     image: { src: "/images/products/infinite-book-shelf/hero.webp", width: 1400, height: 788 },
     alt: "Wooden bookshelves packed with colored books, flowers blooming above each sorted compartment, and a magic wand cursor picking up a yellow book",

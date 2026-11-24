@@ -60,7 +60,7 @@ const CARDS = [
     tint: "#121a12",
     shadeEnd: 0.1,
     kicker: "TECH SHOWCASE",
-    lines: [[["Infinite Book Shelf", "#84b842"]], [["powered by ", "#ffffff"], ["Sai Server.", "#5f9bff"]]],
+    lines: [[["Infinite Bookshelf", "#84b842"]], [["powered by ", "#ffffff"], ["Sai Server.", "#5f9bff"]]],
     sub: "A 3D puzzle for browser, PC and Android with every level saved to the cloud.",
   },
 ];

@@ -4,7 +4,7 @@
 // Facts and numbers follow section 4 of the brief, except platforms: the game ships to the stores in STORES.
 // Do not inflate the numbers.
 
-export const GAME_NAME = "Infinite Book Shelf";
+export const GAME_NAME = "Infinite Bookshelf";
 
 export type Store = {
   id: string;
@@ -49,7 +49,7 @@ export const SHOTS = {
 export const OG_IMAGE = { n: 14, file: "og-image.png", width: 1200, height: 630, ready: true };
 
 export const COPY = {
-  metaTitle: "Infinite Book Shelf – Built on Sai Server",
+  metaTitle: "Infinite Bookshelf – Built on Sai Server",
   metaDescription:
     "A 3D puzzle for browser, PC and Android where every book, shelf and flower is saved to the cloud. Built with Unity and Sai Server. Out now on Unity Play and Itch.io, coming to Steam and Google Play.",
 
@@ -75,13 +75,13 @@ export const COPY = {
     tagline: "Never run out of books.",
     /** YouTube video id (https://youtu.be/0u0mkD7qBFY) */
     videoId: "0u0mkD7qBFY",
-    videoTitle: "Infinite Book Shelf gameplay video",
+    videoTitle: "Infinite Bookshelf gameplay video",
   },
 
   server: {
     kicker: "Powered by Sai Server",
     title: "What the game asks of its backend",
-    lead: "Infinite Book Shelf uses two Sai Server modules for **sign-in** and **cloud saves**. Here is what each one does in the game.",
+    lead: "Infinite Bookshelf uses two Sai Server modules for **sign-in** and **cloud saves**. Here is what each one does in the game.",
     features: [
       { name: "SaiAuth", text: "Google sign-in through the backend, token sessions with auto refresh, and auto-login on return. A session guard sends the player back to login safely when the refresh token expires." },
       { name: "GamerProgress", tag: "custom game_data", text: "The whole level is stored in the cloud: the seed, the position of every moved book, the tray contents and the Fuzzy Fruit count." },

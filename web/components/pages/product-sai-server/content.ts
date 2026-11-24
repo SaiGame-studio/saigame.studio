@@ -13,7 +13,7 @@ export const SHOTS = {
   lua: { file: "lua-script-manager.webp", width: 784, height: 851, alt: "The Lua Script Manager in the Unity Inspector: buttons to create battle scripts from templates and the list of loaded .lua files, each with an Upload New button" },
 } satisfies Record<string, Shot>;
 
-/** the Infinite Book Shelf showcase, a game built on Sai Server */
+/** the Infinite Bookshelf showcase, a game built on Sai Server */
 export const SHOWCASE = {
   href: "/products/infinite-book-shelf/",
   image: { file: "/images/products/infinite-book-shelf/hero.webp", width: 1400, height: 788 },
@@ -154,7 +154,7 @@ export const COPY = {
 
   showcase: {
     kicker: "Built on Sai Server",
-    title: "Infinite Book Shelf",
+    title: "Infinite Bookshelf",
     text: "A 3D puzzle for browser, PC and Android. Sign-in and cloud saves run on Sai Server, so every book, shelf and flower is kept across devices.",
     link: "See the tech showcase",
     alt: "Wooden bookshelves packed with colored books, flowers blooming above each sorted compartment, and a magic wand cursor picking up a yellow book",

@@ -37,7 +37,7 @@ const nextConfig: NextConfig = {
       { source: "/co-ban-sai-server", destination: "/products/", permanent: true },
       // the standalone Sai Server landing was merged into /products/sai-server/ (one page for the "Sai Server" search)
       { source: "/sai-server", destination: "/products/sai-server/", statusCode: 301 },
-      // the Infinite Book Shelf page first shipped at /products/infinity-book-shelf/
+      // the Infinite Bookshelf page first shipped at /products/infinity-book-shelf/
       { source: "/products/infinity-book-shelf", destination: "/products/infinite-book-shelf/", permanent: true },
     ];
     return redirects.flatMap((redirect) => [

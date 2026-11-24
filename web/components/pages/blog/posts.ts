@@ -16,10 +16,10 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "game-making-challenge",
-    description: "SaiGame's Game Making Challenge: the games made month by month, from Hạnh đầu đà and Thánh Gióng to SG11 and Infinite Book Shelf.",
+    description: "SaiGame's Game Making Challenge: the games made month by month, from Hạnh đầu đà and Thánh Gióng to SG11 and Infinite Bookshelf.",
     title: "Game Making Challenge",
     date: "2026-02-01",
-    excerpt: "January: Hạnh đầu đà. March: Thánh Gióng. June: SG11. October: Infinite Book Shelf.",
+    excerpt: "January: Hạnh đầu đà. March: Thánh Gióng. June: SG11. October: Infinite Bookshelf.",
   },
   {
     slug: "sai-game-lore-1",
