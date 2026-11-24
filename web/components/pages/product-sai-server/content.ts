@@ -15,8 +15,8 @@ export const SHOTS = {
 
 /** the Infinite Bookshelf showcase, a game built on Sai Server */
 export const SHOWCASE = {
-  href: "/products/infinite-book-shelf/",
-  image: { file: "/images/products/infinite-book-shelf/hero.webp", width: 1400, height: 788 },
+  href: "/products/infinite-bookshelf/",
+  image: { file: "/images/products/infinite-bookshelf/hero.webp", width: 1400, height: 788 },
 };
 
 /** the limits a Materia stack raises, in display order */

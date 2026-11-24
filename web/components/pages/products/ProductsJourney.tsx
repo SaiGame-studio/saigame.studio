@@ -16,8 +16,8 @@ const SAMPLE_SGEM = "1,250";
 const SHOWCASES = [
   {
     name: "Infinite Bookshelf",
-    href: "/products/infinite-book-shelf/",
-    image: { src: "/images/products/infinite-book-shelf/hero.webp", width: 1400, height: 788 },
+    href: "/products/infinite-bookshelf/",
+    image: { src: "/images/products/infinite-bookshelf/hero.webp", width: 1400, height: 788 },
     alt: "Wooden bookshelves packed with colored books, flowers blooming above each sorted compartment, and a magic wand cursor picking up a yellow book",
     text: "A 3D puzzle for browser, PC and Android. Sign-in and cloud saves run on Sai Server, so every book, shelf and flower is kept across devices.",
     tags: ["Unity 6", "WebGL · PC · Android", "Google sign-in"],
