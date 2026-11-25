@@ -284,6 +284,16 @@
   color: var(--wood);
 }
 
+/* Android closed-test sign-up: its own line under the store cards */
+.storeSignup {
+  margin: 20px 0 0;
+}
+
+.storeSignup .storeLink {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 /* media and numbered placeholders */
 .media {
   margin: 0;
