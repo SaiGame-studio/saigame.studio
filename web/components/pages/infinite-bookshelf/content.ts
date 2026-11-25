@@ -21,7 +21,7 @@ export const STORES: Store[] = [
   { id: "unity-play", name: "Unity Play", platform: "Browser", url: "https://play.unity.com/en/games/b66579aa-f8f3-47af-8671-1fc194efaaeb/infinite-bookshelf" },
   { id: "itch-io", name: "Itch.io", platform: "Browser / PC", url: "https://saigame.itch.io/infinite-bookshelf" },
   { id: "steam", name: "Steam", platform: "PC", url: "https://store.steampowered.com/app/5612980/Infinite_Bookshelf/" },
-  { id: "google-play", name: "Google Play", platform: "Android", url: null },
+  { id: "google-play", name: "Google Play", platform: "Android", url: "https://play.google.com/apps/testing/com.saigame.unbeatable01/join" },
 ];
 
 /** where the screenshots live once the owner adds them (public/images/products/infinite-bookshelf/) */
