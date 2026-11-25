@@ -24,6 +24,9 @@ export const STORES: Store[] = [
   { id: "google-play", name: "Google Play", platform: "Android", url: "https://play.google.com/apps/testing/com.saigame.unbeatable01/join" },
 ];
 
+/** closed-test sign-up form, shown on its own line under the store cards */
+export const ANDROID_TEST_SIGNUP = "https://forms.gle/un6B5nAriijG1PAc6";
+
 /** where the screenshots live once the owner adds them (public/images/products/infinite-bookshelf/) */
 export const IMAGE_DIR = "/images/products/infinite-bookshelf";
 
@@ -67,6 +70,7 @@ export const COPY = {
     lead: "The same game and the same cloud saves, in the browser, on PC and on Android.",
     open: "Play on {store}",
     soon: "Coming soon",
+    signup: "Sign up for the Android test",
   },
 
   game: {

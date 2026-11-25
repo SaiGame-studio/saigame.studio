@@ -5,7 +5,7 @@ import ImageLightbox from "@/components/ImageLightbox";
 import { getI18n } from "@/lib/i18n";
 import { fill } from "@/lib/fill";
 import { linkProducts, SAI_SERVER_URL } from "@/components/SaiServerLink";
-import { COPY, GAME_NAME, IMAGE_DIR, SHOTS, STORES, type Shot } from "./content";
+import { ANDROID_TEST_SIGNUP, COPY, GAME_NAME, IMAGE_DIR, SHOTS, STORES, type Shot } from "./content";
 import s from "./InfiniteBookShelf.module.css";
 
 type T = (en: string) => string;
@@ -157,6 +157,11 @@ export default async function InfiniteBookShelf() {
               </li>
             ))}
           </ul>
+          <p className={s.storeSignup}>
+            <a className={s.storeLink} href={ANDROID_TEST_SIGNUP} target="_blank" rel="noopener external">
+              {t(stores.signup)} <Arrow />
+            </a>
+          </p>
         </div>
       </section>
 
